@@ -1,0 +1,25 @@
+.conteiner-login{
+    /* border: 1px solid black; */
+    background: red;
+    width: 350px;
+    margin: auto;
+    border-radius: 7px;
+    /* transform: translateY(-25px); */
+}
+.formu-box{
+    width: 90%;
+    margin: auto;
+}
+
+
+.con-box h2{
+    color: rgb(0, 0, 0);
+}
+
+.form-group label{
+    color: rgb(0, 0, 0);
+}
+
+.links-log a{
+    color: rgb(0, 0, 0);
+}

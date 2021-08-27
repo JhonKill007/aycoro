@@ -1,0 +1,122 @@
+.biograf{
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: auto;
+    height: 400px;
+}
+
+.portada{
+    width: 100%;
+    height: 300px;
+    /* border: 1px solid green; */
+}
+
+.portada img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.perfil{
+    border: 3px solid black;
+    height: 200px;
+    width: 200px;
+    border-radius: 60%;
+    margin-left: 10px;
+    margin-top: -200px;
+    /* position: relative; */
+}
+
+.perfil img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* .nombre{ */
+    /* transform: translateY(-190px); */
+    /* margin-left: 220px; */
+    /* position: relative; */
+/* } */
+
+.pen{
+    width: 40px;
+    height: 40px;
+    margin: 0 0 0 auto; /* X,Y */
+    font-size: inherit; /* Indiferente */
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.pen2{
+    width: 40px;
+    height: 40px;
+    margin: 0 0 0 auto; /* X,Y */
+    font-size: inherit; /* Indiferente */
+    text-align: center;
+    margin-top: -30px;
+    /* border: 1px solid red; */
+}
+
+.edit{
+    margin: auto;
+}
+
+.messege-icon{
+    width: 320px;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: 250px; */
+    /* margin-top: -100px; */
+}
+
+
+.messege-icon i{
+    font-size: 50px;
+    /* margin-left: 20px; */
+    color: rgb(97, 95, 95);
+}
+
+.box-button-follow{
+    margin: auto;
+}
+
+.messege-icon button{
+    width: 150px;
+    border: 1px solid black;
+    /* margin-top: -150px; */
+    /* margin-left: 230px; */
+    border-radius: 5px;
+}
+
+.green{
+    background-color: rgb(6, 231, 74);
+    color: rgb(0, 0, 0);
+}
+
+.white{
+    color: white;
+}
+
+.folower{
+
+    width: 200px;
+    /* border: 1px solid rgb(0, 9, 128); */
+    margin-top: -26px;
+    margin-left: 400px;
+}
+
+/* .folower-perfil{
+    width: 200px;
+    margin-top: -75px;
+    margin-left: 300px;
+} */
+
+
+@media (max-width: 1088px){
+    
+}

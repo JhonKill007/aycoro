@@ -1,0 +1,131 @@
+
+
+
+
+.box-up-one{
+    top: 100px;
+    width: 300px;
+    position: fixed;
+    /* border: 1px solid rgb(195, 0, 255); */
+    transform: translateX(0);
+
+}
+
+.box-up-two.show{
+    transform: translateX(-400px);
+}
+
+.box-up-two{
+    top: 100px;
+    width: 300px;
+    position: fixed;
+    /* border: 1px solid rgb(195, 0, 255); */
+    transform: translateX(-400px);
+
+}
+
+.box-up-two.show{
+    transform: translateX(0);
+}
+
+.box-up-three{
+    top: 100px;
+    width: 300px;
+    position: fixed;
+    /* border: 1px solid rgb(195, 0, 255); */
+    transform: translateX(-400px);
+
+}
+
+.box-up-three.show{
+    transform: translateX(0);
+}
+
+.create-post{
+    /* display: none; */
+    
+    width: 300px;
+    height: 250px;
+    background: red;
+    border-radius: 7px;
+    color: white;
+    
+
+}
+.create-post.show{
+    /* display: block; */
+    transform: translateX(0);
+}
+
+.post-container{
+    margin: auto;
+}
+
+.btn-box-post{
+    width: 48px;
+    height: 48px;
+    background: red;
+    border-radius: 5px;
+    margin-left: 2px;
+    /* border: 1px solid rgb(9, 255, 0); */
+
+}
+
+.plus-post-box{
+    width: 100%;
+    display: flex;
+}
+
+.post-btn-container{
+    
+    width: 40px;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 3px;
+}
+
+.plus-post-btn{
+    top: 100px;
+    width: 170px;
+    height: 50px;
+    /* position: fixed; */
+    /* border: 1px solid pink; */
+}
+
+.plus-post-btn i{
+    margin: auto;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    
+    
+}
+
+.create-event{
+    display: none;
+    top: 155px;
+    width: 300px;
+    height: 200px;
+    background: red;
+    position: fixed;
+    border-radius: 7px;
+    transform: translateX(-400px);
+}
+
+
+
+
+@media (max-width: 1120px){
+    .box-up-one{
+        display: none;
+    }
+    .box-up-two{
+        display: none;
+    }
+    .box-up-three{
+        display: none;
+    }
+    .create-box-two{
+        display: block;
+    }
+}

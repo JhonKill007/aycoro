@@ -1,0 +1,39 @@
+.conteiner-signup {
+  /* border: 1px solid black; */
+  /* background: red;
+  width: 400px;
+  margin: auto;
+  border-radius: 7px; */
+  /* transform: translateY(-25px); */
+}
+
+#error-email {
+  color: red;
+}
+
+.banner-log {
+  width: 50%;
+  text-align: center;
+  /* margin-right: 50px; */
+}
+
+.banner-log img {
+  width: 100%;
+}
+
+.complete-name {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.email-box {
+  margin-bottom: 10px;
+}
+
+.birthsday {
+  display: flex;
+}
+
+.radio-butoms {
+  display: flex;
+}

@@ -1,0 +1,148 @@
+.publicacion {
+  width: 500px;
+  /* height: 550px; */
+  margin: auto;
+  /* border: 1px solid purple; */
+  /* border-radius: 7px; */
+  margin-bottom: 50px;
+  /* background-color: rgb(169, 169, 184); */
+  border-bottom: 1px solid black;
+}
+
+.pub-img-box {
+  /* border: 1px solid red; */
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+.pub-img-box img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.piecera {
+  width: 400px;
+  /* border: 1px solid rgb(225, 0, 255); */
+  margin: auto;
+}
+
+.like-wait {
+  font-size: 40px;
+  /* margin-left: -40px; */
+  cursor: pointer;
+}
+
+.like-red {
+  font-size: 40px;
+  /* margin-left: -40px; */
+  cursor: pointer;
+  color: red;
+}
+
+.publicacion-text {
+  width: 500px;
+  /* height: 470px; */
+  margin: auto;
+  /* border: 1px solid purple; */
+  /* border-radius: 7px; */
+  margin-bottom: 50px;
+  /* background-color: rgb(169, 169, 184); */
+  border-bottom: 1px solid black;
+}
+
+.container-scroll h2 {
+  text-align: center;
+}
+
+.buton_like {
+  border: 1px solid white;
+  background: white;
+}
+
+.corcho{
+  display: none;
+}
+
+@media (max-width: 1120px) {
+  .phone-size {
+    margin-top: 300px;
+  }
+  .container-scroll{
+    margin-top: -200px;
+    /* border: 1px solid red; */
+  }
+  .corcho{
+    display: block;
+  }
+}
+
+@media (max-width: 556px) {
+  .publicacion {
+    width: 400px;
+  }
+  .pub-img-box {
+    width: 300px;
+    height: 300px;
+  }
+
+  .pub-img-box img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .piecera {
+    width: 300px;
+  }
+  .publicacion-text {
+    width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .publicacion {
+    width: 400px;
+  }
+  .pub-img-box {
+    width: 300px;
+    height: 300px;
+  }
+
+  .pub-img-box img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .piecera {
+    width: 300px;
+  }
+  .publicacion-text {
+    width: 400px;
+  }
+}
+
+
+@media (max-width: 438px) {
+  .publicacion {
+    width: 300px;
+  }
+  .pub-img-box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pub-img-box img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .piecera {
+    width: 200px;
+  }
+  .publicacion-text {
+    width: 300px;
+  }
+}
+
