@@ -11,7 +11,7 @@ require("modulos/nav-two.php");
 
     <div class="conteiner">
         <div class="search-perfiles">
-            <h1>Discuciones</h1>
+            <h1>Discusiones</h1>
             <div class="display-event">
                 <?php
 
@@ -33,7 +33,7 @@ require("modulos/nav-two.php");
                 ?>
 
                             <div class="info-busque-event">
-                                <a href="dm-discucion?usu=<?php echo $id_usu; ?>">
+                                <a href="dm-discusion?usu=<?php echo $id_usu; ?>">
                                     <img src=<?php echo $photo; ?> alt="">
 
                                     <div><a href="perfil-reciver?usu=<?php echo $id_usu; ?>">

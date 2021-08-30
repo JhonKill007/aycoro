@@ -8,10 +8,31 @@ $portada = $registro['portada'];
 
 
 
-$ruta= '../photo_portada/'.$_FILES['portada']['name'];
-$ruta_send= 'photo_portada/'.$_FILES['portada']['name'];
-move_uploaded_file($_FILES['portada']['tmp_name'],$ruta);
-if($ruta_send =='photo_portada/'){
+// $ruta= '../photo_portada/'.$_FILES['portada']['name'];
+// $ruta_send= 'photo_portada/'.$_FILES['portada']['name'];
+// move_uploaded_file($_FILES['portada']['tmp_name'],$ruta);
+
+
+$str_portada = "4gds-portada";
+
+$filename = $_FILES['portada']['name'];
+$new_name = $id_registro . '-' . $str_portada;
+
+
+$xplode = explode('.', $filename);
+$extencion = array_pop($xplode);
+$apply_name = $new_name . '.' . $extencion;
+
+$ruta = '../photo_portada/' . $apply_name;
+$ruta_send = 'photo_portada/' . $apply_name;
+move_uploaded_file($_FILES['portada']['tmp_name'], $ruta);
+
+
+
+
+
+
+if($ruta_send =='photo_portada/'.$id_registro.'-4gds-portada.'){
     $photo_portada = $portada;
     echo $photo_portada;
 }

@@ -1,6 +1,7 @@
 <div class="conteiner">
 
     <div class="container-scroll">
+        <br>
         <h2>Publicaciones</h2>
         <!-- posiciones  de prooductos -->
 
@@ -101,7 +102,7 @@
                                         });
                                     </script>
                                 </form>
-
+                                <p><?php echo $estado_post; ?></p>
                                 <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
                                     <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
                                 </a>

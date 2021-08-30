@@ -29,10 +29,10 @@ require("modulos/nav-two.php");
                     <input type="file" class="form-control" id="perfil" name="perfil" accept="image/*">
 
                     <b for="">Nombre</b>
-                    <input class="form-control" type="text" name="nombre_edit" id="" value=<?php echo$registro['nombre']; ?> required>
+                    <input class="form-control" type="text" name="nombre_edit" id="" value=<?php echo$registro['nombre']; ?> maxlength="30" required>
 
                     <b for="">Apellido</b>
-                    <input class="form-control" type="text" name="apellido_edit" id="" value=<?php echo$registro['apellido']; ?>>
+                    <input class="form-control" type="text" name="apellido_edit" id="" value=<?php echo$registro['apellido']; ?> maxlength="30">
 
                     <b for="">Presentacion</b>
                     <textarea class="form-control" name="presentacion_edit" id="" cols="23" rows="3" maxlength="90" required><?php echo$registro['presentacion']; ?></textarea>

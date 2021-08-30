@@ -101,7 +101,7 @@
                                         });
                                     </script>
                                 </form>
-
+                                <p><?php echo $estado_post; ?></p>
                                 <?php
                                 if ($owner_post == $_SESSION['id']) {
                                 ?>

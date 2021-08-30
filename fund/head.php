@@ -56,4 +56,7 @@
 
     <!-- style de sugerencias -->
     <link rel="stylesheet" href="css/stylo-ayuday-suger.css">
+
+    <!-- icoon de carga -->
+    <link rel="stylesheet" href="css/stylo-charger.css">
 </head>

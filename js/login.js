@@ -9,6 +9,11 @@ formulario.onsubmit = (e) => {
 document.querySelector('.button-log').addEventListener('click', () => {
 
 
+
+
+    document.querySelector(".charger").classList.toggle("watch")
+    document.querySelector(".conteiner-login").classList.toggle("hidde")
+
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "keys/log-in-key.php", true);
     xhr.onload = () => {
@@ -20,12 +25,10 @@ document.querySelector('.button-log').addEventListener('click', () => {
                     location.href = "index"
                 }
                 else {
-                    // errorText.textContent = data;
+                    document.querySelector(".conteiner-login").classList.toggle("hidde")
+                    document.querySelector(".charger").classList.toggle("watch")
                     errorText.innerHTML = data;
-                    // console.log(data);
-                    // errorText.style.display = "block";
                 }
-                // errorText.innerHTML = data;
             }
         }
     }

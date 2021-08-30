@@ -30,7 +30,8 @@
 
                     $SELECT = "SELECT * FROM folow WHERE id_folowing ='$id_usu'";
                     $resultado_2 = mysqli_query($conn, $SELECT);
-                    $seguidores = $resultado_2->num_rows;
+                    $segui = $resultado_2->num_rows;
+                    $seguidores = $segui-1;
                     if ($resultado) {
 
                 ?>

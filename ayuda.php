@@ -24,7 +24,7 @@ require("fund/head.php");
             <div class="interactionbox">
                 <span>En que te podemos ayudar, envia tu problema y responderemos lo mas rapido posible por la bandeja de mensajeria.</span>
                 <form action="keys/send-ayudaosug-key.php" method="post">
-                    <textarea name="mensaje" cols="30" rows="10" placeholder="   Escribe aqui!"></textarea>
+                    <textarea name="mensaje" cols="30" rows="10" placeholder="   Escribe aqui!" maxlength="1000"></textarea>
                     <input type="hidden" value="<?php echo $_SESSION['id']; ?>" name="id_sendner">
                     <input type="hidden" value="<?php echo $id_admin; ?>" name="id_reciver">
                     <input type="hidden" value="<?php echo $opc; ?>" name="opc">

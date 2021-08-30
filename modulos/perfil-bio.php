@@ -3,7 +3,8 @@ $eso = require("keys/conection.php");
 if ($eso) {
     $SELECT = "SELECT * FROM folow WHERE id_folowing ='$id_registro'";
     $resultado = mysqli_query($conn, $SELECT);
-    $nume = $resultado->num_rows;
+    $segui = $resultado->num_rows;
+    $nume = $segui-1;
 } else {
     echo "fallo la coneccion";
 }

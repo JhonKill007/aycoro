@@ -62,7 +62,7 @@ foreach ($todos as $numero) {
                         } else {
                             $ypo = '';
                         }
-                        $msgst = substr($msgs, 0, 60) . '...';
+                        $msgst = substr($msgs, 0, 29) . '...';
 
                         if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
                             $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
@@ -114,7 +114,7 @@ foreach ($todos as $numero) {
                             } else {
                                 $ypo = '';
                             }
-                            $msgst = substr($msgs, 0, 60) . '...';
+                            $msgst = substr($msgs, 0, 29) . '...';
 
                             if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
                                 $data .= '<a href="dm_.php?private=' . $id_chat . '">

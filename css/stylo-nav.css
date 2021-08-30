@@ -37,6 +37,27 @@
   padding: 10px;
 }
 
+.cir-num-mjs {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  text-align: center;
+  border-radius: 50%;
+  margin-top: -25px;
+  margin-right: -70px;
+}
+
+.cicule-mjs {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  text-align: center;
+  border-radius: 50%;
+  margin-top: -25px;
+  margin-left: 22px;
+  z-index: 1000;
+}
+
 .nav-main li a:hover {
   text-decoration: none;
 }
@@ -238,6 +259,7 @@
   padding: 30px;
   opacity: 0.9;
   font-family: "Oswald", sans-serif;
+  /* z-index: 10000; */
   /* transform: translateY(50px); */
 }
 
@@ -339,7 +361,7 @@
     transition: 0.5s ease-in-out;
   }
 
-  .bar-main-rigth{
+  .bar-main-rigth {
     display: none;
   }
 
@@ -424,7 +446,6 @@
     margin-left: -50px;
   }
 }
-
 
 @media (max-width: 486px) {
   #logo2 {

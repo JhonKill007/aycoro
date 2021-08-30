@@ -5,6 +5,9 @@ require("fund/head.php");
 
 
 <body>
+    <div id="contenedo_carca" class="charger">
+        <div id="carga"></div>
+    </div>
 
     <div class="container-one">
 
@@ -40,8 +43,8 @@ require("fund/head.php");
                 <div class="con-box">
                     <h2>Iniciar Session</h2>
                     <div class='error'></div>
-                    
-                    
+
+
 
                     <!-- formulario -->
                     <form action="keys/log-in-key.php" method="POST" class="form-horizontal formu">
@@ -80,7 +83,7 @@ require("fund/head.php");
                             <!-- <a href="">¿Se te olvidó tu contraseña?</a> -->
                             <!-- <br> -->
                             <span>Aun no tengo cuenta</span>
-                            
+
                             <a href="signup"><b>Crear Nueva Cuenta</b></a>
                         </div>
                         <br>

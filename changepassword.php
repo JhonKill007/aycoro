@@ -28,13 +28,13 @@ require("modulos/nav-two.php");
 
                     <b for="">Contraseña Actual</b>
                     <input type="hidden" name="id_per" value=<?php echo $_SESSION['id']; ?>>
-                    <input class="form-control" type="password" name="actual" id="" required>
+                    <input class="form-control" type="password" name="actual" id="" maxlength="50" required>
 
                     <b for="">Nueva Contraseña</b>
-                    <input class="form-control" type="password" name="nueva" id="" required>
+                    <input class="form-control" type="password" name="nueva" id="" maxlength="50" required>
 
                     <b for="">Confirmar nueva contraseña</b>
-                    <input class="form-control" type="password" name="confirm" id="" required>
+                    <input class="form-control" type="password" name="confirm" id="" maxlength="50" required>
                     <br>          
 
                     <!-- boton sign up -->

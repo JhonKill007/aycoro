@@ -8,6 +8,8 @@ formulario.onsubmit = (e) => {
 
 document.querySelector('.button-sign').addEventListener('click', () => {
 
+    document.querySelector(".charger").classList.toggle("watch")
+    document.querySelector(".conteiner-signup").classList.toggle("hidde")
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "keys/signup-key.php", true);
@@ -20,12 +22,11 @@ document.querySelector('.button-sign').addEventListener('click', () => {
                     location.href = "index"
                 }
                 else {
-                    // errorText.textContent = data;
+                    document.querySelector(".conteiner-signup").classList.toggle("hidde")
+                    document.querySelector(".charger").classList.toggle("watch")
                     errorText.innerHTML = data;
-                    // console.log(data);
-                    // errorText.style.display = "block";
+                    
                 }
-                // errorText.innerHTML = data;
             }
         }
     }

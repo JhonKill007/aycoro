@@ -18,7 +18,8 @@ if (!empty($folowing) || !empty($folower)) {
             if ($resultado) {
                 $SELECT = "SELECT * FROM folow WHERE id_folowing ='$folowing'";
                 $resultado_2 = mysqli_query($conn, $SELECT);
-                $seguidores = $resultado_2->num_rows;
+                $segui = $resultado_2->num_rows;
+                $seguidores = $segui-1;
 
                 $datafollow .= "<div class='buton_follow'><button class='green'>Seguido</button><b>". $seguidores ." Seguidores</b></div>";
             } else {
@@ -31,7 +32,8 @@ if (!empty($folowing) || !empty($folower)) {
             if ($resultado) {
                 $SELECT = "SELECT * FROM folow WHERE id_folowing ='$folowing'";
                 $resultado_2 = mysqli_query($conn, $SELECT);
-                $seguidores = $resultado_2->num_rows;
+                $segui = $resultado_2->num_rows;
+                $seguidores = $segui-1;
 
                 $datafollow .= "<div class='buton_follow'><button class='blue'>Seguir</button><b>". $seguidores ." Seguidores</b></div>";
                 

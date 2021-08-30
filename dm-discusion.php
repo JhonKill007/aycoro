@@ -5,7 +5,22 @@ require("fund/head.php");
 
 ?>
 
+<style>
+    @media (max-width: 1120px) {
+        .barra-inicio-new {
+            height: 140px;
+        }
 
+        .nav-main {
+            height: 140px;
+        }
+
+        .container-one {
+            margin-top: -40px;
+            height: 140px;
+        }
+    }
+</style>
 
 <body>
 
@@ -94,7 +109,7 @@ require("fund/head.php");
                     <form action="" method="post" class="typing-area">
                         <input type="hidden" value="<?php echo $id; ?>" name="id_sendner">
                         <input type="hidden" value="<?php echo $id_disc; ?>" name="id_disc">
-                        <input type="text" class="input-field" name="mensaje" placeholder="Type a message here.">
+                        <input type="text" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
                         <!-- <textarea name="mensaje" class="input-field" id="" cols="110" rows="2" placeholder="Type a message here."></textarea> -->
                         <button><i class="fab fa-telegram-plane"></i></button>
                     </form>

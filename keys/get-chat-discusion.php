@@ -40,7 +40,7 @@ if (isset($_SESSION['id'])) {
     }
     if ($output == '') {
         $output .= '<div class="details letter-comver">
-                        <h3>No hay converzacion!</h3>
+                        <h3>No hay conversacion!</h3>
                    </div>';
     }
     echo $output;

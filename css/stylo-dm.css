@@ -87,27 +87,6 @@
   color: rgb(0, 0, 0);
 }
 
-/* pastes */
-/* 
-@import url("https://fonts.googleapi.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #f7f7f7;
-}
-
-
 
 /* signup form css code */
 
@@ -472,6 +451,18 @@ form .name-details .field:last-child {
 
 @media (max-width: 1120px) {
   .chat-box {
-    height: 250px;
+    height: 390px;
+  }
+  .conteiner-chat-box{
+    width: 100%;
+    margin-top: -150px;
   }
 }
+
+
+
+
+
+
+
+

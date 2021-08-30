@@ -1,12 +1,9 @@
 .conteiner-messaje {
   width: 700px;
-  /* border: 1px solid black; */
   background: red;
   margin: auto;
   border-radius: 7px;
   height: auto;
-  /* height: 550px; */
-  /* transform: translateY(-25px); */
 }
 
 .users-lista{
@@ -17,7 +14,8 @@
 }
 
 .mgs_pgas{
-  margin-left: 70px;
+  margin-left: 40px;
+  margin-top: -10px;
   /* margin-right: auto; */
 }
 

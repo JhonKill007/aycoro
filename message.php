@@ -2,7 +2,28 @@
 require("fund/head.php");
 ?>
 
+<style>
+    @media (max-width: 1120px) {
 
+        .conteiner-messaje {
+            border: 1px solid rgb(6, 50, 197);
+            margin-top: -100px;
+        }
+
+        .barra-inicio-new {
+            height: 140px;
+        }
+
+        .nav-main {
+            height: 140px;
+        }
+
+        .container-one {
+            margin-top: -40px;
+            height: 140px;
+        }
+    }
+</style>
 
 <body>
 

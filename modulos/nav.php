@@ -8,7 +8,7 @@ if (!isset($_SESSION['id'])) {
     // 
 ?>
     <div class="container-one">
-    
+
 
 
 
@@ -21,13 +21,29 @@ if (!isset($_SESSION['id'])) {
                 <br>
                 <a href="perfil"><img src=<?php echo $foto; ?> class="foto-bar" alt=""></a>
                 <li><a href="perfil"><?php echo $nombre . ' ' . $apellido ?></a></li>
-                <li><a href="message">Mensajes</a></li>
+                <li><a href="message">Mensajes (<label class="num-message-bar" for="icon-logo"></label>)</a></li>
                 <li><a href="explorador">Explorador</a></li>
                 <li><a href="discusion">Discusion</a></li>
-                <li><a href="">Ajustes</a></li>
-                <li><a href="">Sugerencias</a></li>
-                <li><a href="">Ayuda</a></li>
+                <li><a href="edit-perfil">Ajustes</a></li>
+                <li><a href="sugerencias">Sugerencias</a></li>
+                <li><a href="ayuda">Ayuda</a></li>
                 <li><a href="modulos/logout.php">Cerrar Session</a></li>
+                <script>
+                    const MonViewone = document.querySelector(".num-message-bar");
+                    setInterval(() => {
+                        let xhrzone = new XMLHttpRequest();
+                        xhrzone.open("GET", "keys/num-onview-key.php", true);
+                        xhrzone.onload = () => {
+                            if (xhrzone.readyState === XMLHttpRequest.DONE) {
+                                if (xhrzone.status === 200) {
+                                    let datoviewone = xhrzone.response;
+                                    MonViewone.innerHTML = datoviewone;
+                                }
+                            }
+                        }
+                        xhrzone.send();
+                    }, 500);
+                </script>
                 <div>
                     <br>
                     <br>
@@ -106,7 +122,9 @@ if (!isset($_SESSION['id'])) {
                     <li class="icon-message">
                         <!-- mensaje -->
                         <img class="message-btn" id="icon-logo" src="img/message.png" alt="">
-                        <label class="num-message" for="icon-logo"></label>
+                        <div class="cicule-mjs">
+                            <span class="num-message" for="icon-logo"></span>
+                        </div>
                         <script>
                             const MonView = document.querySelector(".num-message");
                             setInterval(() => {
@@ -141,6 +159,9 @@ if (!isset($_SESSION['id'])) {
                     <li>
                         <div class="menu-btn">
                             <i class="fas fa-bars"></i>
+                            <div class="cir-num-mjs">
+                                <label class="num-message-bar-Two" for="icon-logo"></label>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -148,6 +169,22 @@ if (!isset($_SESSION['id'])) {
             </nav>
 
         </div>
+        <script>
+            const MonViewTwo = document.querySelector(".num-message-bar-Two");
+            setInterval(() => {
+                let xhrzTwo = new XMLHttpRequest();
+                xhrzTwo.open("GET", "keys/num-onview-key.php", true);
+                xhrzTwo.onload = () => {
+                    if (xhrzTwo.readyState === XMLHttpRequest.DONE) {
+                        if (xhrzTwo.status === 200) {
+                            let datoviewTwo = xhrzTwo.response;
+                            MonViewTwo.innerHTML = datoviewTwo;
+                        }
+                    }
+                }
+                xhrzTwo.send();
+            }, 500);
+        </script>
 
         <!-- barra lateral derecha -->
         <nav class="bar-main-rigth fixed-top">
@@ -205,7 +242,7 @@ if (!isset($_SESSION['id'])) {
 
             <div class="inps ag-photo">
                 <h1>Agregar Post</h1>
-                <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-datanav">
+                <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-data">
                     <div class="in-ag-post">
                         <input type="file" class="btn btn-success col-sm-12" name="photo_post" id="" accept="image/*" required>
                         <input type="hidden" value="1" name="opcion">
@@ -231,7 +268,7 @@ if (!isset($_SESSION['id'])) {
             <div class="inps ag-event">
                 <h1>Agregar Discusion</h1>
                 <p>Agrega una discusion Temporal.</p>
-                <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-datanav">
+                <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-data">
                     <div class="in-ag-post">
                         <input type="hidden" value="2" name="opcion">
                         <input type="file" class="btn btn-success col-sm-12" name="evento" id="" accept="image/*" required>

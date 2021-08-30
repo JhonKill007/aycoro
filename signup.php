@@ -5,7 +5,10 @@ require("fund/head.php");
 
 
 <body>
-
+    <div id="contenedo_carca" class="charger">
+        <div id="carga"></div>
+    </div>
+    
     <div class="container-one">
 
         <!-- new barra -->
@@ -32,7 +35,7 @@ require("fund/head.php");
 
 
     <div class="conteiner">
-        <div class="conteiner-signup">
+        <div class="conteiner-signup col-sm-6">
             <div class="con-box">
                 <h2>Registrate</h2>
                 <label>Super facil.</label>
@@ -45,26 +48,30 @@ require("fund/head.php");
                         <div class="col-sm-12 complete-name">
 
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="30" required>
                             </div>
 
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" maxlength="30">
                             </div>
 
                         </div>
 
                         <div class="col-sm-12">
                             <div class="col-sm-12 email-box">
-                                <input type="number" class="form-control" id="numero" name="numero" placeholder="numero" required>
+                                <input type="number" class="form-control" id="numero" name="numero" placeholder="Numero" maxlength="11">
                             </div>
                             <div class="col-sm-12 email-box">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" maxlength="50" required>
+                            </div>
+                            <div class="col-sm-12 email-box">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" maxlength="50" required>
                             </div>
                             <div class="col-sm-12">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" id="password" name="password-confirm" placeholder="Confirma tu contraseña" maxlength="50" required>
                             </div>
                         </div>
+                        <br>
 
                         <div class="col-sm-12">
                             <label for="" class="col-sm-8">Fecha de Nacimiento</label>

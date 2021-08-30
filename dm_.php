@@ -5,7 +5,22 @@ require("fund/head.php");
 
 ?>
 
+<style>
+    @media (max-width: 1120px) {
+        .barra-inicio-new {
+            height: 140px;
+        }
 
+        .nav-main {
+            height: 140px;
+        }
+
+        .container-one {
+            margin-top: -40px;
+            height: 140px;
+        }
+    }
+</style>
 
 <body>
 
@@ -15,7 +30,7 @@ require("fund/head.php");
     $idmine = $_SESSION['id'];
     $id_chat = $_GET['private'];
     $id_sus;
-    
+
     $eso = require("keys/conection.php");
     if ($eso) {
         $UPDATE = "UPDATE chat SET readdate = 1 where id_chat = '$id_chat' AND id_sendner != '$idmine' AND readdate = 0";
@@ -81,7 +96,7 @@ require("fund/head.php");
                     <?php
                     $pri = 1;
                     $vista = 1;
-                    $credms = 0; 
+                    $credms = 0;
                     ?>
                     <form action="" method="post" class="typing-area">
                         <input type="hidden" value="<?php echo $idmine; ?>" name="id_sendner">
@@ -89,9 +104,9 @@ require("fund/head.php");
                         <input type="hidden" value="<?php echo $pri; ?>" name="mgsprivate">
                         <input type="hidden" value="<?php echo $vista; ?>" name="vista">
                         <input type="hidden" value="<?php echo $id_chat; ?>" name="id_chat">
-                        <input type="hidden" value="<?php echo $vista ; ?>" name="readdate">
+                        <input type="hidden" value="<?php echo $vista; ?>" name="readdate">
                         <input type="hidden" value="<?php echo $credms; ?>" name="createdms">
-                        <input type="text" class="input-field" name="mensaje" placeholder="Type a message here.">
+                        <input type="text" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
                         <!-- <textarea name="mensaje" class="input-field" id="" cols="110" rows="2" placeholder="Type a message here."></textarea> -->
                         <button><i class="fab fa-telegram-plane"></i></button>
                     </form>
