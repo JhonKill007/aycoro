@@ -20,6 +20,11 @@ require("fund/head.php");
             height: 140px;
         }
     }
+    @media (max-width: 414px) {
+        .conteiner{
+            width: 100%;
+        }
+    }
 </style>
 
 <body>
@@ -57,6 +62,7 @@ require("fund/head.php");
     }
     require("modulos/nav.php");
     require("modulos/nav-two.php");
+    require("keys/usu.php");
     ?>
 
 
@@ -66,27 +72,12 @@ require("fund/head.php");
             <div class="wrapper">
                 <section class="chat-area">
                     <header>
-                        <?php
-                        // require("php/config.php");
-                        // $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
-
-                        // $SELECT = "SELECT * FROM users WHERE unique_id = '$user_id'";
-                        // $resultado = mysqli_query($conn, $SELECT);
-                        // if ($resultado) {
-                        //     $cht = $resultado->fetch_array();
-                        // }
-
-                        ?>
                         <a href="message" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                        <!-- <a href="perfil-reciver.php?usu=<?php echo $id_usu; ?>"> -->
                         <img src="img/usuario.png" alt="">
-                        <!-- </a> -->
                         <div class="details">
-                            <!-- <a href="perfil-reciver.php?usu=<?php echo $id_usu; ?>"> -->
-                            <!-- <span><?php echo $nombre_usu . " " . $apellido_sus; ?></span> -->
                             <span>Incognito</span>
-                            <!-- </a> -->
-                            <!-- <p><?php echo $cht['status']; ?></p> -->
+                            <div class="status_usu">
+                            </div>
                         </div>
                     </header>
                     <div class="chat-box">
@@ -113,18 +104,10 @@ require("fund/head.php");
                 </section>
             </div>
         </div>
-
-        <?php
-        // require("modulos/chat-module.php");
-        ?>
     </div>
     <script src="js/chat.js"></script>
-    <!-- <script>
-        var chatHistory = document.getElementById("message-box");
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-    </script> -->
+    <script src="js/status.js"></script>
     <?php
-    // require("modulos/footer.php");
     require("fund/script.php");
     ?>
 </body>

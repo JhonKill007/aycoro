@@ -28,8 +28,11 @@
 }
 
 .info-busque h5{
+    margin: auto;
+    width: 150px;
     text-align: center;
     color: black;
+    /* border: 1px solid green; */
 
 }
 
@@ -72,3 +75,28 @@
         grid-template-columns: auto auto;
     }
 }
+
+@media (max-width: 500px) {
+    .info-busque{
+        width: 200px;
+    
+    }
+}
+
+
+@media (max-width: 375px) {
+    .info-busque{
+        width: 180px;
+    
+    }
+}
+
+
+@media (max-width: 360px) {
+    .info-busque{
+        width: 150px;
+    
+    }
+}
+
+

@@ -1,14 +1,17 @@
 <?php
 require("fund/head.php");
-require("modulos/nav.php");
-require("modulos/nav-two.php");
-
 ?>
-
 
 
 <body>
 
+    <?php
+    require("modulos/nav.php");
+    require("modulos/nav-two.php");
+
+    ?>
+
+    
     <div class="conteiner">
         <div class="search-perfiles">
             <h1>Busqueda</h1>

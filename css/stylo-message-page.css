@@ -3,13 +3,13 @@
   background: red;
   margin: auto;
   border-radius: 7px;
-  height: auto;
+  /* height: auto; */
 }
 
 .users-lista{
   /* border: 1px solid black; */
   width: 90%;
-  height: 500px;
+  /* height: 500px; */
   margin: auto;
 }
 

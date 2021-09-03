@@ -4,6 +4,9 @@ $id_sendner = $_POST["id_sendner"];
 $id_reciver = $_POST["id_reciver"];
 $private = $_POST["mgsprivate"];
 $vista = $_POST["vista"];
+date_default_timezone_set('America/Santo_Domingo');
+$fecha = date('d-m-Y');
+$hora = date('h:i a');
 $readdate = 0;
 
 $eso = require("conection.php");
@@ -12,7 +15,7 @@ if ($mensaje != "") {
     if ($vista == 1) {
         $id_chat = $_POST["id_chat"];
         $readdate = $_POST["id_chat"];
-        $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private')";
+        $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private','$fecha','$hora')";
         $resultado = mysqli_query($conn, $INSERT);
         if ($resultado) {
             echo "enviado";
@@ -37,7 +40,7 @@ if ($mensaje != "") {
                             if ($resultadoCHAT) {
                                 $idchat = $resultadoCHAT->fetch_array();
                                 $id_chat = $idchat['id_chat'];
-                                $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private')";
+                                $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private','$fecha','$hora')";
                                 $resultado = mysqli_query($conn, $INSERT);
                                 if ($resultado) {
                                     echo "enviado";
@@ -53,7 +56,7 @@ if ($mensaje != "") {
                         if ($resultadoCHAT) {
                             $idchat = $resultadoCHAT->fetch_array();
                             $id_chat = $idchat['id_chat'];
-                            $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private')";
+                            $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private','$fecha','$hora')";
                             $resultado = mysqli_query($conn, $INSERT);
                             if ($resultado) {
                                 echo "enviado";
@@ -76,7 +79,7 @@ if ($mensaje != "") {
                             if ($resultadoCHAT) {
                                 $idchat = $resultadoCHAT->fetch_array();
                                 $id_chat = $idchat['id_chat'];
-                                $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat',$private)";
+                                $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat',$private,'$fecha','$hora')";
                                 $resultado = mysqli_query($conn, $INSERT);
                                 if ($resultado) {
                                     echo "enviado";
@@ -92,7 +95,7 @@ if ($mensaje != "") {
                         if ($resultadoCHAT) {
                             $idchat = $resultadoCHAT->fetch_array();
                             $id_chat = $idchat['id_chat'];
-                            $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat',$private)";
+                            $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat',$private,'$fecha','$hora')";
                             $resultado = mysqli_query($conn, $INSERT);
                             if ($resultado) {
                                 echo "enviado";

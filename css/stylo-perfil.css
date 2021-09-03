@@ -62,7 +62,12 @@
 }
 
 .edit{
+    width: 300px;
     margin: auto;
+}
+
+.botones-edit{
+    width: 300px;
 }
 
 .messege-icon{

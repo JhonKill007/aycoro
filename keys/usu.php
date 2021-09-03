@@ -14,6 +14,7 @@ $eso = require("keys/conection.php");
                 $presentacion_sus = $usu['presentacion'];
                 $foto_sus = $usu['foto'];
                 $portada_sus = $usu['portada'];
+                $status_usu = $usu['status'];
 
             }
         }

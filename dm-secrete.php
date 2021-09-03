@@ -19,6 +19,12 @@ require("fund/head.php");
             margin-top: -40px;
             height: 140px;
         }
+        
+    }
+    @media (max-width: 414px) {
+        .conteiner{
+            width: 100%;
+        }
     }
 </style>
 
@@ -60,13 +66,16 @@ require("fund/head.php");
                             <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
                                 <span><?php echo $nombre_usu . " " . $apellido_sus; ?></span>
                             </a>
-                            <p>Chat incognito</p>
-                            <!-- <p><?php echo $cht['status']; ?></p> -->
+                            <div class="status_usu">
+                            </div>
                         </div>
                         <div class="icon-dm-box">
                             <a class="icon-dm" href="dm?usu=<?php echo $id_sus; ?>&idmine=<?php echo $id; ?>"><i class="fas fa-comment"></i></a>
                         </div>
                     </header>
+                    <div class="incog">
+                        <p>Chat incognito</p>
+                    </div>
                     <div class="chat-box color-secrete chat-box-secrete">
 
 
@@ -89,18 +98,10 @@ require("fund/head.php");
                 </section>
             </div>
         </div>
-
-        <?php
-        // require("modulos/chat-module.php");
-        ?>
     </div>
     <script src="js/chat.js"></script>
-    <!-- <script>
-        var chatHistory = document.getElementById("message-box");
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-    </script> -->
+    <script src="js/status.js"></script>
     <?php
-    // require("modulos/footer.php");
     require("fund/script.php");
     ?>
 </body>

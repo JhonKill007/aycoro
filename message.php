@@ -6,7 +6,6 @@ require("fund/head.php");
     @media (max-width: 1120px) {
 
         .conteiner-messaje {
-            border: 1px solid rgb(6, 50, 197);
             margin-top: -100px;
         }
 

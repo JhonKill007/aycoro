@@ -22,14 +22,14 @@ if (isset($_SESSION['id'])) {
                     if ($ms['id_sendner'] == $id_sendner) {
                         $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
                     } else {
                         $output .= '<div class="chat incoming">
                                     <img src="' . $ms['foto'] . '" alt="">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
                     }
@@ -47,14 +47,14 @@ if (isset($_SESSION['id'])) {
                     if ($ms['id_sendner'] == $id_sendner) {
                         $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
                     } else {
                         $output .= '<div class="chat incoming">
                                     <img src="' . $ms['foto'] . '" alt="">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
                     }
@@ -67,14 +67,14 @@ if (isset($_SESSION['id'])) {
                     if ($ms['id_sendner'] == $id_sendner) {
                         $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
                     } else {
                         $output .= '<div class="chat incoming">
                                     <img src="img/usuario.png" alt="">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
                     }

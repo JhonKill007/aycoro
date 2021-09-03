@@ -14,6 +14,7 @@ $foto = "img/usuario.png";
 $portada = "img/portada.jpg";
 $presentacion = "PRESENTACION";
 $nom_comp = $nombre . ' ' . $apellido;
+$status = "Online";
 
 
 $datasign = "";
@@ -27,7 +28,7 @@ if (!empty($nombre) || !empty($apellido) || !empty($numero) || !empty($email) ||
         $resultado = mysqli_query($conn, $SELECT);
         if ($resultado->num_rows == 0) {
             if ($password == $passconf) {
-                $INSERT = "INSERT INTO registro (nombre,apellido,nom_comp,numero,email,password,birthday,genero,foto,portada,presentacion)values('$nombre','$apellido','$nom_comp','$numero','$email','$script_password','$birthday','$genero','$foto','$portada','$presentacion')";
+                $INSERT = "INSERT INTO registro (nombre,apellido,nom_comp,numero,email,password,birthday,genero,foto,portada,presentacion,status)values('$nombre','$apellido','$nom_comp','$numero','$email','$script_password','$birthday','$genero','$foto','$portada','$presentacion','$status')";
                 $resultado = mysqli_query($conn, $INSERT);
                 if ($resultado) {
                     $SELECT = "SELECT * FROM registro WHERE email = '$email'";

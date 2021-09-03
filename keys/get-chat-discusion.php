@@ -19,7 +19,7 @@ if (isset($_SESSION['id'])) {
             if ($ms['id_sendner'] == $id_sendner) {
                 $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
             } else {
@@ -31,7 +31,7 @@ if (isset($_SESSION['id'])) {
                                         <a href="perfil-reciver.php?usu='.$idsendner.'">
                                             <b>'.$nom.' '.$ape.'</b>
                                         </a>
-                                        <p>' . $ms['mensaje'] . '</p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">'.$ms['hour'].' '.$ms['day'].'</span></p>
                                     </div>
                                 </div>';
             }

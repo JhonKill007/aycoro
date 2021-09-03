@@ -17,7 +17,7 @@ require("modulos/nav-two.php");
 
 
     <div class="conteiner">
-        <div class="col-sm-4 edit">
+        <div class="edit">
             <h3>Cambiar Contraseña</h3>
             <div class='error'></div>
             <form action="" method="POST" class="form-horizontal formulario">
@@ -40,12 +40,12 @@ require("modulos/nav-two.php");
                     <!-- boton sign up -->
                     <div class="form-group">
                         <div class="col-sm-offset">
-                            <button type="submit" class="btn btn-success col-sm-12 button-change">Guardar</button>
+                            <button type="submit" class="btn btn-success button-change botones-edit">Guardar</button>
                         </div>
                     </div>
                 </div>
             </form>
-            <a href="perfil"><button class="btn btn-danger col-sm-12">Cancelar</button></a>
+            <a href="perfil"><button class="btn btn-danger botones-edit">Cancelar</button></a>
         </div>
     </div>
 

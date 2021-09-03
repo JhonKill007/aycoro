@@ -20,23 +20,16 @@ require("fund/head.php");
             height: 140px;
         }
     }
+    @media (max-width: 414px) {
+        .conteiner{
+            width: 100%;
+        }
+    }
 </style>
 
 <body>
 
     <?php
-    // $idmine = $_GET['idmine'];
-    // $id_sendner = $_GET['usu'];
-    // $eso = require("keys/conection.php");
-    // if ($eso) {
-    //     $UPDATE = "UPDATE chat SET readdate = 1 where id_reciver = '$idmine' AND id_sendner = '$id_sendner' AND readdate = 0";
-    //     $resultadoUP = mysqli_query($conn, $UPDATE);
-    //     if ($resultadoUP) {
-    //         echo "hecho!!";
-    //     } else {
-    //         echo "esa mierda no sirve";
-    //     }
-    // }
     require("modulos/nav.php");
     require("modulos/nav-two.php");
 
@@ -116,18 +109,9 @@ require("fund/head.php");
                 </section>
             </div>
         </div>
-
-        <?php
-        // require("modulos/chat-module.php");
-        ?>
     </div>
     <script src="js/chat-discusion.js"></script>
-    <!-- <script>
-        var chatHistory = document.getElementById("message-box");
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-    </script> -->
     <?php
-    // require("modulos/footer.php");
     require("fund/script.php");
     ?>
 </body>
