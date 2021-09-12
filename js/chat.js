@@ -46,9 +46,9 @@ setInterval(() => {
             if (xhr.status === 200) {
                 let data = xhr.response;
                 chatBox.innerHTML = data;
-                if(!chatBox.classList.contains("active")){
-                    scrollToBottom();
-                }
+                // if(!chatBox.classList.contains("active")){
+                //     scrollToBottom();
+                // }
             }
         }
     }
@@ -63,3 +63,36 @@ function scrollToBottom(){
     // var objDiv = document.getElementById("chat-box");
     // objDiv.scrollTop = objDiv.scrollHeight;
 }
+
+let cont = 1;
+let save;
+
+setInterval(() => {
+    let xhrScroll = new XMLHttpRequest();
+    xhrScroll.open("POST", "keys/get-date-scroll.php", true);
+    xhrScroll.onload = () => {
+        if (xhrScroll.readyState === XMLHttpRequest.DONE) {
+            if (xhrScroll.status === 200) {
+                let dataScroll = xhrScroll.response;
+                
+                if(cont == 1){
+                    save = dataScroll;
+                    // console.log(save);
+                    scrollToBottom();
+                    cont +=1;
+                }
+                else{
+                    if(save != dataScroll){
+                        scrollToBottom();
+                        save = dataScroll;
+                        console.log(save);
+                    }
+
+                }
+            }
+        }
+    }
+    // vamos a mandar el form data atraves de ajax a php
+    let formDataScroll = new FormData(form); //creando el objeto formData
+    xhrScroll.send(formDataScroll);  //enviando el formData a php
+}, 500);

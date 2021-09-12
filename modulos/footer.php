@@ -9,7 +9,7 @@
         <a href="ayuda"><label>Ayuda</label></a>
         <br>
         <label>©AyCoro 2021</label>
-        <span>Version 0.1.3y</span>
+        <span>Version 0.1.4A</span>
     </div>
 
 </div>
