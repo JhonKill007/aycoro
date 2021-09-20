@@ -4,6 +4,8 @@
             <a href="explorador">Explorador</a>
             <a href="discusion">Discusión</a>
 
+
+
             
 
         </div>
