@@ -3,6 +3,7 @@
             <a href="index">Inicio</a>
             <a href="explorador">Explorador</a>
             <a href="discusion">Discusión</a>
+            
 
         </div>
     </div>
