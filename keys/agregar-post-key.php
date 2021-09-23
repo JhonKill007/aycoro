@@ -24,6 +24,7 @@ if ($opcion == 1) {
     move_uploaded_file($_FILES['photo_post']['tmp_name'], $ruta);
 
     $estado = $_POST['estado_post'];
+    require("formate_img.php");
 
 
 
@@ -41,6 +42,7 @@ if ($opcion == 1) {
     $ruta = '../event/' . $apply_name;
     $ruta_send = 'event/' . $apply_name;
     move_uploaded_file($_FILES['evento']['tmp_name'], $ruta);
+    require("formate_img.php");
 
 
 

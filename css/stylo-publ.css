@@ -66,6 +66,68 @@
   display: none;
 }
 
+.post_setting{
+  width: 25px;
+  height: 25px;
+  /* border: 1px solid blue; */
+  align-items: center;
+  cursor: pointer;
+  margin-left: 93%;
+  margin-top: -40px;
+}
+
+.box_setting{
+  width: 17px;
+  height: 23px;
+  margin: auto;
+  /* border: 1px solid rgb(255, 0, 255); */
+}
+
+.options-edit-post{
+  width:90px;
+  border: 1px solid black;
+  margin-left: 80%;
+  text-align: center;
+  border-radius: 5px;
+  /* display: none; */
+}
+
+.options-edit-post.show{
+  display: block;
+}
+
+.text-gren{
+  color: rgb(6, 177, 77);
+  cursor: pointer;
+}
+.text-red{
+  color: rgb(248, 8, 8);
+  cursor: pointer;
+}
+
+.text-gren:hover{
+  border-bottom: 2px solid rgb(6, 177, 77);
+}
+.text-red:hover{
+  border-bottom: 2px solid rgb(248, 8, 8);
+}
+
+.options-edit-post ul{
+  list-style: none;
+}
+
+.edit-post{
+  /* display: none; */
+}
+
+.btn-post{
+  display: flex;
+}
+.btn-post button{
+  width: 45%;
+  margin: auto;
+}
+
 @media (max-width: 1120px) {
   .phone-size {
     margin-top: 300px;

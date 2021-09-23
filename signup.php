@@ -259,11 +259,11 @@ require("fund/head.php");
                                 <label for="hombre" class="col-sm-8">Hombre</label>
                             </div>
                             <div class="col-sm-3">
-                                <input type="radio" name="genero" id="mujer" value="f">
+                                <input type="radio" name="genero" id="mujer" value="f" required>
                                 <label for="mujer">Mujer</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="radio" name="genero" id="personalizado" value="p">
+                                <input type="radio" name="genero" id="personalizado" value="p" required>
                                 <label for="personalizado">Personalizado</label>
                             </div>
                         </div>

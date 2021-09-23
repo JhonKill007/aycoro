@@ -4,13 +4,6 @@ require('identification.php');
 
 $id_registro = $registro['id_registro'];
 $portada = $registro['portada'];
-// echo $perfil;
-
-
-
-// $ruta= '../photo_portada/'.$_FILES['portada']['name'];
-// $ruta_send= 'photo_portada/'.$_FILES['portada']['name'];
-// move_uploaded_file($_FILES['portada']['tmp_name'],$ruta);
 
 
 $str_portada = "4gds-portada";
@@ -26,10 +19,7 @@ $apply_name = $new_name . '.' . $extencion;
 $ruta = '../photo_portada/' . $apply_name;
 $ruta_send = 'photo_portada/' . $apply_name;
 move_uploaded_file($_FILES['portada']['tmp_name'], $ruta);
-
-
-
-
+require("formate_img.php");
 
 
 if($ruta_send =='photo_portada/'.$id_registro.'-4gds-portada.'){

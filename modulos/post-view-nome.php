@@ -122,11 +122,6 @@
                     ?>
                         <div class="publicacion-text">
                             <div class="piecera">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
                                 <p><?php echo $estado_post; ?></p>
                                 <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
                                     <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">

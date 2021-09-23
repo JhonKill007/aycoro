@@ -26,6 +26,7 @@ $apply_name = $new_name . '.' . $extencion;
 $ruta = '../photo_perfil/' . $apply_name;
 $ruta_send = 'photo_perfil/' . $apply_name;
 move_uploaded_file($_FILES['perfil']['tmp_name'], $ruta);
+require("formate_img.php");
 
 
 

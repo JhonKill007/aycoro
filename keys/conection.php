@@ -7,10 +7,10 @@ $dbpassword =  "";
 $dbname = "aycoro";
 
 // hostserver
-// $host = "sql308.epizy.com";
-// $dbusername = "epiz_29551685";
-// $dbpassword =  "o6ZjocwJfsUDTI";
-// $dbname = "epiz_29551685_aycoro";
+// $host = "localhost";
+$dbusername = "u811483169_aycoro";
+$dbpassword =  "Siempreteamare007";
+$dbname = "u811483169_aycoro";
 
 $conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
 

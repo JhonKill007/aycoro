@@ -56,13 +56,14 @@
                                             <button class="buton_like"><i class="far fa-heart like-wait like"></i><b><?php echo $num_like ?> Like</b></button>
                                         </div>
                                     <?php
-
+                                        require("modulos/post_manager.php");
                                     } else {
                                     ?>
                                         <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
                                             <button class=" buton_like"><i class="fas fa-heart like-red like"></i><b><?php echo $num_like ?> Like</b></button>
                                         </div>
                                     <?php
+                                        require("modulos/post_manager.php");
                                     }
                                     ?>
                                     <script>
@@ -102,6 +103,7 @@
                                         });
                                     </script>
                                 </form>
+                                <br>
                                 <p><?php echo $estado_post; ?></p>
                                 <?php
                                 if ($owner_post == $_SESSION['id']) {
@@ -134,11 +136,6 @@
                     ?>
                         <div class="publicacion-text">
                             <div class="piecera">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
                                 <p><?php echo $estado_post; ?></p>
                                 <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
                                     <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
@@ -150,13 +147,14 @@
                                             <button class="buton_like"><i class="far fa-heart like-wait like"></i><b><?php echo $num_like ?> Like</b></button>
                                         </div>
                                     <?php
-
+                                        require("modulos/post_manager.php");
                                     } else {
                                     ?>
                                         <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
                                             <button class=" buton_like"><i class="fas fa-heart like-red like"></i><b><?php echo $num_like ?> Like</b></button>
                                         </div>
                                     <?php
+                                        require("modulos/post_manager.php");
                                     }
                                     ?>
                                     <script>
@@ -196,7 +194,7 @@
                                         });
                                     </script>
                                 </form>
-
+                                <br>
                                 <?php
                                 if ($owner_post == $_SESSION['id']) {
                                 ?>

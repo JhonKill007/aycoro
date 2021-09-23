@@ -26,21 +26,17 @@ if (!empty($email) || !empty($password)) {
                     echo "success";
                 } else {
                     $datalog .= "<div class='error-txt  error'>Error 4013</div>";
-                    echo $datalog;
                 }
             } else {
                 $datalog .= "<div class='error-txt  error'>La Contraseña es Incorrecta</div>";
-                echo $datalog;
             }
         } else {
-
             $datalog .= "<div class='error-txt  error'>El Email es Incorrecto</div>";
-            echo $datalog;
         }
     } else {
-        echo "la coneccionn de la base de  datos fallo";
+        $datalog .= "<div class='error-txt  error'>Fallo la coneccion</div>";
     }
 } else {
-    echo "todos los datos son OBLIGATORIOS";
-    die();
+    $datalog .= "<div class='error-txt  error'>El Email es Incorrecto</div>";
 }
+echo $datalog;
