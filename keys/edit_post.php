@@ -10,7 +10,8 @@ if(!empty($id_post)){
         $resultado = mysqli_query($conn,$UPDATE);
         if($resultado){
             echo "success";
-            
+            // echo $id_post;
+         
         }
         else{
             echo "valio verga";

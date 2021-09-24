@@ -47,6 +47,7 @@
                             </div>
                             <div class="piecera">
                                 <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
+                                    <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
                                     <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
                                     <input type="hidden" name="liker" value="<?php echo $id_registro; ?>">
                                     <?php
@@ -138,6 +139,7 @@
                             <div class="piecera">
                                 <p><?php echo $estado_post; ?></p>
                                 <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
+                                    <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
                                     <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
                                     <input type="hidden" name="liker" value="<?php echo $id_registro; ?>">
                                     <?php

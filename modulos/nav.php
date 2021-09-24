@@ -19,15 +19,15 @@ if (!isset($_SESSION['id'])) {
                 <br>
                 <br>
                 <br>
-                <a href="perfil"><img src=<?php echo $foto; ?> class="foto-bar" alt=""></a>
-                <li><a href="perfil"><?php echo $nombre . ' ' . $apellido ?></a></li>
-                <li><a href="message">Mensajes (<label class="num-message-bar" for="icon-logo"></label>)</a></li>
-                <li><a href="explorador">Explorador</a></li>
-                <li><a href="discusion">Discusion</a></li>
-                <li><a href="edit-perfil">Ajustes</a></li>
-                <li><a href="sugerencias">Sugerencias</a></li>
-                <li><a href="ayuda">Ayuda</a></li>
-                <li><a href="modulos/logout.php">Cerrar Session</a></li>
+                <a href="perfil" title="Perfil"><img src=<?php echo $foto; ?> class="foto-bar" alt=""></a>
+                <li><a href="perfil" title="Perfil"><?php echo $nombre . ' ' . $apellido ?></a></li>
+                <li><a href="message" title="Mensajes">Mensajes (<label class="num-message-bar" for="icon-logo"></label>)</a></li>
+                <li><a href="explorador" title="Explorador">Explorador</a></li>
+                <li><a href="discusion" title="Discusion">Discusion</a></li>
+                <li><a href="edit-perfil" title="Ajustes">Ajustes</a></li>
+                <li><a href="sugerencias" title="Sugerencias">Sugerencias</a></li>
+                <li><a href="ayuda" title="Ayuda">Ayuda</a></li>
+                <li><a href="modulos/logout.php" title="Cerrar Sesion">Cerrar Sesion</a></li>
                 <script>
                     const MonViewone = document.querySelector(".num-message-bar");
                     setInterval(() => {
@@ -94,17 +94,17 @@ if (!isset($_SESSION['id'])) {
                     <li>
                         <!-- logo -->
                         <!-- <a href="index.php"><img id="logo" src="img/logo.png" alt="hola"></a> -->
-                        <a href="index"><img id="logo" src="img/Logo.png" alt=""></a>
-                        <a href="index"><img id="logo2" src="img/Logo2.png" alt=""></a>
+                        <a href="index"><img id="logo" src="img/Logo.png" title="Aycoro" alt=""></a>
+                        <a href="index"><img id="logo2" src="img/Logo2.png" title="Aycoro" alt=""></a>
                     </li>
                     <li>
                         <!-- container -->
                         <div class="middle-nav">
                             <form action="busqueda" method="GET" class="form-horizontal">
                                 <!-- caja de busqueda -->
-                                <input type="search" name="search-box" placeholder="A quien buscas?" id="search-box">
+                                <input type="search" name="search-box" title="A quien busca?" placeholder="A quien buscas?" id="search-box">
                                 <!-- boton buscar -->
-                                <button class="btn btn-success" id="search-boton" name="search-boton" type="submit"><i class="fas fa-search"></i></button>
+                                <button class="btn btn-success" id="search-boton" title="Buscar" name="search-boton" type="submit"><i class="fas fa-search"></i></button>
                             </form>
 
 
@@ -114,14 +114,14 @@ if (!isset($_SESSION['id'])) {
                         <!-- boton log -->
                         <div class="img-barra">
                             <div class="img-box">
-                                <a href="perfil"><img id="usuario-photo" src=<?php echo $foto; ?> alt="como estas"></a>
+                                <a href="perfil"><img id="usuario-photo" title="Perfi" src=<?php echo $foto; ?> alt="perfil"></a>
 
                             </div>
                         </div>
                     </li>
                     <li class="icon-message">
                         <!-- mensaje -->
-                        <img class="message-btn" id="icon-logo" src="img/message.png" alt="">
+                        <img class="message-btn" id="icon-logo" src="img/message.png" title="Mensajes" alt="Mensajes">
                         <div class="cicule-mjs">
                             <span class="num-message" for="icon-logo"></span>
                         </div>
@@ -144,21 +144,21 @@ if (!isset($_SESSION['id'])) {
                     </li>
                     <li class="icon-out">
                         <a href="modulos/logout.php">
-                            <div><i class="fas fa-sign-out-alt go-out"></i></div>
+                            <div><i title="Cerrar Sesion" class="fas fa-sign-out-alt go-out"></i></div>
                         </a>
                     </li>
                     <li class="search-button-two">
                         <div class="search">
                             <!-- <span class="text"></span> -->
                             <form action="busqueda" method="GET">
-                                <input type="text" name="search-box" placeholder="A quien Buscas?">
+                                <input type="text" name="search-box" title="A quien buscas?" placeholder="A quien Buscas?">
                             </form>
-                            <button><i class="fas fa-search"></i></button>
+                            <button><i class="fas fa-search" title="Buscar"></i></button>
                         </div>
                     </li>
                     <li>
                         <div class="menu-btn">
-                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-bars" title="Menu"></i>
                             <div class="cir-num-mjs">
                                 <label class="num-message-bar-Two" for="icon-logo"></label>
                             </div>
@@ -224,9 +224,9 @@ if (!isset($_SESSION['id'])) {
         <div class="box-main-two create-box-two-a">
             <div class="bar-box-main-two">
                 <div class="box-create-two">
-                    <div class="box-i-photo-a box-boton"><i class="fas fa-plus"></i></div>
-                    <div class="box-i-event-a box-boton"><i class="fas fa-clock"></i></div>
-                    <div class="box-i-stat-a box-boton"><i class="fas fa-pen lapiz-i"></i></div>
+                    <div title="Nueva Publicacion" class="box-i-photo-a box-boton"><i class="fas fa-plus"></i></div>
+                    <div title="Discusion" class="box-i-event-a box-boton"><i class="fas fa-clock"></i></div>
+                    <div title="Estado" class="box-i-stat-a box-boton"><i class="fas fa-pen lapiz-i"></i></div>
                 </div>
             </div>
 
@@ -234,9 +234,9 @@ if (!isset($_SESSION['id'])) {
         <div class="box-main-two create-box-two-b">
             <div class="bar-box-main-two">
                 <div class="box-create-two">
-                    <div class="box-i-photo-b box-boton"><i class="fas fa-plus"></i></div>
-                    <div class="box-i-event-b box-boton"><i class="fas fa-clock"></i></div>
-                    <div class="box-i-stat-b box-boton"><i class="fas fa-pen lapiz-i"></i></div>
+                    <div title="Nueva Publicacion" class="box-i-photo-b box-boton"><i class="fas fa-plus"></i></div>
+                    <div title="Discusion" class="box-i-event-b box-boton"><i class="fas fa-clock"></i></div>
+                    <div title="Estado" class="box-i-stat-b box-boton"><i class="fas fa-pen lapiz-i"></i></div>
                 </div>
             </div>
 
@@ -259,9 +259,9 @@ if (!isset($_SESSION['id'])) {
         <div class="box-main-two create-box-two-c">
             <div class="bar-box-main-two">
                 <div class="box-create-two">
-                    <div class="box-i-photo-c box-boton"><i class="fas fa-plus"></i></div>
-                    <div class="box-i-event-c box-boton"><i class="fas fa-clock"></i></div>
-                    <div class="box-i-stat-c box-boton"><i class="fas fa-pen lapiz-i"></i></div>
+                    <div title="Nueva Publicacion" class="box-i-photo-c box-boton"><i class="fas fa-plus"></i></div>
+                    <div title="Discusion" class="box-i-event-c box-boton"><i class="fas fa-clock"></i></div>
+                    <div title="Estado" class="box-i-stat-c box-boton"><i class="fas fa-pen lapiz-i"></i></div>
                 </div>
             </div>
 
@@ -286,9 +286,9 @@ if (!isset($_SESSION['id'])) {
         <div class="box-main-two create-box-two-d">
             <div class="bar-box-main-two">
                 <div class="box-create-two">
-                    <div class="box-i-photo-d box-boton"><i class="fas fa-plus"></i></div>
-                    <div class="box-i-event-d box-boton"><i class="fas fa-clock"></i></div>
-                    <div class="box-i-stat-d box-boton"><i class="fas fa-pen lapiz-i"></i></div>
+                    <div title="Nueva Publicacion" class="box-i-photo-d box-boton"><i class="fas fa-plus"></i></div>
+                    <div title="Discusion" class="box-i-event-d box-boton"><i class="fas fa-clock"></i></div>
+                    <div title="Estado" class="box-i-stat-d box-boton"><i class="fas fa-pen lapiz-i"></i></div>
                 </div>
             </div>
 
