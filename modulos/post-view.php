@@ -56,7 +56,7 @@
                             </div>
                             <div class="piecera">
                                 <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
-                                    <input type="hidden" name="stado_edit" id="status_edit" value="">
+                                    <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
                                     <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
                                     <input type="hidden" name="liker" value="<?php echo $id_registro; ?>">
                                     <?php
@@ -121,14 +121,14 @@
                                 if ($owner_post == $_SESSION['id']) {
                                 ?>
                                     <br>
-                                    <p><?php echo $estado_post; ?></p>
+                                    <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
                                     <a href="perfil">
                                         <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
                                     </a>
                                 <?php
                                 } else {
                                 ?>
-                                    <p><?php echo $estado_post; ?></p>
+                                    <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
                                     <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
                                         <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
                                     </a>
@@ -151,9 +151,9 @@
 ?>
     <div class="publicacion-text">
         <div class="piecera">
-            <p><?php echo $estado_post; ?></p>
+            <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
             <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
-                <input type="hidden" name="stado_edit" id="status_edit" value="">
+                <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
                 <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
                 <input type="hidden" name="liker" value="<?php echo $id_registro; ?>">
                 <?php
