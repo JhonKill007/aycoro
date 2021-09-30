@@ -246,6 +246,7 @@ if (!isset($_SESSION['id'])) {
                     <div class="in-ag-post">
                         <input type="file" class="btn btn-success col-sm-12" name="photo_post" id="" accept="image/*" required>
                         <input type="hidden" value="1" name="opcion">
+                        <input type="hidden" value="" name="time" id="time4">
                         <textarea class="form-control" cols="40" rows="3" name="estado_post" maxlength="115" placeholder="Que quieres decir?"></textarea>
                         <span>Maximo 115 Caracteres</span>
                         <button class="btn btn-success col-sm-12" type="submit">Publicar</button>
@@ -271,6 +272,7 @@ if (!isset($_SESSION['id'])) {
                 <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-data">
                     <div class="in-ag-post">
                         <input type="hidden" value="2" name="opcion">
+                        <input type="hidden" value="" name="time" id="time5">
                         <input type="file" class="btn btn-success col-sm-12" name="evento" id="" accept="image/*" required>
                         <br>
                         <br>
@@ -297,6 +299,7 @@ if (!isset($_SESSION['id'])) {
                 <form action="keys/agregar-post-key.php" method="post">
                     <div class="in-ag-post">
                         <input type="hidden" value="3" name="opcion">
+                        <input type="hidden" value="" name="time" id="time6">
                         <textarea class="form-control" cols="40" rows="3" placeholder="Que quieres decir?" name="estado_post" maxlength="115" required></textarea>
                         <span>Maximo 115 Caracteres</span>
                         <button class="btn btn-success  col-sm-12" type="submit">Publicar</button>

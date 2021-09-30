@@ -63,6 +63,7 @@ require("fund/head.php");
                     <input class="btn btn-success col-sm-12" type="file" name="photo_post" id="" accept="image/*" required>
                     <br>
                     <input type="hidden" value="1" name="opcion">
+                    <input type="hidden" value="" name="time" id="time1">
                     <textarea class="form-control col-sm-12" name="estado_post" id="" cols="20" rows="2" maxlength="115"></textarea>
 
                     <label for="">Maximo 115 Caracteres</label>
@@ -99,6 +100,7 @@ require("fund/head.php");
                 <p>Agrega una discusion Temporal.</p>
                 <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" value="2" name="opcion">
+                    <input type="hidden" value="" name="time" id="time2">
                     <input class="btn btn-success col-sm-12" type="file" name="evento" id="" accept="image/*" required>
                     <br>
                     <button class="btn btn-success col-sm-12" type="submit">Publicar</button>
@@ -134,6 +136,7 @@ require("fund/head.php");
                 <h2>Estado</h2>
                 <form action="keys/agregar-post-key.php" method="post">
                     <input type="hidden" value="3" name="opcion">
+                    <input type="hidden" value="" name="time" id="time3">
                     <textarea class="form-control col-sm-12" name="estado_post" id="" cols="20" rows="2" maxlength="115" required></textarea>
                     <label for="">Maximo 115 Caracteres</label>
                     <button class="btn btn-success col-sm-12" type="submit">Publicar</button>

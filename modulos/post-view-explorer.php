@@ -27,6 +27,7 @@
                     $apellido_owner_post = $post['apellido'];
                     $estado_post = $post['estado_post'];
                     $owner_post = $post['owner'];
+                    $fecha = $post['hour']." ".$post['day'];
 
                     if (!empty($photo_post)) {
                         $SELECT = "SELECT * FROM likes WHERE id_post ='$id_post' and id_liker ='$liker'";
@@ -121,6 +122,7 @@
                                 <?php
                                 }
                                 ?>
+                                <span class="fecha"><?php echo $fecha; ?></span>
                                 <br>
                             </div>
                         </div>
@@ -212,6 +214,7 @@
                                 <?php
                                 }
                                 ?>
+                                <span class="fecha"><?php echo $fecha; ?></span>
                                 <br>
                             </div>
                         </div>

@@ -28,6 +28,7 @@
                     $apellido_owner_post = $post['apellido'];
                     $estado_post = $post['estado_post'];
                     $owner_post = $post['owner'];
+                    $fecha = $post['hour'] . " " . $post['day'];
 
                     if (!empty($photo_post)) {
                         $SELECT = "SELECT * FROM likes WHERE id_post ='$id_post' and id_liker ='$liker'";
@@ -106,21 +107,11 @@
                                 </form>
                                 <br>
                                 <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
-                                <?php
-                                if ($owner_post == $_SESSION['id']) {
-                                ?>
-                                    <a href="perfil">
-                                        <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                                    </a>
-                                <?php
-                                } else {
-                                ?>
-                                    <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
-                                        <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                                    </a>
-                                <?php
-                                }
-                                ?>
+
+                                <a href="perfil">
+                                    <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                                </a>
+                                <span class="fecha"><?php echo $fecha; ?></span>
                                 <br>
                             </div>
                         </div>
@@ -197,21 +188,10 @@
                                     </script>
                                 </form>
                                 <br>
-                                <?php
-                                if ($owner_post == $_SESSION['id']) {
-                                ?>
-                                    <a href="perfil">
-                                        <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                                    </a>
-                                <?php
-                                } else {
-                                ?>
-                                    <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
-                                        <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                                    </a>
-                                <?php
-                                }
-                                ?>
+                                <a href="perfil">
+                                    <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                                </a>
+                                <span class="fecha"><?php echo $fecha; ?></span>
                                 <br>
                             </div>
                         </div>

@@ -90,6 +90,7 @@ require("fund/head.php");
                         <input type="hidden" value="<?php echo $id_sus; ?>" name="id_reciver">
                         <input type="hidden" value="<?php echo $pri; ?>" name="mgsprivate">
                         <input type="hidden" value="<?php echo $vista; ?>" name="vista">
+                        <input type="hidden" value="" name="time" id="time_mjs">
                         <input type="hidden" value="<?php echo $credms; ?>" name="createdms">
                         <input type="text" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
                         <!-- <textarea name="mensaje" class="input-field" id="" cols="110" rows="2" placeholder="Type a message here."></textarea> -->
@@ -99,6 +100,10 @@ require("fund/head.php");
             </div>
         </div>
     </div>
+    <script>
+        const time_mjs = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById("time_mjs").value = time_mjs;
+    </script>
     <script src="js/chat.js"></script>
     <script src="js/status.js"></script>
     <?php

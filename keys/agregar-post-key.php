@@ -4,6 +4,11 @@ require('identification.php');
 
 $id_registro = $registro['id_registro'];
 $longpas = 10;
+$time = $_POST['time'];
+date_default_timezone_set($time);
+$fecha = date('d-m-Y');
+$hora = date('h:i a');
+
 
 
 $opcion = $_POST['opcion'];
@@ -62,7 +67,7 @@ $eso = require("conection.php");
 
 if ($opcion == 1 || $opcion == 3) {
     if ($eso) {
-        $INSERT = "INSERT INTO post (photo_post,estado_post,owner)values('$ruta_send','$estado','$id_registro')";
+        $INSERT = "INSERT INTO post (photo_post,estado_post,owner,day,hour)values('$ruta_send','$estado','$id_registro','$fecha','$hora')";
         $resultado = mysqli_query($conn, $INSERT);
         if ($resultado) {
             // echo "posteado";
@@ -92,7 +97,7 @@ if ($opcion == 1 || $opcion == 3) {
             $resultado = mysqli_query($conn, $SELECT);
             $num = $resultado->num_rows;
             if ($num == 0) {
-                $INSERT = "INSERT INTO event (photo,id_owner)values('$ruta_send','$id_registro')";
+                $INSERT = "INSERT INTO event (photo,id_owner,day,hour)values('$ruta_send','$id_registro','$fecha','$hora')";
                 $resultado = mysqli_query($conn, $INSERT);
                 if ($resultado) {
                     header("Location: ../index");

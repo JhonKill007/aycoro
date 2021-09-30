@@ -102,6 +102,7 @@ require("fund/head.php");
                     <form action="" method="post" class="typing-area">
                         <input type="hidden" value="<?php echo $id; ?>" name="id_sendner">
                         <input type="hidden" value="<?php echo $id_disc; ?>" name="id_disc">
+                        <input type="hidden" value="" name="time" id="time_mjs">
                         <input type="text" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
                         <!-- <textarea name="mensaje" class="input-field" id="" cols="110" rows="2" placeholder="Type a message here."></textarea> -->
                         <button><i class="fab fa-telegram-plane"></i></button>
@@ -110,6 +111,10 @@ require("fund/head.php");
             </div>
         </div>
     </div>
+    <script>
+        const time_mjs = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById("time_mjs").value = time_mjs;
+    </script>
     <script src="js/chat-discusion.js"></script>
     <?php
     require("fund/script.php");

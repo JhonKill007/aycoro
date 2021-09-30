@@ -1,8 +1,9 @@
 <?php
+$time = $_POST['time'];
 $mensaje = $_POST["mensaje"];
 $id_sendner = $_POST["id_sendner"];
 $id_disc = $_POST["id_disc"];
-date_default_timezone_set('America/Santo_Domingo');
+date_default_timezone_set($time);
 $fecha = date('d-m-Y');
 $hora = date('h:i a');
 

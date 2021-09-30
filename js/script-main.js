@@ -154,4 +154,10 @@ document.querySelector('.post-write-two').addEventListener('click',() => {
 })
 
 
-
+const time = Intl.DateTimeFormat().resolvedOptions().timeZone;
+document.getElementById("time1").value = time;
+document.getElementById("time2").value = time;
+document.getElementById("time3").value = time;
+document.getElementById("time4").value = time;
+document.getElementById("time5").value = time;
+document.getElementById("time6").value = time;
