@@ -16,46 +16,46 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
     <!-- stye nav -->
-    <link rel="stylesheet" href="css/stylo-nav.css">
+    <link rel="stylesheet" href="css/stylo-nav.css?0.2.1d">
 
     <!-- stye nav-two -->
-    <link rel="stylesheet" href="css/stylo-nav-two.css">
+    <link rel="stylesheet" href="css/stylo-nav-two.css?0.2.1d">
 
     <!-- stye main -->
-    <link rel="stylesheet" href="css/stylo-main.css">
+    <link rel="stylesheet" href="css/stylo-main.css?0.2.1d">
 
     <!-- slyle index-->
-    <link rel="stylesheet" href="css/stylo-index.css">
+    <link rel="stylesheet" href="css/stylo-index.css?0.2.1d">
 
     <!-- style publicaciones -->
-    <link rel="stylesheet" href="css/stylo-publ.css">
+    <link rel="stylesheet" href="css/stylo-publ.css?0.2.1d">
 
     <!-- style message page -->
-    <link rel="stylesheet" href="css/stylo-message-page.css">
+    <link rel="stylesheet" href="css/stylo-message-page.css?0.2.1d">
 
     <!-- style dm -->
-    <link rel="stylesheet" href="css/stylo-dm.css">
+    <link rel="stylesheet" href="css/stylo-dm.css?0.2.1d">
 
     <!-- style perfil -->
-    <link rel="stylesheet" href="css/stylo-perfil.css">
+    <link rel="stylesheet" href="css/stylo-perfil.css?0.2.1d">
 
     <!-- style log-in -->
-    <link rel="stylesheet" href="css/stylo-login.css">
+    <link rel="stylesheet" href="css/stylo-login.css?0.2.1d">
 
     <!-- style signup -->
-    <link rel="stylesheet" href="css/stylo-signup.css">
+    <link rel="stylesheet" href="css/stylo-signup.css?0.2.1d">
 
     <!-- style busqueda -->
-    <link rel="stylesheet" href="css/stylo-busqueda.css">
+    <link rel="stylesheet" href="css/stylo-busqueda.css?0.2.1d">
 
     <!-- style eventos -->
-    <link rel="stylesheet" href="css/stylo-discuciones.css">
+    <link rel="stylesheet" href="css/stylo-discuciones.css?0.2.1d">
 
     <!-- nav three -->
-    <link rel="stylesheet" href="css/stylo-nav-three.css">
+    <link rel="stylesheet" href="css/stylo-nav-three.css?0.2.1d">
 
     <!-- style de sugerencias -->
-    <link rel="stylesheet" href="css/stylo-ayuday-suger.css">
+    <link rel="stylesheet" href="css/stylo-ayuday-suger.css?0.2.1d">
 
     <!-- icoon de carga -->
     <link rel="stylesheet" href="css/stylo-charger.css">
