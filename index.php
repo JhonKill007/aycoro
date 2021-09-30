@@ -72,6 +72,9 @@ require("fund/head.php");
                 </form>
             </div>
         </div>
+        <?php
+        require("modulos/footer.php");
+        ?>
     </div>
 
     <div class="box-up-two">
@@ -172,7 +175,6 @@ require("fund/head.php");
     <br>
 
     <?php
-    require("modulos/footer.php");
     require("fund/script.php");
     ?>
 </body>

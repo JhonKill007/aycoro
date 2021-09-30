@@ -62,7 +62,6 @@ require("fund/head.php");
 
 
     <?php
-    require("modulos/footer.php");
     require("fund/script.php");
     ?>
 </body>

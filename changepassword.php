@@ -51,8 +51,6 @@ require("modulos/nav-two.php");
 
     <script src="js/changepass.js"></script>
 <?php
-
-require("modulos/footer.php");
 require("fund/script.php");
 ?>
 </body>

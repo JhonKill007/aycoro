@@ -16,7 +16,6 @@ require("fund/head.php");
     require("keys/usu.php");
     require("modulos/perfil-bio-reciver.php");
     require("modulos/post-view-nome.php");
-    require("modulos/footer.php");
     require("fund/script.php");
     ?>
 </body>

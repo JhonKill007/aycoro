@@ -24,7 +24,6 @@ require("modulos/nav-two.php");
 
 require("modulos/perfil-bio.php");
 require("modulos/post-view-mine.php");
-require("modulos/footer.php");
 require("fund/script.php");
 ?>
 </body>

@@ -71,7 +71,6 @@ require("modulos/nav-two.php");
 
 
     <?php
-    require("modulos/footer.php");
     require("fund/script.php");
     ?>
 </body>

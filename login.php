@@ -101,7 +101,6 @@ require("fund/head.php");
 
     <script src="js/login.js"></script>
     <?php
-    // require("modulos/footer-two.php");
     require("fund/script.php");
     ?>
 </body>

@@ -83,8 +83,6 @@ else{
 
 
 <?php
-// require("modulos/post-view.php");
-require("modulos/footer.php");
 require("fund/script.php");
 ?>
 </body>

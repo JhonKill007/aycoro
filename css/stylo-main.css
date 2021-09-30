@@ -5,10 +5,15 @@
     margin-top: 100px;
 }
 
-.footer label{
-    color: black;
+.footer{
+    width: 300px;
+    margin-left: 10px;
 }
 
+.footer label{
+    color: black;
+    cursor: pointer;
+}
 
 .error-txt{
     color: #721c24;
