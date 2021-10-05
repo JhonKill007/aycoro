@@ -73,7 +73,8 @@ require("fund/head.php");
 
 
     <?php
-    require("modulos/post-view-explorer.php");
+    require("models/explorer_post_model.php");
+    require("modulos/post-view.php");
     require("fund/script.php");
     ?>
 </body>

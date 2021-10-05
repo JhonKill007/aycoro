@@ -1,5 +1,4 @@
 <?php
-// require("../keys/identification.php");
 session_start();
 require("../keys/conection.php");
 if(isset($_SESSION['id'])){

@@ -161,6 +161,7 @@ require("fund/head.php");
 
 
     <?php
+    require("models/index_post_model.php");
     require("modulos/post-view.php");
     ?>
 

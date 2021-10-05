@@ -23,7 +23,8 @@ require("modulos/nav-two.php");
                 }
 
 require("modulos/perfil-bio.php");
-require("modulos/post-view-mine.php");
+require("models/perfil_post_model.php");
+require("modulos/post-view.php");
 require("fund/script.php");
 ?>
 </body>

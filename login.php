@@ -41,7 +41,7 @@ require("fund/head.php");
             <!-- caja del formulario -->
             <div class="formu-box">
                 <div class="con-box">
-                    <h2>Iniciar Session</h2>
+                    <h2>Iniciar Sesion</h2>
                     <div class='error'></div>
 
 

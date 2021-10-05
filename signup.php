@@ -283,7 +283,7 @@ require("fund/head.php");
                         <!-- <br> -->
                         <span>Ya tengo cuenta</span>
 
-                        <a href="login.php"><b>Iniciar Session</b></a>
+                        <a href="login.php"><b>Iniciar Sesion</b></a>
                     </div>
                 </form>
                 <br>
