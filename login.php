@@ -60,14 +60,14 @@ require("fund/head.php");
                         </div>
 
                         <!-- password -->
-                        <div class="form-group">
+                      <!--  <div class="form-group">
                             <label for="numero" class="control-label col-sm-2">
                                 Contraseña
                             </label>
                             <div class="col-sm-12">
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su Contraseña" required>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- boton log in -->
                         <div class="form-group">
