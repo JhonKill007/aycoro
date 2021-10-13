@@ -23,7 +23,7 @@ $eso = require("keys/conection.php");
         }
     }
     else{
-        echo"la coneccion fallo";
+        echo"La conexion ha fallado";
     }
 
 ?>
