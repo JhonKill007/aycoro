@@ -61,6 +61,12 @@
     /* border: 1px solid red; */
 }
 
+.biograf i{
+    color: rgb(10, 6, 245);
+    cursor: pointer;
+}
+
+
 .edit{
     width: 300px;
     margin: auto;

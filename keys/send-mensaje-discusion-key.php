@@ -15,6 +15,6 @@ if ($mensaje != "") {
     if ($resultado) {
         echo "enviado";
     } else {
-        echo "valio verga";
+        echo "Ha ocurrido un error!";
     }
 }

@@ -20,7 +20,7 @@ if (!empty($id_post) || !empty($liker)) {
                 $num_like = $resultado_like2->num_rows;
                 $data .= "<button class='buton_like'><i class='fas fa-heart like-red like'></i><b>" . $num_like . " Like</b></button>";
             } else {
-                echo "valio verga";
+                echo "Ha ocurrido un error!";
             }
             echo $data;
         } else {
@@ -32,7 +32,7 @@ if (!empty($id_post) || !empty($liker)) {
                 $num_like = $resultado_like2->num_rows;
                 $data .= "<button class='buton_like'><i class='far fa-heart like-wait like'></i><b>" . $num_like . " Like</b></button>";
             } else {
-                echo "valio verga";
+                echo "Ha ocurrido un error!";
             }
             echo $data;
         }

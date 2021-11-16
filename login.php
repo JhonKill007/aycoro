@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro - Inicia sesion";
 require("fund/head.php");
 ?>
 

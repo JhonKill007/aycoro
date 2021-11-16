@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro - Busqueda";
 require("fund/head.php");
 ?>
 
@@ -8,7 +9,8 @@ require("fund/head.php");
     <?php
     require("modulos/nav.php");
     require("modulos/nav-two.php");
-
+    require("modulos/photo_edit.php");
+    require("modulos/status-post.php");
     ?>
 
     

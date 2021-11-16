@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro - Chat";
 require("fund/head.php");
 
 
@@ -20,8 +21,9 @@ require("fund/head.php");
             height: 140px;
         }
     }
+
     @media (max-width: 414px) {
-        .conteiner{
+        .conteiner {
             width: 100%;
         }
     }
@@ -32,6 +34,8 @@ require("fund/head.php");
     <?php
     require("modulos/nav.php");
     require("modulos/nav-two.php");
+    require("modulos/photo_edit.php");
+    require("modulos/status-post.php");
 
     $id_sus = $_GET['usu'];
 

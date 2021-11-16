@@ -1,7 +1,6 @@
 .conteiner{
     width: 90%;
     margin: auto;
-    /* border: 1px solid green; */
     margin-top: 100px;
 }
 
@@ -13,6 +12,38 @@
 .footer label{
     color: black;
     cursor: pointer;
+}
+
+.contein-editor{
+    display: none;
+    margin: auto;
+    background-color: white;
+}
+
+.contein-editor-history{
+    display: none;
+    margin: auto;
+    background-color: white;
+}
+
+.editor-brs{
+    display: none;
+}
+
+.contein-editor.show{
+    display: block;
+}
+
+.contein-editor-history.show{
+    display: block;
+}
+
+.textos_stados{
+    display: none;
+}
+
+.textos_stados.show{
+    display: block;
 }
 
 .error-txt{
@@ -31,5 +62,8 @@
 @media (max-width: 1120px) {
     .conteiner{
         margin-top: 250px;
+    }
+    .editor-brs{
+        display: block;
     }
 }

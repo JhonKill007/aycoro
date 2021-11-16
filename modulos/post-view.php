@@ -1,15 +1,6 @@
 <div class="conteiner">
-    <div class="corcho">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
-
+    <br>
+    <br>
     <div class="container-scroll">
         <h2>Publicaciones</h2>
         <!-- posiciones  de prooductos -->
@@ -220,6 +211,7 @@
                 }
             }
         } else {
-            echo " se fue a la verga";
+            echo "Ha ocurrido un error!";
         }
 ?>
+</div>

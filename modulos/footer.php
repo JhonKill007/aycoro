@@ -7,6 +7,6 @@
     <label></label>
     <a href="ayuda"><label>Ayuda</label></a>
     <br>
-    <label>©AyCoro 2021</label>
+    <label>©Aycoro 2021</label>
     <span>Version <?php echo $version; ?></span>
 </div>

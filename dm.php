@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro - Chat";
 require("fund/head.php");
 
 
@@ -49,6 +50,8 @@ require("fund/head.php");
     $id_sus = $_GET['usu'];
 
     require("keys/usu.php");
+    require("modulos/photo_edit.php");
+    require("modulos/status-post.php");
     ?>
 
 

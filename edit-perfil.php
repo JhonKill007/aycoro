@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro - Editar perfil";
 require("fund/head.php");
 ?>
 
@@ -6,11 +7,12 @@ require("fund/head.php");
 
 <body>
 
-<?php
-require("modulos/nav.php");
-require("modulos/nav-two.php");
-// require("modulos/perfil-bio.php");
-?>
+    <?php
+    require("modulos/nav.php");
+    require("modulos/nav-two.php");
+    require("modulos/photo_edit.php");
+    require("modulos/status-post.php");
+    ?>
 
 
 
@@ -23,22 +25,18 @@ require("modulos/nav-two.php");
             <form action="keys/edit-perfil.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 <!-- nombre -->
                 <div class="form-group">
-                                    
-                    <input class="form-control" type="hidden" name="actualfoto" value=<?php echo $foto; ?>>       
-                    <b for="">Foto de Perfil</b>            
-                    <input type="file" class="form-control" id="perfil" name="perfil" accept="image/*">
 
                     <b for="">Nombre</b>
-                    <input class="form-control" type="text" name="nombre_edit" id="" value=<?php echo$registro['nombre']; ?> maxlength="30" required>
+                    <input class="form-control" type="text" name="nombre_edit" id="" value=<?php echo $registro['nombre']; ?> maxlength="30" required>
 
                     <b for="">Apellido</b>
-                    <input class="form-control" type="text" name="apellido_edit" id="" value=<?php echo$registro['apellido']; ?> maxlength="30">
+                    <input class="form-control" type="text" name="apellido_edit" id="" value=<?php echo $registro['apellido']; ?> maxlength="30">
 
                     <b for="">Presentacion</b>
-                    <textarea class="form-control" name="presentacion_edit" id="" cols="23" rows="3" maxlength="90" required><?php echo$registro['presentacion']; ?></textarea>
+                    <textarea class="form-control" name="presentacion_edit" id="" cols="23" rows="3" maxlength="90" required><?php echo $registro['presentacion']; ?></textarea>
                     <p>Maximo 90 Caracteres</p>
-                                        
-                                    
+
+
 
                     <!-- boton sign up -->
                     <div class="form-group">
@@ -53,8 +51,9 @@ require("modulos/nav-two.php");
     </div>
 
 
-<?php
-require("fund/script.php");
-?>
+    <?php
+    require("fund/script.php");
+    ?>
 </body>
+
 </html>

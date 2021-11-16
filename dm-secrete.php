@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro - Chat Secreto";
 require("fund/head.php");
 
 
@@ -19,10 +20,11 @@ require("fund/head.php");
             margin-top: -40px;
             height: 140px;
         }
-        
+
     }
+
     @media (max-width: 414px) {
-        .conteiner{
+        .conteiner {
             width: 100%;
         }
     }
@@ -49,6 +51,8 @@ require("fund/head.php");
     $id_sus = $_GET['usu'];
 
     require("keys/usu.php");
+    require("modulos/photo_edit.php");
+    require("modulos/status-post.php");
     ?>
 
 

@@ -9,7 +9,7 @@ if ($eso) {
     if ($resultado_num) {
         echo $num;
     } else {
-        echo "fello en el conteo de articulos";
+        echo "";
     }
 } else {
     echo "la coneccion fallo";

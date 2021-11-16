@@ -15,7 +15,7 @@ if(!empty($id_disc)){
             
         }
         else{
-            echo "valio verga";
+            echo "Ha ocurrido un error!";
         }
     }
     else{

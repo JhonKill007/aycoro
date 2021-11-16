@@ -22,7 +22,7 @@ if ($mensaje != "") {
             echo "enviado";
             // header("Location: ../dm.php?usu=$id_reciver");
         } else {
-            echo "valio verga";
+            echo "Ha ocurrido un error!";
         }
     } else {
         if (!empty($mensaje) || !empty($id_sendner) || !empty($id_reciver) || !empty($readdate)) {
@@ -47,7 +47,7 @@ if ($mensaje != "") {
                                     echo "enviado";
                                     // header("Location: ../dm.php?usu=$id_reciver");
                                 } else {
-                                    echo "valio verga";
+                                    echo "Ha ocurrido un error!";
                                 }
                             }
                         }
@@ -63,7 +63,7 @@ if ($mensaje != "") {
                                 echo "enviado";
                                 // header("Location: ../dm.php?usu=$id_reciver");
                             } else {
-                                echo "valio verga";
+                                echo "Ha ocurrido un error!";
                             }
                         }
                     }
@@ -86,7 +86,7 @@ if ($mensaje != "") {
                                     echo "enviado";
                                     // header("Location: ../dm.php?usu=$id_reciver");
                                 } else {
-                                    echo "valio verga";
+                                    echo "Ha ocurrido un error!";
                                 }
                             }
                         }
@@ -102,7 +102,7 @@ if ($mensaje != "") {
                                 echo "enviado";
                                 // header("Location: ../dm.php?usu=$id_reciver");
                             } else {
-                                echo "valio verga";
+                                echo "Ha ocurrido un error!";
                             }
                         }
                     }

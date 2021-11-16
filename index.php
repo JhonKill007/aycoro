@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro";
 require("fund/head.php");
 ?>
 
@@ -9,75 +10,53 @@ require("fund/head.php");
     <?php
     require("modulos/nav.php");
     require("modulos/nav-two.php");
-
-    // $id_articulo = $_POST['Id_articulo'];
-
-    // if (!empty($id_articulo)) {
-    //     $eso = require("conection.php");
-    //     if ($eso) {
-    //         $DELETE = "DELETE FROM articulos WHERE id_articulos = $id_articulo";
-    //         $resultado = mysqli_query($conn, $DELETE);
-    //         if ($resultado) {
-    //             echo "retirado";
-    //             header("Location: ../perfil.php");
-    //             // $self = $_SERVER['PHP_SELF'];
-    //             // header("refresh:0; url=$self");
-
-    //         } else {
-    //             echo "valio verga";
-    //         }
-    //     } else {
-    //         echo "la connecion fallo";
-    //     }
-    // }
-
+    require("modulos/photo_edit.php");
     ?>
 
 
 
+    <script>
+        perfil = 1;
+    </script>
 
     <div class="box-up-one">
         <div class="plus-post-btn">
             <div class="plus-post-box">
                 <div class="btn-box-post">
                     <div class="post-btn-container">
-                        <i class="fas fa-plus"></i>
+
+                        <label class="post-btn-container btn-upload postcheck1" for="inputImage1" title="Publicar Foto">
+
+                            <input type="file" class="sr-only" id="inputImage1" name="file" accept="image/*">
+                            <i class="fas fa-plus"></i>
+
+                        </label>
                     </div>
                 </div>
                 <div class="btn-box-post event-post">
                     <div class="post-btn-container">
-                        <i class="fas fa-clock"></i>
+                        <label class="post-btn-container btn-upload historycheck1" for="inputImagehistory1" title="Publicar Historia">
+                            <input type="file" class="sr-only" id="inputImagehistory1" name="file" accept="image/*">
+                            <i class="fas fa-clock"></i>
+                        </label>
                     </div>
                 </div>
-                <div class="btn-box-post post-write">
+                <div class="btn-box-post post-write1">
                     <div class="post-btn-container">
                         <i class="fas fa-pen"></i>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="create-post">
-            <div class="post-container col-sm-10">
-                <h2>Agregar Post</h2>
-                <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-data">
-                    <input class="btn btn-success col-sm-12" type="file" name="photo_post" id="" accept="image/*" required>
-                    <br>
-                    <input type="hidden" value="1" name="opcion">
-                    <input type="hidden" value="" name="time" id="time1">
-                    <textarea class="form-control col-sm-12" name="estado_post" id="" cols="20" rows="2" maxlength="115"></textarea>
-
-                    <label for="">Maximo 115 Caracteres</label>
-
-                    <button class="btn btn-success col-sm-12" type="submit">Publicar</button>
-                </form>
-            </div>
-        </div>
         <?php
+        require("modulos/status-post.php");
         require("modulos/footer.php");
         ?>
     </div>
 
-    <div class="box-up-two">
+
+
+    <!-- <div class="box-up-two">
         <div class="plus-post-btn">
             <div class="plus-post-box">
                 <div class="btn-box-post photo-post">
@@ -110,9 +89,9 @@ require("fund/head.php");
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="box-up-three">
+    <!-- <div class="box-up-three">
         <div class="plus-post-btn">
             <div class="plus-post-box">
                 <div class="btn-box-post photo-post-two">
@@ -146,7 +125,7 @@ require("fund/head.php");
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class="create-post">
         <div class="post-container col-sm-10">
@@ -157,6 +136,7 @@ require("fund/head.php");
             <button>Publicar</button>
         </div>
     </div> -->
+
 
 
 

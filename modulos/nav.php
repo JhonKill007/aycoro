@@ -23,7 +23,7 @@ if (!isset($_SESSION['id'])) {
                 <li><a href="perfil" title="Perfil"><?php echo $nombre . ' ' . $apellido ?></a></li>
                 <li><a href="message" title="Mensajes">Mensajes (<label class="num-message-bar" for="icon-logo"></label>)</a></li>
                 <li><a href="explorador" title="Explorador">Explorador</a></li>
-                <li><a href="discusion" title="Discusion">Discusion</a></li>
+                <li><a href="historias" title="Historias">Historias</a></li>
                 <li><a href="edit-perfil" title="Ajustes">Ajustes</a></li>
                 <li><a href="sugerencias" title="Sugerencias">Sugerencias</a></li>
                 <li><a href="ayuda" title="Ayuda">Ayuda</a></li>
@@ -224,14 +224,24 @@ if (!isset($_SESSION['id'])) {
         <div class="box-main-two create-box-two-a">
             <div class="bar-box-main-two">
                 <div class="box-create-two">
-                    <div title="Nueva Publicacion" class="box-i-photo-a box-boton"><i class="fas fa-plus"></i></div>
-                    <div title="Discusion" class="box-i-event-a box-boton"><i class="fas fa-clock"></i></div>
-                    <div title="Estado" class="box-i-stat-a box-boton"><i class="fas fa-pen lapiz-i"></i></div>
+                    <div class="box-i-photo-a box-boton">
+                        <label class="post-btn-container btn-upload postcheck" for="inputImage" title="Publicar Foto">
+                            <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+                            <i class="fas fa-plus"></i>
+                        </label>
+                    </div>
+                    <div title="Discusion" class="box-i-event-a box-boton">
+                        <label class="post-btn-container btn-upload historycheck" for="inputImagehistory" title="Publicar Historia">
+                            <input type="file" class="sr-only" id="inputImagehistory" name="file" accept="image/*">
+                            <i class="fas fa-clock"></i>
+                        </label>
+                    </div>
+                    <div title="Estado" class="box-i-stat-a box-boton post-write"><i class="fas fa-pen lapiz-i"></i></div>
                 </div>
             </div>
 
         </div>
-        <div class="box-main-two create-box-two-b">
+        <!-- <div class="box-main-two create-box-two-b">
             <div class="bar-box-main-two">
                 <div class="box-create-two">
                     <div title="Nueva Publicacion" class="box-i-photo-b box-boton"><i class="fas fa-plus"></i></div>
@@ -310,7 +320,7 @@ if (!isset($_SESSION['id'])) {
                 </form>
 
             </div>
-        </div>
+        </div> -->
 
 
     </div>

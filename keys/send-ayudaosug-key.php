@@ -49,7 +49,7 @@ if($mjs!=""){
                                     </script>";
                             }
                         } else {
-                            echo "valio verga";
+                            echo "Ha ocurrido un error!";
                         }
                     }
                 }
@@ -77,7 +77,7 @@ if($mjs!=""){
                                 </script>";
                         }
                     } else {
-                        echo "valio verga";
+                        echo "Ha ocurrido un error!";
                     }
                 }
             }

@@ -1,4 +1,5 @@
 <?php
+$tittlePage = "Aycoro - Registrate";
 require("fund/head.php");
 ?>
 

@@ -12,7 +12,7 @@ if(!empty($id_post)){
             
         }
         else{
-            echo "valio verga";
+            echo "Ha ocurrido un error!";
         }
     }
     else{
