@@ -39,4 +39,3 @@ document.querySelector('.button-log').addEventListener('click', () => {
 
 
 });
-

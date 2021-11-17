@@ -6,7 +6,7 @@
 }
 
 .barra-inicio-new {
-  background: black;
+  background: red;
   /* position: fixed; */
   /* border: 1px solid rgb(0, 204, 51); */
 }
@@ -35,7 +35,6 @@
 
 .nav-main li {
   padding: 10px;
-  
 }
 
 .cir-num-mjs {
@@ -398,7 +397,7 @@
   }
 
   .barra-inicio-new {
-    height: 150px;
+    height: 200px;
   }
   .nav-main {
     height: 200px;
