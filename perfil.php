@@ -4,8 +4,21 @@ require("fund/head.php");
 ?>
 
 <script>
-    perfil = 2;
+    identity_page_post = 2;
 </script>
+
+<style>
+    .container-scroll {
+        margin-top: -100px;
+    }
+
+    @media (max-width: 1120px) {
+
+        .container-scroll {
+            margin-top: -250px;
+        }
+    }
+</style>
 
 <body>
 

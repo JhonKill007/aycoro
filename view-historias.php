@@ -18,36 +18,34 @@ if (!isset($_SESSION['id'])) {
 
     $id_foto_position = $_GET['history'];
     $position = $_GET['position'];
-    $time_time = $_GET['time'];
+    $identity_history = $_GET['identity'];
+
 ?>
     <script>
         let photo_position = <?php echo $id_foto_position; ?>;
         let item_position = <?php echo $position; ?>;
-        let time_time = <?php echo $time_time; ?>;
+        let identity_history = <?php echo $identity_history; ?>;
+
+
+
+        const time_date_today = new Date();
+        time_date_today.toLocaleDateString();
+
+
+        function formatoFecha(fecha, formato) {
+            const map = {
+                dd: fecha.getDate(),
+                mm: fecha.getMonth() + 1,
+                yy: fecha.getFullYear().toString().slice(-2),
+                yyyy: fecha.getFullYear()
+            }
+
+            return formato.replace(/dd|mm|yyyy/gi, matched => map[matched])
+        }
+
+        let time_time = formatoFecha(time_date_today, 'dd-mm-yyyy');
     </script>
 <?php
-
-
-
-
-    // $eso = require("keys/conection.php");
-    // if ($eso) {
-    //     $SELECT = "SELECT * FROM event inner join registro on event.id_owner=registro.id_registro Where event.id_history = $id_history";
-    //     $resultado = mysqli_query($conn, $SELECT);
-    //     if ($resultado) {
-    //         // echo "query 2";
-    //         // require("modulos/etiquetas.php");
-    //         while ($usu = $resultado->fetch_array()) {
-
-    //             $id_usu = $usu['id_registro'];
-    //             $nombre_usu = $usu['nombre'];
-    //             $apellido_usu = $usu['apellido'];
-    //             $history = $usu['photo'];
-    //             $id_history = $usu['id_history'];
-    //             $perfil = $usu['foto'];
-    //         }
-    //     }
-    // }
 }
 ?>
 <style>
@@ -60,10 +58,25 @@ if (!isset($_SESSION['id'])) {
 
 <body class="body_hystorys">
     <?php
+    $id_registro = $registro['id_registro'];
     $eso = require("keys/conection.php");
     if ($eso) {
-        $SELECT = "SELECT * FROM event ORDER BY id_history Desc";
-        $resultado = mysqli_query($conn, $SELECT);
+        if ($identity_history == 1) {
+
+            $SELECT = "SELECT * FROM history 
+            WHERE date >= NOW() - INTERVAL 1 DAY 
+            AND id_owner = $id_registro ORDER BY id_history Desc";
+
+            $resultado = mysqli_query($conn, $SELECT);
+        }
+        else{
+
+            $SELECT = "SELECT * FROM history 
+            WHERE date >= NOW() - INTERVAL 1 DAY 
+            AND id_owner != $id_registro ORDER BY id_history Desc";
+
+            $resultado = mysqli_query($conn, $SELECT);
+        }
         if ($resultado) {
             while ($usu = $resultado->fetch_array()) {
                 $id_usu = $usu['id_owner'];
@@ -82,7 +95,6 @@ if (!isset($_SESSION['id'])) {
                 let cant_of_perfiles = <?php echo $posiciones; ?>;
             </script>
             <?php
-            // for ($i = $position; $i < $posiciones; $i++) {
             $items = $personas[$position];
             ?>
             <script>
@@ -91,7 +103,12 @@ if (!isset($_SESSION['id'])) {
             <?php
             if ($items != 0) {
                 if ($eso) {
-                    $SELECT = "SELECT * FROM event inner join registro on event.id_owner=registro.id_registro where event.id_owner = $items ORDER BY event.id_history DESC";
+                    
+                    $SELECT = "SELECT * FROM history 
+                    inner join registro on history.id_owner=registro.id_registro 
+                    where history.id_owner = $items 
+                    AND date >= NOW() - INTERVAL 1 DAY "; // ORDER BY event.id_history DESC
+
                     $resultado = mysqli_query($conn, $SELECT);
                     if ($resultado) {
                         while ($usu = $resultado->fetch_array()) {
@@ -115,17 +132,14 @@ if (!isset($_SESSION['id'])) {
             ?>
                         <script>
                             let cant_of_historys = <?php echo $number_img_historys; ?>;
+
+                            // fechas
+                            let fecha_hystory = "<?php echo $fecha_hystorys[$id_foto_position]; ?>";
+                            let hora = "<?php echo $hora_hystorys[$id_foto_position]; ?>";
+                            console.log(fecha_hystory);
                         </script>
-                        <?php
 
 
-
-                        if ($fecha_hystorys[$id_foto_position] == $time_time) {
-                            $fecha_full = $hora_hystorys[$id_foto_position];
-                        } else {
-                            $fecha_full = "Ayer, " . $hora_hystorys[$id_foto_position];
-                        }
-                        ?>
 
                         <div class="conteiner view-history-conteiner">
                             <div class="conteiner-view-historys">
@@ -144,7 +158,7 @@ if (!isset($_SESSION['id'])) {
                                             </div>
                                             <div class="perfil_circle_name_box">
                                                 <b><?php echo $nombre_usu . " " . $apellido_usu; ?></b>
-                                                <p><?php echo $fecha_full; ?></p>
+                                                <p class="p_fecha"></p>
                                             </div>
                                         </div>
                                     </a>
@@ -158,7 +172,7 @@ if (!isset($_SESSION['id'])) {
                                             </div>
                                             <div class="perfil_circle_name_box">
                                                 <b><?php echo $nombre_usu . " " . $apellido_usu; ?></b>
-                                                <p><?php echo $fecha_full; ?></p>
+                                                <p class="p_fecha"></p>
                                             </div>
                                         </div>
                                     </a>
@@ -169,15 +183,30 @@ if (!isset($_SESSION['id'])) {
 
                                 ?>
                                 <script>
+                                    if (fecha_hystory == time_time) {
+                                        const p_fecha = document.querySelector(".p_fecha");
+                                        p_fecha.innerHTML = hora;
+
+                                    } else {
+                                        const p_fecha = document.querySelector(".p_fecha");
+                                        p_fecha.innerHTML = "Ayer " + hora;
+                                    }
+
+
+
+
+
+
+
                                     function atras() {
                                         photo_position--;
                                         if (photo_position > 0) {
-                                            window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&time=<?php echo $time_time; ?>';
+                                            window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&identity=' + identity_history + '';
                                         } else {
                                             item_position--;
                                             if (item_position > 0) {
                                                 photo_position = 1;
-                                                window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&time=<?php echo $time_time; ?>';
+                                                window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&identity=' + identity_history + '';
 
                                             } else {
                                                 photo_position++;
@@ -189,12 +218,12 @@ if (!isset($_SESSION['id'])) {
                                     function adelante() {
                                         photo_position++;
                                         if (photo_position < cant_of_historys) {
-                                            window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&time=<?php echo $time_time; ?>';
+                                            window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&identity=' + identity_history + '';
                                         } else {
                                             item_position++;
                                             if (item_position < cant_of_perfiles) {
                                                 photo_position = 1;
-                                                window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&time=<?php echo $time_time; ?>';
+                                                window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&identity=' + identity_history + '';
 
                                             } else {
                                                 window.location = 'historias';
@@ -233,7 +262,6 @@ if (!isset($_SESSION['id'])) {
                                 ?>
                                     <div class="up-vistas">
                                         <div class="up-vistas-icon" onclick="clearAlert()">
-                                            <!-- <i class="fas fa-chevron-circle-up"></i> -->
                                             <i class="fas fa-chevron-up"></i>
                                         </div>
                                     </div>
@@ -248,7 +276,6 @@ if (!isset($_SESSION['id'])) {
                             <div class="conteiner-view-historys">
                                 <div class="up-vistas_two">
                                     <div class="up-vistas-icon_two" onclick="countAgain()">
-                                        <!-- <i class="fas fa-chevron-circle-down"></i> -->
                                         <i class="fas fa-chevron-down"></i>
                                     </div>
                                 </div>
@@ -294,11 +321,19 @@ function GuardarViews($id_history, $id_owner, $id_viewer)
 {
     $eso = require("keys/conection.php");
     if ($eso) {
-        $SELECT = "SELECT * FROM view_historys where id_history = $id_history AND id_owner = $id_owner AND id_viewer = $id_viewer";
+
+        $SELECT = "SELECT * FROM view_historys 
+        where id_history = $id_history 
+        AND id_owner = $id_owner AND id_viewer = $id_viewer";
+
         $resultado = mysqli_query($conn, $SELECT);
         $cant_result = $resultado->num_rows;
         if ($cant_result < 1) {
-            $INSERT = "INSERT INTO view_historys (id_history,id_owner,id_viewer)values('$id_history','$id_owner','$id_viewer')";
+
+            $INSERT = "INSERT INTO 
+            view_historys (id_history,id_owner,id_viewer,date_view)
+            values('$id_history','$id_owner','$id_viewer',NOW())";
+
             $resultado = mysqli_query($conn, $INSERT);
             if ($resultado) {
                 return "Todo Correcto";
@@ -330,7 +365,11 @@ function PersonsView($id_history)
 {
     $eso = require("keys/conection.php");
     if ($eso) {
-        $SELECT = "SELECT * FROM view_historys inner join registro on view_historys.id_viewer=registro.id_registro where view_historys.id_history = $id_history ";
+
+        $SELECT = "SELECT * FROM view_historys 
+        inner join registro on view_historys.id_viewer=registro.id_registro 
+        where view_historys.id_history = $id_history ";
+
         $resultado = mysqli_query($conn, $SELECT);
         if ($resultado) {
             while ($personView = $resultado->fetch_array()) {
@@ -345,7 +384,7 @@ function PersonsView($id_history)
                             <img src=<?php echo $perfil; ?> alt="">
                         </div>
                         <div class="name_count">
-                            <b><?php echo $nombre_usu." ".$apellido_usu; ?></b>
+                            <b><?php echo $nombre_usu . " " . $apellido_usu; ?></b>
                         </div>
                     </div>
                 </a>

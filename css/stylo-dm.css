@@ -510,7 +510,7 @@ form .name-details .field:last-child {
 
 @media (max-width: 376px) and (max-height: 667px){
   .chat-box {
-    height: 350px;
+    height: 300px;
   }
 }
 

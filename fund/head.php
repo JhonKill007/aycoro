@@ -1,5 +1,5 @@
 <?php
-$version = "0.5.0 mid_lanch";
+$version = "0.6.1 almost_lanch";
 ?>
 
 
@@ -54,7 +54,7 @@ $version = "0.5.0 mid_lanch";
   <link rel="stylesheet" href="css/stylo-busqueda.css?<?php echo $version; ?>">
 
   <!-- style eventos -->
-  <link rel="stylesheet" href="css/stylo-discuciones.css?<?php echo $version; ?>">
+  <link rel="stylesheet" href="css/stylo-historys.css?<?php echo $version; ?>">
 
   <!-- nav three -->
   <link rel="stylesheet" href="css/stylo-nav-three.css?<?php echo $version; ?>">
@@ -73,6 +73,6 @@ $version = "0.5.0 mid_lanch";
   <link rel="stylesheet" href="css/main.css?<?php echo $version; ?>">
 
   <script>
-    let perfil = 0;
+    let identity_page_post = 0;
   </script>
 </head>

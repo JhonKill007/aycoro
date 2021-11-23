@@ -37,5 +37,6 @@ if ($eso) {
             <b><?php echo $nume . " " . "Seguidores"; ?></b>
             <p><?php echo $presentacion." "; ?><a href="edit-perfil"><i class="fas fa-cog"></i></a></p>
         </div>
+        <hr>
     </div>
 </div>

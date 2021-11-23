@@ -8,6 +8,10 @@ $time = $_POST['time'];
 date_default_timezone_set($time);
 $fecha = date('d-m-Y');
 $hora = date('h:i a');
+$date = date('Y-m-d')." ".date("H:i:s");  
+
+// echo $time;
+
 
 
 
@@ -42,17 +46,21 @@ if ($opcion == 1) {
     $base64 = $_POST["foto"];
     $path = $_POST["extencion"];
 
+    // echo $base64;
+
     $lognstring = substr(md5(microtime()), 1, $longpas);
     $new_name = $id_registro . '-' . $lognstring;
 
 
-    $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    // $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    $extencion = "jpg";
+    // echo $extencion;
     $apply_name = $new_name . '.' . $extencion;
 
 
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $base64));
-    $ruta = '../event/' . $apply_name;
-    $ruta_send = 'event/' . $apply_name;
+    $ruta = '../historys/' . $apply_name;
+    $ruta_send = 'historys/' . $apply_name;
     file_put_contents($ruta, $data);
 
     require("formate_img.php");
@@ -106,3 +114,4 @@ if ($opcion == 1) {
 }
 
 require("../models/agregar_post_model.php");
+?>

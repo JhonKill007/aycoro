@@ -70,6 +70,8 @@ require("fund/head.php");
                             <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
                                 <span><?php echo $nombre_usu . " " . $apellido_sus; ?></span>
                             </a>
+                            <p>Chat incognito</p>
+                            
                             <div class="status_usu">
                             </div>
                         </div>
@@ -77,9 +79,9 @@ require("fund/head.php");
                             <a class="icon-dm" href="dm?usu=<?php echo $id_sus; ?>&idmine=<?php echo $id; ?>"><i class="fas fa-comment"></i></a>
                         </div>
                     </header>
-                    <div class="incog">
+                    <!-- <div class="incog">
                         <p>Chat incognito</p>
-                    </div>
+                    </div> -->
                     <div class="chat-box color-secrete chat-box-secrete">
 
 

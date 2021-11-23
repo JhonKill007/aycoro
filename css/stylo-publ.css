@@ -1,17 +1,12 @@
 .publicacion {
   width: 500px;
-  /* height: 550px; */
   margin: auto;
-  /* border: 1px solid purple; */
-  /* border-radius: 7px; */
   margin-bottom: 50px;
-  /* background-color: rgb(169, 169, 184); */
   border-bottom: 1px solid black;
 }
 
 
 .pub-img-box {
-  /* border: 1px solid red; */
   width: 400px;
   height: 400px;
   margin: auto;
@@ -30,31 +25,24 @@
 
 .piecera {
   width: 400px;
-  /* border: 1px solid rgb(225, 0, 255); */
   margin: auto;
 }
 
 .like-wait {
   font-size: 40px;
-  /* margin-left: -40px; */
   cursor: pointer;
 }
 
 .like-red {
   font-size: 40px;
-  /* margin-left: -40px; */
   cursor: pointer;
   color: red;
 }
 
 .publicacion-text {
   width: 500px;
-  /* height: 470px; */
   margin: auto;
-  /* border: 1px solid purple; */
-  /* border-radius: 7px; */
   margin-bottom: 50px;
-  /* background-color: rgb(169, 169, 184); */
   border-bottom: 1px solid black;
   
 }
@@ -81,7 +69,6 @@
 .post_setting{
   width: 25px;
   height: 25px;
-  /* border: 1px solid blue; */
   align-items: center;
   cursor: pointer;
   margin-left: 93%;
@@ -92,7 +79,6 @@
   width: 17px;
   height: 23px;
   margin: auto;
-  /* border: 1px solid rgb(255, 0, 255); */
 }
 
 .options-edit-post{
@@ -101,7 +87,6 @@
   margin-left: 80%;
   text-align: center;
   border-radius: 5px;
-  /* display: none; */
 }
 
 .options-edit-post.show{
@@ -128,9 +113,7 @@
   list-style: none;
 }
 
-.edit-post{
-  /* display: none; */
-}
+
 
 .btn-post{
   display: flex;
@@ -143,9 +126,6 @@
 @media (max-width: 1120px) {
   .phone-size {
     margin-top: 300px;
-  }
-  .container-scroll{
-    /* margin-top: -200px; */
   }
   .corcho{
     display: block;

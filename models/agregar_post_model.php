@@ -20,7 +20,7 @@ if ($opcion == 1 || $opcion == 3) {
                 </script>";
     }
 } else if ($opcion == 2) {
-    if ($ruta_send == 'event/') {
+    if ($ruta_send == 'historys/') {
 
         echo "<script>
         alert('Debe seleccionar una imagen.');
@@ -28,11 +28,7 @@ if ($opcion == 1 || $opcion == 3) {
         </script>";
     } else {
         if ($eso) {
-            // $SELECT = "SELECT * FROM event where id_owner = $id_registro";
-            // $resultado = mysqli_query($conn, $SELECT);
-            // $num = $resultado->num_rows;
-            // if ($num == 0) {
-            $INSERT = "INSERT INTO event (photo,id_owner,day,hour)values('$ruta_send','$id_registro','$fecha','$hora')";
+            $INSERT = "INSERT INTO history (photo,id_owner,day,hour,date)values('$ruta_send','$id_registro','$fecha','$hora',NOW())";
             $resultado = mysqli_query($conn, $INSERT);
             if ($resultado) {
                 header("Location: ../historias");
@@ -42,12 +38,6 @@ if ($opcion == 1 || $opcion == 3) {
                             window.location='../index';
                             </script>";
             }
-            // } else {
-            //     echo "<script>
-            //         alert('Ya tiene una discucion creada, solo puede tener una discucion por dia.');
-            //         window.location='../index';
-            //         </script>";
-            // }
         } else {
             echo "<script>
                 alert('la connecion fallo.');

@@ -12,10 +12,10 @@ if (isset($_SESSION['id'])) {
             $status_usu = $usu['status'];
             if ($status_usu == 'Online') {
                 $output .= '<p class="status_online">' . $status_usu . '</p>';
-                echo $output;
+                // echo $output;
             } else {
                 $output .= '<p>' . $status_usu . '</p>';
-                echo $output;
+                // echo $output;
             }
         }
     }

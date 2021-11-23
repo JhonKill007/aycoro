@@ -8,6 +8,18 @@ require("fund/head.php");
 ?>
 
 
+<style>
+    .container-scroll {
+        margin-top: -70px;
+    }
+
+    @media (max-width: 1120px) {
+
+        .container-scroll {
+            margin-top: -220px;
+        }
+    }
+</style>
 
 <body>
 

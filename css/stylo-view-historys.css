@@ -72,7 +72,6 @@
 }
 
 .perfil_circle{
-    width: 200px;
     height: 50px;
     display: flex;
     margin-left: 210px;
@@ -82,7 +81,6 @@
 .perfil_circle_img_box{
     width: 50px;
     height: 50px;
-    
 }
 
 .perfil_circle_img_box img{
@@ -96,7 +94,7 @@
 .perfil_circle_name_box{
     margin-top: 10px;
     margin-left: 5px;
-    height: 20px;
+    color: white;
 }
 
 .perfil_circle_name_box b p{
@@ -120,7 +118,7 @@
 
 .up-vistas-icon i{
     font-size: 40px;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .up-vistas_two{
@@ -135,7 +133,7 @@
 
 .up-vistas-icon_two i{
     font-size: 40px;
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 .count-history-conteiner{

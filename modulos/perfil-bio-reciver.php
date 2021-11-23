@@ -12,12 +12,13 @@
 
 
             <div class="messege-icon">
+                <div class="icon_messages_perfil">
+                    <a href="dm?usu=<?php echo $id_usu; ?>&idmine=<?php echo $id; ?>">
+                        <i class="fas fa-comment"></i>
+                    </a>
+                </div>
+                <h1>|</h1>
 
-                <!-- <a href="secrete-dm.php?usu=<?php echo $id_usu; ?>"><i class="fas fa-comment-slash"></i></a> -->
-
-                <!-- <div><a href="dm.php?usu=<?php echo $id_usu; ?>"><i class="fas fa-comment"></i></a></div> -->
-                <div><a href="dm?usu=<?php echo $id_usu; ?>&idmine=<?php echo $id; ?>"><i class="fas fa-comment"></i></a></div>
-                <!-- <a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '"> -->
 
 
                 <?php
@@ -31,7 +32,7 @@
                     $SELECT = "SELECT * FROM folow WHERE id_folowing ='$id_usu'";
                     $resultado_2 = mysqli_query($conn, $SELECT);
                     $segui = $resultado_2->num_rows;
-                    $seguidores = $segui-1;
+                    $seguidores = $segui - 1;
                     if ($resultado) {
 
                 ?>
@@ -45,14 +46,28 @@
                                 if ($nume == 0) {
                                 ?>
                                     <div class="button-box like" id="">
-                                        <div class="buton_follow"><button class="blue">Seguir</button><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
+                                        <div class="buton_follow">
+                                            <div class="button_follow" type="submit">
+                                                <div class="lettle_follow">
+                                                    <b>Seguir</b>
+                                                </div>
+                                            </div>
+                                            <div><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
+                                        </div>
                                     </div>
                                 <?php
 
                                 } else {
                                 ?>
                                     <div class="button-box like" id="">
-                                        <div class="buton_follow"><button class="green">Seguido</button><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
+                                        <div class="buton_follow">
+                                            <div class="button_follow" type="submit">
+                                                <div class="icon_follow">
+                                                    <i class="fas fa-user-check"></i>
+                                                </div>
+                                            </div>
+                                            <div><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
+                                        </div>
                                     </div>
                                 <?php
                                 }
@@ -109,6 +124,7 @@
 
             </div>
             <p><?php echo $presentacion_sus; ?></p>
+            <hr>
         </div>
 
     </div>

@@ -49,7 +49,19 @@ document.getElementById("time6").value = time;
 //     return "You have attempted to leave this page.  If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
 //   }
 
-window.onbeforeunload = function (e) {
+// window.onbeforeunload = function (e) {
+//     Swal.fire({
+//         title: 'ERROR!',
+//         text: 'La publicacion no pudo ser editada.',
+//         icon: 'error',
+//     }).then((result) => {
+//         location.reload();
+
+//     })
+// };
+
+
+function quitCloseWindow() { // Called when a user clicks on the close button.
     Swal.fire({
         title: 'ERROR!',
         text: 'La publicacion no pudo ser editada.',
@@ -58,5 +70,6 @@ window.onbeforeunload = function (e) {
         location.reload();
 
     })
-};
-
+    // What to do just before closing the window.
+    chrome.app.window.current().close(); // Closing the window.
+}

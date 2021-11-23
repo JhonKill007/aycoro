@@ -9,13 +9,16 @@ require("modulos/status-post.php");
 
 $publicaciones = array(0);
 $personas = array(0);
-
+$id_registro = $registro['id_registro'];
 
 ?>
 
 
 
 <body>
+    <script>
+        identity_page_post = 3;
+    </script>
 
     <div class="conteiner">
         <div class="search-perfiles">
@@ -24,7 +27,65 @@ $personas = array(0);
                 <?php
                 $eso = require("keys/conection.php");
                 if ($eso) {
-                    $SELECT = "SELECT * FROM event ORDER BY id_history Desc";
+
+                    $SELECT = "SELECT * FROM history 
+                    inner join registro on history.id_owner=registro.id_registro 
+                    WHERE date >= NOW() - INTERVAL 1 DAY AND history.id_owner = $id_registro ORDER BY history.id_history DESC";
+
+                    $resultado = mysqli_query($conn, $SELECT);
+                    $cant_historys_ = $resultado->num_rows;
+                    if ($resultado) {
+                        if ($cant_historys_ != 0) {
+                            if ($usu = $resultado->fetch_array()) {
+                                $id_usu = $usu['id_registro'];
+                                $nombre_usu = $usu['nombre'];
+                                $apellido_usu = $usu['apellido'];
+                                $photo = $usu['photo'];
+                                $perfil = $usu['foto'];
+                                $id_history = $usu['id_history'];
+                                $init = 1;
+
+
+                ?>
+
+                                <!-- <a href="dm-discusion?usu=<?php echo $id_usu; ?>"> -->
+                                <div class="info-busque-event-circle border-no-view">
+                                    <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $init; ?>&identity=1">
+                                        <img src=<?php echo $perfil; ?> alt="">
+                                        <div>
+                                            <h5 class="nombredisc">Tu historia</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php
+                            }
+                        } else {
+                            ?>
+
+                            <label for="inputHistoryPage" title="Publicar Historia">
+                                <input type="file" class="sr-only" id="inputHistoryPage" name="file" accept="image/*">
+                                <div class="info-busque-event-circle">
+                                    <img src=<?php echo $foto; ?> alt="">
+                                    <div class="icon_history-none">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="nombredisc">Tu historia</h5>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <?php
+
+                        }
+                    }
+                }
+                if ($eso) {
+
+                    $SELECT = "SELECT * FROM history 
+                    WHERE date >= NOW() - INTERVAL 1 DAY 
+                    AND id_owner != $id_registro  ORDER BY id_history Desc";
+
                     $resultado = mysqli_query($conn, $SELECT);
                     if ($resultado) {
                         while ($usu = $resultado->fetch_array()) {
@@ -42,7 +103,106 @@ $personas = array(0);
                             $items = $personas[$i];
                             if ($items != 0) {
                                 if ($eso) {
-                                    $SELECT = "SELECT * FROM event inner join registro on event.id_owner=registro.id_registro where event.id_owner = $items ORDER BY event.id_history DESC";
+
+                                    $SELECT = "SELECT * FROM history 
+                                    inner join registro on history.id_owner=registro.id_registro 
+                                    where history.id_owner = $items ORDER BY history.id_history DESC";
+
+                                    $resultado = mysqli_query($conn, $SELECT);
+                                    if ($resultado) {
+                                        if ($usu = $resultado->fetch_array()) {
+                                            $id_usu = $usu['id_registro'];
+                                            $nombre_usu = $usu['nombre'];
+                                            $apellido_usu = $usu['apellido'];
+                                            $photo = $usu['photo'];
+                                            $id_history = $usu['id_history'];
+                                            $init;
+
+                                            $SELECT = "SELECT * FROM view_historys 
+                                            WHERE id_history = $id_history 
+                                            AND id_viewer = $id_registro";
+
+                                            $resultado = mysqli_query($conn, $SELECT);
+                                            $wacht_already = $resultado->num_rows;
+                                            if ($wacht_already == 0) {
+                                                $array_cant_history = array(0);
+                                                $contador_history = 1;
+
+                                                $SELECT = "SELECT * FROM history 
+                                                WHERE date >= NOW() - INTERVAL 1 DAY 
+                                                AND id_owner = $id_usu";
+
+                                                $resultado = mysqli_query($conn, $SELECT);
+                                                $cant_history_user = $resultado->num_rows;
+                                                // echo $cant_history_user;
+
+                                                while($h_history = $resultado->fetch_array()){
+                                                    array_push($array_cant_history, $contador_history);
+                                                    $contador_history++;
+                                                }
+                                                $reversed = array_reverse($array_cant_history);
+
+
+                                                $SELECT = "SELECT * FROM view_historys 
+                                                WHERE date_view >= NOW() - INTERVAL 1 DAY 
+                                                AND id_owner = $id_usu  
+                                                AND id_viewer = $id_registro";
+
+                                                $resultado = mysqli_query($conn, $SELECT);
+                                                $cant_history_watch = $resultado->num_rows;
+                                                // echo $cant_history_watch;
+                                                if($cant_history_watch == 0 || $cant_history_user == $cant_history_watch){
+                                                    $init = 1;
+                                                }
+                                                else{
+                                                    $resta_h = $cant_history_user - $cant_history_watch;
+                                                    $init = $reversed[$resta_h-1];
+                                                }
+
+                            ?>
+
+                                                <!-- <a href="dm-discusion?usu=<?php echo $id_usu; ?>"> -->
+
+                                                <div class="info-busque-event border-no-view">
+                                                    <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">
+                                                        <img src=<?php echo $photo; ?> alt="">
+
+                                                        <div>
+                                                            <?php
+                                                            if ($id_usu == $registro['id_registro']) {
+                                                            ?>
+                                                                <a href="perfil">
+                                                                    <h5 class="nombredisc nom_history"><?php echo $nombre_usu . " " . $apellido_usu; ?></h5>
+                                                                </a>
+                                                            <?php
+                                                            } else {
+                                                            ?>
+                                                                <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
+                                                                    <h5 class="nombredisc nom_history"><?php echo $nombre_usu . " " . $apellido_usu; ?></h5>
+                                                                </a>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <?php
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        for ($i = 0; $i < $posiciones; $i++) {
+                            $items = $personas[$i];
+                            if ($items != 0) {
+                                if ($eso) {
+
+                                    $SELECT = "SELECT * FROM history 
+                                    inner join registro on history.id_owner=registro.id_registro 
+                                    where history.id_owner = $items ORDER BY history.id_history DESC";
+
                                     $resultado = mysqli_query($conn, $SELECT);
                                     if ($resultado) {
                                         if ($usu = $resultado->fetch_array()) {
@@ -52,76 +212,43 @@ $personas = array(0);
                                             $photo = $usu['photo'];
                                             $id_history = $usu['id_history'];
                                             $init = 1;
-                ?>
-                                            <script>
-                                                const time_date_today = new Date();
-                                                time_date_today.toLocaleDateString();
 
+                                            $SELECT = "SELECT * FROM view_historys 
+                                            WHERE id_history = $id_history 
+                                            AND id_viewer = $id_registro";
 
-                                                function formatoFecha(fecha, formato) {
-                                                    const map = {
-                                                        dd: fecha.getDate(),
-                                                        mm: fecha.getMonth() + 1,
-                                                        yy: fecha.getFullYear().toString().slice(-2),
-                                                        yyyy: fecha.getFullYear()
-                                                    }
+                                            $resultado = mysqli_query($conn, $SELECT);
+                                            $wacht_already = $resultado->num_rows;
+                                            if ($wacht_already == 1) {
 
-                                                    return formato.replace(/dd|mm|yyyy/gi, matched => map[matched])
-                                                }
+                                            ?>
 
-                                                let time_last_date = formatoFecha(time_date_today, 'dd-mm-yyyy');
-
-
-
-                                                function send() {
-                                                    window.location = 'view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&time=' + time_last_date + '';
-                                                }
-                                            </script>
-                                            <div class="info-busque-event" onclick="send()">
                                                 <!-- <a href="dm-discusion?usu=<?php echo $id_usu; ?>"> -->
-                                                <img src=<?php echo $photo; ?> alt="">
+                                                <div class="info-busque-event">
+                                                    <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">
+                                                        <img src=<?php echo $photo; ?> alt="">
 
-                                                <div>
-                                                    <?php
-                                                    if ($id_usu == $registro['id_registro']) {
-                                                    ?>
-                                                        <a href="perfil">
-                                                            <h5 class="nombredisc"><?php echo $nombre_usu . " " . $apellido_usu; ?></h5>
-                                                        </a>
-                                                    <?php
-                                                    } else {
-                                                    ?>
-                                                        <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
-                                                            <h5 class="nombredisc"><?php echo $nombre_usu . " " . $apellido_usu; ?></h5>
-                                                        </a>
-                                                    <?php
-                                                    }
-                                                    ?>
+                                                        <div>
+                                                            <?php
+                                                            if ($id_usu == $registro['id_registro']) {
+                                                            ?>
+                                                                <a href="perfil">
+                                                                    <h5 class="nombredisc nom_history"><?php echo $nombre_usu . " " . $apellido_usu; ?></h5>
+                                                                </a>
+                                                            <?php
+                                                            } else {
+                                                            ?>
+                                                                <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
+                                                                    <h5 class="nombredisc nom_history"><?php echo $nombre_usu . " " . $apellido_usu; ?></h5>
+                                                                </a>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                                <!-- </a> -->
-                                            </div>
-                                            <script>
-                                                
-
-                                                // var tope = 0;
-                                                // var intervalo;
-                                                // intervalo();
-                                                // function mensaje() {
-
-                                                //     console.log("hola desde javascript");
-                                                //     tope++;
-                                                //     if (tope >= 10) {
-                                                //         clearInterval(intervalo);
-                                                //     }
-                                                // }
-
-                                                // function intervalo() {
-
-                                                //     intervalo = setInterval(mensaje, 1000);
-
-                                                // }
-                                            </script>
                 <?php
+                                            }
                                         }
                                     }
                                 }
@@ -141,13 +268,6 @@ $personas = array(0);
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
 
 

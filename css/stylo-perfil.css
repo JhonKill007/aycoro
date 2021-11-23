@@ -77,55 +77,55 @@
 }
 
 .messege-icon{
-    width: 320px;
-    /* border: 1px solid green; */
+    width: 250px;
     display: flex;
-    justify-content: space-between;
-    /* margin-left: 250px; */
-    /* margin-top: -100px; */
+}
+
+.icon_messages_perfil{
+    width: 60px;
 }
 
 
 .messege-icon i{
     font-size: 50px;
-    /* margin-left: 20px; */
     color: rgb(97, 95, 95);
 }
 
 .box-button-follow{
-    margin: auto;
+
 }
 
-.messege-icon button{
+.button_follow{
     width: 150px;
-    border: 1px solid black;
-    /* margin-top: -150px; */
-    /* margin-left: 230px; */
-    border-radius: 5px;
-}
-
-.green{
-    background-color: rgb(6, 231, 74);
-    color: rgb(0, 0, 0);
-}
-
-.white{
+    height: 35px;
+    background-color: red;
     color: white;
+    border-radius: 20px;
 }
+
+.lettle_follow{
+    width: 50px;
+    margin: auto;
+    border-top: 4px solid red;
+}
+
+.icon_follow{
+    width: 35px;
+    margin: auto;
+
+}
+.icon_follow i{
+    font-size: 33px;
+
+}
+
 
 .folower{
 
     width: 200px;
-    /* border: 1px solid rgb(0, 9, 128); */
     margin-top: -26px;
     margin-left: 400px;
 }
-
-/* .folower-perfil{
-    width: 200px;
-    margin-top: -75px;
-    margin-left: 300px;
-} */
 
 
 @media (max-width: 1088px){
