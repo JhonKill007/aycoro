@@ -13,7 +13,7 @@ if (!empty($folowing) || !empty($folower)) {
         $nume = $resultado->num_rows;
 
         if ($nume == 0) {
-            $INSERT = "INSERT INTO folow (id_folowing,id_folower)values('$folowing','$folower')";
+            $INSERT = "INSERT INTO folow (id_folowing,id_folower,date_follow)values('$folowing','$folower',NOW())";
             $resultado = mysqli_query($conn, $INSERT);
             if ($resultado) {
                 $SELECT = "SELECT * FROM folow WHERE id_folowing ='$folowing'";

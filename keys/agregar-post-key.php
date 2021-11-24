@@ -29,7 +29,8 @@ if ($opcion == 1) {
     $new_name = $id_registro . '-' . $lognstring;
 
 
-    $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    // $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    $extencion = "jpg";
     $apply_name = $new_name . '.' . $extencion;
 
 
@@ -77,7 +78,8 @@ if ($opcion == 1) {
     $new_name = $id_registro . '-' . $lognstring;
 
 
-    $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    // $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    $extencion = "jpg";
     $apply_name = $new_name . '.' . $extencion;
 
 
@@ -96,7 +98,8 @@ if ($opcion == 1) {
     $new_name = $id_registro . '-' . $lognstring;
 
 
-    $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    // $extencion = pathinfo($path, PATHINFO_EXTENSION);
+    $extencion = "jpg";
     $apply_name = $new_name . '.' . $extencion;
 
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $base64));

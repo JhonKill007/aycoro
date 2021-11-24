@@ -1,5 +1,5 @@
 <?php
-$version = "0.6.1 almost_lanch";
+$version = "0.6.2 almost_lanch02";
 ?>
 
 

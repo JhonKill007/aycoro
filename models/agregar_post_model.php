@@ -2,7 +2,7 @@
 $eso = require("conection.php");
 if ($opcion == 1 || $opcion == 3) {
     if ($eso) {
-        $INSERT = "INSERT INTO post (photo_post,estado_post,owner,day,hour)values('$ruta_send','$estado','$id_registro','$fecha','$hora')";
+        $INSERT = "INSERT INTO post (photo_post,estado_post,owner,day,hour,date_post)values('$ruta_send','$estado','$id_registro','$fecha','$hora',NOW())";
         $resultado = mysqli_query($conn, $INSERT);
         if ($resultado) {
             // echo "posteado";

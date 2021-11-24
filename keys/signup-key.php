@@ -13,7 +13,7 @@ if (!empty($nombre) && !empty($apellido) && !empty($numero) && !empty($email) &&
             $resultado = mysqli_query($conn, $SELECT);
             if ($resultado->num_rows == 0) {
                 if ($password == $passconf) {
-                    $INSERT = "INSERT INTO registro (nombre,apellido,nom_comp,numero,email,password,birthday,genero,foto,portada,presentacion,status)values('$nombre','$apellido','$nom_comp','$numero','$email','$script_password','$birthday','$genero','$foto','$portada','$presentacion','$status')";
+                    $INSERT = "INSERT INTO registro (nombre,apellido,nom_comp,numero,email,password,birthday,genero,foto,portada,presentacion,status,date_signup)values('$nombre','$apellido','$nom_comp','$numero','$email','$script_password','$birthday','$genero','$foto','$portada','$presentacion','$status',NOW())";
                     $resultado = mysqli_query($conn, $INSERT);
                     if ($resultado) {
                         $SELECT = "SELECT * FROM registro WHERE email = '$email'";
@@ -22,7 +22,7 @@ if (!empty($nombre) && !empty($apellido) && !empty($numero) && !empty($email) &&
                             while ($sign = $resultadoh->fetch_array()) {
                                 $id = $sign['id_registro'];
                                 if (1 == 1) {
-                                    $INSERTsign = "INSERT INTO folow (id_folowing,id_folower)values('$id','$id')";
+                                    $INSERTsign = "INSERT INTO folow (id_folowing,id_folower,date_follow)values('$id','$id',NOW())";
                                     $resultadosign = mysqli_query($conn, $INSERTsign);
                                     if ($resultadosign) {
                                         session_start();

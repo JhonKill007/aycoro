@@ -13,13 +13,29 @@ if (!isset($_SESSION['id'])) {
     $timezone = $_POST['time'];
 }
 ?>
-<script>
-    // var files = <?php echo $files; ?>;
-    // console.log(files);
-</script>
 
 <body>
     <div class="container">
+        <?php
+        if ($opt == 1) {
+        ?>
+            <h1>Editor de Post</h1>
+        <?php
+        } else if ($opt == 2) {
+        ?>
+            <h1>Editor de Historias</h1>
+        <?php
+        } else if ($opt == 4) {
+        ?>
+            <h1>Editor de Foto de Perfil</h1>
+        <?php
+        } else if ($opt == 5) {
+        ?>
+            <h1>Editor de Foto de Portada</h1>
+        <?php
+        }
+        ?>
+
         <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-9">
@@ -33,12 +49,18 @@ if (!isset($_SESSION['id'])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 textos_stados">
-                    <h4>Escribe un comentario</h4>
-                    <textarea class="form-control col-sm-12" name="estado_post" id="" cols="20" placeholder="Escribe aqui!" rows="5" maxlength="115"></textarea>
-                    <label for="">Maximo 115 Caracteres</label>
-                    <br>
-                </div>
+                <?php
+                if ($opt == 1) {
+                ?>
+                    <div class="col-md-3 textos_stados">
+                        <h4>Escribe un comentario</h4>
+                        <textarea class="form-control col-sm-12" name="estado_post" id="" cols="20" placeholder="Escribe aqui!" rows="5" maxlength="115"></textarea>
+                        <label for="">Maximo 115 Caracteres</label>
+                        <br>
+                    </div>
+                <?php
+                }
+                ?>
 
             </div>
             <div class="row" id="actions">

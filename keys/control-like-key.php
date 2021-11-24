@@ -12,7 +12,7 @@ if (!empty($id_post) || !empty($liker)) {
         $resultado_like1 = mysqli_query($conn, $SELECT);
         $nume = $resultado_like1->num_rows;
         if ($nume == 0) {
-            $INSERT = "INSERT INTO likes (id_post,id_liker)values('$id_post','$liker')";
+            $INSERT = "INSERT INTO likes (id_post,id_liker,date_like)values('$id_post','$liker',NOW())";
             $resultado = mysqli_query($conn, $INSERT);
             if ($resultado) {
                 $SELECT = "SELECT * FROM likes WHERE id_post ='$id_post'";

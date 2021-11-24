@@ -38,13 +38,7 @@
     display: block;
 }
 
-.textos_stados{
-    display: none;
-}
 
-.textos_stados.show{
-    display: block;
-}
 
 .error-txt{
     color: #721c24;
