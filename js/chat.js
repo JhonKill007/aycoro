@@ -1,4 +1,5 @@
 
+var timeIntervalID;
 
 const form = document.querySelector(".typing-area"),
     inputField = form.querySelector(".input-field"),
@@ -8,32 +9,40 @@ const form = document.querySelector(".typing-area"),
 
 
 form.onsubmit = (e) => {
-    e.preventDefault(); //previene el recargo de la pagina
+    e.preventDefault();
 }
 
 
+
+
+let cont = 1;
+let save;
+
+
+
+
 sendBtn.onclick = () => {
-    // console.log("hello");
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "keys/send-mensaje-key.php", true);
     xhr.onload = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 inputField.value = "";
-                scrollToBottom();
+                // scrollToBottom();
             }
         }
     }
-    // vamos a mandar el form data atraves de ajax a php
-    let formData = new FormData(form); //creando el objeto formData
-    xhr.send(formData);  //enviando el formData a php
-
+    let formData = new FormData(form);
+    xhr.send(formData);
 }
 
-chatBox.onmouseenter = ()=>{
+
+
+
+chatBox.onmouseenter = () => {
     chatBox.classList.add("active");
 }
-chatBox.onmouseleave = ()=>{
+chatBox.onmouseleave = () => {
     chatBox.classList.remove("active");
 }
 
@@ -46,26 +55,37 @@ setInterval(() => {
             if (xhr.status === 200) {
                 let data = xhr.response;
                 chatBox.innerHTML = data;
-                // if(!chatBox.classList.contains("active")){
-                //     scrollToBottom();
+                // if (!chatBox.classList.contains("active")) {
+                // scrollToBottom();
                 // }
+                // timeIntervalID = window.setInterval(scrollToBottom, 3000);
             }
         }
     }
-    // vamos a mandar el form data atraves de ajax a php
-    let formData = new FormData(form); //creando el objeto formData
-    xhr.send(formData);  //enviando el formData a php
+    let formData = new FormData(form);
+    xhr.send(formData);
 }, 500);
 
-function scrollToBottom(){
-    chatBox.scrollTop = chatBox.scrollHeight;
 
-    // var objDiv = document.getElementById("chat-box");
-    // objDiv.scrollTop = objDiv.scrollHeight;
+
+
+function scrollToBottom() {
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-let cont = 1;
-let save;
+
+
+
+// var timeoutID;
+// timeoutID = window.setTimeout(adelante, 5000);
+
+// function clearAlert() {
+//     window.clearTimeout(timeoutID);
+// }
+
+// function countAgain() {
+//     timeoutID = window.setTimeout(adelante, 5000);
+// }
 
 setInterval(() => {
     let xhrScroll = new XMLHttpRequest();
@@ -74,18 +94,16 @@ setInterval(() => {
         if (xhrScroll.readyState === XMLHttpRequest.DONE) {
             if (xhrScroll.status === 200) {
                 let dataScroll = xhrScroll.response;
-                
-                if(cont == 1){
-                    save = dataScroll;
-                    // console.log(save);
+
+                if (cont == 1) {
                     scrollToBottom();
-                    cont +=1;
+                    save = dataScroll;
+                    cont += 1;
                 }
-                else{
-                    if(save != dataScroll){
+                else {
+                    if (save != dataScroll) {
                         scrollToBottom();
                         save = dataScroll;
-                        console.log(save);
                     }
 
                 }
@@ -96,3 +114,6 @@ setInterval(() => {
     let formDataScroll = new FormData(form); //creando el objeto formData
     xhrScroll.send(formDataScroll);  //enviando el formData a php
 }, 500);
+
+
+

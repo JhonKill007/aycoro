@@ -1,10 +1,10 @@
 <?php
-$version = "0.6.2 almost_lanch02";
+$version = "0.6.9 lanchStark-002";
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">

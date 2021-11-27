@@ -25,6 +25,7 @@ if (!empty($nombre) && !empty($apellido) && !empty($numero) && !empty($email) &&
                                     $INSERTsign = "INSERT INTO folow (id_folowing,id_folower,date_follow)values('$id','$id',NOW())";
                                     $resultadosign = mysqli_query($conn, $INSERTsign);
                                     if ($resultadosign) {
+                                        setcookie("IgtX9000",$id,time()+2592000,"/");
                                         session_start();
                                         $_SESSION['id'] = $id;
                                         echo "success";

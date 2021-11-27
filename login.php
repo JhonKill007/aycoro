@@ -81,11 +81,10 @@ require("fund/head.php");
 
                         <!-- link log -->
                         <div class="links-log">
-                            <!-- <a href="">¿Se te olvidó tu contraseña?</a> -->
-                            <!-- <br> -->
                             <span>Aun no tengo cuenta</span>
-
                             <a href="signup"><b>Crear Nueva Cuenta</b></a>
+                            <br>
+                            <a href="identity"><b>Restablecer Contraseña</b></a>
                         </div>
                         <br>
 

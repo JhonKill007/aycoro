@@ -6,17 +6,16 @@ $opc = $_POST["opc"];
 $readdate = 0;
 $private = 0;
 
-if($opc == 0){
-    $mensaje = "Sugerencia: ".$mjs;
-}
-else{
-    $mensaje = "Ayuda: ".$mjs;
+if ($opc == 0) {
+    $mensaje = "Sugerencia: " . $mjs;
+} else {
+    $mensaje = "Ayuda: " . $mjs;
 }
 
 
 $eso = require("conection.php");
 
-if($mjs!=""){
+if ($mjs != "") {
     if (!empty($mjs) || !empty($id_sendner) || !empty($id_reciver) || !empty($readdate)) {
 
         if ($eso) {
@@ -36,17 +35,10 @@ if($mjs!=""){
                         $resultado = mysqli_query($conn, $INSERT);
                         if ($resultado) {
                             // echo "enviado";
-                            if($opc == 0){
-                                echo "<script>
-                                    alert('Su sugerencia a sido enviada.');
-                                    window.location='../index';
-                                    </script>";
-                            }
-                            else{
-                                echo "<script>
-                                    alert('Tu solicitud de ayuda a sido enviada.');
-                                    window.location='../index';
-                                    </script>";
+                            if ($opc == 0) {
+                                index();
+                            } else {
+                                index();
                             }
                         } else {
                             echo "Ha ocurrido un error!";
@@ -64,17 +56,10 @@ if($mjs!=""){
                     if ($resultado) {
                         // echo "enviado";
                         // header("Location: ../dm.php?usu=$id_reciver");
-                        if($opc == 0){
-                            echo "<script>
-                                alert('Su sugerencia a sido enviada.');
-                                window.location='../index';
-                                </script>";
-                        }
-                        else{
-                            echo "<script>
-                                alert('Tu solicitud de ayuda a sido enviada.');
-                                window.location='../index';
-                                </script>";
+                        if ($opc == 0) {
+                            index();
+                        } else {
+                            index();
                         }
                     } else {
                         echo "Ha ocurrido un error!";
@@ -85,18 +70,28 @@ if($mjs!=""){
             echo "la connecion fallo";
         }
     }
-}
-else{
-    if($opc == 0){
-        echo "<script>
-        alert('No se puede enviar vacio, por favor escribir.');
-        window.location='../sugerencias';
-        </script>";
-    }
-    else{
+} else {
+    if ($opc == 0) {
+?>
+        <script>
+            alert('No se puede enviar vacio, por favor escribir.');
+            window.location = '../sugerencias';
+        </script>
+    <?php
+    } else {
         echo "<script>
         alert('No se puede enviar vacio, por favor escribir.');
         window.location='../ayuda';
         </script>";
     }
 }
+
+
+function index()
+{
+    header("Location: ../index");
+  
+}
+
+
+?>

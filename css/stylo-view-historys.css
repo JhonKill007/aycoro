@@ -114,6 +114,8 @@
 .up-vistas-icon{
     width: 40px;
     margin: auto;
+    
+
 }
 
 .up-vistas-icon i{
@@ -313,6 +315,9 @@
     .adelante{
         right: -1%;
         /* top: calc(45% - 5px); */
+    }
+    .up-vistas{
+        margin-top: -140px;
     }
 }
   

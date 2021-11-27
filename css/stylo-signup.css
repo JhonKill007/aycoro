@@ -1,6 +1,9 @@
 .conteiner-signup {
+  width: 500px;
+  /* border: 1px solid red; */
   margin: auto;
 }
+
 
 #error-email {
   color: red;
@@ -17,8 +20,14 @@
 }
 
 .complete-name {
+  width: 100%;
   display: flex;
   margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.name_last{
+  width: 47%;
 }
 
 .email-box {
@@ -26,13 +35,93 @@
 }
 
 .birthsday {
+  width: 100%;
+  /* border: 1px solid red; */
+  justify-content: space-between;
   display: flex;
 }
 
+.fecha_na{
+  width: 33%;
+}
+
 .radio-butoms {
+  width: 98%;
   display: flex;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.genero_all{
+  width: 25%;
+}
+
+.genero_all_p{
+  width: 40%;
+}
+
+.btn-box{
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.button-sign{
+  width: 100%;
+}
+
+.button-identity{
+  width: 100%;
 }
 
 .conteiner-signup.hidde{
   display: none;
+}
+
+@media (max-width: 552px) {
+  .conteiner-signup {
+    width: 470px;
+  }
+}
+
+@media (max-width: 512px) {
+  .conteiner-signup {
+    width: 420px;
+  }
+}
+
+@media (max-width: 463px) {
+  .conteiner-signup {
+    width: 380px;
+  }
+}
+
+@media (max-width: 412px) {
+  .conteiner-signup {
+    width: 370px;
+  }
+}
+
+@media (max-width: 376px) {
+  .conteiner-signup {
+    width: 340px;
+  }
+}
+
+@media (max-width: 360px) {
+  .conteiner-signup {
+    width: 310px;
+  }
+}
+
+@media (max-width: 320px) {
+  .conteiner-signup {
+    width: 280px;
+  }
+}
+
+@media (max-width: 280px) {
+  .conteiner-signup {
+    width: 240px;
+  }
 }

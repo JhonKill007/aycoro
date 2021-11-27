@@ -16,5 +16,5 @@
 <script src="https://unpkg.com/jquery@3/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap@4/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://fengyuanchen.github.io/shared/google-analytics.js" crossorigin="anonymous"></script>
-<script src="js/cropper.js"></script>
+
 <script src="js/main.js"></script>

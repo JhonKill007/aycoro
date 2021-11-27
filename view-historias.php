@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_COOKIE["IgtX9000"])) {
+    $_SESSION['id'] = $_COOKIE["IgtX9000"];
+}
 if (!isset($_SESSION['id'])) {
     header("Location: login");
 } else {
@@ -68,8 +71,7 @@ if (!isset($_SESSION['id'])) {
             AND id_owner = $id_registro ORDER BY id_history Desc";
 
             $resultado = mysqli_query($conn, $SELECT);
-        }
-        else{
+        } else {
 
             $SELECT = "SELECT * FROM history 
             WHERE date >= NOW() - INTERVAL 1 DAY 
@@ -103,7 +105,7 @@ if (!isset($_SESSION['id'])) {
             <?php
             if ($items != 0) {
                 if ($eso) {
-                    
+
                     $SELECT = "SELECT * FROM history 
                     inner join registro on history.id_owner=registro.id_registro 
                     where history.id_owner = $items 

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_COOKIE["IgtX9000"])){
+    $_SESSION['id'] = $_COOKIE["IgtX9000"];
+}
 if (!isset($_SESSION['id'])) {
     header("Location: login");
 } else {
@@ -15,6 +18,7 @@ if (!isset($_SESSION['id'])) {
 ?>
 
 <body>
+    <script src="js/cropper.js"></script>
     <div class="container">
         <?php
         if ($opt == 1) {

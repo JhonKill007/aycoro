@@ -20,7 +20,6 @@ while ($men = $resultado->fetch_array()) {
     $idchat = $men['id_chat'];
 
     array_push($id_mds, $idchat);
-
 }
 
 $todos =  (array_unique($id_mds));
@@ -47,7 +46,16 @@ foreach ($todos as $numero) {
                     $SELECT_perfil = "SELECT * FROM registro WHERE id_registro = '$dato_id'";
                     $resultado_perfil = mysqli_query($conn, $SELECT_perfil);
                     $info_perfil = $resultado_perfil->fetch_array();
-                    $nomape = $info_perfil['nombre'] . ' ' . $info_perfil['apellido'];
+
+
+                    $nameandlast = $info_perfil['nombre'] . ' ' . $info_perfil['apellido'];
+                    $cant_nom_caract = strlen($nameandlast);
+                    if ($cant_nom_caract > 21) {
+                        $nomape = substr($nameandlast, 0, 18) . '...';
+                    } else {
+                        $nomape = $info_perfil['nombre'] . ' ' . $info_perfil['apellido'];
+                    }
+
                     $foto_mgs = $info_perfil['foto'];
 
 
@@ -66,7 +74,7 @@ foreach ($todos as $numero) {
 
                         if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
                             $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
-                                           <div title="'.$nomape.'" class="message-box-nav">
+                                           <div title="' . $nomape . '" class="message-box-nav">
                                                <b>' . $nomape . '</b>
                                                <br>
                                                <b>' . $ypo . $msgst . '</b>
@@ -74,14 +82,14 @@ foreach ($todos as $numero) {
                                        </a>';
                         } else if ($mgs['id_sendner'] == $id) {
                             $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
-                                            <div title="'.$nomape.'" class="message-box-nav">
+                                            <div title="' . $nomape . '" class="message-box-nav">
                                                 <b>' . $nomape . '</b>
                                                 <p>' . $ypo . $msgst . '</p>
                                             </div>
                                         </a>';
                         } else {
                             $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
-                                            <div title="'.$nomape.'" class="message-box-nav">
+                                            <div title="' . $nomape . '" class="message-box-nav">
                                                     <b>' . $nomape . '</b>
                                                     <p>' . $ypo . $msgst . '</p>
                                                 </div>
@@ -115,26 +123,26 @@ foreach ($todos as $numero) {
 
                             if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
                                 $data .= '<a href="dm_.php?private=' . $id_chat . '">
-                                                <div title="'.$nomape.'" class="message-box-nav">
+                                                <div title="' . $nomape . '" class="message-box-nav">
                                                     <b>' . $nomape . '</b>
                                                     <br>
                                                     <b>' . $ypo . $msgst . '</b>
                                                 </div>
-                                            </a>';                    
+                                            </a>';
                             } else if ($mgs['id_sendner'] == $id) {
                                 $data .= '<a href="dm_.php?private=' . $id_chat . '">
-                                                <div title="'.$nomape.'" class="message-box-nav">
+                                                <div title="' . $nomape . '" class="message-box-nav">
                                                     <b>' . $nomape . '</b>
                                                     <p>' . $ypo . $msgst . '</p>
                                                 </div>
                                             </a>';
                             } else {
                                 $data .= '<a href="dm_.php?private=' . $id_chat . '">
-                                                <div title="'.$nomape.'" class="message-box-nav">
+                                                <div title="' . $nomape . '" class="message-box-nav">
                                                     <b>' . $nomape . '</b>
                                                     <p>' . $ypo . $msgst . '</p>
                                                 </div>
-                                            </a>';                    
+                                            </a>';
                             }
                         }
                     }
@@ -149,4 +157,3 @@ if ($data == '') {
     $data .= '<h4 class="nochat">No tienes ningun Chat</h4>';
 }
 echo $data;
-

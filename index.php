@@ -47,7 +47,7 @@ require("fund/head.php");
             </div>
         </div>
 
-        
+
 
         <?php
         require("modulos/status-post.php");

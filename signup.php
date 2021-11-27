@@ -36,7 +36,7 @@ require("fund/head.php");
 
 
     <div class="conteiner">
-        <div class="conteiner-signup col-sm-6">
+        <div class="conteiner-signup">
             <div class="con-box">
                 <h2>Registrate</h2>
                 <label>Super facil.</label>
@@ -46,39 +46,39 @@ require("fund/head.php");
                 <form action="" method="POST" class="form-horizontal formulario">
                     <!-- nombre -->
                     <div class="form-group">
-                        <div class="col-sm-12 complete-name">
+                        <div class="complete-name">
 
-                            <div class="col-sm-6">
+                            <div class="name_last">
                                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="30" required>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="name_last">
                                 <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" maxlength="30">
                             </div>
 
                         </div>
 
-                        <div class="col-sm-12">
-                            <div class="col-sm-12 email-box">
+                        <div class="">
+                            <div class=" email-box">
                                 <input type="number" class="form-control" id="numero" name="numero" placeholder="Numero" maxlength="11">
                             </div>
-                            <div class="col-sm-12 email-box">
+                            <div class=" email-box">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" maxlength="50" required>
                             </div>
-                            <div class="col-sm-12 email-box">
+                            <div class=" email-box">
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" maxlength="50" required>
                             </div>
-                            <div class="col-sm-12">
+                            <div class="">
                                 <input type="password" class="form-control" id="password" name="password-confirm" placeholder="Confirma tu contraseña" maxlength="50" required>
                             </div>
                         </div>
                         <br>
 
-                        <div class="col-sm-12">
-                            <label for="" class="col-sm-8">Fecha de Nacimiento</label>
+                        <div class="">
+                            <label for="" class="">Fecha de Nacimiento</label>
                         </div>
-                        <div class="col-sm-12 birthsday">
-                            <div class="col-sm-4">
+                        <div class="birthsday">
+                            <div class="fecha_na">
                                 <select class="form-control" id="day" name="day" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -113,7 +113,7 @@ require("fund/head.php");
                                     <option value="31">31</option>
                                 </select>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="fecha_na">
                                 <select class="form-control" id="month" name="month" required>
                                     <option value="1">Enero</option>
                                     <option value="2">Febrero</option>
@@ -129,7 +129,7 @@ require("fund/head.php");
                                     <option value="12">Diciembre</option>
                                 </select>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="fecha_na">
                                 <select class="form-control" id="year" name="year" required>
                                     <option value="2021" selected="1">2021</option>
                                     <option value="2020">2020</option>
@@ -251,28 +251,28 @@ require("fund/head.php");
                                 </select>
                             </div>
                         </div>
-                        <div class="col-sm-12">
-                            <label for="" class="col-sm-8">Genero</label>
+                        <div class="">
+                            <label for="" class="">Genero</label>
                         </div>
-                        <div class="col-sm-12 radio-butoms">
-                            <div class="col-sm-4">
+                        <div class="radio-butoms">
+                            <div class="genero_all">
                                 <input type="radio" name="genero" id="hombre" value="m" required>
-                                <label for="hombre" class="col-sm-8">Hombre</label>
+                                <label for="hombre" class="">Hombre</label>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="genero_all">
                                 <input type="radio" name="genero" id="mujer" value="f" required>
                                 <label for="mujer">Mujer</label>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="genero_all_p">
                                 <input type="radio" name="genero" id="personalizado" value="p" required>
                                 <label for="personalizado">Personalizado</label>
                             </div>
                         </div>
 
                         <!-- boton sign up -->
-                        <div class="form-group">
+                        <div class="btn-box form-group">
                             <div class="col-sm-offset">
-                                <button class="btn btn-success col-sm-12 button-sign">
+                                <button class="btn btn-success  button-sign">
                                     Registrate
                                 </button>
                             </div>
@@ -284,7 +284,7 @@ require("fund/head.php");
                         <!-- <br> -->
                         <span>Ya tengo cuenta</span>
 
-                        <a href="login.php"><b>Iniciar Sesion</b></a>
+                        <a href="login"><b>Iniciar Sesion</b></a>
                     </div>
                 </form>
                 <br>
