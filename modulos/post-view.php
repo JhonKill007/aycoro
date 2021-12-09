@@ -41,7 +41,7 @@
                                 if ($nume == 0) {
                                 ?>
                                     <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
-                                        <button class="buton_like"><i class="far fa-heart like-wait like"></i><b><?php echo $num_like ?> Like</b></button>
+                                        <div class="buton_like"><i class="far fa-heart like-wait"></i><b><?php echo $num_like ?> Like</b></div>
                                     </div>
                                 <?php
 
@@ -49,7 +49,7 @@
                                 } else {
                                 ?>
                                     <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
-                                        <button class=" buton_like"><i class="fas fa-heart like-red like"></i><b><?php echo $num_like ?> Like</b></button>
+                                        <div class="buton_like"><i class="fas fa-heart like-red"></i><b><?php echo $num_like ?> Like</b></div>
                                     </div>
 
                                 <?php

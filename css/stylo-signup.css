@@ -26,6 +26,10 @@
   justify-content: space-between;
 }
 
+.terminos{
+  font-size: 12px;
+}
+
 .name_last{
   width: 47%;
 }

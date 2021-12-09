@@ -10,7 +10,6 @@ $fecha = date('d-m-Y');
 $hora = date('h:i a');
 $date = date('Y-m-d')." ".date("H:i:s");  
 
-// echo $time;
 
 
 

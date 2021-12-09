@@ -44,24 +44,6 @@ if (!empty($email)) {
             } else {
                 $datalog .= "<div class='error-txt  error'>No se pudo enviar el Email.</div>";
             }
-
-
-            // if (password_verify($password, $log['password'])) {
-            //     // echo "true";
-            //     $id = $log['id_registro'];
-            //     $UPDATE = "UPDATE registro SET status='Online' Where id_registro ='$id'";
-            //     $resultado = mysqli_query($conn, $UPDATE);
-            //     if ($resultado) {
-            //         setcookie("IgtX9000",$id,time()+2592000,"/");
-            //         session_start();
-            //         $_SESSION['id'] = $id;
-            //         echo "success";
-            //     } else {
-            // $datalog .= "<div class='error-txt  error'>" . $email . "</div>";
-            //     }
-            // } else {
-            //     $datalog .= "<div class='error-txt  error'>La Contraseña es Incorrecta</div>";
-            // }
         } else {
             $datalog .= "<div class='error-txt  error'>El Email ingresado no coincide con ninguna cuenta</div>";
         }

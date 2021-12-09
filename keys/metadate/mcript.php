@@ -18,4 +18,3 @@ $desencriptar = function ($valor) use ($method, $clave, $iv1) {
     return openssl_decrypt($valor, $method, $clave, false, $iv1);
 };
 
-

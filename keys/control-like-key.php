@@ -18,7 +18,7 @@ if (!empty($id_post) || !empty($liker)) {
                 $SELECT = "SELECT * FROM likes WHERE id_post ='$id_post'";
                 $resultado_like2 = mysqli_query($conn, $SELECT);
                 $num_like = $resultado_like2->num_rows;
-                $data .= "<button class='buton_like'><i class='fas fa-heart like-red like'></i><b>" . $num_like . " Like</b></button>";
+                $data .= "<div class='buton_like'><i class='fas fa-heart like-red'></i><b>" . $num_like . " Like</b></div>";
             } else {
                 echo "Ha ocurrido un error!";
             }
@@ -30,7 +30,7 @@ if (!empty($id_post) || !empty($liker)) {
                 $SELECT = "SELECT * FROM likes WHERE id_post ='$id_post'";
                 $resultado_like2 = mysqli_query($conn, $SELECT);
                 $num_like = $resultado_like2->num_rows;
-                $data .= "<button class='buton_like'><i class='far fa-heart like-wait like'></i><b>" . $num_like . " Like</b></button>";
+                $data .= "<div class='buton_like'><i class='far fa-heart like-wait'></i><b>" . $num_like . " Like</b></div>";
             } else {
                 echo "Ha ocurrido un error!";
             }

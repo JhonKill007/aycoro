@@ -19,9 +19,10 @@ require("fund/head.php");
                 <ul>
                     <li>
                         <!-- logo -->
-                        <!-- <a href="index.php"><img id="logo" src="img/logo.png" alt="hola"></a> -->
-                        <img id="logo" src="img/Logo.png" alt="">
-                        <img id="logo2" src="img/Logo2.png" alt="">
+                        <a href="login">
+                            <img id="logo" src="img/Logo.png" alt="">
+                            <img id="logo2" src="img/Logo2.png" alt="">
+                        </a>
                     </li>
                 </ul>
 
@@ -268,6 +269,7 @@ require("fund/head.php");
                                 <label for="personalizado">Personalizado</label>
                             </div>
                         </div>
+                        <p class="terminos">Al hacer clic en Registrarse, acepta nuestros <a href="terminos">Terminos y condiciones de uso</a>.</p>
 
                         <!-- boton sign up -->
                         <div class="btn-box form-group">

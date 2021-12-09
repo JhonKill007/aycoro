@@ -19,9 +19,10 @@ require("fund/head.php");
                 <ul>
                     <li>
                         <!-- logo -->
-                        <!-- <a href="index.php"><img id="logo" src="img/logo.png" alt="hola"></a> -->
-                        <img id="logo" src="img/Logo.png" alt="">
-                        <img id="logo2" src="img/Logo2.png" alt="">
+                        <a href="login">
+                            <img id="logo" src="img/Logo.png" alt="">
+                            <img id="logo2" src="img/Logo2.png" alt="">
+                        </a>
                     </li>
                 </ul>
 

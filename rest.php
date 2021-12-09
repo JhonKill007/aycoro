@@ -2,17 +2,21 @@
 $tittlePage = "Aycoro - Restablecer contraseña";
 require("fund/head.php");
 
+$dato = $_GET['fditer'];
+// $email = htmlspecialchars($_GET["fditer"]);
 
-$email = $_GET['fditer'];
+$email = str_replace(" ", "+", $dato);
+
 $date = $_GET['hfdar'];
+
 include "keys/metadate/mcript.php";
 
-$dato_desncriptado = $desencriptar($dato);
+$dato_desncriptado = $desencriptar($email);
 $date_desencryp = $desencriptar($date);
 
 $eso =  require('keys/conection.php');
 if ($eso) {
-    $SELECT = "SELECT * from registro where email='$email'";
+    $SELECT = "SELECT * from registro where email='$dato_desncriptado'";
     $resultado = mysqli_query($conn, $SELECT);
 
     if ($resultado->num_rows == 1) {
@@ -27,7 +31,8 @@ if ($eso) {
 }
 
 $date_today = time();
-if ($email_identity != $email || $date_desencryp<$date_today) {
+if ($email_identity != $dato_desncriptado || $date_desencryp < $date_today) {
+    // if ($email_identity != $dato_desncriptado) {
     header("Location: login");
 }
 
@@ -49,9 +54,10 @@ if ($email_identity != $email || $date_desencryp<$date_today) {
                 <ul>
                     <li>
                         <!-- logo -->
-                        <!-- <a href="index.php"><img id="logo" src="img/logo.png" alt="hola"></a> -->
-                        <img id="logo" src="img/Logo.png" alt="">
-                        <img id="logo2" src="img/Logo2.png" alt="">
+                        <a href="login">
+                            <img id="logo" src="img/Logo.png" alt="">
+                            <img id="logo2" src="img/Logo2.png" alt="">
+                        </a>
                     </li>
                 </ul>
 
@@ -72,17 +78,18 @@ if ($email_identity != $email || $date_desencryp<$date_today) {
                 <div class='error'></div>
                 <hr>
 
-                <form action="" method="POST" class="form-horizontal formulario_identity">
+                <form action="" method="POST" class="form-horizontal formulario_rest">
                     <!-- nombre -->
                     <div class="form-group">
 
 
                         <div class="">
                             <div class=" email-box">
+                                <input type="hidden" name="id_per" value=<?php echo $id_identity; ?>>
                                 <b>Nueva contraseña</b>
-                                <input type="password" class="form-control" id="pass" name="pass" maxlength="50" required>
+                                <input type="password" class="form-control" id="pass" name="nueva" maxlength="50" required>
                                 <b>Confirmar nueva contraseña</b>
-                                <input type="password" class="form-control" id="pass" name="pass_confirm" maxlength="50" required>
+                                <input type="password" class="form-control" id="pass" name="confirm" maxlength="50" required>
                             </div>
                         </div>
                         <br>
@@ -92,7 +99,7 @@ if ($email_identity != $email || $date_desencryp<$date_today) {
                         <!-- boton sign up -->
                         <div class="btn-box form-group">
                             <div class="col-sm-offset">
-                                <button class="btn btn-success  button-identity">
+                                <button type="submit" class="btn btn-success button-change button-identity">
                                     Guardar
                                 </button>
                             </div>
@@ -107,9 +114,19 @@ if ($email_identity != $email || $date_desencryp<$date_today) {
 
     </div>
 
+    
+    <script src="js/recover-count.js"></script>
+
 
     <script src="js/identity.js"></script>
     <?php
+    // echo $email;
+    // echo $resultadothghg;
+    // echo $dato_desncriptado;
+    // echo $date_desencryp;
+    echo "\r\n";
+    // echo $date_today;
+    // echo $email_identity;
     require("fund/script.php");
     ?>
 </body>
