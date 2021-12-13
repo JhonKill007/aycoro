@@ -43,6 +43,14 @@
   color: red;
 }
 
+.display-form{
+  display: flex;
+}
+
+.coment-box{
+  width: 50px;
+}
+
 .publicacion-text {
   width: 500px;
   margin: auto;
@@ -51,7 +59,16 @@
   
 }
 
+.conment-icon{
+  font-size: 40px;
+  cursor: pointer;
+}
 
+.name_and_date_post{
+  width: 100%;
+  /* border: 1px solid grey; */
+  margin-top: -15px;
+}
 
 .container-scroll{
   margin-top: -40px;
@@ -76,7 +93,7 @@
   align-items: center;
   cursor: pointer;
   margin-left: 93%;
-  margin-top: -40px;
+  margin-top: -44px;
 }
 
 .box_setting{
@@ -85,10 +102,16 @@
   margin: auto;
 }
 
+.options-edit-post_space{
+  width: 95px;
+  margin-top: 15px;
+  margin-left: 75%;
+}
+
 .options-edit-post{
   width:90px;
   border: 1px solid black;
-  margin-left: 80%;
+  /* margin-left: 80%; */
   text-align: center;
   border-radius: 5px;
 }
@@ -125,6 +148,73 @@
 .btn-post button{
   width: 45%;
   margin: auto;
+}
+
+.title-coment{
+  font-size: 15px;
+  color: grey;
+  cursor: pointer;
+}
+
+.coment_add_box{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.coment_add_input{
+  width: 85%;
+}
+
+.coment_add_box_center{
+  width: 100%;
+  display: flex;
+}
+
+.coment-text-box{
+  width: 90%;
+  margin: auto;
+  font-size: 15px;
+}
+
+.model-coment-view{
+  width: 100%;
+  border: 1px solid black;
+  color: grey;
+  border-radius: 15px;
+  padding: 10px;
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
+
+.head_coment_text_box{
+  display: flex;
+}
+
+.img_perfil_coment{
+  height: 25px;
+  width: 25px;
+}
+
+.img_perfil_coment img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.name_perfil_coment{
+  margin-top: 5px;
+}
+
+.coment_value{
+  margin-left: 30px;
+  padding: 0;
+}
+
+.coment_date{
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 1120px) {

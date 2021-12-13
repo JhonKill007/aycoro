@@ -9,10 +9,11 @@
             while ($post = $resultado->fetch_array()) {
                 $liker = $_SESSION['id'];
                 $id_post = $post['id_post'];
+                $foto_perfil = $post['foto'];
                 $photo_post = $post['photo_post'];
                 $nombre_owner_post = $post['nombre'];
                 $apellido_owner_post = $post['apellido'];
-                $estado_post = $post['estado_post'];
+                $estado_post =  $post['estado_post'];
                 $owner_post = $post['owner'];
                 $fecha = $post['hour'] . " " . $post['day'];
 
@@ -40,21 +41,80 @@
                                 <?php
                                 if ($nume == 0) {
                                 ?>
-                                    <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
-                                        <div class="buton_like"><i class="far fa-heart like-wait"></i><b><?php echo $num_like ?> Like</b></div>
+                                    <div class="display-form">
+                                        <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
+                                            <div class="buton_like"><i class="far fa-heart like-wait"></i><b><?php echo $num_like ?> Like</b></div>
+                                        </div>
+                                        <div class="coment-box button_coment<?php echo $id_post; ?>" onclick="OpenInputComent<?php echo $id_post; ?>()">
+                                            <div><i class="far fa-comment conment-icon"></i></div>
+                                        </div>
                                     </div>
                                 <?php
-
-                                    require("modulos/post_manager.php");
                                 } else {
                                 ?>
-                                    <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
-                                        <div class="buton_like"><i class="fas fa-heart like-red"></i><b><?php echo $num_like ?> Like</b></div>
+                                    <div class="display-form">
+                                        <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
+                                            <div class="buton_like"><i class="fas fa-heart like-red"></i><b><?php echo $num_like ?> Like</b></div>
+                                        </div>
+                                        <div class="coment-box button_coment<?php echo $id_post; ?>" onclick="OpenInputComent<?php echo $id_post; ?>()">
+                                            <div><i class="far fa-comment conment-icon"></i></div>
+                                        </div>
                                     </div>
 
                                 <?php
-                                    require("modulos/post_manager.php");
                                 }
+                                ?>
+
+                                <?php
+                                if ($owner_post == $_SESSION['id']) {
+                                ?>
+
+                                    <div class="post_setting">
+                                        <div class="box_setting<?php echo $id_post; ?>">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                    <div class="options-edit-post<?php echo $id_post; ?> options-edit-post_space">
+
+                                    </div>
+                                <?php
+                                }
+                                if ($estado_post == "") {
+                                ?>
+                                    <br>
+                                <?php
+                                }
+                                ?>
+                                <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
+                                <div class="name_and_date_post">
+                                    <?php
+                                    if ($owner_post == $_SESSION['id']) {
+                                    ?>
+                                        <a href="perfil">
+                                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                                        </a>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
+                                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                    <span class="fecha"><?php echo $fecha; ?></span>
+                                    <br>
+                                    <b class="title-coment active-view-conment<?php echo $id_post; ?>" onclick="ViewComents<?php echo $id_post; ?>()">Ver comentarios</b>
+                                </div>
+                                <div class="coment_add_box conteiner_coment_input<?php echo $id_post; ?>">
+
+                                </div>
+                                <div class="coment-text-box<?php echo $id_post; ?>">
+
+                                </div>
+                                <br>
+                                <?php
+                                require("modulos/post_manager.php");
                                 ?>
                                 <script>
                                     const formu<?php echo $id_post; ?> = document.querySelector(".liking-area<?php echo $id_post; ?>"),
@@ -93,25 +153,11 @@
                                     });
                                 </script>
                             </form>
-                            <br>
-                            <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
-                            <?php
-                            if ($owner_post == $_SESSION['id']) {
-                            ?>
-                                <a href="perfil">
-                                    <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                                </a>
-                            <?php
-                            } else {
-                            ?>
-                                <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
-                                    <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                                </a>
-                            <?php
-                            }
-                            ?>
-                            <span class="fecha"><?php echo $fecha; ?></span>
+
                         </div>
+                        <?php
+                        require("modulos/coments_make_view.php")
+                        ?>
                     </div>
     </div>
 
@@ -135,19 +181,59 @@
                 <?php
                     if ($nume == 0) {
                 ?>
-                    <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
-                        <button class="buton_like"><i class="far fa-heart like-wait like"></i><b><?php echo $num_like ?> Like</b></button>
+                    <div class="display-form">
+                        <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
+                            <div class="buton_like"><i class="far fa-heart like-wait"></i><b><?php echo $num_like ?> Like</b></div>
+                        </div>
+                        <div class="coment-box button_coment<?php echo $id_post; ?>" onclick="OpenInputComent<?php echo $id_post; ?>()">
+                            <div><i class="far fa-comment conment-icon"></i></div>
+                        </div>
                     </div>
                 <?php
-                        require("modulos/post_manager.php");
                     } else {
                 ?>
-                    <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
-                        <button class=" buton_like"><i class="fas fa-heart like-red like"></i><b><?php echo $num_like ?> Like</b></button>
+                    <div class="display-form">
+                        <div class="button-box<?php echo $id_post; ?> like" id="<?php echo $id_post; ?>">
+                            <div class="buton_like"><i class="fas fa-heart like-red"></i><b><?php echo $num_like ?> Like</b></div>
+                        </div>
+                        <div class="coment-box button_coment<?php echo $id_post; ?>" onclick="OpenInputComent<?php echo $id_post; ?>()">
+                            <div><i class="far fa-comment conment-icon"></i></div>
+                        </div>
                     </div>
+
                 <?php
-                        require("modulos/post_manager.php");
                     }
+                ?>
+                <br>
+                <div class="name_and_date_post">
+                    <?php
+                    if ($owner_post == $_SESSION['id']) {
+                    ?>
+                        <a href="perfil">
+                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                        </a>
+                    <?php
+                    } else {
+                    ?>
+                        <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
+                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                        </a>
+                    <?php
+                    }
+                    ?>
+                    <span class="fecha"><?php echo $fecha; ?></span>
+                    <br>
+                    <b class="title-coment active-view-conment<?php echo $id_post; ?>" onclick="ViewComents<?php echo $id_post; ?>()">Ver comentarios</b>
+                </div>
+                <div class="coment_add_box conteiner_coment_input<?php echo $id_post; ?>">
+
+                </div>
+                <div class="coment-text-box<?php echo $id_post; ?>">
+
+                </div>
+                <br>
+                <?php
+                    require("modulos/post_manager.php");
                 ?>
                 <script>
                     const formu<?php echo $id_post; ?> = document.querySelector(".liking-area<?php echo $id_post; ?>"),
@@ -187,25 +273,11 @@
                 </script>
             </form>
 
-            <?php
-                    if ($owner_post == $_SESSION['id']) {
-            ?>
-                <br>
-                <a href="perfil">
-                    <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                </a>
-            <?php
-                    } else {
-            ?>
-                <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
-                    <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
-                </a>
-            <?php
-                    }
-            ?>
-            <span class="fecha"><?php echo $fecha; ?></span>
             <br>
         </div>
+        <?php
+                    require("modulos/coments_make_view.php")
+        ?>
     </div>
 <?php
                 }

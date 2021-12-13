@@ -1,15 +1,6 @@
 <?php
 if ($owner_post == $_SESSION['id']) {
 ?>
-
-    <div class="post_setting">
-        <div class="box_setting<?php echo $id_post; ?>">
-            <i class="fas fa-ellipsis-h"></i>
-        </div>
-    </div>
-    <div class="options-edit-post<?php echo $id_post; ?>">
-
-    </div>
     <script>
         let optix<?php echo $id_post; ?> = 1;
         const Opt<?php echo $id_post; ?> = document.querySelector(".options-edit-post<?php echo $id_post; ?>");
@@ -130,3 +121,48 @@ if ($owner_post == $_SESSION['id']) {
 <?php
 }
 ?>
+<script>
+    let cont_coment<?php echo $id_post; ?> = 1;
+    const conteiner_input_coment<?php echo $id_post; ?> = document.querySelector(".conteiner_coment_input<?php echo $id_post; ?>");
+
+    function OpenInputComent<?php echo $id_post; ?>() {
+        if (cont_coment<?php echo $id_post; ?> == 1) {
+            let xhrts_coment<?php echo $id_post; ?> = new XMLHttpRequest();
+            xhrts_coment<?php echo $id_post; ?>.open("POST", "modulos/coment_input.php", true);
+            xhrts_coment<?php echo $id_post; ?>.onload = () => {
+                if (xhrts_coment<?php echo $id_post; ?>.readyState === XMLHttpRequest.DONE) {
+                    if (xhrts_coment<?php echo $id_post; ?>.status === 200) {
+                        let data_coment<?php echo $id_post; ?> = xhrts_coment<?php echo $id_post; ?>.response;
+                        conteiner_input_coment<?php echo $id_post; ?>.innerHTML = data_coment<?php echo $id_post; ?>;
+                        cont_coment<?php echo $id_post; ?> = 2;
+                    }
+                }
+            }
+            let formDatats_coment<?php echo $id_post; ?> = new FormData(formu<?php echo $id_post; ?>);
+            xhrts_coment<?php echo $id_post; ?>.send(formDatats_coment<?php echo $id_post; ?>);
+        } else {
+            conteiner_input_coment<?php echo $id_post; ?>.innerHTML = "";
+            cont_coment<?php echo $id_post; ?> = 1;
+        }
+    }
+
+
+    function SendComent<?php echo $id_post; ?>() {
+        let xhrts_add_coment<?php echo $id_post; ?> = new XMLHttpRequest();
+        xhrts_add_coment<?php echo $id_post; ?>.open("POST", "keys/add-coments-key.php", true);
+        xhrts_add_coment<?php echo $id_post; ?>.onload = () => {
+            if (xhrts_add_coment<?php echo $id_post; ?>.readyState === XMLHttpRequest.DONE) {
+                if (xhrts_add_coment<?php echo $id_post; ?>.status === 200) {
+                    let data_add_coment<?php echo $id_post; ?> = xhrts_add_coment<?php echo $id_post; ?>.response;
+                    
+                    if(data_add_coment<?php echo $id_post; ?> == "successfull"){
+                        document.getElementById("coment_value<?php echo $id_post; ?>").value = "";
+                    }
+
+                }
+            }
+        }
+        let formDatats_add_coment<?php echo $id_post; ?> = new FormData(formu<?php echo $id_post; ?>);
+        xhrts_add_coment<?php echo $id_post; ?>.send(formDatats_add_coment<?php echo $id_post; ?>);
+    }
+</script>

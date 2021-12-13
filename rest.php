@@ -32,7 +32,6 @@ if ($eso) {
 
 $date_today = time();
 if ($email_identity != $dato_desncriptado || $date_desencryp < $date_today) {
-    // if ($email_identity != $dato_desncriptado) {
     header("Location: login");
 }
 
