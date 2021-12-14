@@ -1,5 +1,5 @@
 <?php
-$version = "0.7.3 lanch_pack";
+$version = "0.7.4 golden_pack";
 ?>
 
 

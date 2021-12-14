@@ -6,6 +6,8 @@
     <a href="sugerencias"><label>Sugerencias</label></a>
     <label></label>
     <a href="ayuda"><label>Ayuda</label></a>
+    <label></label>
+    <a href="terminos"><label>Condiciones</label></a>
     <br>
     <label>©Aycoro 2021</label>
     <span>Version <?php echo $version; ?></span>

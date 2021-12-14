@@ -1,5 +1,21 @@
+var segonload;
+segonload = setInterval(awitload, 1000);
 
-var timeIntervalID;
+function StopLoad() {
+    clearInterval(segonload);
+}
+
+function awitload() {
+    scrollToBottom();
+}
+
+var timeStop;
+timeStop = window.setTimeout(clearLoad, 1000);
+
+function clearLoad() {
+    StopLoad();
+}
+
 
 const form = document.querySelector(".typing-area"),
     inputField = form.querySelector(".input-field"),
@@ -13,10 +29,8 @@ form.onsubmit = (e) => {
 }
 
 
-
-
-let cont = 1;
-let save;
+var cont = 1;
+var save;
 
 
 
@@ -27,8 +41,9 @@ sendBtn.onclick = () => {
     xhr.onload = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
+                console.log("enviado")
                 inputField.value = "";
-                // scrollToBottom();
+                scrollToBottom();
             }
         }
     }
@@ -74,19 +89,6 @@ function scrollToBottom() {
 }
 
 
-
-
-// var timeoutID;
-// timeoutID = window.setTimeout(adelante, 5000);
-
-// function clearAlert() {
-//     window.clearTimeout(timeoutID);
-// }
-
-// function countAgain() {
-//     timeoutID = window.setTimeout(adelante, 5000);
-// }
-
 setInterval(() => {
     let xhrScroll = new XMLHttpRequest();
     xhrScroll.open("POST", "keys/get-date-scroll.php", true);
@@ -110,9 +112,8 @@ setInterval(() => {
             }
         }
     }
-    // vamos a mandar el form data atraves de ajax a php
-    let formDataScroll = new FormData(form); //creando el objeto formData
-    xhrScroll.send(formDataScroll);  //enviando el formData a php
+    let formDataScroll = new FormData(form); 
+    xhrScroll.send(formDataScroll);
 }, 500);
 
 

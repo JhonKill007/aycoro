@@ -96,7 +96,7 @@ require("fund/head.php");
                         <input type="hidden" value="" name="time" id="time_mjs">
                         <input type="hidden" value="<?php echo $vista; ?>" name="vista">
                         <input type="hidden" value="<?php echo $credms; ?>" name="createdms">
-                        <input type="text" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
+                        <input type="text" autocomplete="off" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
                         <button><i class="fab fa-telegram-plane"></i></button>
                     </form>
                 </section>
