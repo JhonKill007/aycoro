@@ -18,8 +18,8 @@ if ($opcion == 1 || $opcion == 4) {
 }
 else if ($opcion == 5) {
 
-    $ancho_origin = 720;
-    $alto_origin = 227;
+    $ancho_origin = 1440;
+    $alto_origin = 454;
 }
 
 $img_destino = imagecreatetruecolor($ancho_origin, $alto_origin);
