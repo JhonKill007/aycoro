@@ -1,7 +1,7 @@
 <div class="footer">
     <a href="index"><label>Inicio</label></a>
     <label></label>
-    <a href="modulos/logout.php"><label>Cerrar Session</label></a>
+    <a href="edit-perfil"><label>Ajustes</label></a>
     <label></label>
     <a href="sugerencias"><label>Sugerencias</label></a>
     <label></label>

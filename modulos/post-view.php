@@ -104,7 +104,9 @@
                                     ?>
                                     <span class="fecha"><?php echo $fecha; ?></span>
                                     <br>
-                                    <b class="title-coment active-view-conment<?php echo $id_post; ?>" onclick="ViewComents<?php echo $id_post; ?>()">Ver comentarios</b>
+                                    <div class="conteiner_cant_coments_view<?php echo $id_post; ?>">
+
+                                    </div>
                                 </div>
                                 <div class="coment_add_box conteiner_coment_input<?php echo $id_post; ?>">
 
@@ -173,7 +175,9 @@
 ?>
     <div class="publicacion-text">
         <div class="piecera">
-            <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
+            <div class="estado_lettle">
+                <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p>
+            </div>
             <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
                 <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
                 <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
@@ -223,7 +227,9 @@
                     ?>
                     <span class="fecha"><?php echo $fecha; ?></span>
                     <br>
-                    <b class="title-coment active-view-conment<?php echo $id_post; ?>" onclick="ViewComents<?php echo $id_post; ?>()">Ver comentarios</b>
+                    <div class="conteiner_cant_coments_view<?php echo $id_post; ?>">
+
+                    </div>
                 </div>
                 <div class="coment_add_box conteiner_coment_input<?php echo $id_post; ?>">
 

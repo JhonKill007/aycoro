@@ -1,5 +1,5 @@
 <?php
-$version = "0.7.1 lanch_midle_already";
+$version = "0.7.2 lanch_pack";
 ?>
 
 

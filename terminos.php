@@ -19,7 +19,7 @@ require("fund/head.php");
                 <ul>
                     <li>
                         <!-- logo -->
-                        <a href="login">
+                        <a href="index">
                             <img id="logo" src="img/Logo.png" alt="">
                             <img id="logo2" src="img/Logo2.png" alt="">
                         </a>
@@ -126,6 +126,14 @@ require("fund/head.php");
                 <br>
                 <br>
 
+                <b>Política de cookies</b>
+                <br>
+                ¿Qué son las cookies?
+                Las cookies son pequeños archivos de texto que contienen una cadena de caracteres que se puede colocar en una computadora o un dispositivo móvil, y sirve para identificar de forma exclusiva un navegador o dispositivo. Podemos usar ciertas tecnologías, como las cookies, los píxeles y el almacenamiento local, para proporcionar y proteger productos, servicios y anuncios, así como para comprender su funcionamiento.
+                <br>
+                Usamos las cookies para facilitarte el acceso a la plataforma de una forma mas rapida y eficiente, lo que te ahora tiempo a la hora de iniciar session.
+                <br>
+                <br>
 
                 <b>Resposabilidades de accion en nuestra plataforma</b>
                 <br>

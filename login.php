@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (isset($_SESSION['id'])) {
+    header("Location: index");
+} 
 $tittlePage = "Aycoro - Inicia sesion";
 require("fund/head.php");
 ?>

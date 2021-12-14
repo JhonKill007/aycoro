@@ -4,9 +4,8 @@ $eso = require("keys/conection.php");
 
         $SELECT = "SELECT * FROM registro WHERE id_registro = $id_sus";
         $resultado = mysqli_query($conn,$SELECT);
+        $n_usu = $resultado->num_rows;
         if($resultado){
-            // echo "query 2";
-            // require("modulos/etiquetas.php");
             while($usu = $resultado->fetch_array()){
                 $id_usu = $usu['id_registro'];
                 $nombre_usu = $usu['nombre'];
@@ -18,8 +17,8 @@ $eso = require("keys/conection.php");
 
             }
         }
-        if($resultado = 0){
-            echo "No se han encontrado resultados para tu búsqueda";
+        if($n_usu < 1){
+            header("Location: index");
         }
     }
     else{

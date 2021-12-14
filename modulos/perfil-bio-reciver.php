@@ -52,7 +52,7 @@
                                                     <b>Seguir</b>
                                                 </div>
                                             </div>
-                                            <div><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
+                                            <div class="cant_follow_conteiner"><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
                                         </div>
                                     </div>
                                 <?php
@@ -66,7 +66,7 @@
                                                     <i class="fas fa-user-check"></i>
                                                 </div>
                                             </div>
-                                            <div><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
+                                            <div class="cant_follow_conteiner"><b><?php echo $seguidores . " " . "Seguidores"; ?></b></div>
                                         </div>
                                     </div>
                                 <?php

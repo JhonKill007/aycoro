@@ -34,24 +34,28 @@ require("fund/head.php");
     <?php
     $idmine = $_GET['idmine'];
     $id_sendner = $_GET['usu'];
+
     $eso = require("keys/conection.php");
+
     if ($eso) {
         $UPDATE = "UPDATE chat SET readdate = 1 where id_reciver = '$idmine' AND id_sendner = '$id_sendner' AND readdate = 0";
         $resultadoUP = mysqli_query($conn, $UPDATE);
         if ($resultadoUP) {
-            echo "hecho!!";
         } else {
-            echo "esa mierda no sirve";
         }
     }
-    require("modulos/nav.php");
-    require("modulos/nav-two.php");
-
     $id_sus = $_GET['usu'];
 
     require("keys/usu.php");
+    require("modulos/nav.php");
+    require("modulos/nav-two.php");
+    $idmine = $registro['id_registro'];
+
+
+
     require("modulos/photo_edit.php");
     require("modulos/status-post.php");
+    // echo $n_usu;
     ?>
 
 

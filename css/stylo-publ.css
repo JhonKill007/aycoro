@@ -186,6 +186,19 @@
   margin-bottom: 5px;
 }
 
+.estado_lettle{
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.estado_lettle p{
+  word-wrap: break-word;
+  padding: 8px 1px;
+}
+
+
+
+
 .head_coment_text_box{
   display: flex;
 }
@@ -200,6 +213,7 @@
   width: 100%;
   object-fit: cover;
   object-position: center center;
+  border-radius: 50%;
 }
 
 .name_perfil_coment{
@@ -209,6 +223,11 @@
 .coment_value{
   margin-left: 30px;
   padding: 0;
+}
+
+.coment_value p{
+  word-wrap: break-word;
+  padding: 1px 1px;
 }
 
 .coment_date{
