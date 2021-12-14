@@ -21,7 +21,6 @@ require("modulos/status-post.php");
 
 
                 $word = $_GET['search-box'];
-                // echo $word.$categoria;
 
                 $eso = require("keys/conection.php");
                 if ($eso) {
@@ -29,8 +28,6 @@ require("modulos/status-post.php");
                         $SELECT = "SELECT * FROM registro WHERE nombre LIKE '%$word%' ";
                         $resultado = mysqli_query($conn, $SELECT);
                         if ($resultado) {
-                            // echo "query 2";
-                            // require("modulos/etiquetas.php");
                             while ($usu = $resultado->fetch_array()) {
                                 $id_usu = $usu['id_registro'];
                                 $nombre_usu = $usu['nombre'];

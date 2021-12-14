@@ -25,7 +25,6 @@
 .box-boton {
   width: 30px;
   height: 30px;
-  /* border: 1px solid seagreen; */
   margin: auto;
 }
 
@@ -47,7 +46,6 @@
 
 .in-ag-post {
   width: 310px;
-  /* border: 1px solid black; */
   margin: auto;
 }
 
@@ -68,6 +66,5 @@
 @media (max-width: 414px) {
   .box-create-two {
     width: 200px;
-    /* margin-left: 70px; */
   }
 }

@@ -1,6 +1,5 @@
 .search-perfiles {
   width: 100%;
-  /* border: 1px solid red; */
 }
 
 .nombredisc {
@@ -61,7 +60,6 @@
   margin-top: -29%;
   border-radius: 50%;
   background-color: red;
-  /* position: relative; */
   cursor: pointer;
 }
 
@@ -71,7 +69,6 @@
 }
 
 .border-no-view {
-  /* background: linear-gradient(to bottom right, red, yellow); */
   background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 }
 

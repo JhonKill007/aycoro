@@ -1,7 +1,6 @@
 .conteiner-chat-box {
   width: 90%;
   margin: auto;
-  /* border: 1px solid blue; */
   margin-top: -25px;
 }
 
@@ -20,7 +19,6 @@
   margin: 0 0 0 auto; /* X,Y */
   font-size: inherit; /* Indiferente */
   text-align: center;
-  /* border: 1px solid red; */
 }
 
 .icon-dm:hover {
@@ -30,12 +28,10 @@
 .dm-letter {
   height: 390px;
   overflow: auto;
-  /* border: 1px solid green; */
 }
 
 .dm-writer {
   height: 80px;
-  /* border: 1px solid rgb(190, 0, 0); */
   display: flex;
 }
 
@@ -45,10 +41,7 @@
 
 .message-box {
   width: 600px;
-  /* height: 100px; */
-  /* border: 1px sold rgb(245, 13, 13); */
   background: white;
-  /* margin-left: 10px; */
   margin: auto;
   padding: 10px;
   border-radius: 7px;
@@ -58,10 +51,7 @@
 
 .message-box-mine {
   width: 600px;
-  /* height: 100px; */
-  /* border: 1px sold rgb(245, 13, 13); */
   background: white;
-  /* margin-left: 10px; */
   margin: auto;
   padding: 10px;
   border-radius: 7px;
@@ -90,7 +80,6 @@
   background: #fff;
   width: 100%;
   border-radius: 16px;
-  /* border: 1px solid red; */
 }
 
 .form {

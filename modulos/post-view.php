@@ -5,8 +5,29 @@
         <h2>Publicaciones</h2>
         <!-- posiciones  de prooductos -->
         <?php
+        $publi = 0;
         if ($resultado) {
+            $cant_de_post = $resultado->num_rows;
+            if($cant_de_post == 0 && $identity_page_post == 1){
+                ?>
+                <div class="publicacion inicio_de_cuenta">
+                    <h5>Al parecer eres nuevo en Aycoro</h5>
+                    <h3>Bienvenid@</h3>
+                    <h6>Esperamos que disfrutes compartir con nosotros
+                    <br>
+                    puedes comenzar a seguir a tus amigos buscandolos
+                    <br>
+                    en la barra superior que dice buscar, o viendo personas 
+                    <br>
+                    aleatorias y todas nuestras publicaciones en forma
+                    <br>
+                    desendente en <a href="explorador">explorador.</a></h6>
+                    <h4>Gracias</h4>
+                </div>
+                <?php
+            }
             while ($post = $resultado->fetch_array()) {
+                $publi++;
                 $liker = $_SESSION['id'];
                 $id_post = $post['id_post'];
                 $foto_perfil = $post['foto'];
@@ -16,6 +37,20 @@
                 $estado_post =  $post['estado_post'];
                 $owner_post = $post['owner'];
                 $fecha = $post['hour'] . " " . $post['day'];
+
+                if ($publi == 3) {
+        ?>
+                    <div class="publicacion">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
+                        <!-- publicaciones -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                <?php
+                    $publi = 0;
+                }
 
                 if (!empty($photo_post)) {
                     $SELECT = "SELECT * FROM likes WHERE id_post ='$id_post' and id_liker ='$liker'";
@@ -27,7 +62,9 @@
                     $num_like = $resultado_like2->num_rows;
 
 
-        ?>
+
+
+                ?>
 
                     <div class="publicacion">
                         <div class="pub-img-box">
@@ -288,6 +325,19 @@
 <?php
                 }
             }
+            if ($publi != 3) {
+                ?>
+                            <div class="publicacion">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
+                                <!-- publicaciones -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        <?php
+                            $publi = 0;
+                        }
         } else {
             echo "Ha ocurrido un error!";
         }

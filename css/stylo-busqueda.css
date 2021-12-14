@@ -1,11 +1,9 @@
 .search-perfiles{
-    /* border: 1px solid red; */
     margin-top: 100px;
 }
 
 .search-perfiles h1{
     text-align: center;
-    /* margin: auto; */
 }
 
 
@@ -32,7 +30,6 @@
     width: 150px;
     text-align: center;
     color: black;
-    /* border: 1px solid green; */
 
 }
 
@@ -41,7 +38,6 @@
 }
 
 .display{
-    /* border: 1px solid rgb(15, 228, 228); */
     width: 100%;
     display: grid;
     justify-content: space-around;
@@ -51,7 +47,6 @@
 
 .info-busque{
     width: 230px;
-    /* border: 1px solid rgb(0, 255, 42); */
 
 }
 
@@ -59,7 +54,6 @@
 
 @media (max-width: 1264px) {
     .display{
-        /* grid-auto-columns: 1fr 1fr 1fr 1fr; */
         grid-template-columns: auto auto auto auto;
     }
 }

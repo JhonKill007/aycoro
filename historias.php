@@ -134,7 +134,6 @@ $id_registro = $registro['id_registro'];
 
                                                 $resultado = mysqli_query($conn, $SELECT);
                                                 $cant_history_user = $resultado->num_rows;
-                                                // echo $cant_history_user;
 
                                                 while($h_history = $resultado->fetch_array()){
                                                     array_push($array_cant_history, $contador_history);
@@ -150,7 +149,6 @@ $id_registro = $registro['id_registro'];
 
                                                 $resultado = mysqli_query($conn, $SELECT);
                                                 $cant_history_watch = $resultado->num_rows;
-                                                // echo $cant_history_watch;
                                                 if($cant_history_watch == 0 || $cant_history_user == $cant_history_watch){
                                                     $init = 1;
                                                 }
@@ -161,7 +159,7 @@ $id_registro = $registro['id_registro'];
 
                             ?>
 
-                                                <!-- <a href="dm-discusion?usu=<?php echo $id_usu; ?>"> -->
+                                      
 
                                                 <div class="info-busque-event border-no-view">
                                                     <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">

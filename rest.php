@@ -119,13 +119,6 @@ if ($email_identity != $dato_desncriptado || $date_desencryp < $date_today) {
 
     <script src="js/identity.js"></script>
     <?php
-    // echo $email;
-    // echo $resultadothghg;
-    // echo $dato_desncriptado;
-    // echo $date_desencryp;
-    echo "\r\n";
-    // echo $date_today;
-    // echo $email_identity;
     require("fund/script.php");
     ?>
 </body>

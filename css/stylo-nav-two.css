@@ -1,7 +1,6 @@
 .conteiner-nav-two{
     width: 76%;
     height: 30px;
-    /* border: 1px solid rgb(126, 55, 55); */
     margin: auto;
     top: 60px;
     background-color: white;
@@ -13,14 +12,12 @@
 .nav-two{
     transform: translateY(10px);
     width: 200px;
-    /* border: 1px solid rgb(128, 47, 0); */
     margin: auto;
 
 }
 
 @media(max-width: 2410px){
     .nav-two{
-        /* border: 1px solid rgb(128, 47, 0); */
         transform: translateX(280px);
     
     }
@@ -28,7 +25,6 @@
 
 @media(max-width: 2009px){
     .nav-two{
-        /* border: 1px solid rgb(128, 47, 0); */
         transform: translateX(240px);
     
     }
@@ -36,7 +32,6 @@
 
 @media(max-width: 1748px){
     .nav-two{
-        /* border: 1px solid rgb(128, 47, 0); */
         transform: translateX(210px);
     
     }
@@ -44,7 +39,6 @@
 
 @media(max-width: 1421px){
     .nav-two{
-        /* border: 1px solid rgb(128, 47, 0); */
         transform: translateX(170px);
     
     }
@@ -52,7 +46,6 @@
 
 @media(max-width: 1309px){
     .nav-two{
-        /* border: 1px solid rgb(128, 47, 0); */
         transform: translateX(155px);
     
     }
@@ -60,7 +53,6 @@
 
 @media(max-width: 1245px){
     .nav-two{
-        /* border: 1px solid rgb(128, 47, 0); */
         transform: translateX(150px);
     
     }
@@ -68,7 +60,6 @@
 
 @media(max-width: 1188px){
     .nav-two{
-        /* border: 1px solid rgb(128, 47, 0); */
         transform: translateX(140px);
     
     }

@@ -79,9 +79,6 @@ require("fund/head.php");
                             <a class="icon-dm" href="dm?usu=<?php echo $id_sus; ?>&idmine=<?php echo $id; ?>"><i class="fas fa-comment"></i></a>
                         </div>
                     </header>
-                    <!-- <div class="incog">
-                        <p>Chat incognito</p>
-                    </div> -->
                     <div class="chat-box color-secrete chat-box-secrete">
 
 

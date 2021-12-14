@@ -1,5 +1,5 @@
 <?php
-$version = "0.7.4 golden_pack";
+$version = "1.1.0 FullStar";
 ?>
 
 
@@ -75,4 +75,7 @@ $version = "0.7.4 golden_pack";
   <script>
     let identity_page_post = 0;
   </script>
+  <?php
+  $identity_page_post = 0;
+  ?>
 </head>

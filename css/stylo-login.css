@@ -1,10 +1,8 @@
 .conteiner-login{
-    /* border: 1px solid black; */
     background: red;
     width: 350px;
     margin: auto;
     border-radius: 7px;
-    /* transform: translateY(-25px); */
 }
 .formu-box{
     width: 90%;
@@ -26,4 +24,8 @@
 
 .conteiner-login.hidde{
     display: none;
+}
+
+.button-log{
+    width: 100%;
 }

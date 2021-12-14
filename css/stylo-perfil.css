@@ -1,5 +1,4 @@
 .biograf{
-    /* border: 1px solid red; */
     width: 90%;
     margin: auto;
     height: 400px;
@@ -8,7 +7,6 @@
 .portada{
     width: 100%;
     height: 300px;
-    /* border: 1px solid green; */
 }
 
 .portada img{
@@ -25,7 +23,6 @@
     border-radius: 60%;
     margin-left: 10px;
     margin-top: -200px;
-    /* position: relative; */
 }
 
 .perfil img{
@@ -36,29 +33,21 @@
     object-position: center center;
 }
 
-/* .nombre{ */
-    /* transform: translateY(-190px); */
-    /* margin-left: 220px; */
-    /* position: relative; */
-/* } */
-
 .pen{
     width: 40px;
     height: 40px;
-    margin: 0 0 0 auto; /* X,Y */
-    font-size: inherit; /* Indiferente */
+    margin: 0 0 0 auto; 
+    font-size: inherit; 
     text-align: center;
-    /* border: 1px solid red; */
 }
 
 .pen2{
     width: 40px;
     height: 40px;
-    margin: 0 0 0 auto; /* X,Y */
-    font-size: inherit; /* Indiferente */
+    margin: 0 0 0 auto;
+    font-size: inherit; 
     text-align: center;
     margin-top: -30px;
-    /* border: 1px solid red; */
 }
 
 .biograf i{

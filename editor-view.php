@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_COOKIE["IgtX9000"])){
+if (isset($_COOKIE["IgtX9000"])) {
     $_SESSION['id'] = $_COOKIE["IgtX9000"];
 }
 if (!isset($_SESSION['id'])) {
@@ -43,13 +43,9 @@ if (!isset($_SESSION['id'])) {
         <form action="keys/agregar-post-key.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-9">
-                    <!-- <h3>Demo:</h3> -->
                     <div class="docs-demo">
                         <div class="img-container">
-                            <!-- <img src="C:\Users\Jhon David\Pictures\White and Black\20210626_225002000_iOS.jpg" alt=""> -->
                             <img src="<?php echo $files ?>" alt="">
-                            <!-- <img src="photo_perfil/1-89b1fece92.jpeg" alt=""> -->
-                            <!-- <img src="" alt=""> -->
                         </div>
                     </div>
                 </div>
@@ -69,14 +65,8 @@ if (!isset($_SESSION['id'])) {
             </div>
             <div class="row" id="actions">
                 <div class="col-md-9 docs-buttons">
-                    <!-- <h3>Toolbar:</h3> -->
                     <div class="btn-group">
                         <br>
-                        <!-- <button type="button" class="btn btn-primary" data-method="setDragMode" data-option="crop" title="Crop">
-              <span class="docs-tooltip" data-toggle="tooltip" title="cropper.setDragMode(&quot;crop&quot;)">
-                <span class="fa fa-crop-alt"></span>
-              </span>
-            </button> -->
                     </div>
 
                     <div class="btn-group">
@@ -175,9 +165,7 @@ if (!isset($_SESSION['id'])) {
 
 
 
-                    <!-- Show the cropped image in modal -->
 
-                    <!-- alert para visualizar y descargar foto -->
                     <div class="modal fade docs-cropped" id="getCroppedCanvasModal" role="dialog" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -196,17 +184,14 @@ if (!isset($_SESSION['id'])) {
                         </div>
                     </div>
 
-                </div><!-- /.docs-buttons -->
+                </div>
 
                 <div class="col-md-3 docs-toggles">
                     <div class="dropdown dropup docs-options">
-                        <!-- <button type="button" class="btn btn-primary btn-block dropdown-toggle" id="toggleOptions" data-toggle="dropdown" aria-expanded="true">
-            Toggle Options
-          </button> -->
 
-                    </div><!-- /.dropdown -->
+                    </div>
                 </div>
-        </form><!-- /.docs-toggles -->
+        </form>
     </div>
 
 </body>

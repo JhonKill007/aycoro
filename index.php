@@ -3,7 +3,9 @@ $tittlePage = "Aycoro";
 require("fund/head.php");
 ?>
 
-
+<?php
+$identity_page_post = 1;
+?>
 
 <body>
 
@@ -18,6 +20,8 @@ require("fund/head.php");
     <script>
         identity_page_post = 1;
     </script>
+
+
 
     <div class="box-up-one">
         <div class="plus-post-btn">

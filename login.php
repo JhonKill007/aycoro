@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['id'])) {
     header("Location: index");
-} 
+}
 $tittlePage = "Aycoro - Inicia sesion";
 require("fund/head.php");
 ?>
@@ -57,20 +57,20 @@ require("fund/head.php");
 
                         <!-- email -->
                         <div class="form-group">
-                            <label for="email" class="control-label col-sm-2">
+                            <label for="email" class="control-label">
                                 Email
                             </label>
-                            <div class="col-sm-12">
+                            <div>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su Email" required>
                             </div>
                         </div>
 
                         <!-- password -->
                         <div class="form-group">
-                            <label for="numero" class="control-label col-sm-2">
+                            <label for="numero" class="control-label">
                                 Contraseña
                             </label>
-                            <div class="col-sm-12">
+                            <div>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su Contraseña" required>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ require("fund/head.php");
                         <!-- boton log in -->
                         <div class="form-group">
                             <div class="col-sm-offset">
-                                <button class="btn btn-success col-sm-12 button-log">
+                                <button class="btn btn-success button-log">
                                     Iniciar Sesion
                                 </button>
                             </div>
@@ -92,15 +92,16 @@ require("fund/head.php");
                             <a href="identity"><b>Restablecer Contraseña</b></a>
                         </div>
                         <br>
-
-
-
                     </form>
                 </div>
             </div>
-
-
         </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
+        <!-- login y signup -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="7758489410" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
 

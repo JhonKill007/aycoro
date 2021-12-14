@@ -50,7 +50,7 @@ require("fund/head.php");
                 <form action="" method="POST" class="form-horizontal formulario_identity">
                     <!-- nombre -->
                     <div class="form-group">
-                        
+
 
                         <div class="">
                             <div class=" email-box">
@@ -59,7 +59,7 @@ require("fund/head.php");
                         </div>
                         <br>
 
-                        
+
 
                         <!-- boton sign up -->
                         <div class="btn-box form-group">
@@ -83,7 +83,12 @@ require("fund/head.php");
             </div>
         </div>
 
-
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
+        <!-- login y signup -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="7758489410" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
     </div>
 
