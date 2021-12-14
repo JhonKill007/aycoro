@@ -2,10 +2,10 @@
 
 // localhost
 
-$host = "localhost";
-$dbusername = "root";
-$dbpassword =  "";
-$dbname = "aycoro";
+// $host = "localhost";
+// $dbusername = "root";
+// $dbpassword =  "";
+// $dbname = "aycoro";
 
 // hostserver
 
@@ -26,10 +26,10 @@ $desencriptar = function ($valor) use ($method, $clave, $iv) {
 };
 
 
-// $host = $desencriptar($dato1);
-// $dbusername = $desencriptar($dato2);
-// $dbpassword =  $desencriptar($dato3);
-// $dbname = $desencriptar($dato4);
+$host = $desencriptar($dato1);
+$dbusername = $desencriptar($dato2);
+$dbpassword =  $desencriptar($dato3);
+$dbname = $desencriptar($dato4);
 
 
 $conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
