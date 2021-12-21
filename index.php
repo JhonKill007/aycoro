@@ -22,7 +22,6 @@ $identity_page_post = 1;
     </script>
 
 
-
     <div class="box-up-one">
         <div class="plus-post-btn">
             <div class="plus-post-box">
@@ -51,15 +50,11 @@ $identity_page_post = 1;
             </div>
         </div>
 
-
-
         <?php
         require("modulos/status-post.php");
         require("modulos/footer.php");
         ?>
     </div>
-
-
 
 
     <?php
@@ -76,6 +71,7 @@ $identity_page_post = 1;
     <br>
     <br>
     <br>
+
 
     <?php
     require("fund/script.php");

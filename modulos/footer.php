@@ -9,6 +9,6 @@
     <label></label>
     <a href="terminos"><label>Condiciones</label></a>
     <br>
-    <label>©Aycoro 2021</label>
+    <span>©Aycoro 2021</span>
     <span>Version <?php echo $version; ?></span>
 </div>

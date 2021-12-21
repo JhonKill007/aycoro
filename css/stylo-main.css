@@ -12,6 +12,11 @@
 .footer label{
     color: black;
     cursor: pointer;
+    font-size: 13px;
+}
+
+.footer span{
+    font-size: 13px;
 }
 
 .contein-editor{

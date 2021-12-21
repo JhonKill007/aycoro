@@ -22,14 +22,15 @@ if ($opcion == 1) {
 
 
     $base64 = $_POST["foto"];
-    $path = $_POST["extencion"];
+    // $path = $_POST["extencion"];
 
     $lognstring = substr(md5(microtime()), 1, $longpas);
     $new_name = $id_registro . '-' . $lognstring;
 
 
     // $extencion = pathinfo($path, PATHINFO_EXTENSION);
-    $extencion = "jpg";
+    // $extencion = "jpg";
+    $extencion = "png";
     $apply_name = $new_name . '.' . $extencion;
 
 
@@ -44,7 +45,7 @@ if ($opcion == 1) {
 } else if ($opcion == 2) {
 
     $base64 = $_POST["foto"];
-    $path = $_POST["extencion"];
+    // $path = $_POST["extencion"];
 
     // echo $base64;
 
@@ -53,7 +54,8 @@ if ($opcion == 1) {
 
 
     // $extencion = pathinfo($path, PATHINFO_EXTENSION);
-    $extencion = "jpg";
+    // $extencion = "jpg";
+    $extencion = "png";
     // echo $extencion;
     $apply_name = $new_name . '.' . $extencion;
 
@@ -78,7 +80,8 @@ if ($opcion == 1) {
 
 
     // $extencion = pathinfo($path, PATHINFO_EXTENSION);
-    $extencion = "jpg";
+    // $extencion = "jpg";
+    $extencion = "png";
     $apply_name = $new_name . '.' . $extencion;
 
 
@@ -98,7 +101,8 @@ if ($opcion == 1) {
 
 
     // $extencion = pathinfo($path, PATHINFO_EXTENSION);
-    $extencion = "jpg";
+    // $extencion = "jpg";
+    $extencion = "png";
     $apply_name = $new_name . '.' . $extencion;
 
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $base64));

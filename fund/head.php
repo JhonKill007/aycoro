@@ -1,5 +1,5 @@
 <?php
-$version = "1.1.0 FullStar";
+$version = "1.2.1 FullStar";
 ?>
 
 
@@ -67,10 +67,6 @@ $version = "1.1.0 FullStar";
 
   <!-- icoon de carga -->
   <link rel="stylesheet" href="css/stylo-charger.css?<?php echo $version; ?>">
-
-  <!-- css del editor de fotos -->
-  <link rel="stylesheet" href="css/cropper.css?<?php echo $version; ?>">
-  <link rel="stylesheet" href="css/main.css?<?php echo $version; ?>">
 
   <script>
     let identity_page_post = 0;

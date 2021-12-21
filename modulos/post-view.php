@@ -8,20 +8,21 @@
         $publi = 0;
         if ($resultado) {
             $cant_de_post = $resultado->num_rows;
-            if($cant_de_post == 0 && $identity_page_post == 1){
-                ?>
+            if ($cant_de_post == 0 && $identity_page_post == 1) {
+        ?>
                 <div class="publicacion inicio_de_cuenta">
                     <h5>Al parecer eres nuevo en Aycoro</h5>
                     <h3>Bienvenid@</h3>
                     <h6>Esperamos que disfrutes compartir con nosotros
-                    <br>
-                    puedes comenzar a seguir a tus amigos buscandolos
-                    <br>
-                    en la barra superior que dice buscar, o viendo personas 
-                    <br>
-                    aleatorias y todas nuestras publicaciones en forma
-                    <br>
-                    desendente en <a href="explorador">explorador.</a></h6>
+                        <br>
+                        puedes comenzar a seguir a tus amigos buscandolos
+                        <br>
+                        en la barra superior que dice buscar, o viendo personas
+                        <br>
+                        aleatorias y todas nuestras publicaciones en forma
+                        <br>
+                        desendente en <a href="explorador">explorador.</a>
+                    </h6>
                     <h4>Gracias</h4>
                 </div>
                 <?php
@@ -39,15 +40,15 @@
                 $fecha = $post['hour'] . " " . $post['day'];
 
                 if ($publi == 3) {
-        ?>
-                    <div class="publicacion">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
-                        <!-- publicaciones -->
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                ?>
+                    <!-- <div class="publicacion"> -->
+                    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script> -->
+                    <!-- publicaciones -->
+                    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                    </div>
+                    </div> -->
                 <?php
                     $publi = 0;
                 }
@@ -246,6 +247,21 @@
                     }
                 ?>
                 <br>
+                <?php
+                    if ($owner_post == $_SESSION['id']) {
+                ?>
+
+                    <div class="post_setting">
+                        <div class="box_setting<?php echo $id_post; ?>">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="options-edit-post<?php echo $id_post; ?> options-edit-post_space">
+
+                    </div>
+                <?php
+                    }
+                ?>
                 <div class="name_and_date_post">
                     <?php
                     if ($owner_post == $_SESSION['id']) {
@@ -326,18 +342,18 @@
                 }
             }
             if ($publi != 3) {
-                ?>
-                            <div class="publicacion">
-                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
-                                <!-- publicaciones -->
-                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
+?>
+<!-- <div class="publicacion"> -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script> -->
+<!-- publicaciones -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
-                            </div>
-                        <?php
-                            $publi = 0;
-                        }
+                            </div> -->
+<?php
+                $publi = 0;
+            }
         } else {
             echo "Ha ocurrido un error!";
         }
