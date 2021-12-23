@@ -1,13 +1,15 @@
 <script>
     const conteiner_view_cant_coment<?php echo $id_post; ?> = document.querySelector(".conteiner_cant_coments_view<?php echo $id_post; ?>");
-    setInterval(() => {
+    var comentariosInitLoad = ViewComentCant<?php echo $id_post; ?>();
+
+    function ViewComentCant<?php echo $id_post; ?>() {
         let xhrts_view_cant_coment<?php echo $id_post; ?> = new XMLHttpRequest();
         xhrts_view_cant_coment<?php echo $id_post; ?>.open("POST", "keys/cant_of_coment-key.php", true);
         xhrts_view_cant_coment<?php echo $id_post; ?>.onload = () => {
             if (xhrts_view_cant_coment<?php echo $id_post; ?>.readyState === XMLHttpRequest.DONE) {
                 if (xhrts_view_cant_coment<?php echo $id_post; ?>.status === 200) {
                     let data_view_cant_coment<?php echo $id_post; ?> = xhrts_view_cant_coment<?php echo $id_post; ?>.response;
-                    if(data_view_cant_coment<?php echo $id_post; ?> != ""){
+                    if (data_view_cant_coment<?php echo $id_post; ?> != "") {
                         conteiner_view_cant_coment<?php echo $id_post; ?>.innerHTML = data_view_cant_coment<?php echo $id_post; ?>;
                     }
 
@@ -16,7 +18,7 @@
         }
         let formDatats_view_cant_coment<?php echo $id_post; ?> = new FormData(formu<?php echo $id_post; ?>);
         xhrts_view_cant_coment<?php echo $id_post; ?>.send(formDatats_view_cant_coment<?php echo $id_post; ?>);
-    }, 500);
+    }
 
 
 

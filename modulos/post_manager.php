@@ -157,6 +157,7 @@ if ($owner_post == $_SESSION['id']) {
                     
                     if(data_add_coment<?php echo $id_post; ?> == "successfull"){
                         document.getElementById("coment_value<?php echo $id_post; ?>").value = "";
+                        ViewComentCant<?php echo $id_post; ?>();
                     }
 
                 }

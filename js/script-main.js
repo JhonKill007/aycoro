@@ -1,14 +1,55 @@
 
+
+var bar_mjs_nav = 1;
+var varstopIntervalMjs;
+
+const chatListaNav = document.querySelector(".chat-list-nav");
+
+
+function StopFunctionIntervalMjs() {
+    clearInterval(varstopIntervalMjs);
+}
+
 document.querySelector('.message-btn').addEventListener('click', () => {
     document.querySelector(".bar-menu-rigth").classList.toggle("show")
-    // console.log("hola");
-})
+    if (bar_mjs_nav == 1) {
+        bar_mjs_nav = 2;
+        
+        varstopIntervalMjs = setInterval(MsjBarRigthNav, 1000);
 
+    }
+    else {
+        StopFunctionIntervalMjs();
+        bar_mjs_nav = 1;
+    }
+
+
+
+})
 
 document.querySelector('.menu-btn').addEventListener('click', () => {
     document.querySelector(".bar-menu").classList.toggle("showed")
-    // console.log("hola");
 })
+
+
+
+function MsjBarRigthNav() {
+    let xhrz = new XMLHttpRequest();
+    xhrz.open("GET", "keys/message-nav-key.php", true);
+    xhrz.onload = () => {
+        if (xhrz.readyState === XMLHttpRequest.DONE) {
+            if (xhrz.status === 200) {
+                let datanav = xhrz.response;
+                chatListaNav.innerHTML = datanav;
+            }
+        }
+    }
+    xhrz.send();
+}
+
+
+
+
 
 // button search responsive
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_COOKIE["IgtX9000"])){
+if (isset($_COOKIE["IgtX9000"])) {
     $_SESSION['id'] = $_COOKIE["IgtX9000"];
 }
 if (!isset($_SESSION['id'])) {
@@ -31,22 +31,6 @@ if (!isset($_SESSION['id'])) {
                 <li><a href="sugerencias" title="Sugerencias">Sugerencias</a></li>
                 <li><a href="ayuda" title="Ayuda">Ayuda</a></li>
                 <li><a href="modulos/logout.php" title="Cerrar Sesion">Cerrar Sesion</a></li>
-                <script>
-                    const MonViewone = document.querySelector(".num-message-bar");
-                    setInterval(() => {
-                        let xhrzone = new XMLHttpRequest();
-                        xhrzone.open("GET", "keys/num-onview-key.php", true);
-                        xhrzone.onload = () => {
-                            if (xhrzone.readyState === XMLHttpRequest.DONE) {
-                                if (xhrzone.status === 200) {
-                                    let datoviewone = xhrzone.response;
-                                    MonViewone.innerHTML = datoviewone;
-                                }
-                            }
-                        }
-                        xhrzone.send();
-                    }, 500);
-                </script>
                 <div>
                     <br>
                     <br>
@@ -128,22 +112,6 @@ if (!isset($_SESSION['id'])) {
                         <div class="cicule-mjs">
                             <span class="num-message" for="icon-logo"></span>
                         </div>
-                        <script>
-                            const MonView = document.querySelector(".num-message");
-                            setInterval(() => {
-                                let xhrz = new XMLHttpRequest();
-                                xhrz.open("GET", "keys/num-onview-key.php", true);
-                                xhrz.onload = () => {
-                                    if (xhrz.readyState === XMLHttpRequest.DONE) {
-                                        if (xhrz.status === 200) {
-                                            let datoview = xhrz.response;
-                                            MonView.innerHTML = datoview;
-                                        }
-                                    }
-                                }
-                                xhrz.send();
-                            }, 500);
-                        </script>
                     </li>
                     <li class="icon-out">
                         <a href="modulos/logout.php">
@@ -174,18 +142,22 @@ if (!isset($_SESSION['id'])) {
         </div>
         <script>
             const MonViewTwo = document.querySelector(".num-message-bar-Two");
+            const MonView = document.querySelector(".num-message");
+            const MonViewone = document.querySelector(".num-message-bar");
             setInterval(() => {
-                let xhrzTwo = new XMLHttpRequest();
-                xhrzTwo.open("GET", "keys/num-onview-key.php", true);
-                xhrzTwo.onload = () => {
-                    if (xhrzTwo.readyState === XMLHttpRequest.DONE) {
-                        if (xhrzTwo.status === 200) {
-                            let datoviewTwo = xhrzTwo.response;
-                            MonViewTwo.innerHTML = datoviewTwo;
+                let xhrz = new XMLHttpRequest();
+                xhrz.open("GET", "keys/num-onview-key.php", true);
+                xhrz.onload = () => {
+                    if (xhrz.readyState === XMLHttpRequest.DONE) {
+                        if (xhrz.status === 200) {
+                            let datoview = xhrz.response;
+                            MonView.innerHTML = datoview;
+                            MonViewTwo.innerHTML = datoview;
+                            MonViewone.innerHTML = datoview;
                         }
                     }
                 }
-                xhrzTwo.send();
+                xhrz.send();
             }, 500);
         </script>
 
@@ -199,27 +171,6 @@ if (!isset($_SESSION['id'])) {
                 <div class="chat-list-nav">
 
                 </div>
-
-                <script>
-                    const chatListaNav = document.querySelector(".chat-list-nav");
-                    setInterval(() => {
-                        let xhrz = new XMLHttpRequest();
-                        xhrz.open("GET", "keys/message-nav-key.php", true);
-                        xhrz.onload = () => {
-                            if (xhrz.readyState === XMLHttpRequest.DONE) {
-                                if (xhrz.status === 200) {
-                                    let datanav = xhrz.response;
-                                    chatListaNav.innerHTML = datanav;
-                                }
-                            }
-                        }
-                        xhrz.send();
-                    }, 500);
-                </script>
-
-
-
-
 
 
             </ul>
@@ -245,7 +196,7 @@ if (!isset($_SESSION['id'])) {
 
         </div>
     </div>
-    
+
 <?php
 }
 ?>
