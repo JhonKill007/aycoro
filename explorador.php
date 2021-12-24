@@ -80,7 +80,10 @@ require("fund/head.php");
 
 
 
-
+    <br>
+    <br>
+    <br>
+    <br>
 
     <?php
     require("models/explorer_post_model.php");

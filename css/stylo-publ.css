@@ -7,8 +7,8 @@
 
 
 .pub-img-box {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   margin: auto;
 }
 
@@ -17,14 +17,14 @@
 }
 
 .pub-img-box img {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
 }
 
 .piecera {
-  width: 400px;
+  width: 500px;
   margin: auto;
 }
 
@@ -248,17 +248,11 @@
     width: 400px;
   }
   .pub-img-box {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
-
-  .pub-img-box img {
-    width: 300px;
-    height: 300px;
-  }
-
   .piecera {
-    width: 300px;
+    width: 400px;
   }
   .publicacion-text {
     width: 400px;
@@ -266,22 +260,6 @@
 }
 
 @media (max-width: 500px) {
-  .publicacion {
-    width: 400px;
-  }
-  .pub-img-box {
-    width: 300px;
-    height: 300px;
-  }
-
-  .pub-img-box img {
-    width: 300px;
-    height: 300px;
-  }
-
-  .piecera {
-    width: 300px;
-  }
   .publicacion-text {
     width: 400px;
   }
@@ -293,17 +271,12 @@
     width: 300px;
   }
   .pub-img-box {
-    width: 200px;
-    height: 200px;
-  }
-
-  .pub-img-box img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
   }
 
   .piecera {
-    width: 200px;
+    width: 300px;
   }
   .publicacion-text {
     width: 300px;

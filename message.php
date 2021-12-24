@@ -6,9 +6,7 @@ require("fund/head.php");
 <style>
     @media (max-width: 1120px) {
 
-        .conteiner-messaje {
-            margin-top: -100px;
-        }
+        
 
         .barra-inicio-new {
             height: 140px;

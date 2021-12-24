@@ -461,9 +461,6 @@ form .name-details .field:last-child {
   .chat-box {
     height: 1040px;
   }
-  .conteiner-chat-box {
-    margin-top: -130px;
-  }
 }
 
 @media (max-width: 769px) {

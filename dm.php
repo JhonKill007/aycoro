@@ -5,28 +5,6 @@ require("fund/head.php");
 
 
 ?>
-<style>
-    @media (max-width: 1120px) {
-        .barra-inicio-new {
-            height: 140px;
-        }
-
-        .nav-main {
-            height: 140px;
-        }
-
-        .container-one {
-            margin-top: -40px;
-            height: 140px;
-        }
-    }
-
-    @media (max-width: 414px) {
-        .conteiner {
-            width: 100%;
-        }
-    }
-</style>
 
 
 <body>
@@ -60,7 +38,6 @@ require("fund/head.php");
 
 
     <div class="conteiner">
-
         <div class="conteiner-chat-box">
             <div class="wrapper">
                 <section class="chat-area">

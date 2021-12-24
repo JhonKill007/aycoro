@@ -10,13 +10,13 @@ require("fund/head.php");
 
 <style>
     .container-scroll {
-        margin-top: -70px;
+        margin-top: -90px;
     }
 
     @media (max-width: 1120px) {
 
         .container-scroll {
-            margin-top: -220px;
+            margin-top: -140px;
         }
     }
 </style>
