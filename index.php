@@ -55,8 +55,7 @@ $identity_page_post = 1;
         require("modulos/footer.php");
         ?>
     </div>
-
-
+    
     <?php
     require("models/index_post_model.php");
     require("modulos/post-view.php");

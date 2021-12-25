@@ -1,6 +1,6 @@
-<script src="js/script-main.js"></script>
-<script src="js/edit-view.js"></script>
-<script src="js/scroll.js"></script>
+<script src="js/script-main.js?<?php echo $version; ?>"></script>
+<script src="js/edit-view.js?<?php echo $version; ?>"></script>
+<script src="js/scroll.js?<?php echo $version; ?>"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

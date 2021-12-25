@@ -1,5 +1,5 @@
 <?php
-$version = "1.2.4 FullStar";
+$version = "1.2.5 FullStar";
 ?>
 
 
@@ -12,6 +12,12 @@ $version = "1.2.4 FullStar";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $tittlePage; ?></title>
 
+  <!-- meta etiquetas -->
+  <meta name="description" content="La primera red social Dominicana. Crea una cuenta o inicia sesión en Aycoro y conéctate con amigos, familiares y otras personas que quieras conocer ademas comparte fotos, envía mensajes a quien quieras.">
+  <meta name="keywords" content="aycoro, red socia, social network, app, aplicacion, chat">
+
+
+  <!-- icono -->
   <link rel="icon" type="imagen/png" href="img/Icon.jpg">
 
   <!-- font awesome -->
