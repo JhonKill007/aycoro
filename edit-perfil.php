@@ -32,6 +32,10 @@ require("fund/head.php");
                     <b for="">Apellido</b>
                     <input class="form-control" type="text" name="apellido_edit" id="" value=<?php echo $registro['apellido']; ?> maxlength="30">
 
+                    <b for="">Usuario</b>
+                    <a href="change-user"><span>editar</span></a>
+                    <input class="form-control" type="text" disabled value=<?php echo $registro['usuario']; ?> maxlength="30">
+                    
                     <b for="">Presentacion</b>
                     <textarea class="form-control" name="presentacion_edit" id="" cols="23" rows="3" maxlength="90" required><?php echo $registro['presentacion']; ?></textarea>
                     <p>Maximo 90 Caracteres</p>

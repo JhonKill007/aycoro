@@ -28,7 +28,7 @@ require("fund/head.php");
                 $eso = require("keys/conection.php");
                 if ($eso) {
                     if (!empty($word)) {
-                        $SELECT = "SELECT * FROM registro WHERE (nombre LIKE '%$word%') OR (apellido LIKE '%$word%')  OR (nom_comp LIKE '%$word%')";
+                        $SELECT = "SELECT * FROM registro WHERE (nombre LIKE '%$word%') OR (apellido LIKE '%$word%')  OR (nom_comp LIKE '%$word%') OR (usuario LIKE '%$word%')";
                         $resultado = mysqli_query($conn, $SELECT);
                         if ($resultado) {
                             // echo "query 2";

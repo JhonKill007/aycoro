@@ -9,7 +9,7 @@
         <div class="nombre">
 
             <h1><?php echo $nombre_usu . " " . $apellido_sus; ?></h1>
-
+            <a href=""><b><?php echo $usuario_sus; ?></b></a>
 
             <div class="messege-icon">
                 <div class="icon_messages_perfil">

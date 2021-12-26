@@ -2,10 +2,9 @@
 $eso = require("conection.php");
 if ($opcion == 1 || $opcion == 3) {
     if ($eso) {
-        $INSERT = "INSERT INTO post (photo_post,estado_post,owner,day,hour,date_post)values('$ruta_send','$estado','$id_registro','$fecha','$hora',NOW())";
+        $INSERT = "INSERT INTO post (photo_post,estado_post,owner,day,hour,date_post,status)values('$ruta_send','$estado','$id_registro','$fecha','$hora',NOW(),'Active')";
         $resultado = mysqli_query($conn, $INSERT);
         if ($resultado) {
-            // echo "posteado";
             header("Location: ../index");
         } else {
             echo "<script>
@@ -50,7 +49,6 @@ if ($opcion == 1 || $opcion == 3) {
         $UPDATE = "UPDATE registro SET foto='$ruta_send' Where id_registro='$id_registro'";
         $resultado = mysqli_query($conn, $UPDATE);
         if ($resultado) {
-            // echo"todo correcto";
             header("Location: ../perfil");
         } else {
             echo "Ha ocurrido un error!";
@@ -63,7 +61,6 @@ if ($opcion == 1 || $opcion == 3) {
         $UPDATE = "UPDATE registro SET portada ='$ruta_send' Where id_registro='$id_registro'";
         $resultado = mysqli_query($conn, $UPDATE);
         if ($resultado) {
-            // echo"todo correcto";
             header("Location: ../perfil");
         } else {
             echo "Ha ocurrido un error!";

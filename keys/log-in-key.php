@@ -9,7 +9,7 @@ if (!empty($email) || !empty($password)) {
 
     $eso =  require('conection.php');
     if ($eso) {
-        $SELECT = "SELECT * from registro where email='$email'";
+        $SELECT = "SELECT * from registro where email='$email' OR usuario ='$email' OR numero ='$email'";
         $resultado = mysqli_query($conn, $SELECT);
 
         if ($resultado->num_rows == 1) {
@@ -32,7 +32,7 @@ if (!empty($email) || !empty($password)) {
                 $datalog .= "<div class='error-txt  error'>La Contraseña es Incorrecta</div>";
             }
         } else {
-            $datalog .= "<div class='error-txt  error'>El Email es Incorrecto</div>";
+            $datalog .= "<div class='error-txt  error'>El Usuario o Email es Incorrecto</div>";
         }
     } else {
         $datalog .= "<div class='error-txt  error'>Fallo la coneccion</div>";

@@ -10,6 +10,7 @@ $eso = require("keys/conection.php");
                 $id_usu = $usu['id_registro'];
                 $nombre_usu = $usu['nombre'];
                 $apellido_sus = $usu['apellido'];
+                $usuario_sus = $usu['usuario'];
                 $presentacion_sus = $usu['presentacion'];
                 $foto_sus = $usu['foto'];
                 $portada_sus = $usu['portada'];

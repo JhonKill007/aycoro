@@ -14,6 +14,7 @@ if(!empty($id)){
             $nombre = $registro['nombre'];
             $apellido = $registro['apellido'];
             $numero = $registro['numero'];
+            $usuario = $registro['usuario'];
             $email = $registro['email'];
             $password = $registro['password'];
             $birthday = $registro['birthday'];

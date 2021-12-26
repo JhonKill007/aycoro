@@ -156,10 +156,10 @@ require("fund/head.php");
                         <!-- email -->
                         <div class="form-group">
                             <label for="email" class="control-label">
-                                Email
+                                Usuario
                             </label>
                             <div>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su Email" required>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Teléfono, usuario o correo electrónico" required>
                             </div>
                         </div>
 
