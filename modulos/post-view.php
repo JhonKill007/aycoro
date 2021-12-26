@@ -12,8 +12,19 @@
         ?>
                 <div class="publicacion inicio_de_cuenta">
                     <h5>Al parecer eres nuevo en Aycoro</h5>
-                    <h3>Bienvenid@</h3>
-                    <h6>Esperamos que disfrutes compartir con nosotros
+                    <?php
+                    if ($registro['genero'] == 'm') {
+                    ?>
+                        <h3>Bienvenido <?php echo $registro['nombre']; ?></h3>
+                    <?php
+                    }
+                    else{
+                        ?>
+                        <h3>Bienvenida <?php echo $registro['nombre']; ?></h3>
+                    <?php
+                    }
+                    ?>
+                    <h6>Esperamos que disfrutes compartir con nosotros,
                         <br>
                         puedes comenzar a seguir a tus amigos buscandolos
                         <br>
@@ -22,8 +33,10 @@
                         aleatorias y todas nuestras publicaciones en forma
                         <br>
                         desendente en <a href="explorador">explorador.</a>
+                        <br>
+                        Tambien puedes ver y subir historias diarias en <a href="historias">historias.</a>
                     </h6>
-                    <h4>Gracias</h4>
+                    <h4>Gracias!</h4>
                 </div>
                 <?php
             }

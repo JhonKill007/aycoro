@@ -1,5 +1,5 @@
 <?php
-$version = "1.2.5 FullStar";
+$version = "1.2.7 FullStar";
 ?>
 
 
@@ -13,8 +13,9 @@ $version = "1.2.5 FullStar";
   <title><?php echo $tittlePage; ?></title>
 
   <!-- meta etiquetas -->
-  <meta name="description" content="La primera red social Dominicana. Crea una cuenta o inicia sesión en Aycoro y conéctate con amigos, familiares y otras personas que quieras conocer ademas comparte fotos, envía mensajes a quien quieras.">
-  <meta name="keywords" content="aycoro, red socia, social network, app, aplicacion, chat">
+  <meta name="description" content="La primera red social Dominicana. Crea una cuenta o inicia sesión en Aycoro y conéctate con amigos, familiares y otras personas que quieras conocer ademas comparte fotos y envía mensajes a quien quieras.">
+  <meta name="keywords" content="aycoro, red social, social network, app, aplicacion, chat">
+  <!-- <meta name="robots" content="noimageindex, noarchive"> -->
 
 
   <!-- icono -->

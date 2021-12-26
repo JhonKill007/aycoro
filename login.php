@@ -111,7 +111,7 @@ require("fund/head.php");
         <br>
         <!-- <br> -->
         <div class="conteiner-login">
-            <h5 id="tittle">Cuenta regresiba lanzaminto Aycoro.com</h5>
+            <h5 id="tittle">Cuenta regresiva lanzamiento Aycoro.com</h5>
             <div class="formu-box">
                 <div class="con-box">
                     <div class="timer_conteiner">
