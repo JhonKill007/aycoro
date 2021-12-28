@@ -101,6 +101,10 @@ document.getElementById("time6").value = time;
 //     })
 // };
 
+function send_form() {
+    document.all["form_files"].submit();
+}
+
 
 function quitCloseWindow() { // Called when a user clicks on the close button.
     Swal.fire({

@@ -1,5 +1,5 @@
 <?php
-$version = "1.2.8 FullStar";
+$version = "1.2.9 FullStar";
 ?>
 
 
@@ -72,8 +72,24 @@ $version = "1.2.8 FullStar";
   <!-- style de vista de historias -->
   <link rel="stylesheet" href="css/stylo-view-historys.css?<?php echo $version; ?>">
 
+  <!-- style de editor de fotos -->
+  <link rel="stylesheet" href="css/stylo-editor.css?<?php echo $version; ?>">
+
   <!-- icoon de carga -->
   <link rel="stylesheet" href="css/stylo-charger.css?<?php echo $version; ?>">
+  
+
+
+
+
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
+  <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet" />
+  <script src="https://unpkg.com/dropzone"></script>
+  <script src="https://unpkg.com/cropperjs"></script>
 
   <script>
     let identity_page_post = 0;

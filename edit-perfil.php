@@ -10,7 +10,6 @@ require("fund/head.php");
     <?php
     require("modulos/nav.php");
     require("modulos/nav-two.php");
-    require("modulos/photo_edit.php");
     require("modulos/status-post.php");
     ?>
 
@@ -51,6 +50,7 @@ require("fund/head.php");
                 </div>
             </form>
             <a href="perfil"><button class="btn btn-danger botones-edit">Cancelar</button></a>
+            <a href="terminos">Terminos y condiciones de uso.</a>
         </div>
     </div>
 

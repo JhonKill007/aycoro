@@ -3,7 +3,6 @@ $tittlePage = "Aycoro - Historias";
 require("fund/head.php");
 require("modulos/nav.php");
 require("modulos/nav-two.php");
-require("modulos/photo_edit.php");
 require("modulos/status-post.php");
 
 

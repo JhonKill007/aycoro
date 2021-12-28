@@ -8,6 +8,18 @@ require("fund/head.php");
 
 
 <body>
+    <style>
+        @media (max-width: 414px) {
+            .container-one {
+                display: none;
+            }
+
+            .conteiner {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
 
     <?php
     $idmine = $_GET['idmine'];
@@ -27,13 +39,8 @@ require("fund/head.php");
     require("keys/usu.php");
     require("modulos/nav.php");
     require("modulos/nav-two.php");
-    $idmine = $registro['id_registro'];
-
-
-
-    require("modulos/photo_edit.php");
+    $idmine = $registro['id_registro'];  
     require("modulos/status-post.php");
-    // echo $n_usu;
     ?>
 
 

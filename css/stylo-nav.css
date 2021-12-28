@@ -350,7 +350,7 @@
   }
   #logo2 {
     display: block;
-    height: 150px;
+    width: 100px;
     margin-top: 110px;
   }
   #logo2:hover {
@@ -376,28 +376,18 @@
 }
 
 @media (max-width: 618px) {
-  #logo2 {
-    margin-left: -20px;
-  }
   .nav-main ul {
     justify-content: space-around;
   }
 }
 
 @media (max-width: 564px) {
-  #logo2 {
-    margin-left: -40px;
-  }
   .nav-main ul {
     justify-content: space-around;
   }
 }
 
 @media (max-width: 545px) {
-  #logo2 {
-    height: 120px;
-    margin-left: -60px;
-  }
   .search input {
     width: 150px;
   }
@@ -410,9 +400,6 @@
 }
 
 @media (max-width: 486px) {
-  #logo2 {
-    margin-left: 0px;
-  }
   .search {
     margin-left: -50px;
   }
@@ -422,9 +409,6 @@
 }
 
 @media (max-width: 389px) {
-  #logo2 {
-    margin-left: -10px;
-  }
   .search input {
     width: 130px;
   }
@@ -437,9 +421,6 @@
 }
 
 @media (max-width: 363px) {
-  #logo2 {
-    margin-left: -20px;
-  }
   .search {
     margin-left: -60px;
   }
@@ -449,10 +430,6 @@
 }
 
 @media (max-width: 323px) {
-  #logo2 {
-    height: 100px;
-    margin-left: -5px;
-  }
   .search {
     margin-left: -60px;
   }

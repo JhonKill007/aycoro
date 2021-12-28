@@ -7,9 +7,213 @@ if (!isset($_SESSION['id'])) {
     header("Location: login");
 } else {
     require('keys/identification.php');
-
-    // 
 ?>
+
+
+    <script>
+        var option = 0;
+
+        function post() {
+            option = 1;
+            // console.log(option);
+
+        }
+
+        function history() {
+            option = 2;
+            // console.log(option);
+
+        }
+        $(document).ready(function() {
+
+            var $modal = $('#modal');
+            var container = document.querySelector('.img-container');
+            var butoninput = document.querySelector('.image');
+            var image = container.getElementsByTagName('img').item(0);
+            var inputpost = document.getElementById('inputpost');
+            var inputhistory = document.getElementById('inputhistory');
+            var inputpost_nav = document.getElementById('inputpost_nav');
+            var inputhistory_nav = document.getElementById('inputhistory_nav');
+
+            var cropper;
+
+            inputpost_nav.onchange = function() {
+                console.log(option);
+                var files = event.target.files;
+
+                var done = function(url) {
+                    image.src = url;
+                    $modal.modal('show');
+                    console.log("mostrar")
+                };
+
+                if (files && files.length > 0) {
+                    reader = new FileReader();
+                    reader.onload = function(event) {
+                        done(reader.result);
+                    };
+                    reader.readAsDataURL(files[0]);
+                }
+            }
+
+            inputhistory_nav.onchange = function() {
+                console.log(option);
+                var files = event.target.files;
+
+                var done = function(url) {
+                    image.src = url;
+                    $modal.modal('show');
+                    console.log("mostrar")
+                };
+
+                if (files && files.length > 0) {
+                    reader = new FileReader();
+                    reader.onload = function(event) {
+                        done(reader.result);
+                    };
+                    reader.readAsDataURL(files[0]);
+                }
+            }
+
+            $modal.on('shown.bs.modal', function() {
+                if (option == 1 || option == 4) {
+                    cropper = new Cropper(image, {
+                        aspectRatio: 1,
+                        viewMode: 3,
+                        preview: '.preview'
+                    });
+                    if (option == 1) {
+                        document.querySelector(".text_input_post").classList.toggle("show")
+                    }
+                } else if (option == 2) {
+                    cropper = new Cropper(image, {
+                        aspectRatio: 3 / 5,
+                        viewMode: 3,
+                        preview: '.preview'
+                    });
+                } else if (option == 5) {
+                    cropper = new Cropper(image, {
+                        aspectRatio: 19 / 6,
+                        viewMode: 3,
+                        preview: '.preview'
+                    });
+                }
+            }).on('hidden.bs.modal', function() {
+                cropper.destroy();
+                cropper = null;
+                inputpost_nav.value = null;
+                inputhistory_nav.value = null;
+                if (option == 1) {
+                    document.querySelector(".text_input_post").classList.toggle("show");
+                }
+
+            });
+
+            $('#crop').click(function() {
+
+                if (option == 1 || option == 4) {
+                    canvas = cropper.getCroppedCanvas({
+                        width: 750,
+                        height: 750
+                    });
+                } else if (option == 2) {
+                    canvas = cropper.getCroppedCanvas({
+                        width: 647,
+                        height: 1080
+                    });
+                } else if (option == 5) {
+                    canvas = cropper.getCroppedCanvas({
+                        width: 1440,
+                        height: 454
+                    });
+                }
+
+                canvas.toBlob(function(blob) {
+                    url = URL.createObjectURL(blob);
+                    var reader = new FileReader();
+                    reader.readAsDataURL(blob);
+                    reader.onloadend = function() {
+                        var base64data = reader.result;
+                        document.getElementById("base64_ui").value = base64data;
+                        document.getElementById("option_view_opt").value = option;
+                        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                        document.getElementById("time_view_opt").value = timezone;
+                        send_form();
+                    };
+                });
+            });
+
+        });
+    </script>
+
+
+    <!-- <div class="container" align="center">
+        <br />
+        <h3 align="center">Crop Image Before Upload using CropperJS with PHP</h3>
+        <br />
+        <div class="row">
+            <div class="col-md-4">&nbsp;</div>
+            <div class="col-md-4">
+                <div class="image_area">
+                    <form method="post">
+                        <label for="upload_image">
+                            <img src="upload/user.png" id="uploaded_image" class="img-responsive img-circle" />
+                            <div class="overlay">
+                                <div class="text">Click to Change Profile Image</div>
+                            </div>
+                            <input type="file" name="image" class="image" id="upload_image" style="display:none" />
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <div class="container" align="center">
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="img-container">
+                            <div class="row">
+                                <div class="col-md-8 visor">
+                                    <div class="img_conteiner">
+                                        <img src="<?php echo $files ?>" id="sample_image" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text_input_post">
+                                    <div class="col-md-12 textos_stados">
+                                        <h4>Escribe un comentario</h4>
+                                        <form action="keys/agregar-post-key.php" id="form_files" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" id="base64_ui" name="foto" value="">
+                                            <input type="hidden" id="option_view_opt" name="opcion" value="">
+                                            <input type="hidden" id="time_view_opt" name="time" value="">
+                                            <textarea class="form-control col-sm-12" name="estado_post" id="" cols="20" placeholder="Escribe aqui!" rows="5" maxlength="115"></textarea>
+                                        </form>
+                                        <label for="">Maximo 115 Caracteres</label>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="crop" class="btn btn-primary">Publicar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container-one">
 
 
@@ -179,14 +383,14 @@ if (!isset($_SESSION['id'])) {
             <div class="bar-box-main-two">
                 <div class="box-create-two">
                     <div class="box-i-photo-a box-boton">
-                        <label class="post-btn-container btn-upload postcheck" for="inputImage" title="Publicar Foto">
-                            <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+                        <label class="post-btn-container btn-upload postcheck" for="inputpost_nav" onclick="post()" title="Publicar Foto">
+                            <input type="file" class="image_post" id="inputpost_nav" name="file" style="display:none" accept="image/*">
                             <i class="fas fa-plus"></i>
                         </label>
                     </div>
                     <div title="Discusion" class="box-i-event-a box-boton">
-                        <label class="post-btn-container btn-upload historycheck" for="inputImagehistory" title="Publicar Historia">
-                            <input type="file" class="sr-only" id="inputImagehistory" name="file" accept="image/*">
+                        <label class="post-btn-container btn-upload historycheck" for="inputhistory_nav" onclick="history()" title="Publicar Historia">
+                            <input type="file" class="image_post" id="inputhistory_nav" style="display:none" name="file" accept="image/*">
                             <i class="fas fa-clock"></i>
                         </label>
                     </div>

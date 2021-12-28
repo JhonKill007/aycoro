@@ -7,25 +7,23 @@ require("fund/head.php");
 ?>
 
 <style>
-    @media (max-width: 1120px) {
-        .barra-inicio-new {
-            height: 140px;
-        }
-
-        .nav-main {
-            height: 140px;
-        }
-
-        .container-one {
-            margin-top: -40px;
-            height: 140px;
-        }
-
+    .conteiner-chat-box {
+        margin-top: -57px;
     }
 
     @media (max-width: 414px) {
+        .container-one {
+            display: none;
+        }
+
         .conteiner {
             width: 100%;
+            margin-top: 0;
+        }
+
+        .conteiner-chat-box {
+            position: fixed;
+            margin-top: -130px;
         }
     }
 </style>
@@ -40,9 +38,9 @@ require("fund/head.php");
         $UPDATE = "UPDATE chat SET readdate = 1 where id_reciver = '$idmine' AND id_sendner = '$id_sendner' AND readdate = 0";
         $resultadoUP = mysqli_query($conn, $UPDATE);
         if ($resultadoUP) {
-            echo "hecho!!";
+            // echo "hecho!!";
         } else {
-            echo "esa mierda no sirve";
+            // echo "esa mierda no sirve";
         }
     }
     require("modulos/nav.php");
@@ -51,7 +49,6 @@ require("fund/head.php");
     $id_sus = $_GET['usu'];
 
     require("keys/usu.php");
-    require("modulos/photo_edit.php");
     require("modulos/status-post.php");
     ?>
 
@@ -71,7 +68,7 @@ require("fund/head.php");
                                 <span><?php echo $nombre_usu . " " . $apellido_sus; ?></span>
                             </a>
                             <p>Chat incognito</p>
-                            
+
                             <div class="status_usu">
                             </div>
                         </div>
