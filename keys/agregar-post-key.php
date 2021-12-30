@@ -21,7 +21,7 @@ if ($opcion == 1) {
 
 
 
-    $base64 = $_POST["foto"];
+    $base64 = $_POST["file_post"];
     // $path = $_POST["extencion"];
 
     $lognstring = substr(md5(microtime()), 1, $longpas);
@@ -44,7 +44,7 @@ if ($opcion == 1) {
     require("formate_img.php");
 } else if ($opcion == 2) {
 
-    $base64 = $_POST["foto"];
+    $base64 = $_POST["file_post"];
     // $path = $_POST["extencion"];
 
     // echo $base64;
@@ -70,7 +70,7 @@ if ($opcion == 1) {
     $estado = $_POST['estado_post'];
     $ruta_send = "";
 } else if ($opcion == 4) {
-    $base64 = $_POST["foto"];
+    $base64 = $_POST["file_post"];
     $path = $_POST["extencion"];
 
 
@@ -93,8 +93,9 @@ if ($opcion == 1) {
 
     require("formate_img.php");
 } else if ($opcion == 5) {
-    $base64 = $_POST["foto"];
-    $path = $_POST["extencion"];
+    $base64 = $_POST["file_post"];
+
+    // $path = $_POST["extencion"];
 
     $lognstring = substr(md5(microtime()), 1, $longpas);
     $new_name = $id_registro . '-' . $lognstring;

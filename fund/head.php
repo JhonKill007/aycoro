@@ -1,5 +1,5 @@
 <?php
-$version = "1.2.9 FullStar";
+$version = "1.2.10 FullStar";
 ?>
 
 

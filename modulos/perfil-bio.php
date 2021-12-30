@@ -17,8 +17,8 @@ if ($eso) {
         <div class="portada">
             <img src=<?php echo $portada; ?> alt="">
             <div class="pen">
-                <label class="post-btn-container btn-upload portadacheck" for="inputImageportada" title="Editar Portada">
-                    <input type="file" class="sr-only" id="inputImageportada" name="file" accept="image/*">
+                <label class="post-btn-container btn-upload portadacheck" for="inputImageportada" onclick="fotoPortada()" title="Editar Portada">
+                    <input type="file" name="image" class="image_post" id="inputImageportada" data-option="2" style="display:none" accept="image/*" />
                     <i class="fas fa-pen"></i>
                 </label>
             </div>
@@ -26,8 +26,8 @@ if ($eso) {
         <div class="perfil">
             <img src=<?php echo $foto; ?> alt="img/usuario.png">
             <div class="pen2">
-                <label class="post-btn-container btn-upload perfilcheck" for="inputImageperfil" title="Editar Perfil">
-                    <input type="file" class="sr-only" id="inputImageperfil" name="file" accept="image/*">
+                <label class="post-btn-container btn-upload perfilcheck" for="inputImageperfil" onclick="fotoPerfil()" title="Cambiar Foto">
+                    <input type="file" name="image" class="image_post" id="inputImageperfil" data-option="2" style="display:none" accept="image/*" />
                     <i class="fas fa-pen"></i>
                 </label>
             </div>
@@ -37,7 +37,7 @@ if ($eso) {
             <a href=""><b><?php echo $usuario; ?></b></a>
             <br>
             <b><?php echo $nume . " " . "Seguidores"; ?></b>
-            <p><?php echo $presentacion." "; ?><a href="edit-perfil"><i class="fas fa-cog"></i></a></p>
+            <p><?php echo $presentacion . " "; ?><a href="edit-perfil"><i class="fas fa-cog"></i></a></p>
         </div>
         <hr>
     </div>

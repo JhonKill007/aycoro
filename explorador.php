@@ -34,7 +34,7 @@ require("fund/head.php");
 
                 $eso = require("keys/conection.php");
                 if ($eso) {
-                    $SELECT = "SELECT * FROM registro WHERE id_registro != $id ORDER BY rand() LIMIT 5";
+                    $SELECT = "SELECT * FROM registro WHERE id_registro != $id ORDER BY rand() LIMIT 4";
                     $resultado = mysqli_query($conn, $SELECT);
                     if ($resultado) {
                         while ($usu = $resultado->fetch_array()) {

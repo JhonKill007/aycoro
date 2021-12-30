@@ -24,6 +24,15 @@ if (!isset($_SESSION['id'])) {
             // console.log(option);
 
         }
+
+        function fotoPerfil(){
+            option = 4;
+        }
+
+        function fotoPortada(){
+            option = 5;
+        }
+
         $(document).ready(function() {
 
             var $modal = $('#modal');
@@ -38,7 +47,6 @@ if (!isset($_SESSION['id'])) {
             var cropper;
 
             inputpost_nav.onchange = function() {
-                console.log(option);
                 var files = event.target.files;
 
                 var done = function(url) {
@@ -129,16 +137,18 @@ if (!isset($_SESSION['id'])) {
                 }
 
                 canvas.toBlob(function(blob) {
+                    // console.log(blob)
                     url = URL.createObjectURL(blob);
                     var reader = new FileReader();
                     reader.readAsDataURL(blob);
                     reader.onloadend = function() {
                         var base64data = reader.result;
-                        document.getElementById("base64_ui").value = base64data;
+                        document.getElementById("base64_post").value = base64data;
                         document.getElementById("option_view_opt").value = option;
                         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
                         document.getElementById("time_view_opt").value = timezone;
                         send_form();
+                        $modal.modal('show');
                     };
                 });
             });
@@ -185,17 +195,17 @@ if (!isset($_SESSION['id'])) {
                             <div class="row">
                                 <div class="col-md-8 visor">
                                     <div class="img_conteiner">
-                                        <img src="<?php echo $files ?>" id="sample_image" />
+                                        <img src="" id="sample_image" />
                                     </div>
                                 </div>
                                 <div class="col-md-4 text_input_post">
                                     <div class="col-md-12 textos_stados">
                                         <h4>Escribe un comentario</h4>
                                         <form action="keys/agregar-post-key.php" id="form_files" method="post" enctype="multipart/form-data">
-                                            <input type="hidden" id="base64_ui" name="foto" value="">
+                                            <input type="hidden" id="base64_post" name="file_post" value="hola como estas">
                                             <input type="hidden" id="option_view_opt" name="opcion" value="">
                                             <input type="hidden" id="time_view_opt" name="time" value="">
-                                            <textarea class="form-control col-sm-12" name="estado_post" id="" cols="20" placeholder="Escribe aqui!" rows="5" maxlength="115"></textarea>
+                                            <textarea class="form-control col-sm-12" name="estado_post" id="estado_post" cols="20" placeholder="Escribe aqui!" rows="5" maxlength="115"></textarea>
                                         </form>
                                         <label for="">Maximo 115 Caracteres</label>
                                         <br>
