@@ -23,7 +23,6 @@ if ($eso) {
         $identity = $resultado->fetch_array();
         $id_identity = $identity['id_registro'];
         $name_identity = $identity['nombre'];
-        $lastname_identity = $identity['apellido'];
         $email_identity = $identity['email'];
     } else {
         header("Location: login");

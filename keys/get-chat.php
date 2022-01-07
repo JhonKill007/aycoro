@@ -22,14 +22,14 @@ if (isset($_SESSION['id'])) {
                     if ($ms['id_sendner'] == $id_sendner) {
                         $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">'.$ms['hour'].' '.$ms['day'].'</span></p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
                                     </div>
                                 </div>';
                     } else {
                         $output .= '<div class="chat incoming">
                                     <img src="' . $ms['foto'] . '" alt="">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">'.$ms['hour'].' '.$ms['day'].'</span></p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
                                     </div>
                                 </div>';
                     }
@@ -37,7 +37,32 @@ if (isset($_SESSION['id'])) {
                 // echo $output;
             }
         }
-    } else {
+    }
+    if ($creatdm == 2) {
+        $id_chat = $_POST['id_chat'];
+
+        $SELECT = "SELECT * FROM chat inner join registro on chat.id_sendner=registro.id_registro WHERE id_chat = '$id_chat'";
+        $resultado = mysqli_query($conn, $SELECT);
+        if ($resultado->num_rows > 0) {
+            while ($ms = $resultado->fetch_array()) {
+                if ($ms['id_sendner'] == $id_sendner) {
+                    $output .= '<div class="chat outgoing">
+                                    <div class="details">
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
+                                    </div>
+                                </div>';
+                } else {
+                    $output .= '<div class="chat incoming">
+                                    <img src="img/usuario.png" alt="">
+                                    <div class="details">
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
+                                    </div>
+                                </div>';
+                }
+            }
+        }
+    }
+    if ($creatdm == 0) {
         $SELECT = "SELECT * FROM chat inner join registro on chat.id_sendner=registro.id_registro WHERE (id_sendner = '$id_sendner' OR id_sendner = '$id_reciver')
                              AND ( id_reciver = '$id_reciver' OR id_reciver = '$id_sendner') AND mgsprivate = $private";
         $resultado = mysqli_query($conn, $SELECT);
@@ -47,14 +72,14 @@ if (isset($_SESSION['id'])) {
                     if ($ms['id_sendner'] == $id_sendner) {
                         $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">'.$ms['hour'].' '.$ms['day'].'</span></p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
                                     </div>
                                 </div>';
                     } else {
                         $output .= '<div class="chat incoming">
                                     <img src="' . $ms['foto'] . '" alt="">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">'.$ms['hour'].' '.$ms['day'].'</span></p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
                                     </div>
                                 </div>';
                     }
@@ -67,14 +92,14 @@ if (isset($_SESSION['id'])) {
                     if ($ms['id_sendner'] == $id_sendner) {
                         $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">'.$ms['hour'].' '.$ms['day'].'</span></p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date outtime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
                                     </div>
                                 </div>';
                     } else {
                         $output .= '<div class="chat incoming">
                                     <img src="img/usuario.png" alt="">
                                     <div class="details">
-                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">'.$ms['hour'].' '.$ms['day'].'</span></p>
+                                        <p>' . $ms['mensaje'] . '<br> <span class="time_date intime">' . $ms['hour'] . ' ' . $ms['day'] . '</span></p>
                                     </div>
                                 </div>';
                     }
@@ -83,8 +108,8 @@ if (isset($_SESSION['id'])) {
             }
         }
     }
-    if($output == ''){
-        $output.= '<div class="details letter-comver">
+    if ($output == '') {
+        $output .= '<div class="details letter-comver">
                         <h3>No haz iniciado una conversacion</h3>
                    </div>';
     }

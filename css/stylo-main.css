@@ -43,7 +43,9 @@
     display: block;
 }
 
-
+.body_center.hide {
+    display: none;
+}
 
 .error-txt{
     color: #721c24;

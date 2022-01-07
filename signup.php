@@ -44,31 +44,24 @@ require("fund/head.php");
         <div class="conteiner-signup">
             <div class="con-box">
                 <h2>Registrate</h2>
-                <label>Super facil.</label>
+                <label>Es super facil.</label>
+                <br>
+                <span id="span_sign">Solo tienes que completar un simpe formulario y podras compartir tus mejores moomentos con tus amigos, familiares y el mundo.</span>
                 <div class='error'></div>
                 <hr>
 
                 <form action="" method="POST" class="form-horizontal formulario">
                     <!-- nombre -->
                     <div class="form-group">
-                        <div class="complete-name">
-
-                            <div class="name_last">
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="30" required>
-                            </div>
-
-                            <div class="name_last">
-                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" maxlength="30">
-                            </div>
-
-                        </div>
-
                         <div class="">
                             <div class=" email-box">
-                                <input type="tel" class="form-control" id="numero" name="numero" placeholder="Numero" maxlength="11">
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="50" required>
                             </div>
+                            <!-- <div class=" email-box">
+                                <input type="tel" class="form-control" id="numero" name="numero" placeholder="Numero" maxlength="11">
+                            </div> -->
                             <div class=" email-box">
-                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" maxlength="50" required>
+                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" maxlength="20" required>
                             </div>
                             <div class=" email-box">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" maxlength="50" required>

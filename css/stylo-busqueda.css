@@ -25,12 +25,14 @@
     object-position: center center;
 }
 
-.info-busque h5{
-    margin: auto;
-    width: 150px;
-    text-align: center;
-    color: black;
+.info-busque{
+    width: 230px;
 
+}
+
+.user-info-busque{
+    margin: auto;
+    text-align: center;
 }
 
 .search-perfiles a{
@@ -45,10 +47,7 @@
 }
 
 
-.info-busque{
-    width: 230px;
 
-}
 
 
 

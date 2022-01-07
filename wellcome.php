@@ -1,9 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['id'])) {
-    header("Location: index");
-}
-$tittlePage = "Aycoro - Registrate";
+
+$tittlePage = "Aycoro - Wellcome";
 require("fund/head.php");
 $name = $_GET['name'];
 ?>
@@ -46,15 +44,34 @@ $name = $_GET['name'];
         <br>
         <br>
         <br>
-        <h1>Hola <?php echo $name;?></h1>
+        <h1>Hola <?php echo $name; ?></h1>
+
         <h4>Te damos la bienvenida a Aycoro, la primera red social de la Repubica Dominicana.
             <br>
             Aqui podras compartir fotos con tus seguidores ademas de historias diarias
-            <br> 
-            y podras intercambiar mesajes con otros usuarios. 
             <br>
-            Si ya estas registrado <a href="login">Inicia Sesion</a>
-            o <a href="signup">Registrate</a>
+            y podras intercambiar mesajes con otros usuarios.
+            <br>
+            <br>
+            <?php
+            if (isset($_SESSION['id'])) {
+            ?>
+                <?php echo $name; ?>, cordialmente Jhon David Mesa fundador y CEO de Aycoro te agradece
+                <br>
+                por haberte registrado en nuestra plataforma, ahora ve y comparte tus
+                <br>
+                mejores momentos con el mundo.
+                <a href="index">Home</a>
+            <?php
+            } else {
+            ?>
+                <?php echo $name; ?>, cordialmente Jhon David Mesa fundador y CEO de Aycoro te invita a que
+                <br>
+                te registres en nuestra plataforma, has click
+                <a href="signup">aqui</a>.
+            <?php
+            }
+            ?>
         </h4>
     </div>
 
@@ -106,7 +123,7 @@ $name = $_GET['name'];
             h1_DAYS.textContent = "00";
         } else {
             if (REMAINING_DAYS < 10) {
-                h1_DAYS.textContent = "0"+REMAINING_DAYS;
+                h1_DAYS.textContent = "0" + REMAINING_DAYS;
             } else {
                 h1_DAYS.textContent = REMAINING_DAYS;
             }
@@ -117,7 +134,7 @@ $name = $_GET['name'];
             h1_HOURS.textContent = "00";
         } else {
             if (REMAINING_HOURS < 10) {
-                h1_HOURS.textContent = "0"+REMAINING_HOURS;
+                h1_HOURS.textContent = "0" + REMAINING_HOURS;
 
             } else {
                 h1_HOURS.textContent = REMAINING_HOURS;
@@ -129,7 +146,7 @@ $name = $_GET['name'];
             h1_MINUTES.textContent = "00";
         } else {
             if (REMAINING_MINUTES < 10) {
-                h1_MINUTES.textContent = "0"+REMAINING_MINUTES;
+                h1_MINUTES.textContent = "0" + REMAINING_MINUTES;
             } else {
                 h1_MINUTES.textContent = REMAINING_MINUTES;
             }
@@ -140,7 +157,7 @@ $name = $_GET['name'];
             h1_SECONDS.textContent = "00";
         } else {
             if (REMAINING_SECONDS < 10) {
-                h1_SECONDS.textContent = "0"+REMAINING_SECONDS;
+                h1_SECONDS.textContent = "0" + REMAINING_SECONDS;
             } else {
                 h1_SECONDS.textContent = REMAINING_SECONDS;
             }

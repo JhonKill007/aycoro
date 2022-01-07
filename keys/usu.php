@@ -2,14 +2,13 @@
 $eso = require("keys/conection.php");
     if($eso){
 
-        $SELECT = "SELECT * FROM registro WHERE id_registro = $id_sus";
+        $SELECT = "SELECT * FROM registro WHERE usuario = '$usuario_usu'";
         $resultado = mysqli_query($conn,$SELECT);
         $n_usu = $resultado->num_rows;
         if($resultado){
             while($usu = $resultado->fetch_array()){
                 $id_usu = $usu['id_registro'];
                 $nombre_usu = $usu['nombre'];
-                $apellido_sus = $usu['apellido'];
                 $usuario_sus = $usu['usuario'];
                 $presentacion_sus = $usu['presentacion'];
                 $foto_sus = $usu['foto'];
@@ -19,7 +18,7 @@ $eso = require("keys/conection.php");
             }
         }
         if($n_usu < 1){
-            header("Location: index");
+            // header("Location: index");
         }
     }
     else{

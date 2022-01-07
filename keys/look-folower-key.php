@@ -12,7 +12,6 @@
                 $id_folo = $folo['id_folowing'];
                 $foto_folo = $folo['foto'];
                 $nombre_folo = $folo['nombre'];
-                $apellido_folo = $folo['apellido'];
             ?>
                 
                 <a href="perfil-reciver.php?folo=<?php echo $id_usu;?>">
@@ -20,7 +19,7 @@
                         <div class="search-perfil-box">
                             <img src=<?php echo $foto_folo; ?> alt="">
                         </div>
-                        <h5><?php echo $nombre_folo."".$apellido_folo; ?></h5>
+                        <h5><?php echo $nombre_folo; ?></h5>
                     </div>
                 </a>
                 <?php

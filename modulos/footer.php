@@ -1,7 +1,7 @@
 <div class="footer">
     <a href="index"><label>Inicio</label></a>
     <label></label>
-    <a href="edit-perfil"><label>Ajustes</label></a>
+    <a href="configuration"><label>Ajustes</label></a>
     <label></label>
     <a href="sugerencias"><label>Sugerencias</label></a>
     <label></label>
@@ -9,6 +9,6 @@
     <label></label>
     <a href="terminos"><label>Condiciones</label></a>
     <br>
-    <span>©Aycoro 2021</span>
+    <span>©Aycoro 2022</span>
     <span>Version <?php echo $version; ?></span>
 </div>

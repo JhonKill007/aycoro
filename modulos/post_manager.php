@@ -57,16 +57,8 @@ if ($owner_post == $_SESSION['id']) {
                                             location.reload();
 
                                         })
-                                    } else {
-                                        Swal.fire({
-                                            title: 'ERROR!',
-                                            text: 'La publicacion no pudo ser editada.',
-                                            icon: 'error',
-                                        }).then((result) => {
-                                            location.reload();
-
-                                        })
                                     }
+
                                 }
                             }
                         }
@@ -154,8 +146,8 @@ if ($owner_post == $_SESSION['id']) {
             if (xhrts_add_coment<?php echo $id_post; ?>.readyState === XMLHttpRequest.DONE) {
                 if (xhrts_add_coment<?php echo $id_post; ?>.status === 200) {
                     let data_add_coment<?php echo $id_post; ?> = xhrts_add_coment<?php echo $id_post; ?>.response;
-                    
-                    if(data_add_coment<?php echo $id_post; ?> == "successfull"){
+
+                    if (data_add_coment<?php echo $id_post; ?> == "successfull") {
                         document.getElementById("coment_value<?php echo $id_post; ?>").value = "";
                         ViewComentCant<?php echo $id_post; ?>();
                     }

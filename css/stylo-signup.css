@@ -3,6 +3,9 @@
   margin: auto;
 }
 
+#span_sign{
+  font-size: 13px;
+}
 
 #error-email {
   color: red;

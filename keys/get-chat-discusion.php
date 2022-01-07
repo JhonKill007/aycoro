@@ -15,7 +15,6 @@ if (isset($_SESSION['id'])) {
         while ($ms = $resultado->fetch_array()) {
             $idsendner = $ms['id_sendner'];
             $nom = $ms['nombre'];
-            $ape = $ms['apellido'];
             if ($ms['id_sendner'] == $id_sendner) {
                 $output .= '<div class="chat outgoing">
                                     <div class="details">

@@ -12,13 +12,13 @@ if(!empty($id)){
             $id = $registro['id_registro'];
             $id_registro = $registro['id_registro'];
             $nombre = $registro['nombre'];
-            $apellido = $registro['apellido'];
             $numero = $registro['numero'];
             $usuario = $registro['usuario'];
             $email = $registro['email'];
             $password = $registro['password'];
             $birthday = $registro['birthday'];
             $genero = $registro['genero'];
+            $usuario = $registro['usuario'];
             $foto = $registro['foto'];
             $portada = $registro['portada'];
             $presentacion = $registro['presentacion'];

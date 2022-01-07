@@ -22,15 +22,16 @@ if (!empty($folowing) || !empty($folower)) {
                 $seguidores = $segui-1;
 
                 // <div class='buton_follow'><button class='green'>Seguido</button><b>". $seguidores ." Seguidores</b></div>
-                $datafollow .= "
-                <div class='buton_follow'>
+                $datafollow .= "<div class='button-box like'>
+                                        <div class='buton_follow'>
                                             <div class='button_follow' type='submit'>
                                                 <div class='icon_follow'>
                                                     <i class='fas fa-user-check'></i>
                                                 </div>
                                             </div>
-                                            <div><b>". $seguidores ." Seguidores</b></div>
-                                        </div>";
+                                            <div class='cant_follow_conteiner'><b>".$seguidores." Seguidores</b></div>
+                                        </div>
+                                    </div>";
             } else {
                 echo "valio verga";
             }
@@ -45,15 +46,16 @@ if (!empty($folowing) || !empty($folower)) {
                 $seguidores = $segui-1;
 
                 // <div class='buton_follow'><button class='blue'>Seguir</button><b>". $seguidores ." Seguidores</b></div>
-                $datafollow .= "
-                <div class='buton_follow'>
+                $datafollow .= "<div class='button-box like'>
+                                        <div class='buton_follow'>
                                             <div class='button_follow' type='submit'>
                                                 <div class='lettle_follow'>
                                                     <b>Seguir</b>
                                                 </div>
                                             </div>
-                                            <div><b>". $seguidores ." Seguidores</b></div>
-                                        </div>";
+                                            <div class='cant_follow_conteiner'><b>".$seguidores ." Seguidores</b></div>
+                                        </div>
+                                    </div>";
                 
                 
 

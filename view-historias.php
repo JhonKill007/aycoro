@@ -116,9 +116,9 @@ if (!isset($_SESSION['id'])) {
                         while ($usu = $resultado->fetch_array()) {
                             $id_usu = $usu['id_registro'];
                             $nombre_usu = $usu['nombre'];
-                            $apellido_usu = $usu['apellido'];
                             $history = $usu['photo'];
                             $id_history = $usu['id_history'];
+                            $user_usu = $usu['usuario'];
                             $perfil = $usu['foto'];
                             $fecha_date_history = $usu['day'];
                             $hora = $usu['hour'];
@@ -159,7 +159,7 @@ if (!isset($_SESSION['id'])) {
                                                 <img src=<?php echo $perfil; ?> alt="">
                                             </div>
                                             <div class="perfil_circle_name_box">
-                                                <b><?php echo $nombre_usu . " " . $apellido_usu; ?></b>
+                                                <b><?php echo $user_usu; ?></b>
                                                 <p class="p_fecha"></p>
                                             </div>
                                         </div>
@@ -167,13 +167,13 @@ if (!isset($_SESSION['id'])) {
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
+                                    <a href="user?user=<?php echo $id_usu; ?>">
                                         <div class="perfil_circle">
                                             <div class="perfil_circle_img_box">
                                                 <img src=<?php echo $perfil; ?> alt="">
                                             </div>
                                             <div class="perfil_circle_name_box">
-                                                <b><?php echo $nombre_usu . " " . $apellido_usu; ?></b>
+                                                <b><?php echo $user_usu; ?></b>
                                                 <p class="p_fecha"></p>
                                             </div>
                                         </div>
@@ -384,16 +384,16 @@ function PersonsView($id_history)
             while ($personView = $resultado->fetch_array()) {
                 $id_usu = $personView['id_registro'];
                 $nombre_usu = $personView['nombre'];
-                $apellido_usu = $personView['apellido'];
+                $user_usu = $personView['usuario'];
                 $perfil = $personView['foto'];
 ?>
-                <a href="perfil-reciver?usu=<?php echo $id_usu; ?>" class="a_count_view">
+                <a href="user?user=<?php echo $user_usu; ?>" class="a_count_view">
                     <div class="person_count">
                         <div class="perfil_cont">
                             <img src=<?php echo $perfil; ?> alt="">
                         </div>
                         <div class="name_count">
-                            <b><?php echo $nombre_usu . " " . $apellido_usu; ?></b>
+                            <b><?php echo $user_usu; ?></b>
                         </div>
                     </div>
                 </a>

@@ -47,9 +47,9 @@
                 $foto_perfil = $post['foto'];
                 $photo_post = $post['photo_post'];
                 $nombre_owner_post = $post['nombre'];
-                $apellido_owner_post = $post['apellido'];
                 $estado_post =  $post['estado_post'];
                 $owner_post = $post['owner'];
+                $user_post = $post['usuario'];
                 $fecha = $post['hour'] . " " . $post['day'];
 
                 if ($publi == 3) {
@@ -87,6 +87,7 @@
                         <div class="piecera">
                             <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
                                 <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
+                                <input type="hidden" name="type_post" value="1">
                                 <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
                                 <input type="hidden" name="liker" value="<?php echo $id_registro; ?>">
                                 <?php
@@ -142,13 +143,13 @@
                                     if ($owner_post == $_SESSION['id']) {
                                     ?>
                                         <a href="perfil">
-                                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                                            <b><?php echo $user_post; ?></b>
                                         </a>
                                     <?php
                                     } else {
                                     ?>
-                                        <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
-                                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                                        <a href="user?user=<?php echo $user_post; ?>">
+                                            <b><?php echo $user_post; ?></b>
                                         </a>
                                     <?php
                                     }
@@ -231,6 +232,7 @@
             </div>
             <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
                 <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
+                <input type="hidden" name="type_post" value="2">
                 <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
                 <input type="hidden" name="liker" value="<?php echo $id_registro; ?>">
                 <?php
@@ -280,13 +282,13 @@
                     if ($owner_post == $_SESSION['id']) {
                     ?>
                         <a href="perfil">
-                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                            <b><?php echo $user_post; ?></b>
                         </a>
                     <?php
                     } else {
                     ?>
-                        <a href="perfil-reciver?usu=<?php echo $owner_post; ?>">
-                            <b><?php echo $nombre_owner_post . " " . $apellido_owner_post; ?></b>
+                        <a href="user?user=<?php echo $user_post; ?>">
+                            <b><?php echo $user_post; ?></b>
                         </a>
                     <?php
                     }

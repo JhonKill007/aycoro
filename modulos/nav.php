@@ -25,11 +25,11 @@ if (!isset($_SESSION['id'])) {
 
         }
 
-        function fotoPerfil(){
+        function fotoPerfil() {
             option = 4;
         }
 
-        function fotoPortada(){
+        function fotoPortada() {
             option = 5;
         }
 
@@ -118,6 +118,8 @@ if (!isset($_SESSION['id'])) {
             });
 
             $('#crop').click(function() {
+                document.querySelector(".body_center").classList.toggle("hide")
+                document.querySelector(".charger").classList.toggle("watch")
 
                 if (option == 1 || option == 4) {
                     canvas = cropper.getCroppedCanvas({
@@ -234,18 +236,18 @@ if (!isset($_SESSION['id'])) {
             <ul class="bar-menu">
                 <br>
                 <br>
-                <br>
-                <br>
                 <a href="perfil" title="Perfil"><img src=<?php echo $foto; ?> class="foto-bar" alt=""></a>
-                <li><a href="perfil" title="Perfil"><?php echo $nombre . ' ' . $apellido ?></a></li>
+                <li><a href="perfil" title="Perfil"><?php echo $nombre; ?></a></li>
                 <li><a href="message" title="Mensajes">Mensajes (<label class="num-message-bar" for="icon-logo"></label>)</a></li>
                 <li><a href="explorador" title="Explorador">Explorador</a></li>
                 <li><a href="historias" title="Historias">Historias</a></li>
-                <li><a href="edit-perfil" title="Ajustes">Ajustes</a></li>
+                <li><a href="configuration" title="Ajustes">Ajustes</a></li>
                 <li><a href="sugerencias" title="Sugerencias">Sugerencias</a></li>
                 <li><a href="ayuda" title="Ayuda">Ayuda</a></li>
                 <li><a href="modulos/logout.php" title="Cerrar Sesion">Cerrar Sesion</a></li>
                 <div>
+                    <br>
+                    <br>
                     <br>
                     <br>
                     <br>
@@ -315,7 +317,7 @@ if (!isset($_SESSION['id'])) {
                         <!-- boton log -->
                         <div class="img-barra">
                             <div class="img-box">
-                                <a href="perfil"><img id="usuario-photo" title="Perfi" src=<?php echo $foto; ?> alt="perfil"></a>
+                                <a href="perfil"><img id="usuario-photo" title="<?php echo $registro['usuario']; ?>" src=<?php echo $foto; ?> alt="perfil"></a>
 
                             </div>
                         </div>

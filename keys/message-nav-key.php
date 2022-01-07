@@ -48,12 +48,12 @@ foreach ($todos as $numero) {
                     $info_perfil = $resultado_perfil->fetch_array();
 
 
-                    $nameandlast = $info_perfil['nombre'] . ' ' . $info_perfil['apellido'];
+                    $nameandlast = $info_perfil['nombre'];
                     $cant_nom_caract = strlen($nameandlast);
                     if ($cant_nom_caract > 21) {
                         $nomape = substr($nameandlast, 0, 18) . '...';
                     } else {
-                        $nomape = $info_perfil['nombre'] . ' ' . $info_perfil['apellido'];
+                        $nomape = $info_perfil['nombre'];
                     }
 
                     $foto_mgs = $info_perfil['foto'];
@@ -73,7 +73,7 @@ foreach ($todos as $numero) {
                         $msgst = substr($msgs, 0, 24) . '...';
 
                         if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
-                            $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
+                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario'] . '">
                                            <div title="' . $nomape . '" class="message-box-nav">
                                                <b>' . $nomape . '</b>
                                                <br>
@@ -81,14 +81,14 @@ foreach ($todos as $numero) {
                                            </div>
                                        </a>';
                         } else if ($mgs['id_sendner'] == $id) {
-                            $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
+                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario'] . '">
                                             <div title="' . $nomape . '" class="message-box-nav">
                                                 <b>' . $nomape . '</b>
                                                 <p>' . $ypo . $msgst . '</p>
                                             </div>
                                         </a>';
                         } else {
-                            $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
+                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario'] . '">
                                             <div title="' . $nomape . '" class="message-box-nav">
                                                     <b>' . $nomape . '</b>
                                                     <p>' . $ypo . $msgst . '</p>

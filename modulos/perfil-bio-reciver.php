@@ -8,12 +8,12 @@
         </div>
         <div class="nombre">
 
-            <h1><?php echo $nombre_usu . " " . $apellido_sus; ?></h1>
+            <h1><?php echo $nombre_usu; ?></h1>
             <a href=""><b><?php echo $usuario_sus; ?></b></a>
 
             <div class="messege-icon">
                 <div class="icon_messages_perfil">
-                    <a href="dm?usu=<?php echo $id_usu; ?>&idmine=<?php echo $id; ?>">
+                    <a href="dm?user=<?php echo $usuario_usu; ?>">
                         <i class="fas fa-comment"></i>
                     </a>
                 </div>

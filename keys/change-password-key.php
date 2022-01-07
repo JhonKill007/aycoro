@@ -16,12 +16,16 @@ if (!empty($id_per) || !empty($actual) || !empty($nueva) || !empty($confirm)) {
             if (password_verify($actual, $dt['password'])) {
                 if ($nueva == $confirm) {
                     $script_password = password_hash($nueva, PASSWORD_DEFAULT);
+                    $script_password_old = password_hash($actual, PASSWORD_DEFAULT);
 
                     $UPDATE = "UPDATE registro SET password ='$script_password' Where id_registro='$id_per'";
                     $resultado = mysqli_query($conn, $UPDATE);
                     if ($resultado) {
-                        // echo"todo correcto";
-                        echo "success";
+                        $INSERT = "INSERT INTO edits (campo,new,old,id_user,date_edit)values('Password','$script_password','$script_password_old','$id_per',NOW())";
+                        $resultado = mysqli_query($conn, $INSERT);
+                        if ($resultado) {
+                            echo "success";
+                        }
                     }
                 } else {
                     $datachange .= "<div class='error-txt  error'>La Contraseña nueva y la confirmacion no coinsiden.</div>";

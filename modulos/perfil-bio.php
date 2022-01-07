@@ -33,11 +33,11 @@ if ($eso) {
             </div>
         </div>
         <div class="nombre">
-            <h1><?php echo $nombre . " " . $apellido; ?></h1>
+            <h3><?php echo $nombre; ?></h3>
             <a href=""><b><?php echo $usuario; ?></b></a>
             <br>
-            <b><?php echo $nume . " " . "Seguidores"; ?></b>
-            <p><?php echo $presentacion . " "; ?><a href="edit-perfil"><i class="fas fa-cog"></i></a></p>
+            <a id="folowers_perfil" href=""><b><?php echo $nume . " " . "Seguidores"; ?></b></a>
+            <p><?php echo $presentacion . " "; ?><a href="configuration"><i class="fas fa-cog"></i></a></p>
         </div>
         <hr>
     </div>

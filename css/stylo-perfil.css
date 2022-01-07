@@ -80,6 +80,11 @@
     color: rgb(97, 95, 95);
 }
 
+#folowers_perfil{
+    text-decoration: none;
+    color: rgb(41, 41, 41);
+}
+
 .box-button-follow{
 
 }

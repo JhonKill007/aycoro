@@ -1,12 +1,12 @@
 
-const formulario = document.querySelector(".formulario"),
-    errorText = document.querySelector(".error");
+const formulario_password = document.querySelector(".formulario_password"),
+    errorText_password = document.querySelector(".error");
 
-formulario.onsubmit = (e) => {
+formulario_password.onsubmit = (e) => {
     e.preventDefault(); //previene el recargo de la pagina
 }
 
-document.querySelector('.button-change').addEventListener('click', () => {
+document.querySelector('.button-change-pass').addEventListener('click', () => {
 
 
     let xhr = new XMLHttpRequest();
@@ -20,17 +20,17 @@ document.querySelector('.button-change').addEventListener('click', () => {
                     location.href = "perfil"
                 }
                 else {
-                    // errorText.textContent = data;
-                    errorText.innerHTML = data;
+                    // errorText_password.textContent = data;
+                    errorText_password.innerHTML = data;
                     // console.log(data);
-                    // errorText.style.display = "block";
+                    // errorText_password.style.display = "block";
                 }
-                // errorText.innerHTML = data;
+                // errorText_password.innerHTML = data;
             }
         }
     }
     // // vamos a mandar el formu data atraves de ajax a php
-    let formData = new FormData(formulario); //creando el objeto formData
+    let formData = new FormData(formulario_password); //creando el objeto formData
     xhr.send(formData); //enviando el formData a php
 
 

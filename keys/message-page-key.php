@@ -20,7 +20,6 @@ while ($men = $resultado->fetch_array()) {
     $idchat = $men['id_chat'];
 
     array_push($id_mds, $idchat);
-
 }
 
 $todos =  (array_unique($id_mds));
@@ -49,13 +48,12 @@ foreach ($todos as $numero) {
                     $info_perfil = $resultado_perfil->fetch_array();
 
 
-                    $nameandlast = $info_perfil['nombre'] . ' ' . $info_perfil['apellido'];
+                    $nameandlast = $info_perfil['nombre'];
                     $cant_nom_caract = strlen($nameandlast);
-                    if($cant_nom_caract > 21){
+                    if ($cant_nom_caract > 21) {
                         $nomape = substr($nameandlast, 0, 18) . '...';
-                    }
-                    else{
-                        $nomape = $info_perfil['nombre'] . ' ' . $info_perfil['apellido'];
+                    } else {
+                        $nomape = $info_perfil['nombre'];
                     }
                     $foto_mgs = $info_perfil['foto'];
 
@@ -74,7 +72,7 @@ foreach ($todos as $numero) {
                         $msgst = substr($msgs, 0, 29) . '...';
 
                         if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
-                            $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
+                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario'] . '">
                                                                 <div class="message-box-page-me">
                                                                 <img class="img_mgs" src="' . $foto_mgs . '" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -83,7 +81,7 @@ foreach ($todos as $numero) {
                                                                 </div>
                                                             </a>';
                         } else if ($mgs['id_sendner'] == $id) {
-                            $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
+                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario']  . '">
                                                             <div class="message-box-page-me">
                                                             <img class="img_mgs" src="' . $foto_mgs . '" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -91,7 +89,7 @@ foreach ($todos as $numero) {
                                                                 </div>
                                                             </a>';
                         } else {
-                            $data .= '<a href="dm.php?usu=' . $dato_id . '&idmine=' . $id . '">
+                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario']  . '">
                                                             <div class="message-box-page-nome">
                                                             <img class="img_mgs" src="' . $foto_mgs . '" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -129,7 +127,7 @@ foreach ($todos as $numero) {
                                 $data .= '<a href="dm_.php?private=' . $id_chat . '">
                                                                 <div class="message-box-page-me">
                                                                 <img class="img_mgs" src="img/usuario.png" alt="">
-                                                                    <b>' . $nomape. '</b>
+                                                                    <b>' . $nomape . '</b>
                                                                     <br>
                                                                     <b class="mgs_pgas">' . $ypo . $msgst . '</b>
                                                                 </div>
@@ -138,7 +136,7 @@ foreach ($todos as $numero) {
                                 $data .= '<a href="dm_.php?private=' . $id_chat . '">
                                                             <div class="message-box-page-me">
                                                             <img class="img_mgs" src="img/usuario.png" alt="">
-                                                                    <b>' . $nomape. '</b>
+                                                                    <b>' . $nomape . '</b>
                                                                     <p class="mgs_pgas">' . $ypo . $msgst . '</p>
                                                                 </div>
                                                             </a>';

@@ -48,7 +48,7 @@ require("fund/head.php");
                 $id_disc =  $usu['id_event'];
                 $id_usu = $usu['id_registro'];
                 $nombre_usu = $usu['nombre'];
-                $apellido_usu = $usu['apellido'];
+                $user_usu = $usu['usuario'];
                 $photo = $usu['photo'];
                 $id_owner_disc = $usu['id_owner'];
             }
@@ -66,12 +66,12 @@ require("fund/head.php");
                 <section class="chat-area">
                     <header>
                         <a href="discusion" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                        <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
+                        <a href="user?user=<?php echo $user_usu; ?>">
                             <img src=<?php echo $photo; ?> alt="">
                         </a>
                         <div class="details">
-                            <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
-                                <span>Discucion de: <?php echo $nombre_usu . " " . $apellido_usu; ?></span>
+                            <a href="user?user=<?php echo $user_usu; ?>">
+                                <span>Discucion de: <?php echo $nombre_usu; ?></span>
                                 <?php
                                 if ($id_owner_disc  == $_SESSION['id']) {
                                 ?>

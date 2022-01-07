@@ -13,7 +13,7 @@ if (!empty($id_post)) {
                 $id_registro = $coments['id_registro'];
                 $foto_perfil = $coments['foto'];
                 $nombre_perfil = $coments['nombre'];
-                $apellido_perfil = $coments['apellido'];
+                $usuario_perfil = $coments['usuario'];
                 $fecha_coment = $coments['coment_date'];
                 $value_coment = $coments['comentario'];
 
@@ -25,18 +25,18 @@ if (!empty($id_post)) {
                                                 <img src="' . $foto_perfil . '" alt="">
                                             </div>
                                             <div class="name_perfil_coment">
-                                                <b>' . $nombre_perfil . ' ' . $apellido_perfil . '</b>
+                                                <b>' . $usuario_perfil . '</b>
                                             </div>    
                                         </div>
                                     </a>';
                 } else {
-                    $head_coment = '<a href="perfil-reciver?usu=' . $id_registro . '">
+                    $head_coment = '<a href="user?user=' . $usuario_perfil . '">
                                         <div class="head_coment_text_box">
                                             <div class="img_perfil_coment">
                                                 <img src="' . $foto_perfil . '" alt="">
                                             </div>
                                             <div class="name_perfil_coment">
-                                                <b>' . $nombre_perfil . ' ' . $apellido_perfil . '</b>
+                                                <b>' . $usuario_perfil . '</b>
                                             </div>
                                         </div>
                                     </a>';
@@ -48,7 +48,7 @@ if (!empty($id_post)) {
                             ' . $head_coment . '    
                             
                             <div class="coment_value">
-                                <p>' . $value_coment . ' <span class="coment_date">'.$fecha_coment.'</span></p>
+                                <p>' . $value_coment . ' <span class="coment_date">' . $fecha_coment . '</span></p>
                             </div>
                         </div>
                 ';

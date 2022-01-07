@@ -23,7 +23,6 @@ require("fund/head.php");
 
         .conteiner-chat-box {
             position: fixed;
-            margin-top: -130px;
         }
     }
 </style>
@@ -31,27 +30,30 @@ require("fund/head.php");
 <body>
 
     <?php
-    $idmine = $_GET['idmine'];
-    $id_sendner = $_GET['usu'];
+    // $idmine = $_GET['idmine'];
+    $usuario_usu = $_GET['user'];
     $eso = require("keys/conection.php");
-    if ($eso) {
-        $UPDATE = "UPDATE chat SET readdate = 1 where id_reciver = '$idmine' AND id_sendner = '$id_sendner' AND readdate = 0";
-        $resultadoUP = mysqli_query($conn, $UPDATE);
-        if ($resultadoUP) {
-            // echo "hecho!!";
-        } else {
-            // echo "esa mierda no sirve";
-        }
-    }
+    // if ($eso) {
+    //     $UPDATE = "UPDATE chat SET readdate = 1 where id_reciver = '$idmine' AND id_sendner = '$id_sendner' AND readdate = 0";
+    //     $resultadoUP = mysqli_query($conn, $UPDATE);
+    //     if ($resultadoUP) {
+    //         // echo "hecho!!";
+    //     } else {
+    //         // echo "esa mierda no sirve";
+    //     }
+    // }
     require("modulos/nav.php");
     require("modulos/nav-two.php");
 
-    $id_sus = $_GET['usu'];
+    // $id_sus = $_GET['usu'];
 
     require("keys/usu.php");
     require("modulos/status-post.php");
+    echo $id_usu;
     ?>
 
+    <br>
+    <br>
 
     <div class="conteiner">
 
@@ -60,12 +62,12 @@ require("fund/head.php");
                 <section class="chat-area color-secrete">
                     <header>
                         <a href="message" class="back-icon icon-dm"><i class="fas fa-arrow-left"></i></a>
-                        <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
+                        <a href="user?user=<?php echo $usuario_usu; ?>">
                             <img src=<?php echo $foto_sus; ?> alt="">
                         </a>
                         <div class="details">
-                            <a href="perfil-reciver?usu=<?php echo $id_usu; ?>">
-                                <span><?php echo $nombre_usu . " " . $apellido_sus; ?></span>
+                            <a href="user?user=<?php echo $usuario_usu; ?>">
+                                <span><?php echo $nombre_usu; ?></span>
                             </a>
                             <p>Chat incognito</p>
 
@@ -73,7 +75,7 @@ require("fund/head.php");
                             </div>
                         </div>
                         <div class="icon-dm-box">
-                            <a class="icon-dm" href="dm?usu=<?php echo $id_sus; ?>&idmine=<?php echo $id; ?>"><i class="fas fa-comment"></i></a>
+                            <a class="icon-dm" href="dm?user=<?php echo $usuario_usu; ?>"><i class="fas fa-comment"></i></a>
                         </div>
                     </header>
                     <div class="chat-box color-secrete chat-box-secrete">
@@ -86,8 +88,8 @@ require("fund/head.php");
                     $credms = 1;
                     ?>
                     <form action="" method="post" class="typing-area">
-                        <input type="hidden" value="<?php echo $id; ?>" name="id_sendner">
-                        <input type="hidden" value="<?php echo $id_sus; ?>" name="id_reciver">
+                        <input type="hidden" value="<?php echo $registro['id_registro']; ?>" name="id_sendner">
+                        <input type="hidden" value="<?php echo $id_usu; ?>" name="id_reciver">
                         <input type="hidden" value="<?php echo $pri; ?>" name="mgsprivate">
                         <input type="hidden" value="<?php echo $vista; ?>" name="vista">
                         <input type="hidden" value="" name="time" id="time_mjs">
