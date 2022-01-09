@@ -1,6 +1,7 @@
 <?php
 $tittlePage = "Aycoro - Historias";
 require("fund/head.php");
+require("modulos/session.php");
 $publicaciones = array(0);
 $personas = array(0);
 ?>

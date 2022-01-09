@@ -1,6 +1,7 @@
 <?php
 $tittlePage = "Aycoro - Mensajes";
 require("fund/head.php");
+require("modulos/session.php");
 ?>
 
 <style>

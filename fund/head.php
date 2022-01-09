@@ -1,5 +1,5 @@
 <?php
-$version = "1.3.1 FullStar";
+$version = "1.3.2 FullStar";
 ?>
 
 
@@ -78,10 +78,15 @@ $version = "1.3.1 FullStar";
   <!-- icoon de carga -->
   <link rel="stylesheet" href="css/stylo-charger.css?<?php echo $version; ?>">
   
+  <!-- folows page  -->
+  <link rel="stylesheet" href="css/stylo-folows.css?<?php echo $version; ?>">
+
+  <!-- publicidad -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
 
 
 
-
+  <!-- editor -->
 
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

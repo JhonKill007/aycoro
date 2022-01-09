@@ -1,10 +1,32 @@
 <?php
-session_start();
 if (isset($_COOKIE["IgtX9000"])) {
     $_SESSION['id'] = $_COOKIE["IgtX9000"];
 }
 if (!isset($_SESSION['id'])) {
-    header("Location: login");
+?>
+    <div class="container-one">
+
+        <!-- new barra -->
+        <div class="barra-inicio-new">
+            <!-- componentes -->
+            <nav class="nav-main">
+                <ul>
+                    <li>
+                        <!-- logo -->
+                        <a href="login">
+                            <img id="logo" src="img/Logo.png" alt="">
+                            <img id="logo2" src="img/Logo2.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+    </div>
+<?php
 } else {
     require('keys/identification.php');
 ?>

@@ -1,6 +1,7 @@
 <?php
 $tittlePage = "Aycoro - Busqueda";
 require("fund/head.php");
+require("modulos/session.php");
 ?>
 
 

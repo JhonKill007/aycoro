@@ -11,7 +11,7 @@
 
 .portada img{
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
     object-position: center center;
 }
@@ -71,12 +71,13 @@
 }
 
 .icon_messages_perfil{
-    width: 60px;
+    margin-left: 60px;
+    width: 50px;
 }
 
 
 .messege-icon i{
-    font-size: 50px;
+    font-size: 40px;
     color: rgb(97, 95, 95);
 }
 
@@ -122,10 +123,16 @@
 }
 
 .cant_follow_conteiner{
-    width: 150px;
+    width: 250px;
+    /* border: 1px solid red; */
 }
 
 
-@media (max-width: 1088px){
-    
+@media (max-width: 500px){
+    .biograf{
+        width: 100%;
+    }
+    .portada{
+        height: 200px;
+    }
 }

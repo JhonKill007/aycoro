@@ -4,11 +4,18 @@ if ($eso) {
     $SELECT = "SELECT * FROM folow WHERE id_folowing ='$id_registro'";
     $resultado = mysqli_query($conn, $SELECT);
     $segui = $resultado->num_rows;
-    $nume = $segui - 1;
+    $can_of_folowers = $segui - 1;
+
+    $SELECT = "SELECT * FROM folow WHERE id_folower ='$id_registro'";
+    $resultado = mysqli_query($conn, $SELECT);
+    $segui = $resultado->num_rows;
+    $can_of_foloweds = $segui - 1;
 } else {
     echo "fallo la coneccion";
 }
 ?>
+
+
 
 
 
@@ -33,10 +40,12 @@ if ($eso) {
             </div>
         </div>
         <div class="nombre">
-            <h3><?php echo $nombre; ?></h3>
+            <h4><?php echo $nombre; ?></h4>
             <a href=""><b><?php echo $usuario; ?></b></a>
             <br>
-            <a id="folowers_perfil" href=""><b><?php echo $nume . " " . "Seguidores"; ?></b></a>
+            <a id="folowers_perfil" href="folows?o=2&user=<?php echo $usuario; ?>"><b><?php echo $can_of_foloweds . " " . "Seguidos"; ?></b></a>
+            <span>|</span>
+            <a id="folowers_perfil" href="folows?o=1&user=<?php echo $usuario; ?>"><b><?php echo $can_of_folowers . " " . "Seguidores"; ?></b></a>
             <p><?php echo $presentacion . " "; ?><a href="configuration"><i class="fas fa-cog"></i></a></p>
         </div>
         <hr>

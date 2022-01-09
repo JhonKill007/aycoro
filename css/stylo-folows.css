@@ -1,0 +1,50 @@
+#lettle_title{
+    text-align: center;
+}
+
+.folows_buton_conteiner{
+    width: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.folows_buton_box{
+    width: 40%;
+    padding: 10px;
+}
+
+.folows_buton_box button{
+    width: 100%;
+}
+
+#select{
+    border-bottom: 2px solid red;
+}
+
+.persons_folow{
+    width: 300px;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 10px;
+}
+
+.user_folows{
+    color: rgb(32, 32, 32);
+}
+
+.segidores_box{
+    display: none;
+}
+
+.segidos_box{
+    display: none;
+}
+
+.segidores_box.show{
+    display: block;
+}
+
+.segidos_box.show{
+    display: block;
+}

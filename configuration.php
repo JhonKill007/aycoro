@@ -1,6 +1,7 @@
 <?php
 $tittlePage = "Aycoro - Editar perfil";
 require("fund/head.php");
+require("modulos/session.php");
 ?>
 
 

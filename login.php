@@ -50,10 +50,10 @@ require("fund/head.php");
 
     body,
     html {
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
         overflow-x: hidden;
 
-        background: url("img/background.jpg") no-repeat center center/cover;
+        /* background: url("img/background.jpg") no-repeat center center/cover; */
         /* background: url("img/background-27defebrero-version.jpg") no-repeat center center/cover; */
     }
 
@@ -221,7 +221,7 @@ require("fund/head.php");
     //===
     // VARIABLES
     //===
-    const DATE_TARGET = new Date('1/23/2022 7:00 PM');
+    const DATE_TARGET = new Date('1/23/2022 7:30 PM');
     // const DATE_TARGET = new Date('12/25/2021 7:17 PM');
     // DOM for render
     const h1_DAYS = document.querySelector('h1#days');

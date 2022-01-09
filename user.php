@@ -19,6 +19,18 @@ require("fund/head.php");
             margin-top: -110px;
         }
     }
+
+    @media (max-width: 500px) {
+
+        .container-scroll {
+            margin-top: -230px;
+        }
+    }
+
+    .buton_registra_user {
+        width: 98px;
+        margin: auto;
+    }
 </style>
 
 <body>
@@ -33,8 +45,38 @@ require("fund/head.php");
 
 
         require("modulos/perfil-bio-reciver.php");
-        require("models/user_post_model.php");
-        require("modulos/post-view.php");
+
+        if (isset($_SESSION['id'])) {
+            require("models/user_post_model.php");
+            require("modulos/post-view.php");
+        } else {
+        ?>
+            <div class="conteiner">
+                <br>
+                <div class="container-scroll">
+                    <!-- <div class="publicacion-text"> -->
+                    <div class="piecera">
+                        <div class="estado_lettle">
+                            <!-- <p id="stado<?php echo $id_post; ?>"><?php echo $estado_post; ?></p> -->
+                            <h6>Registrate para que puedas ver todas sus fotos, seguir a la persona que quieras y conversar con ella.</h6>
+                        </div>
+                        <div class="buton_registra_user">
+                            <button class="btn btn-primary">Registrate</button>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <br>
+            <br>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script>
+            <!-- login y signup -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="7758489410" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        <?php
+        }
         require("fund/script.php");
         ?>
     </div>

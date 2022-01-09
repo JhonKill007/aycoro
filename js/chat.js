@@ -41,7 +41,7 @@ sendBtn.onclick = () => {
     xhr.onload = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                console.log("enviado")
+                // console.log("enviado")
                 inputField.value = "";
                 scrollToBottom();
             }

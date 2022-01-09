@@ -1,6 +1,7 @@
 <?php
 $tittlePage = "Aycoro - Perfil";
 require("fund/head.php");
+require("modulos/session.php");
 ?>
 
 
@@ -14,6 +15,13 @@ require("fund/head.php");
 
         .container-scroll {
             margin-top: -150px;
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        .container-scroll {
+            margin-top: -250px;
         }
     }
 </style>

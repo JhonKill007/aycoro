@@ -1,7 +1,7 @@
 <?php
 $tittlePage = "Aycoro - Chat";
 require("fund/head.php");
-
+require("modulos/session.php");
 
 
 ?>
