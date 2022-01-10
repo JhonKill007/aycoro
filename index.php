@@ -316,10 +316,10 @@ $identity_page_post = 1;
                                                         <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">
 
                                                             <div class="box_img_history">
-                                                                <img src="img/usuario.png" alt="">
+                                                                <img src=<?php echo $photo; ?> alt="">
                                                             </div>
                                                             <div class="div_name_history">
-                                                                <b>User</b>
+                                                                <b><?php echo $nombre_usu; ?></b>
                                                             </div>
                                                         </a>
                                                     </div>
@@ -362,10 +362,10 @@ $identity_page_post = 1;
                                                         <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">
 
                                                             <div class="box_img_history">
-                                                                <img src="img/usuario.png" alt="">
+                                                                <img src=<?php echo $photo; ?> alt="">
                                                             </div>
                                                             <div class="div_name_history">
-                                                                <b>User</b>
+                                                                <b><?php echo $nombre_usu; ?></b>
                                                             </div>
                                                         </a>
                                                     </div>
