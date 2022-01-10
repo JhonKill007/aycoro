@@ -268,6 +268,7 @@ $identity_page_post = 1;
                                             if ($usu = $resultado->fetch_array()) {
                                                 $id_usu = $usu['id_registro'];
                                                 $nombre_usu = $usu['nombre'];
+                                                $usuario_usu = $usu['usuario'];
                                                 $photo = $usu['photo'];
                                                 $id_history = $usu['id_history'];
                                                 $init;
@@ -319,7 +320,7 @@ $identity_page_post = 1;
                                                                 <img src=<?php echo $photo; ?> alt="">
                                                             </div>
                                                             <div class="div_name_history">
-                                                                <b><?php echo $nombre_usu; ?></b>
+                                                                <b><?php echo $usuario_usu; ?></b>
                                                             </div>
                                                         </a>
                                                     </div>
@@ -345,6 +346,7 @@ $identity_page_post = 1;
                                             if ($usu = $resultado->fetch_array()) {
                                                 $id_usu = $usu['id_registro'];
                                                 $nombre_usu = $usu['nombre'];
+                                                $usuario_usu = $usu['usuario'];
                                                 $photo = $usu['photo'];
                                                 $id_history = $usu['id_history'];
                                                 $init = 1;
@@ -365,7 +367,7 @@ $identity_page_post = 1;
                                                                 <img src=<?php echo $photo; ?> alt="">
                                                             </div>
                                                             <div class="div_name_history">
-                                                                <b><?php echo $nombre_usu; ?></b>
+                                                                <b><?php echo $usuario_usu; ?></b>
                                                             </div>
                                                         </a>
                                                     </div>
