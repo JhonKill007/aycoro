@@ -9,7 +9,7 @@ if (!isset($_SESSION['id'])) {
         <div class="nav-two">
             <a href="index">Inicio</a>
             <a href="explorador">Explorador</a>
-            <a href="historias">Historias</a>
+            <a href="perfil">Perfil</a>
 
         </div>
     </div>

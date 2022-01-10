@@ -262,7 +262,6 @@ if (!isset($_SESSION['id'])) {
                 <li><a href="perfil" title="Perfil"><?php echo $nombre; ?></a></li>
                 <li><a href="message" title="Mensajes">Mensajes (<label class="num-message-bar" for="icon-logo"></label>)</a></li>
                 <li><a href="explorador" title="Explorador">Explorador</a></li>
-                <li><a href="historias" title="Historias">Historias</a></li>
                 <li><a href="configuration" title="Ajustes">Ajustes</a></li>
                 <li><a href="sugerencias" title="Sugerencias">Sugerencias</a></li>
                 <li><a href="ayuda" title="Ayuda">Ayuda</a></li>
