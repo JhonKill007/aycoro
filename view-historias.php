@@ -167,10 +167,10 @@ if (!isset($_SESSION['id'])) {
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="user?user=<?php echo $id_usu; ?>">
+                                    <a href="user?user=<?php echo $user_usu; ?>">
                                         <div class="perfil_circle">
                                             <div class="perfil_circle_img_box">
-                                                <img src=<?php echo $user_usu; ?> alt="">
+                                                <img src=<?php echo $perfil; ?> alt="">
                                             </div>
                                             <div class="perfil_circle_name_box">
                                                 <b><?php echo $user_usu; ?></b>
