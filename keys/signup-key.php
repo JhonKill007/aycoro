@@ -9,66 +9,60 @@ if (!empty($nombre) && !empty($numero) && !empty($email) && !empty($password) &&
     if ($edad > 10) {
         $eso =  require('conection.php');
         if ($eso) {
-            $SELECT = "SELECT * FROM registro WHERE numero = '$numero'";
-            $resultado = mysqli_query($conn, $SELECT);
-            if ($resultado->num_rows == 0) {
-                $cadena = explode(" ", $usuario);
-                $tamaño = count($cadena);
-                $espacios = $tamaño - 1;
-                if ($espacios < 1) {
-                    $userConprover = comprobar_nombre_usuario($usuario);
-                    if ($userConprover) {
-                        $SELECT = "SELECT * FROM registro WHERE usuario = '$usuario'";
-                        $resultado = mysqli_query($conn, $SELECT);
-                        if ($resultado->num_rows == 0) {
-                            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                                $SELECT = "SELECT * FROM registro WHERE email = '$email'";
-                                $resultado = mysqli_query($conn, $SELECT);
-                                if ($resultado->num_rows == 0) {
-                                    if ($password == $passconf) {
-                                        $INSERT = "INSERT INTO registro (nombre,numero,usuario,email,password,birthday,genero,foto,portada,presentacion,status,date_signup)values('$nombre','$numero','$usuario','$email','$script_password','$birthday','$genero','$foto','$portada','$presentacion','$status',NOW())";
-                                        $resultado = mysqli_query($conn, $INSERT);
-                                        if ($resultado) {
-                                            $SELECT = "SELECT * FROM registro WHERE email = '$email'";
-                                            $resultadoh = mysqli_query($conn, $SELECT);
-                                            if ($resultadoh) {
-                                                while ($sign = $resultadoh->fetch_array()) {
-                                                    $id = $sign['id_registro'];
-                                                    if (1 == 1) {
-                                                        $INSERTsign = "INSERT INTO folow (id_folowing,id_folower,date_follow)values('$id','$id',NOW())";
-                                                        $resultadosign = mysqli_query($conn, $INSERTsign);
-                                                        if ($resultadosign) {
-                                                            setcookie("IgtX9000", $id, time() + 2592000, "/");
-                                                            session_start();
-                                                            $_SESSION['id'] = $id;
-                                                            echo "success";
-                                                        }
+            $cadena = explode(" ", $usuario);
+            $tamaño = count($cadena);
+            $espacios = $tamaño - 1;
+            if ($espacios < 1) {
+                $userConprover = comprobar_nombre_usuario($usuario);
+                if ($userConprover) {
+                    $SELECT = "SELECT * FROM registro WHERE usuario = '$usuario'";
+                    $resultado = mysqli_query($conn, $SELECT);
+                    if ($resultado->num_rows == 0) {
+                        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            $SELECT = "SELECT * FROM registro WHERE email = '$email'";
+                            $resultado = mysqli_query($conn, $SELECT);
+                            if ($resultado->num_rows == 0) {
+                                if ($password == $passconf) {
+                                    $INSERT = "INSERT INTO registro (nombre,numero,usuario,email,password,birthday,genero,foto,portada,presentacion,status,date_signup)values('$nombre','$numero','$usuario','$email','$script_password','$birthday','$genero','$foto','$portada','$presentacion','$status',NOW())";
+                                    $resultado = mysqli_query($conn, $INSERT);
+                                    if ($resultado) {
+                                        $SELECT = "SELECT * FROM registro WHERE email = '$email'";
+                                        $resultadoh = mysqli_query($conn, $SELECT);
+                                        if ($resultadoh) {
+                                            while ($sign = $resultadoh->fetch_array()) {
+                                                $id = $sign['id_registro'];
+                                                if (1 == 1) {
+                                                    $INSERTsign = "INSERT INTO folow (id_folowing,id_folower,date_follow)values('$id','$id',NOW())";
+                                                    $resultadosign = mysqli_query($conn, $INSERTsign);
+                                                    if ($resultadosign) {
+                                                        setcookie("IgtX9000", $id, time() + 2592000, "/");
+                                                        session_start();
+                                                        $_SESSION['id'] = $id;
+                                                        echo "success";
                                                     }
                                                 }
-                                            } else {
-                                                $datasign .= "<div class='error-txt  error'>NO HAY REGISTRO</div>";
                                             }
                                         } else {
-                                            $datasign .= "<div class='error-txt  error'>NO SE GUARDO EL REGISTRO</div>";
+                                            $datasign .= "<div class='error-txt  error'>NO HAY REGISTRO</div>";
                                         }
                                     } else {
-                                        $datasign .= "<div class='error-txt  error'>Las contraseñas no coinsiden</div>";
+                                        $datasign .= "<div class='error-txt  error'>NO SE GUARDO EL REGISTRO</div>";
                                     }
                                 } else {
-                                    $datasign .= "<div class='error-txt  error'>El Email usado ya esta Registrado</div>";
+                                    $datasign .= "<div class='error-txt  error'>Las contraseñas no coinsiden</div>";
                                 }
                             } else {
-                                $datasign .= "<div class='error-txt  error'>'" . $email . "' Este Email no es valido</div>";
+                                $datasign .= "<div class='error-txt  error'>El Email usado ya esta Registrado</div>";
                             }
                         } else {
-                            $datasign .= "<div class='error-txt  error'>Usuario no disponible</div>";
+                            $datasign .= "<div class='error-txt  error'>'" . $email . "' Este Email no es valido</div>";
                         }
+                    } else {
+                        $datasign .= "<div class='error-txt  error'>Usuario no disponible</div>";
                     }
-                } else {
-                    $datasign .= "<div class='error-txt  error'>No se aceptan espacios en el usuario.</div>";
                 }
             } else {
-                $datasign .= "<div class='error-txt  error'>Este numero esta siendo usado en una cuenta</div>";
+                $datasign .= "<div class='error-txt  error'>No se aceptan espacios en el usuario.</div>";
             }
         } else {
             $datasign .= "<div class='error-txt  error'>Fallo la coneccion</div>";

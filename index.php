@@ -2,12 +2,20 @@
 $tittlePage = "Aycoro";
 require("fund/head.php");
 require("modulos/session.php");
+$publicaciones = array(0);
+$personas = array(0);
 ?>
 
 <?php
 $identity_page_post = 1;
 ?>
-
+<style>
+    @media (max-width: 1120px) {
+        .conteiner {
+            width: 100%;
+        }
+    }
+</style>
 
 <body>
     <div id="contenedo_carca" class="charger">
@@ -30,6 +38,7 @@ $identity_page_post = 1;
                 var inputhistory = document.getElementById('inputhistory');
                 var inputpost_nav = document.getElementById('inputpost_nav');
                 var inputhistory_nav = document.getElementById('inputhistory_nav');
+                var inputhistoryCircle = document.getElementById('HistoryCircle');
 
                 var cropper;
 
@@ -53,6 +62,25 @@ $identity_page_post = 1;
                 }
 
                 inputhistory.onchange = function() {
+                    console.log(option);
+                    var files = event.target.files;
+
+                    var done = function(url) {
+                        image.src = url;
+                        $modal.modal('show');
+                        console.log("mostrar")
+                    };
+
+                    if (files && files.length > 0) {
+                        reader = new FileReader();
+                        reader.onload = function(event) {
+                            done(reader.result);
+                        };
+                        reader.readAsDataURL(files[0]);
+                    }
+                }
+
+                inputhistoryCircle.onchange = function() {
                     console.log(option);
                     var files = event.target.files;
 
@@ -102,13 +130,6 @@ $identity_page_post = 1;
             });
         </script>
 
-
-
-
-
-
-
-
         <div class="box-up-one">
             <div class="plus-post-btn">
                 <div class="plus-post-box">
@@ -147,10 +168,239 @@ $identity_page_post = 1;
             ?>
         </div>
 
+        <div class="conteiner">
+            <div class="conteiner_historys">
+                <div class="mas_boton_left">
+                    <div class="div_boton back_buton_history"><i class="fas fa-chevron-left"></i></div>
+                </div>
+                <div class="conteiner_box_history" id="caja_de_historias">
+                    <?php
+                    $eso = require("keys/conection.php");
+                    if ($eso) {
+
+                        $SELECT = "SELECT * FROM history 
+                    inner join registro on history.id_owner=registro.id_registro 
+                    WHERE date >= NOW() - INTERVAL 1 DAY AND history.id_owner = $id_registro 
+                    ORDER BY history.id_history DESC";
+
+                        $resultado = mysqli_query($conn, $SELECT);
+                        $cant_historys_ = $resultado->num_rows;
+                        if ($resultado) {
+                            if ($cant_historys_ != 0) {
+                                if ($usu = $resultado->fetch_array()) {
+                                    $id_usu = $usu['id_registro'];
+                                    $nombre_usu = $usu['nombre'];
+                                    $photo = $usu['photo'];
+                                    $perfil = $usu['foto'];
+                                    $id_history = $usu['id_history'];
+                                    $init = 1;
+
+
+                    ?>
+
+                                    <div class="box_person_history">
+                                        <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $init; ?>&identity=1">
+                                            <div class="box_img_history">
+                                                <img src=<?php echo $perfil; ?> alt="">
+                                            </div>
+                                            <div class="div_name_history">
+                                                <b>Tu historia</b>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php
+                                }
+                            } else {
+                                ?>
+
+                                <label for="HistoryCircle" title="Publicar Historia" onclick="history()">
+                                    <input type="file" class="sr-only" id="HistoryCircle" name="file" accept="image/*">
+                                    <div class="box_person_history">
+                                        <div class="box_img_history">
+                                            <img src=<?php echo $foto; ?> alt="">
+                                            <div class="icon_history-none">
+                                                <i class="fas fa-plus"></i>
+                                            </div>
+                                        </div>
+                                        <div class="div_name_history">
+                                            <b>Tu historia</b>
+                                        </div>
+                                    </div>
+                                </label>
+
+
+
+                                <?php
+
+                            }
+                        }
+                    }
+                    if ($eso) {
+
+                        $SELECT = "SELECT * FROM history 
+                    WHERE date >= NOW() - INTERVAL 1 DAY 
+                    AND id_owner != $id_registro  ORDER BY id_history Desc";
+
+                        $resultado = mysqli_query($conn, $SELECT);
+                        if ($resultado) {
+                            while ($usu = $resultado->fetch_array()) {
+                                $id_usu = $usu['id_owner'];
+                                array_push($publicaciones, $id_usu);
+                            }
+                            $filtrados =  (array_unique($publicaciones));
+                            foreach ($filtrados as $item) {
+                                if ($item != 0) {
+                                    array_push($personas, $item);
+                                }
+                            }
+                            $posiciones = count($personas);
+                            for ($i = 0; $i < $posiciones; $i++) {
+                                $items = $personas[$i];
+                                if ($items != 0) {
+                                    if ($eso) {
+
+                                        $SELECT = "SELECT * FROM history 
+                                    inner join registro on history.id_owner=registro.id_registro 
+                                    where history.id_owner = $items ORDER BY history.id_history DESC";
+
+                                        $resultado = mysqli_query($conn, $SELECT);
+                                        if ($resultado) {
+                                            if ($usu = $resultado->fetch_array()) {
+                                                $id_usu = $usu['id_registro'];
+                                                $nombre_usu = $usu['nombre'];
+                                                $photo = $usu['photo'];
+                                                $id_history = $usu['id_history'];
+                                                $init;
+
+                                                $SELECT = "SELECT * FROM view_historys 
+                                            WHERE id_history = $id_history 
+                                            AND id_viewer = $id_registro";
+
+                                                $resultado = mysqli_query($conn, $SELECT);
+                                                $wacht_already = $resultado->num_rows;
+                                                if ($wacht_already == 0) {
+                                                    $array_cant_history = array(0);
+                                                    $contador_history = 1;
+
+                                                    $SELECT = "SELECT * FROM history 
+                                                WHERE date >= NOW() - INTERVAL 1 DAY 
+                                                AND id_owner = $id_usu";
+
+                                                    $resultado = mysqli_query($conn, $SELECT);
+                                                    $cant_history_user = $resultado->num_rows;
+
+                                                    while ($h_history = $resultado->fetch_array()) {
+                                                        array_push($array_cant_history, $contador_history);
+                                                        $contador_history++;
+                                                    }
+                                                    $reversed = array_reverse($array_cant_history);
+
+
+                                                    $SELECT = "SELECT * FROM view_historys 
+                                                WHERE date_view >= NOW() - INTERVAL 1 DAY 
+                                                AND id_owner = $id_usu  
+                                                AND id_viewer = $id_registro";
+
+                                                    $resultado = mysqli_query($conn, $SELECT);
+                                                    $cant_history_watch = $resultado->num_rows;
+                                                    if ($cant_history_watch == 0 || $cant_history_user == $cant_history_watch) {
+                                                        $init = 1;
+                                                    } else {
+                                                        $resta_h = $cant_history_user - $cant_history_watch;
+                                                        $init = $reversed[$resta_h - 1];
+                                                    }
+
+                                ?>
+
+                                                    <div class="box_person_history">
+                                                        <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">
+
+                                                            <div class="box_img_history">
+                                                                <img src="img/usuario.png" alt="">
+                                                            </div>
+                                                            <div class="div_name_history">
+                                                                <b>User</b>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                <?php
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            for ($i = 0; $i < $posiciones; $i++) {
+                                $items = $personas[$i];
+                                if ($items != 0) {
+                                    if ($eso) {
+
+                                        $SELECT = "SELECT * FROM history 
+                                    inner join registro on history.id_owner=registro.id_registro 
+                                    where history.id_owner = $items ORDER BY history.id_history DESC";
+
+                                        $resultado = mysqli_query($conn, $SELECT);
+                                        if ($resultado) {
+                                            if ($usu = $resultado->fetch_array()) {
+                                                $id_usu = $usu['id_registro'];
+                                                $nombre_usu = $usu['nombre'];
+                                                $photo = $usu['photo'];
+                                                $id_history = $usu['id_history'];
+                                                $init = 1;
+
+                                                $SELECT = "SELECT * FROM view_historys 
+                                            WHERE id_history = $id_history 
+                                            AND id_viewer = $id_registro";
+
+                                                $resultado = mysqli_query($conn, $SELECT);
+                                                $wacht_already = $resultado->num_rows;
+                                                if ($wacht_already == 1) {
+
+                                                ?>
+                                                    <div class="box_person_history">
+                                                        <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">
+
+                                                            <div class="box_img_history">
+                                                                <img src="img/usuario.png" alt="">
+                                                            </div>
+                                                            <div class="div_name_history">
+                                                                <b>User</b>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                    <?php
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if ($resultado = 0) {
+                            echo "No se han encontrado resultados para tu búsqueda";
+                        }
+                    } else {
+                        echo "la coneccion fallo";
+                    }
+                    ?>
+                </div>
+                <div class="mas_boton_right">
+                    <div class="div_boton come_buton_history"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
+
 
         <?php
         require("models/index_post_model.php");
-        require("modulos/post-view.php");
+        ?>
+        <div class="conteiner_index">
+            <?php
+            require("modulos/post-view.php");
+            ?>
+        </div>
+        <?php
         if (isset($_GET['acces'])) {
             $acces = $_GET['acces'];
             if ($acces == 'Admin007') {

@@ -145,7 +145,7 @@ if (!isset($_SESSION['id'])) {
 
                         <div class="conteiner view-history-conteiner">
                             <div class="conteiner-view-historys">
-                                <a href="historias">
+                                <a href="index">
                                     <div class="box-close">
                                         <i class="fas fa-window-close"></i>
                                     </div>
@@ -228,7 +228,7 @@ if (!isset($_SESSION['id'])) {
                                                 window.location = 'view-historias?history=' + photo_position + '&position=' + item_position + '&identity=' + identity_history + '';
 
                                             } else {
-                                                window.location = 'historias';
+                                                window.location = 'index';
                                             }
                                         }
                                     }

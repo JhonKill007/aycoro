@@ -30,7 +30,7 @@ if ($opcion == 1 || $opcion == 3) {
             $INSERT = "INSERT INTO history (photo,id_owner,day,hour,date)values('$ruta_send','$id_registro','$fecha','$hora',NOW())";
             $resultado = mysqli_query($conn, $INSERT);
             if ($resultado) {
-                header("Location: ../historias");
+                header("Location: ../index");
             } else {
                 echo "<script>
                             alert('la option de post 2 ha fallado.');

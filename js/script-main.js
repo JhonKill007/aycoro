@@ -14,7 +14,7 @@ document.querySelector('.message-btn').addEventListener('click', () => {
     document.querySelector(".bar-menu-rigth").classList.toggle("show")
     if (bar_mjs_nav == 1) {
         bar_mjs_nav = 2;
-        
+
         varstopIntervalMjs = setInterval(MsjBarRigthNav, 1000);
 
     }
@@ -48,7 +48,15 @@ function MsjBarRigthNav() {
 }
 
 
-
+$(document).ready(function () {
+    var back = document.getElementById("caja_de_historias");
+    document.querySelector('.back_buton_history').addEventListener('click', () => {
+        back.scrollLeft -= 200;
+    })
+    document.querySelector('.come_buton_history').addEventListener('click', () => {
+        back.scrollLeft += 200;
+    })
+});
 
 
 // button search responsive
@@ -118,3 +126,7 @@ function quitCloseWindow() { // Called when a user clicks on the close button.
     // What to do just before closing the window.
     chrome.app.window.current().close(); // Closing the window.
 }
+
+
+
+
