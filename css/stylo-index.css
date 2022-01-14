@@ -100,8 +100,18 @@
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  border: 2px solid black;
   margin: auto;
+  
+}
+
+.noSeen {
+  padding: 5px;
+  background: -webkit-linear-gradient(left top, crimson 0%, rgb(0, 162, 255) 100%);
+}
+
+.Seen {
+  padding: 3px;
+  background: rgb(187, 187, 187);
 }
 
 .box_img_history img {

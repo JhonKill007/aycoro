@@ -200,7 +200,7 @@ $identity_page_post = 1;
 
                                     <div class="box_person_history">
                                         <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $init; ?>&identity=1">
-                                            <div class="box_img_history">
+                                            <div class="box_img_history noSeen">
                                                 <img src=<?php echo $perfil; ?> alt="">
                                             </div>
                                             <div class="div_name_history">
@@ -216,7 +216,7 @@ $identity_page_post = 1;
                                 <label for="HistoryCircle" title="Publicar Historia" onclick="history()">
                                     <input type="file" class="sr-only" id="HistoryCircle" name="file" accept="image/*">
                                     <div class="box_person_history">
-                                        <div class="box_img_history">
+                                        <div class="box_img_history Seen">
                                             <img src=<?php echo $foto; ?> alt="">
                                             <div class="icon_history-none">
                                                 <i class="fas fa-plus"></i>
@@ -237,9 +237,13 @@ $identity_page_post = 1;
                     }
                     if ($eso) {
 
-                        $SELECT = "SELECT * FROM history 
-                    WHERE date >= NOW() - INTERVAL 1 DAY 
-                    AND id_owner != $id_registro  ORDER BY id_history Desc";
+                        $SELECT = "SELECT * from folow 
+                        inner join history on folow.id_folowing = history.id_owner 
+                        inner join registro on history.id_owner=registro.id_registro 
+                        WHERE date >= NOW() - INTERVAL 1 DAY 
+                        AND folow.id_folower='$id_registro' 
+                        AND history.id_owner != $id_registro 
+                        ORDER BY history.id_history DESC";
 
                         $resultado = mysqli_query($conn, $SELECT);
                         if ($resultado) {
@@ -316,7 +320,7 @@ $identity_page_post = 1;
                                                     <div class="box_person_history">
                                                         <a href="view-historias?history=<?php echo $init; ?>&position=<?php echo $i; ?>&identity=0">
 
-                                                            <div class="box_img_history">
+                                                            <div class="box_img_history noSeen">
                                                                 <img src=<?php echo $photo; ?> alt="">
                                                             </div>
                                                             <div class="div_name_history">
