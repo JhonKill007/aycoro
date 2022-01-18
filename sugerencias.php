@@ -1,7 +1,7 @@
 <?php
+require("modulos/session.php");
 $tittlePage = "Aycoro - Sugerencias";
 require("fund/head.php");
-require("modulos/session.php");
 ?>
 
 

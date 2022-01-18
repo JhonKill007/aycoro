@@ -1,7 +1,7 @@
 <?php
+require("modulos/session.php");
 $tittlePage = "Aycoro";
 require("fund/head.php");
-require("modulos/session.php");
 $publicaciones = array(0);
 $personas = array(0);
 ?>

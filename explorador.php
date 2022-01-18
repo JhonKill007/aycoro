@@ -1,7 +1,7 @@
 <?php
+require("modulos/session.php");
 $tittlePage = "Aycoro - Explorador";
 require("fund/head.php");
-require("modulos/session.php");
 ?>
 
 <style>

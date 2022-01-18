@@ -1,8 +1,8 @@
 <?php
+require("modulos/session.php");
 $e = $_GET['e'];
 $tittlePage = "Aycoro - Edit " . $e;
 require("fund/head.php");
-require("modulos/session.php");
 ?>
 
 

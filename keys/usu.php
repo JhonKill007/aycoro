@@ -18,7 +18,7 @@ $eso = require("keys/conection.php");
             }
         }
         if($n_usu < 1){
-            // header("Location: index");
+            header("Location: index");
         }
     }
     else{

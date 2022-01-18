@@ -1,7 +1,9 @@
 <?php
+require("modulos/session.php");
+$usuario_usu = $_GET['user'];
+require("keys/usu.php");
 $tittlePage = "Aycoro - Chat";
 require("fund/head.php");
-require("modulos/session.php");
 
 
 ?>
@@ -22,18 +24,9 @@ require("modulos/session.php");
     </style>
 
     <?php
-    // $idmine = $_GET['idmine'];
-    $usuario_usu = $_GET['user'];
-    require("keys/usu.php");
-    // $eso = require("keys/conection.php");
-
-    
-    // $id_sus = $_GET['usu'];
-
-    
     require("modulos/nav.php");
     require("modulos/nav-two.php");
-    $idmine = $registro['id_registro'];  
+    $idmine = $registro['id_registro'];
     require("modulos/status-post.php");
     if ($eso) {
         $UPDATE = "UPDATE chat SET readdate = 1 where id_reciver = '$idmine' AND id_sendner = '$id_usu' AND readdate = 0";

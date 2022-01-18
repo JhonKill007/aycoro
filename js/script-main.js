@@ -74,10 +74,10 @@ searchBtn.onclick = () => {
 searchBar.onkeyup = () => {
     let searchTerm = searchBar.value;
     if (searchTerm != "") {
-        searchBar.classList.add("active");
+        // searchBar.classList.add("active");
     }
     else {
-        searchBar.classList.remove("active");
+        // searchBar.classList.remove("active");
     }
 }
 

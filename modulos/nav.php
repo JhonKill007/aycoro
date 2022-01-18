@@ -315,36 +315,27 @@ if (!isset($_SESSION['id'])) {
             <!-- componentes -->
             <nav class="nav-main">
                 <ul>
-                    <li>
+                    <li class="conteinner_logo">
                         <!-- logo -->
-                        <!-- <a href="index.php"><img id="logo" src="img/logo.png" alt="hola"></a> -->
                         <a href="index"><img id="logo" src="img/Logo.png" title="Aycoro" alt=""></a>
                         <a href="index"><img id="logo2" src="img/Logo2.png" title="Aycoro" alt=""></a>
                     </li>
-                    <li>
-                        <!-- container -->
-                        <div class="middle-nav">
-                            <form action="busqueda" method="GET" class="form-horizontal">
-                                <!-- caja de busqueda -->
-                                <input type="search" name="search-box" title="A quien busca?" placeholder="A quien buscas?" id="search-box">
-                                <!-- boton buscar -->
-                                <button class="btn btn-success" id="search-boton" title="Buscar" name="search-boton" type="submit"><i class="fas fa-search"></i></button>
+                    <li class="search-button-two">
+                        <div class="search">
+                            <form action="" class="form_search" method="POST">
+                                <input type="text" autocomplete="off" name="search-box" title="A quien buscas?" placeholder="A quien Buscas?" class="search_input_box" id="search-box">
                             </form>
-
-
+                            <button><i class="fas fa-search" title="Buscar"></i></button>
                         </div>
                     </li>
-                    <li>
-                        <!-- boton log -->
+                    <li class="conteier_perfil_img">
                         <div class="img-barra">
                             <div class="img-box">
                                 <a href="perfil"><img id="usuario-photo" title="<?php echo $registro['usuario']; ?>" src=<?php echo $foto; ?> alt="perfil"></a>
-
                             </div>
                         </div>
                     </li>
                     <li class="icon-message">
-                        <!-- mensaje -->
                         <img class="message-btn" id="icon-logo" src="img/message.png" title="Mensajes" alt="Mensajes">
                         <div class="cicule-mjs">
                             <span class="num-message" for="icon-logo"></span>
@@ -355,16 +346,8 @@ if (!isset($_SESSION['id'])) {
                             <div><i title="Cerrar Sesion" class="fas fa-sign-out-alt go-out"></i></div>
                         </a>
                     </li>
-                    <li class="search-button-two">
-                        <div class="search">
-                            <!-- <span class="text"></span> -->
-                            <form action="busqueda" method="GET">
-                                <input type="text" name="search-box" title="A quien buscas?" placeholder="A quien Buscas?">
-                            </form>
-                            <button><i class="fas fa-search" title="Buscar"></i></button>
-                        </div>
-                    </li>
-                    <li>
+
+                    <li class="conteiner_buton_menu">
                         <div class="menu-btn">
                             <i class="fas fa-bars" title="Menu"></i>
                             <div class="cir-num-mjs">
@@ -376,6 +359,9 @@ if (!isset($_SESSION['id'])) {
 
             </nav>
 
+        </div>
+
+        <div class="conteiner_search">
         </div>
         <script>
             const MonViewTwo = document.querySelector(".num-message-bar-Two");
@@ -433,6 +419,51 @@ if (!isset($_SESSION['id'])) {
 
         </div>
     </div>
+
+    <script>
+        const formSearch = document.querySelector(".form_search"),
+            search_box = document.querySelector('.search_input_box'),
+            contenedor_search = document.querySelector(".conteiner_search");
+
+        formSearch.onsubmit = (e) => {
+            e.preventDefault();
+        }
+
+        var change_search = 0;
+
+        search_box.addEventListener('keyup', (event) => {
+            // console.log(event.target.value)
+            if (event.target.value != "") {
+
+                if (change_search == 0) {
+                    document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
+                    document.querySelector(".conteiner_search").classList.toggle("show")
+                    change_search = 1;
+                }
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "keys/busqueda-key.php", true);
+                xhr.onload = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            let data = xhr.response;
+                            // console.log(data);
+                            contenedor_search.innerHTML = data;
+                        }
+                    }
+                }
+                let formData = new FormData(formSearch);
+                xhr.send(formData);
+            } else {
+                if (change_search == 1) {
+                    document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
+                    document.querySelector(".conteiner_search").classList.toggle("show")
+                    change_search = 0;
+                }
+            }
+
+        });
+    </script>
 
 <?php
 }
