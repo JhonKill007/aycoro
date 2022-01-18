@@ -40,10 +40,6 @@ $name = $_GET['name'];
 
 
     <div class="conteiner">
-        <br>
-        <br>
-        <br>
-        <br>
         <h1>Hola <?php echo $name; ?></h1>
 
         <h4>Te damos la bienvenida a Aycoro, la primera red social de la Repubica Dominicana.

@@ -1,3 +1,72 @@
+.search-perfiles {
+  margin-top: 100px;
+}
+
+.search-perfiles h1 {
+  text-align: center;
+}
+
+.search-perfiles a {
+  text-decoration: none;
+}
+
+
+.display {
+  width: 100%;
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto auto;
+}
+
+.info-busque {
+  width: 230px;
+}
+
+.user-info-busque {
+  margin: auto;
+  text-align: center;
+}
+
+.search-perfil-box {
+  border: 3px solid black;
+  height: 100px;
+  width: 100px;
+  border-radius: 60%;
+  margin: auto;
+}
+
+.search-perfil-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 736px) {
+  .display {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .info-busque {
+    width: 200px;
+  }
+}
+
+@media (max-width: 375px) {
+  .info-busque {
+    width: 180px;
+  }
+}
+
+@media (max-width: 360px) {
+  .info-busque {
+    width: 150px;
+  }
+}
+
 /* search nav */
 
 .conteiner_search {
@@ -84,3 +153,7 @@
     width: 100%;
   }
 }
+
+
+
+
