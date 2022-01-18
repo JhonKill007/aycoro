@@ -69,6 +69,12 @@ searchBtn.onclick = () => {
     searchBar.classList.toggle("active");
     searchBar.focus();
     searchBtn.classList.toggle("active");
+    if (change_search == 1) {
+        document.querySelector('.search_input_box').value = "";
+        document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
+        document.querySelector(".conteiner_search").classList.toggle("show")
+        change_search = 0;
+    }
 }
 
 searchBar.onkeyup = () => {
