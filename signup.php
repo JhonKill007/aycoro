@@ -57,9 +57,6 @@ require("fund/head.php");
                             <div class=" email-box">
                                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="50" required>
                             </div>
-                            <!-- <div class=" email-box">
-                                <input type="tel" class="form-control" id="numero" name="numero" placeholder="Numero" maxlength="11">
-                            </div> -->
                             <div class=" email-box">
                                 <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" maxlength="20" required>
                             </div>

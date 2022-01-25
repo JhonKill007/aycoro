@@ -74,8 +74,11 @@ if (!isset($_SESSION['id'])) {
         } else {
 
             $SELECT = "SELECT * FROM history 
+            inner join folow on history.id_owner  = folow.id_folowing
             WHERE date >= NOW() - INTERVAL 1 DAY 
-            AND id_owner != $id_registro ORDER BY id_history Desc";
+            AND id_owner != $id_registro 
+            AND folow.id_folower='$id_registro' 
+            ORDER BY id_history Desc";
 
             $resultado = mysqli_query($conn, $SELECT);
         }
@@ -109,7 +112,7 @@ if (!isset($_SESSION['id'])) {
                     $SELECT = "SELECT * FROM history 
                     inner join registro on history.id_owner=registro.id_registro 
                     where history.id_owner = $items 
-                    AND date >= NOW() - INTERVAL 1 DAY "; // ORDER BY event.id_history DESC
+                    AND date >= NOW() - INTERVAL 1 DAY";
 
                     $resultado = mysqli_query($conn, $SELECT);
                     if ($resultado) {

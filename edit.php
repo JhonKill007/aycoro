@@ -134,11 +134,11 @@ require("fund/head.php");
                             <?php
                             if ($registro['numero'] == "Null") {
                             ?>
-                                <input class="form-control" type="tel" name="number_new" id="" maxlength="50" placeholder="Nuevo Numero" required>
+                                <input class="form-control" type="text" name="number_new" id="" maxlength="50" placeholder="Nuevo Numero" required>
                             <?php
                             } else {
                             ?>
-                                <input class="form-control" type="tel" name="number_new" id="" maxlength="50" value="<?php echo $registro['numero']; ?>" placeholder="Nuevo Numero" required>
+                                <input class="form-control" type="text" name="number_new" id="" maxlength="50" value="<?php echo $registro['numero']; ?>" placeholder="Nuevo Numero" required>
                             <?php
                             }
                             ?>
