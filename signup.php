@@ -46,7 +46,7 @@ require("fund/head.php");
                 <h2>Registrate</h2>
                 <label>Es super facil.</label>
                 <br>
-                <span id="span_sign">Solo tienes que completar un simpe formulario y podras compartir tus mejores moomentos con tus amigos, familiares y el mundo.</span>
+                <span id="span_sign">Solo tienes que completar un simple formulario y podras compartir tus mejores momentos con tus amigos, familiares y el mundo.</span>
                 <div class='error'></div>
                 <hr>
 

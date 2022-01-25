@@ -20,7 +20,7 @@ document.querySelector('.button-change').addEventListener('click', () => {
                     Swal.fire({
                         title: 'Contraseña Cambiada',
                         icon: 'success',
-                        text: 'Ya acmbiaste tu contraseña, ahora inicia session.'
+                        text: 'Ya cambiaste tu contraseña, ahora inicia sesion.'
                     }).then((result) => {
                         location.href = "index";
 
