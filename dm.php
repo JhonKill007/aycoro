@@ -86,7 +86,7 @@ require("fund/head.php");
         document.getElementById("time_mjs").value = time_mjs;
     </script>
     <script src="js/chat.js"></script>
-    <script src="js/status.js"></script>
+    <!-- <script src="js/status.js"></script> -->
     <?php
     require("fund/script.php");
     ?>

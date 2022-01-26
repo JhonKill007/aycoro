@@ -6,20 +6,8 @@ if ($owner_post == $_SESSION['id']) {
         const Opt<?php echo $id_post; ?> = document.querySelector(".options-edit-post<?php echo $id_post; ?>");
         document.querySelector('.box_setting<?php echo $id_post; ?>').addEventListener('click', () => {
             if (optix<?php echo $id_post; ?> == 1) {
-                let xhrts<?php echo $id_post; ?> = new XMLHttpRequest();
-                xhrts<?php echo $id_post; ?>.open("POST", "modulos/options_edit.php", true);
-                xhrts<?php echo $id_post; ?>.onload = () => {
-                    if (xhrts<?php echo $id_post; ?>.readyState === XMLHttpRequest.DONE) {
-                        if (xhrts<?php echo $id_post; ?>.status === 200) {
-                            let datats<?php echo $id_post; ?> = xhrts<?php echo $id_post; ?>.response;
-                            Opt<?php echo $id_post; ?>.innerHTML = datats<?php echo $id_post; ?>;
-                            optix<?php echo $id_post; ?> = 2;
-                        }
-                    }
-                }
-                // vamos a mandar el form data atraves de ajax a php
-                let formDatats<?php echo $id_post; ?> = new FormData(formu<?php echo $id_post; ?>); //creando el objeto formData
-                xhrts<?php echo $id_post; ?>.send(formDatats<?php echo $id_post; ?>); //enviando el formData a php
+                Opt<?php echo $id_post; ?>.innerHTML = '<div class="options-edit-post"><br><ul><li onclick="EditPost<?php echo $id_post; ?>()"><b class="text-gren">Editar</b></li><li onclick="options<?php echo $id_post; ?>()"><b class="text-red">Eliminar</b></li></ul></div>';
+                optix<?php echo $id_post; ?> = 2;
             } else {
                 Opt<?php echo $id_post; ?>.innerHTML = "";
                 optix<?php echo $id_post; ?> = 1;
@@ -119,19 +107,10 @@ if ($owner_post == $_SESSION['id']) {
 
     function OpenInputComent<?php echo $id_post; ?>() {
         if (cont_coment<?php echo $id_post; ?> == 1) {
-            let xhrts_coment<?php echo $id_post; ?> = new XMLHttpRequest();
-            xhrts_coment<?php echo $id_post; ?>.open("POST", "modulos/coment_input.php", true);
-            xhrts_coment<?php echo $id_post; ?>.onload = () => {
-                if (xhrts_coment<?php echo $id_post; ?>.readyState === XMLHttpRequest.DONE) {
-                    if (xhrts_coment<?php echo $id_post; ?>.status === 200) {
-                        let data_coment<?php echo $id_post; ?> = xhrts_coment<?php echo $id_post; ?>.response;
-                        conteiner_input_coment<?php echo $id_post; ?>.innerHTML = data_coment<?php echo $id_post; ?>;
-                        cont_coment<?php echo $id_post; ?> = 2;
-                    }
-                }
-            }
-            let formDatats_coment<?php echo $id_post; ?> = new FormData(formu<?php echo $id_post; ?>);
-            xhrts_coment<?php echo $id_post; ?>.send(formDatats_coment<?php echo $id_post; ?>);
+
+            conteiner_input_coment<?php echo $id_post; ?>.innerHTML = '<div class="coment_add_box_send"><div class ="coment_add_box_center"><div class="coment_add_input"><input class="form-control" name="coment_value" id="coment_value<?php echo $id_post; ?>" maxlength="900" autocomplete="off" placeholder="Agrega un comentario..." type="text"></div><div class="coment_add_buttons"><button class="btn btn-success" onclick="SendComent<?php echo $id_post; ?>()">Publicar</button></div></div></div>';
+            cont_coment<?php echo $id_post; ?> = 2;
+
         } else {
             conteiner_input_coment<?php echo $id_post; ?>.innerHTML = "";
             cont_coment<?php echo $id_post; ?> = 1;

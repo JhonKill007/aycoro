@@ -1,5 +1,5 @@
 var segonload;
-segonload = setInterval(awitload, 1000);
+segonload = setInterval(awitload, 2000);
 
 function StopLoad() {
     clearInterval(segonload);
