@@ -2,7 +2,7 @@
 session_start();
 
 $tittlePage = "Aycoro - Wellcome";
-require("fund/head.php");
+require("../fund/head-comunity.php");
 $name = $_GET['name'];
 ?>
 
@@ -22,9 +22,9 @@ $name = $_GET['name'];
                 <ul>
                     <li>
                         <!-- logo -->
-                        <a href="login">
-                            <img id="logo" src="img/Logo.png" alt="">
-                            <img id="logo2" src="img/Logo2.png" alt="">
+                        <a href="../login">
+                            <img id="logo" src="../img/Logo.png" alt="">
+                            <img id="logo2" src="../img/Logo2.png" alt="">
                         </a>
                     </li>
                 </ul>
@@ -57,25 +57,21 @@ $name = $_GET['name'];
                 por haberte registrado en nuestra plataforma, ahora ve y comparte tus
                 <br>
                 mejores momentos con el mundo.
-                <a href="index">Home</a>
+                <a href="../index">Home</a>
             <?php
             } else {
             ?>
                 <?php echo $name; ?>, cordialmente Jhon David Mesa fundador y CEO de Aycoro te invita a que
                 <br>
                 te registres en nuestra plataforma, has click
-                <a href="signup">aqui</a>.
+                <a href="../signup">aqui</a>.
             <?php
             }
             ?>
         </h4>
+        <br>
+        <?php require("footer-comunity.php") ?>
     </div>
-
-
-    <script src="js/signup.js"></script>
-    <?php
-    require("fund/script.php");
-    ?>
 </body>
 
 

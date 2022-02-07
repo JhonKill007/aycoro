@@ -108,7 +108,7 @@ if ($owner_post == $_SESSION['id']) {
     function OpenInputComent<?php echo $id_post; ?>() {
         if (cont_coment<?php echo $id_post; ?> == 1) {
 
-            conteiner_input_coment<?php echo $id_post; ?>.innerHTML = '<div class="coment_add_box_send"><div class ="coment_add_box_center"><div class="coment_add_input"><input class="form-control" name="coment_value" id="coment_value<?php echo $id_post; ?>" maxlength="900" autocomplete="off" placeholder="Agrega un comentario..." type="text"></div><div class="coment_add_buttons"><button class="btn btn-success" onclick="SendComent<?php echo $id_post; ?>()">Publicar</button></div></div></div>';
+            conteiner_input_coment<?php echo $id_post; ?>.innerHTML = '<div class="coment_add_box_send"><div class ="coment_add_box_center"><div class="coment_add_input"><input class="form-control" id="coment_value<?php echo $id_post; ?>" maxlength="900" autocomplete="off" placeholder="Agrega un comentario..." type="text"></div><div class="coment_add_buttons"><button class="btn btn-success" onclick="SendComent<?php echo $id_post; ?>()">Publicar</button></div></div></div>';
             cont_coment<?php echo $id_post; ?> = 2;
 
         } else {
@@ -119,6 +119,8 @@ if ($owner_post == $_SESSION['id']) {
 
 
     function SendComent<?php echo $id_post; ?>() {
+        document.getElementById("status_input_hiden<?php echo $id_post; ?>").value = document.getElementById("coment_value<?php echo $id_post; ?>").value;
+        document.getElementById("coment_value<?php echo $id_post; ?>").value = "";
         let xhrts_add_coment<?php echo $id_post; ?> = new XMLHttpRequest();
         xhrts_add_coment<?php echo $id_post; ?>.open("POST", "keys/add-coments-key.php", true);
         xhrts_add_coment<?php echo $id_post; ?>.onload = () => {

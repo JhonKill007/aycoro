@@ -1,6 +1,6 @@
 <?php
-$tittlePage = "Aycoro - Registrate";
-require("fund/head.php");
+$tittlePage = "Aycoro - Terminos y condiciones de uso";
+require("../fund/head-comunity.php");
 ?>
 
 
@@ -19,9 +19,9 @@ require("fund/head.php");
                 <ul>
                     <li>
                         <!-- logo -->
-                        <a href="index">
-                            <img id="logo" src="img/Logo.png" alt="">
-                            <img id="logo2" src="img/Logo2.png" alt="">
+                        <a href="../index">
+                            <img id="logo" src="../img/Logo.png" alt="">
+                            <img id="logo2" src="../img/Logo2.png" alt="">
                         </a>
                     </li>
                 </ul>
@@ -158,16 +158,9 @@ require("fund/head.php");
                 <br>
             </div>
         </div>
-
-
-
+        <br>
+        <?php require("footer-comunity.php") ?>
     </div>
-
-
-    <script src="js/signup.js"></script>
-    <?php
-    require("fund/script.php");
-    ?>
 </body>
 
 </html>

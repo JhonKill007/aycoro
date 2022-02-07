@@ -88,6 +88,7 @@
                             <form action="" method="POST" class="liking-area<?php echo $id_post; ?>">
                                 <input type="hidden" name="stado_edit" id="status_edit<?php echo $id_post; ?>" value="">
                                 <input type="hidden" name="type_post" value="1">
+                                <input type="hidden" id="status_input_hiden<?php echo $id_post; ?>" name="coment_value" value="">
                                 <input type="hidden" name="id_post" value="<?php echo $id_post; ?>">
                                 <input type="hidden" name="liker" value="<?php echo $id_registro; ?>">
                                 <?php

@@ -3,36 +3,29 @@ session_start();
 if (isset($_SESSION['id'])) {
     header("Location: index");
 }
-$tittlePage = "Aycoro - Inicia sesion";
+$tittlePage = "Aycoro";
 require("fund/head.php");
 ?>
 
 <style>
-    .timer_conteiner {
+    /* .timer_conteiner {
         width: 100%;
-        /* height: 100px; */
 
     }
 
     .reloj {
         width: 100%;
-        /* height: 100px; */
         display: flex;
         justify-content: space-between;
-        /* border: 1px solid black; */
     }
 
     .letter_conteiner {
         width: 100%;
-        /* height: 25px; */
-        /* margin-top: -30px; */
         display: flex;
         justify-content: space-between;
-        /* border: 1px solid black; */
     }
 
     .visores {
-        /* margin: auto; */
         width: 20%;
         height: 50px;
         background-color: white;
@@ -43,22 +36,15 @@ require("fund/head.php");
     .names_reloj {
         margin: auto;
         width: 20%;
-        /* height: 20px; */
         text-align: center;
         border-radius: 5px;
     }
 
     body,
     html {
-        /* overflow-y: hidden; */
         overflow-x: hidden;
-
-        /* background: url("img/background.jpg") no-repeat center center/cover; */
-        /* background: url("img/background-27defebrero-version.jpg") no-repeat center center/cover; */
     }
 
-    /* body { */
-    /* } */
 
     #tittle {
         text-align: center;
@@ -75,6 +61,28 @@ require("fund/head.php");
     .particula[data-padre="false"] {
         width: 5px;
         height: 5px;
+    } */
+
+    .links-log span {
+        color: white;
+    }
+
+    .form-group label {
+        color: white;
+    }
+
+    .links-log a {
+        color: white
+    }
+
+    @media (max-width: 600px) {
+        .conteiner {
+            width: 100%;
+        }
+
+        .conteiner-login {
+            margin-top: -100px;
+        }
     }
 </style>
 
@@ -83,32 +91,23 @@ require("fund/head.php");
         <div id="carga"></div>
     </div>
 
-    <div class="container-one">
-
-        <!-- new barra -->
+    <!-- <div class="container-one">
         <div class="barra-inicio-new">
-            <!-- componentes -->
             <nav class="nav-main">
                 <ul>
                     <li>
-                        <!-- logo -->
                         <a href="login">
                             <img id="logo" src="img/Logo.png" alt="">
                             <img id="logo2" src="img/Logo2.png" alt="">
                         </a>
                     </li>
                 </ul>
-
             </nav>
-
         </div>
-
-
-    </div>
+    </div> -->
 
 
     <div class="conteiner">
-        <br>
         <!-- <br> -->
         <!-- <div class="conteiner-login">
             <h5 id="tittle">Cuenta regresiva lanzamiento Aycoro.com</h5>
@@ -139,13 +138,13 @@ require("fund/head.php");
                 </div>
             </div>
         </div> -->
-
-        <br>
         <div class="conteiner-login">
             <!-- caja del formulario -->
             <div class="formu-box">
                 <div class="con-box">
-                    <h2>Iniciar Sesion</h2>
+                    <div class="logo_login">
+                        <img src="img/Logo2.png" alt="">
+                    </div>
                     <div class='error'></div>
 
 
@@ -170,6 +169,7 @@ require("fund/head.php");
                             </label>
                             <div>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su Contraseña" required>
+                                <a href="identity" class="link_password"><span>Olvidaste tu contraseña?</span></a>
                             </div>
                         </div>
 
@@ -187,7 +187,6 @@ require("fund/head.php");
                             <span>Aun no tengo cuenta</span>
                             <a href="signup"><b>Crear Nueva Cuenta</b></a>
                             <br>
-                            <a href="identity"><b>Restablecer Contraseña</b></a>
                         </div>
                         <br>
                     </form>
@@ -196,7 +195,32 @@ require("fund/head.php");
         </div>
         <br>
         <br>
-
+        <div class="footer_login">
+            <ul id="ul1">
+                <li><a href="Comunity/aycoro"><span>Aycoro</span></a></li>
+                <li><a href="Comunity/historia"><span>Historia</span></a></li>
+                <li><a href="Comunity/ayuda"><span>Ayuda</span></a></li>
+                <li><a href="Comunity/contribuciones"><span>Contribuciónes</span></a></li>
+                <!-- <li><a href=""><span>Patreon</span></a></li> -->
+                <li><a href="Comunity/perfiles"><span>Perfiles</span></a></li>
+                <li><a href="Comunity/contactos"><span>Contactos</span></a></li>
+                <li><a href="Comunity/terminos"><span>Terminos y condiciones</span></a></li>
+            </ul>
+            <ul id="ul2">
+                <li><a href="Comunity/aycoro"><span>Aycoro</span></a></li>
+                <li><a href="Comunity/historia"><span>Historia</span></a></li>
+                <li><a href="Comunity/ayuda"><span>Ayuda</span></a></li>
+                <li><a href="Comunity/contribuciones"><span>Contribuciónes</span></a></li>
+                <!-- <li><a href=""><span>Patreon</span></a></li> -->
+            </ul>
+            <ul id="ul3">
+                <li><a href="Comunity/perfiles"><span>Perfiles</span></a></li>
+                <li><a href="Comunity/contactos"><span>Contactos</span></a></li>
+                <li><a href="Comunity/terminos"><span>Terminos y condiciones</span></a></li>
+            </ul>
+            <span class="copy-version">©Aycoro 2022</span>
+            <span class="copy-version">Version <?php echo $version; ?></span>
+        </div>
         <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script> -->
         <!-- login y signup -->
         <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="7758489410" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -208,7 +232,7 @@ require("fund/head.php");
     <!-- <div class="particula" data-velocidad="0" /> -->
 
 
-    <script src="js/login.js"></script>
+    <script src="js/login.js?<?php echo $version; ?>"></script>
     <script src="js/fireworks.js"></script>
     <?php
     require("fund/script.php");

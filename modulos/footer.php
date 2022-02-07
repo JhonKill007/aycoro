@@ -5,7 +5,7 @@
     <label></label>
     <a href="sugerencias"><label>Sugerencias</label></a>
     <label></label>
-    <a href="ayuda"><label>Ayuda</label></a>
+    <a href="Comunity/ayuda"><label>Ayuda</label></a>
     <label></label>
     <a href="terminos"><label>Condiciones</label></a>
     <br>

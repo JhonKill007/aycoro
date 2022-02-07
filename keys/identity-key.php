@@ -30,11 +30,11 @@ if (!empty($email)) {
 
 
             $asunto = "Restablecer Contraseña";
-            $mensaje = "" . $name_identity . " Alguien a tratado de Restablecer tu contraseña, 
-            si fuiste tu da click en este link http://aycoro.com/rest?fditer=" . $dato_encriptado . "&hfdar=" . $date_encryp . "";
+            $mensaje = "" . $name_identity . ", alguien a tratado de Restablecer tu contraseña. 
+            Si has sido tú solo has click en este link http://aycoro.com/rest?fditer=" . $dato_encriptado . "&hfdar=" . $date_encryp . "";
 
 
-            $header = "From: NoReply@aycoro.com" . "\r\n";
+            $header = "From: Aycoro <no-reply@aycoro.com>" . "\r\n";
             $header .= "Reply-To: NoReplay@aycoro.com" . "\r\n";
             $header .= "X-Mailer: PHP/" . phpversion();
             $mail = mail($email_identity, $asunto, $mensaje, $header);
