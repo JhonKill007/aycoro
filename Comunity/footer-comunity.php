@@ -59,8 +59,15 @@
         <li><a href="perfiles"><span>Perfiles</span></a></li>
         <li><a href="contactos"><span>Contactos</span></a></li>
         <li><a href="terminos"><span>Terminos y condiciones</span></a></li>
-        <li><a href="../login.php"><span>Iniciar Sesion</span></a></li>
-        <li><a href="../signup.php"><span>Registrate</span></a></li>
+        <?php
+        if (!isset($_SESSION['id'])) {
+        ?>
+            <li><a href="../login.php"><span>Iniciar Sesion</span></a></li>
+            <li><a href="../signup.php"><span>Registrate</span></a></li>
+        <?php
+        }
+        ?>
+
     </ul>
     <ul id="ul2">
         <li><a href="aycoro"><span>Aycoro</span></a></li>
@@ -75,10 +82,17 @@
         <li><a href="contactos"><span>Contactos</span></a></li>
         <li><a href="terminos"><span>Terminos y condiciones</span></a></li>
     </ul>
-    <ul id="ul4">
-        <li><a href="../login.php"><span>Iniciar Sesion</span></a></li>
-        <li><a href="../signup.php"><span>Registrate</span></a></li>
-    </ul>
+    <?php
+    if (!isset($_SESSION['id'])) {
+    ?>
+        <ul id="ul4">
+            <li><a href="../login.php"><span>Iniciar Sesion</span></a></li>
+            <li><a href="../signup.php"><span>Registrate</span></a></li>
+        </ul>
+    <?php
+    }
+    ?>
+
     <span class="copy-version">©Aycoro 2022</span>
     <span class="copy-version">Version <?php echo $version; ?></span>
 </div>

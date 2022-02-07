@@ -264,7 +264,7 @@ if (!isset($_SESSION['id'])) {
                 <li><a href="explorador" title="Explorador">Explorador</a></li>
                 <li><a href="configuration" title="Ajustes">Ajustes</a></li>
                 <li><a href="sugerencias" title="Sugerencias">Sugerencias</a></li>
-                <li><a href="ayuda" title="Ayuda">Ayuda</a></li>
+                <li><a href="Comunity/ayuda" title="Ayuda">Ayuda</a></li>
                 <li><a href="modulos/logout.php" title="Cerrar Sesion">Cerrar Sesion</a></li>
                 <div>
                     <br>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $tittlePage = "Aycoro Network";
 require("../fund/head-comunity.php");
 ?>

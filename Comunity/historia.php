@@ -1,4 +1,5 @@
 <?php
+session_start();
 $tittlePage = "Aycoro - Historia de Aycoro";
 require("../fund/head-comunity.php");
 ?>

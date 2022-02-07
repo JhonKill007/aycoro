@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $tittlePage = "Aycoro - Wellcome";
 require("../fund/head-comunity.php");
 $name = $_GET['name'];

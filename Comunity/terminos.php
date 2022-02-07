@@ -1,4 +1,5 @@
 <?php
+session_start();
 $tittlePage = "Aycoro - Terminos y condiciones de uso";
 require("../fund/head-comunity.php");
 ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $tittlePage = "Aycoro - Contribuciones";
 require("../fund/head-comunity.php");
 ?>

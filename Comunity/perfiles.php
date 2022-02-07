@@ -1,4 +1,5 @@
 <?php
+session_start();
 $tittlePage = "Aycoro - Perfiles";
 require("../fund/head-comunity.php");
 ?>

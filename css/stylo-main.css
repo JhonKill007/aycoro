@@ -9,14 +9,13 @@
     margin-left: 10px;
 }
 
-.footer label{
-    color: black;
-    cursor: pointer;
-    font-size: 13px;
+.footer_span{
+    font-size: 12px;
 }
 
-.footer span{
-    font-size: 13px;
+.footer_version{
+    font-size: 12px;
+    color:  grey;
 }
 
 .contein-editor{

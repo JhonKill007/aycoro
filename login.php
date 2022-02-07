@@ -195,32 +195,7 @@ require("fund/head.php");
         </div>
         <br>
         <br>
-        <div class="footer_login">
-            <ul id="ul1">
-                <li><a href="Comunity/aycoro"><span>Aycoro</span></a></li>
-                <li><a href="Comunity/historia"><span>Historia</span></a></li>
-                <li><a href="Comunity/ayuda"><span>Ayuda</span></a></li>
-                <li><a href="Comunity/contribuciones"><span>Contribuciónes</span></a></li>
-                <!-- <li><a href=""><span>Patreon</span></a></li> -->
-                <li><a href="Comunity/perfiles"><span>Perfiles</span></a></li>
-                <li><a href="Comunity/contactos"><span>Contactos</span></a></li>
-                <li><a href="Comunity/terminos"><span>Terminos y condiciones</span></a></li>
-            </ul>
-            <ul id="ul2">
-                <li><a href="Comunity/aycoro"><span>Aycoro</span></a></li>
-                <li><a href="Comunity/historia"><span>Historia</span></a></li>
-                <li><a href="Comunity/ayuda"><span>Ayuda</span></a></li>
-                <li><a href="Comunity/contribuciones"><span>Contribuciónes</span></a></li>
-                <!-- <li><a href=""><span>Patreon</span></a></li> -->
-            </ul>
-            <ul id="ul3">
-                <li><a href="Comunity/perfiles"><span>Perfiles</span></a></li>
-                <li><a href="Comunity/contactos"><span>Contactos</span></a></li>
-                <li><a href="Comunity/terminos"><span>Terminos y condiciones</span></a></li>
-            </ul>
-            <span class="copy-version">©Aycoro 2022</span>
-            <span class="copy-version">Version <?php echo $version; ?></span>
-        </div>
+        <?php require("modulos/footer-blog.php")?>
         <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script> -->
         <!-- login y signup -->
         <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="7758489410" data-ad-format="auto" data-full-width-responsive="true"></ins>

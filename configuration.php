@@ -64,8 +64,9 @@ require("fund/head.php");
                     }
                     ?>
                 </div>
-                <a href="terminos"><b>Terminos y condiciones de uso.</b></a>
             </div>
+            <br>
+            <?php require("modulos/footer-blog.php")?>
         </div>
 
         <?php
