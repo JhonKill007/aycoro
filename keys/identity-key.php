@@ -58,7 +58,7 @@ if (!empty($email)) {
                     </div>
                     <div style='font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:14px;color:rgba(0,0,0,0.87);line-height:20px;padding-top:20px;text-align:center'>Haz solicitado restablecer tu contraseña,
                         al parecer has perdido tu contraseña, te hemos enviado este correo para que puedas restablecerla. Si no has sido tú, no es necesario que hagas nada. De lo contrario, restablece tu acceso.<div style='padding-top:32px;text-align:center'>
-                            <a href='http://aycoro.com/rest?fditer=" . $dato_encriptado . "&hfdar=" . $date_encryp . "' style='font-family:" . $lettle_type . ",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;line-height:16px;color:#ffffff;font-weight:400;text-decoration:none;font-size:14px;display:inline-block;padding:10px 24px;background-color:#4184f3;border-radius:5px;min-width:90px'>Restablecer contraseña</a>
+                            <a style='font-family:" . $lettle_type . ",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;line-height:16px;color:#ffffff;font-weight:400;text-decoration:none;font-size:14px;display:inline-block;padding:10px 24px;background-color:#4184f3;border-radius:5px;min-width:90px' href='http://aycoro.com/rest?fditer=" . $dato_encriptado . "&hfdar=" . $date_encryp . "'>Restablecer contraseña</a>
                         </div>
                     </div>
                 </div>
@@ -72,8 +72,9 @@ if (!empty($email)) {
             $header .= "Reply-To: NoReplay@aycoro.com" . "\r\n";
             $header .= "X-Mailer: PHP/" . phpversion();
             $mail = mail($email_identity, $asunto, $mensaje, $header);
-            if ($mail) {
+            if ($mail == 1) {
                 echo "success";
+                // $datalog .= "<div class='error-txt  error'>http://aycoro.com/rest?fditer=" . $dato_encriptado . "&hfdar=" . $date_encryp . "</div>";
             } else {
                 $datalog .= "<div class='error-txt  error'>No se pudo enviar el Email.</div>";
             }
