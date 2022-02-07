@@ -51,7 +51,7 @@ if (!empty($email)) {
                             <tbody>
                                 <tr style="line-height:normal">
                                     <td align="right" style="padding-right:8px"><img width="20" height="20" style="width:20px;height:20px;vertical-align:sub;border-radius:50%" src="https://aycoro.com/' . $foto_identity . '" alt="" class="CToWUd"></td>
-                                    <td><a style="font-family:' . $lettle_type . ',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color:rgba(0,0,0,0.87);font-size:14px;line-height:20px">jhond2069@gmail.com</a></td>
+                                    <td><a style="font-family:' . $lettle_type . ',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color:rgba(0,0,0,0.87);font-size:14px;line-height:20px">'.$email_identity.'</a></td>
                                 </tr>
                             </tbody>
                         </table>
