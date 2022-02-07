@@ -16,6 +16,8 @@ if (!empty($email)) {
             $id_identity = $identity['id_registro'];
             $name_identity = $identity['nombre'];
             $email_identity = $identity['email'];
+            $foto_identity = $identity['foto'];
+            $lettle_type = "Google Sans";
 
 
 
@@ -30,8 +32,25 @@ if (!empty($email)) {
 
 
             $asunto = "Restablecer Contraseña";
-            $mensaje = "" . $name_identity . ", alguien a tratado de Restablecer tu contraseña. 
-            Si has sido tú solo has click en este link http://aycoro.com/rest?fditer=" . $dato_encriptado . "&hfdar=" . $date_encryp . "";
+            $mensaje = '<div style="border-style:solid;border-width:thin;border-color:#dadce0;border-radius:8px;padding:40px 20px" align="center">
+            <img style="width: 74px;height: 74px;margin: auto;" src="https://aycoro.com/img/Icon.jpg" alt="Aycoro">
+            <div style="font-family:' . $lettle_type . ',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;border-bottom:thin solid #dadce0;color:rgba(0,0,0,0.87);line-height:32px;padding-bottom:24px;text-align:center;word-break:break-word">
+                <div style="font-size:24px;">' . $name_identity . '</div>
+                <table align="center" style="margin-top:8px">
+                    <tbody>
+                        <tr style="line-height:normal">
+                            <td align="right" style="padding-right:8px"><img width="20" height="20" style="width:20px;height:20px;vertical-align:sub;border-radius:50%" src="https://aycoro.com/' . $foto_identity . '" alt="" class="CToWUd"></td>
+                            <td><a style="font-family:' . $lettle_type . ',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color:rgba(0,0,0,0.87);font-size:14px;line-height:20px">jhond2069@gmail.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:14px;color:rgba(0,0,0,0.87);line-height:20px;padding-top:20px;text-align:center">Haz solicitado restablecer tu contraseña,
+                al parecer has perdido tu contraseña, te hemos enviado este correo para que puedas restablecerla. Si no has sido tú, no es necesario que hagas nada. De lo contrario, restablece tu acceso.<div style="padding-top:32px;text-align:center">
+                    <a href="http://aycoro.com/rest?fditer=' . $dato_encriptado . '&hfdar=' . $date_encryp . '" style="font-family:' . $lettle_type . ',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;line-height:16px;color:#ffffff;font-weight:400;text-decoration:none;font-size:14px;display:inline-block;padding:10px 24px;background-color:#4184f3;border-radius:5px;min-width:90px">Restablecer contraseña</a>
+                </div>
+            </div>
+        </div>';
 
 
             $header = "From: Aycoro <no-reply@aycoro.com>" . "\r\n";
