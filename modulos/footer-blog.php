@@ -24,3 +24,6 @@
     <span class="copy-version">©Aycoro 2022</span>
     <span class="copy-version">Version <?php echo $version; ?></span>
 </div>
+<br>
+<br>
+<?php require("ads/login_signup_Ads.php") ?>

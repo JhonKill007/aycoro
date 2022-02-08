@@ -107,9 +107,9 @@ if ($email_identity != $dato_desncriptado || $date_desencryp < $date_today) {
                 <br>
             </div>
         </div>
-
-
-
+        <br>
+        <br>
+        <?php require("modulos/footer-blog.php")?>
     </div>
 
     

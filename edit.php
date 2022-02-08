@@ -212,6 +212,7 @@ require("fund/head.php");
             </div>
         <?php
         }
+        require("modulos/footer-blog.php");
         require("fund/script.php");
         ?>
     </div>

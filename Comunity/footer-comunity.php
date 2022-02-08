@@ -98,3 +98,4 @@
 </div>
 <br>
 <br>
+<?php require("../ads/sugerencias_ayudas_Ads.php") ?>

@@ -17,9 +17,8 @@
                     ?>
                         <h3>Bienvenido <?php echo $registro['nombre']; ?></h3>
                     <?php
-                    }
-                    else{
-                        ?>
+                    } else {
+                    ?>
                         <h3>Bienvenida <?php echo $registro['nombre']; ?></h3>
                     <?php
                     }
@@ -52,16 +51,11 @@
                 $user_post = $post['usuario'];
                 $fecha = $post['hour'] . " " . $post['day'];
 
-                if ($publi == 3) {
+                if ($publi == 5) {
                 ?>
-                    <!-- <div class="publicacion"> -->
-                    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script> -->
-                    <!-- publicaciones -->
-                    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div> -->
+                    <div class="publicacion">
+                        <?php require("ads/publicaciones_Ads.php") ?>
+                    </div>
                 <?php
                     $publi = 0;
                 }
@@ -357,16 +351,13 @@
 <?php
                 }
             }
-            if ($publi != 3) {
+            if ($publi != 5) {
 ?>
-<!-- <div class="publicacion"> -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464187088568984" crossorigin="anonymous"></script> -->
-<!-- publicaciones -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464187088568984" data-ad-slot="8349709873" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                                <script>
-                                    (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
-                            </div> -->
+<div class="publicacion">
+    <?php require("ads/publicaciones_Ads.php") ?>
+</div>
+
+
 <?php
                 $publi = 0;
             }
