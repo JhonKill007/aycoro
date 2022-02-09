@@ -367,7 +367,8 @@ if (!isset($_SESSION['id'])) {
             const MonViewTwo = document.querySelector(".num-message-bar-Two");
             const MonView = document.querySelector(".num-message");
             const MonViewone = document.querySelector(".num-message-bar");
-            setInterval(() => {
+
+            function chatCount() {
                 let xhrz = new XMLHttpRequest();
                 xhrz.open("GET", "keys/num-onview-key.php", true);
                 xhrz.onload = () => {
@@ -381,7 +382,54 @@ if (!isset($_SESSION['id'])) {
                     }
                 }
                 xhrz.send();
-            }, 500);
+            };
+
+            $(document).ready(function(e) {
+                chatCount();
+                var conn = new WebSocket('ws://localhost:8080');
+                conn.onopen = function(e) {
+                    console.log("Connection established!");
+                };
+
+                conn.onmessage = function(e) {
+                    var obj = JSON.parse(e.data);
+                    const id_registro = <?php echo $registro['id_registro'];?>;
+                    console.log('id_sendner: ' + obj.id_sendner 
+                    + ' id_reciver: ' + obj.id_reciver
+                    + 'mensaje: '+ obj.mensaje);
+                    if(id_registro == obj.id_reciver){
+                        chatCount();
+                    }
+                };
+
+                $('#btn').click(function(e) {
+                    // console.log("hecho");
+                    var id_sendner = $('#id_sendner').val();
+                    var id_reciver = $('#id_reciver').val();
+                    var mgsprivate = $('#mgsprivate').val();
+                    var time_mjs = $('#time_mjs').val();
+                    var vista = $('#vista').val();
+                    var createdms = $('#createdms').val();
+                    var mensaje = $('#mensaje').val();
+
+                    var enviar = {
+                        'id_sendner': id_sendner,
+                        'id_reciver': id_reciver,
+                        'mgsprivate': mgsprivate,
+                        'time_mjs': time_mjs,
+                        'vista': vista,
+                        'createdms': createdms,
+                        'mensaje': mensaje
+                    };
+                    console.log(enviar); 
+
+                    var sendDAta = conn.send(JSON.stringify(enviar));
+                    if(sendDAta){
+                        console.log('enviado');
+                    }
+                });
+                // conn.send('Hello World!');
+            });
         </script>
 
         <!-- barra lateral derecha -->
