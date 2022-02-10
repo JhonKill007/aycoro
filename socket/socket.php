@@ -34,10 +34,10 @@
             const id_registro = <?php echo $registro['id_registro']; ?>;
 
 
-            // console.log('id_sendner: ' + obj.id_sendner +
-            //     ' id_reciver: ' + obj.id_reciver +
-            //     ' mensaje: ' + obj.mensaje +
-            //     ' foto: ' + obj.foto);
+            console.log('id_sendner: ' + obj.id_sendner +
+                ' id_reciver: ' + obj.id_reciver +
+                ' mensaje: ' + obj.mensaje +
+                ' foto: ' + obj.foto);
 
 
             if (id_registro == obj.id_reciver) {
@@ -188,7 +188,7 @@
                     if (xhr.status === 200) {
                         let data = xhr.response;
                         $('#chat-boox').append(data);
-                        scrollToBottom();s
+                        scrollToBottom();
                     }
                 }
             }
