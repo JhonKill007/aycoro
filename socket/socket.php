@@ -9,7 +9,6 @@
     const pathTree = '/dm_';
     const pathFour = '/message';
     var LocationPath = location.pathname;
-    console.log(LocationPath);
 
     const MonViewTwo = document.querySelector(".num-message-bar-Two");
     const MonView = document.querySelector(".num-message");
@@ -27,24 +26,26 @@
 
         var conn = new WebSocket('ws://localhost:8080');
         conn.onopen = function(e) {
-            console.log("Connection established!");
+            // console.log("Connection established!");
         };
 
         conn.onmessage = function(e) {
             var obj = JSON.parse(e.data);
             const id_registro = <?php echo $registro['id_registro']; ?>;
-            console.log('id_sendner: ' + obj.id_sendner +
-                ' id_reciver: ' + obj.id_reciver +
-                ' mensaje: ' + obj.mensaje +
-                ' foto: ' + obj.foto);
+
+
+            // console.log('id_sendner: ' + obj.id_sendner +
+            //     ' id_reciver: ' + obj.id_reciver +
+            //     ' mensaje: ' + obj.mensaje +
+            //     ' foto: ' + obj.foto);
+
+
             if (id_registro == obj.id_reciver) {
                 chatCount();
                 MsjBarRigthNav();
                 if (LocationPath == pathFour) {
                     getdataPage();
                 }
-                // getData();
-                // console.log(obj.createdms);
                 if (obj.createdms == 1 || obj.createdms == 2) {
                     $('#chat-boox').append('<div class="chat incoming"><img src="' + obj.foto + '" alt=""><div class="details"><p>' + obj.mensaje + '<br> <span class="time_date intime">' + obj.hora + ' ' + obj.dia + '</span></p></div></div>');
                 }
@@ -120,13 +121,19 @@
                 'hora': hora,
                 'foto': foto
             };
-            console.log(enviar);
+
+
+            // console.log(enviar);
+
+
             $("#tittleOfEmpty").html("");
             $('#chat-boox').append('<div class="chat outgoing"><div class="details"><p>' + mensaje + '<br>  <span class = "time_date outtime" > ' + hora +
                 ' ' + dia +
                 '</span></p></div></div>');
             var sendMensaje = SaveMessaje();
-            console.log(sendMensaje);
+
+            // console.log(sendMensaje);
+
             var sendDAta = conn.send(JSON.stringify(enviar));
             MsjBarRigthNav();
         });
@@ -165,7 +172,6 @@
                     MonView.innerHTML = datoview;
                     MonViewTwo.innerHTML = datoview;
                     MonViewone.innerHTML = datoview;
-                    console.log("Cantidad de Mensajes: " + datoview);
                 }
             }
         }
@@ -174,8 +180,6 @@
 
     function getData() {
         if (LocationPath == pathOne || LocationPath == pathTwo || LocationPath == pathTree) {
-            console.log("variables de chatForm Validadas");
-            console.log(LocationPath);
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "keys/get-chat.php", true);
@@ -184,8 +188,7 @@
                     if (xhr.status === 200) {
                         let data = xhr.response;
                         $('#chat-boox').append(data);
-                        scrollToBottom();
-                        console.log(data);
+                        scrollToBottom();s
                     }
                 }
             }
@@ -193,11 +196,4 @@
             xhr.send(formData);
         }
     }
-
-
-
-
-    // function scrollToBottom() {
-    //     chatBox.scrollTop = chatBox.scrollHeight;
-    // }
 </script>

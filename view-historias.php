@@ -317,7 +317,7 @@ if (!isset($_SESSION['id'])) {
         echo "la coneccion fallo";
     }
     ?>
-    <script src="js/history.js"></script>
+    <script src="js/history.js?<?php echo $version; ?>"></script>
 </body>
 
 </html>

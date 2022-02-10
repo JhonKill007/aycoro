@@ -113,10 +113,10 @@ if ($email_identity != $dato_desncriptado || $date_desencryp < $date_today) {
     </div>
 
     
-    <script src="js/recover-count.js"></script>
+    <script src="js/recover-count.js?<?php echo $version; ?>"></script>
 
 
-    <script src="js/identity.js"></script>
+    <script src="js/identity.js?<?php echo $version; ?>"></script>
     <?php
     require("fund/script.php");
     ?>

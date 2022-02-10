@@ -200,7 +200,7 @@ require("fund/head.php");
 
 
     <script src="js/login.js?<?php echo $version; ?>"></script>
-    <script src="js/fireworks.js"></script>
+    <script src="js/fireworks.js?<?php echo $version; ?>"></script>
     <?php
     require("fund/script.php");
     ?>

@@ -87,7 +87,7 @@ require("fund/head.php");
     </div>
 
 
-    <script src="js/identity.js"></script>
+    <script src="js/identity.js?<?php echo $version; ?>"></script>
     <?php
     require("fund/script.php");
     ?>

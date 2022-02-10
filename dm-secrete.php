@@ -106,8 +106,7 @@ require("fund/head.php");
         const time_mjs = Intl.DateTimeFormat().resolvedOptions().timeZone;
         document.getElementById("time_mjs").value = time_mjs;
     </script>
-    <script src="js/chat.js"></script>
-    <!-- <script src="js/status.js"></script> -->
+    <script src="js/chat.js?<?php echo $version; ?>"></script>
     <?php
     require("fund/script.php");
     ?>
