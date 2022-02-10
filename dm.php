@@ -58,7 +58,7 @@ require("fund/head.php");
                             <a class="icon-dm" href="dm-secrete?user=<?php echo $usuario_usu; ?>"><i class="fas fa-comment-slash"></i></a>
                         </div>
                     </header>
-                    <div class="chat-box">
+                    <div class="chat-box" id="chat-boox">
 
 
                     </div>
@@ -67,6 +67,7 @@ require("fund/head.php");
                     $vista = 0;
                     $credms = 0;
                     ?>
+                    <!-- <div class="typing-area"> -->
                     <form action="" method="post" class="typing-area">
                         <input type="hidden" value="<?php echo $registro['id_registro']; ?>" name="id_sendner" id="id_sendner">
                         <input type="hidden" value="<?php echo $id_usu; ?>" name="id_reciver" id="id_reciver">
@@ -74,9 +75,11 @@ require("fund/head.php");
                         <input type="hidden" value="" name="time" id="time_mjs">
                         <input type="hidden" value="<?php echo $vista; ?>" name="vista" id="vista">
                         <input type="hidden" value="<?php echo $credms; ?>" name="createdms" id="createdms">
+                        <input type="hidden" value="<?php echo $registro['foto']; ?>" name="foto_user" id="foto_user">
                         <input type="text" autocomplete="off" class="input-field" name="mensaje" id="mensaje" placeholder="Escribe Aqui" maxlength="1000">
                         <button id="btn"><i class="fab fa-telegram-plane"></i></button>
                     </form>
+                    <!-- </div> -->
                 </section>
             </div>
         </div>

@@ -29,57 +29,60 @@ form.onsubmit = (e) => {
 }
 
 
-var cont = 1;
-var save;
+// var cont = 1;
+// var save;
 
 
 
 
-sendBtn.onclick = () => {
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "keys/send-mensaje-key.php", true);
-    xhr.onload = () => {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                // console.log("enviado")
-                inputField.value = "";
-                scrollToBottom();
-            }
-        }
-    }
-    let formData = new FormData(form);
-    xhr.send(formData);
-}
+// sendBtn.onclick = () => {
+//     let xhr = new XMLHttpRequest();
+//     xhr.open("POST", "keys/send-mensaje-key.php", true);
+//     xhr.onload = () => {
+//         if (xhr.readyState === XMLHttpRequest.DONE) {
+//             if (xhr.status === 200) {
+//                 // console.log("enviado")
+//                 inputField.value = "";
+//                 scrollToBottom();
+//             }
+//         }
+//     }
+//     let formData = new FormData(form);
+//     xhr.send(formData);
+// }
 
 
 
 
-chatBox.onmouseenter = () => {
-    chatBox.classList.add("active");
-}
-chatBox.onmouseleave = () => {
-    chatBox.classList.remove("active");
-}
+// chatBox.onmouseenter = () => {
+//     chatBox.classList.add("active");
+// }
+// chatBox.onmouseleave = () => {
+//     chatBox.classList.remove("active");
+// }
 
 
-setInterval(() => {
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "keys/get-chat.php", true);
-    xhr.onload = () => {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                let data = xhr.response;
-                chatBox.innerHTML = data;
+// setInterval(() => {
+//     let xhr = new XMLHttpRequest();
+//     xhr.open("POST", "keys/get-chat.php", true);
+//     xhr.onload = () => {
+//         if (xhr.readyState === XMLHttpRequest.DONE) {
+//             if (xhr.status === 200) {
+//                 let data = xhr.response;
+//                 chatBox.innerHTML = data;
+
+
+                // ya estaba comentado
                 // if (!chatBox.classList.contains("active")) {
                 // scrollToBottom();
                 // }
                 // timeIntervalID = window.setInterval(scrollToBottom, 3000);
-            }
-        }
-    }
-    let formData = new FormData(form);
-    xhr.send(formData);
-}, 500);
+//             }
+//         }
+//     }
+//     let formData = new FormData(form);
+//     xhr.send(formData);
+// }, 500);
 
 
 
@@ -89,32 +92,32 @@ function scrollToBottom() {
 }
 
 
-setInterval(() => {
-    let xhrScroll = new XMLHttpRequest();
-    xhrScroll.open("POST", "keys/get-date-scroll.php", true);
-    xhrScroll.onload = () => {
-        if (xhrScroll.readyState === XMLHttpRequest.DONE) {
-            if (xhrScroll.status === 200) {
-                let dataScroll = xhrScroll.response;
+// setInterval(() => {
+//     let xhrScroll = new XMLHttpRequest();
+//     xhrScroll.open("POST", "keys/get-date-scroll.php", true);
+//     xhrScroll.onload = () => {
+//         if (xhrScroll.readyState === XMLHttpRequest.DONE) {
+//             if (xhrScroll.status === 200) {
+//                 let dataScroll = xhrScroll.response;
 
-                if (cont == 1) {
-                    scrollToBottom();
-                    save = dataScroll;
-                    cont += 1;
-                }
-                else {
-                    if (save != dataScroll) {
-                        scrollToBottom();
-                        save = dataScroll;
-                    }
+//                 if (cont == 1) {
+//                     scrollToBottom();
+//                     save = dataScroll;
+//                     cont += 1;
+//                 }
+//                 else {
+//                     if (save != dataScroll) {
+//                         scrollToBottom();
+//                         save = dataScroll;
+//                     }
 
-                }
-            }
-        }
-    }
-    let formDataScroll = new FormData(form); 
-    xhrScroll.send(formDataScroll);
-}, 500);
+//                 }
+//             }
+//         }
+//     }
+//     let formDataScroll = new FormData(form); 
+//     xhrScroll.send(formDataScroll);
+// }, 500);
 
 
 

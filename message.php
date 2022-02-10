@@ -46,7 +46,8 @@ require("fund/head.php");
                 <br>
                 <script>
                     const usersLista = document.querySelector(".users-lista");
-                    setInterval(() => {
+                    var getPageData = getdataPage();
+                    function getdataPage() {
                         let xhr = new XMLHttpRequest();
                         xhr.open("GET", "keys/message-page-key.php", true);
                         xhr.onload = () => {
@@ -58,7 +59,7 @@ require("fund/head.php");
                             }
                         }
                         xhr.send();
-                    }, 500);
+                    }
                 </script>
 
             </div>

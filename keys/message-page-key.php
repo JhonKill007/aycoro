@@ -72,7 +72,7 @@ foreach ($todos as $numero) {
                         $msgst = substr($msgs, 0, 29) . '...';
 
                         if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
-                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario'] . '">
+                            $data .= '<a href="dm?user=' . $info_perfil['usuario'] . '">
                                                                 <div class="message-box-page-me">
                                                                 <img class="img_mgs" src="' . $foto_mgs . '" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -81,7 +81,7 @@ foreach ($todos as $numero) {
                                                                 </div>
                                                             </a>';
                         } else if ($mgs['id_sendner'] == $id) {
-                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario']  . '">
+                            $data .= '<a href="dm?user=' . $info_perfil['usuario']  . '">
                                                             <div class="message-box-page-me">
                                                             <img class="img_mgs" src="' . $foto_mgs . '" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -89,7 +89,7 @@ foreach ($todos as $numero) {
                                                                 </div>
                                                             </a>';
                         } else {
-                            $data .= '<a href="dm.php?user=' . $info_perfil['usuario']  . '">
+                            $data .= '<a href="dm?user=' . $info_perfil['usuario']  . '">
                                                             <div class="message-box-page-nome">
                                                             <img class="img_mgs" src="' . $foto_mgs . '" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -124,7 +124,7 @@ foreach ($todos as $numero) {
                             $msgst = substr($msgs, 0, 29) . '...';
 
                             if ($mgs['readdate'] == 0 && $mgs['id_sendner'] == $dato_id) {
-                                $data .= '<a href="dm_.php?private=' . $id_chat . '">
+                                $data .= '<a href="dm_?private=' . $id_chat . '">
                                                                 <div class="message-box-page-me">
                                                                 <img class="img_mgs" src="img/usuario.png" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -133,7 +133,7 @@ foreach ($todos as $numero) {
                                                                 </div>
                                                             </a>';
                             } else if ($mgs['id_sendner'] == $id) {
-                                $data .= '<a href="dm_.php?private=' . $id_chat . '">
+                                $data .= '<a href="dm_?private=' . $id_chat . '">
                                                             <div class="message-box-page-me">
                                                             <img class="img_mgs" src="img/usuario.png" alt="">
                                                                     <b>' . $nomape . '</b>
@@ -141,7 +141,7 @@ foreach ($todos as $numero) {
                                                                 </div>
                                                             </a>';
                             } else {
-                                $data .= '<a href="dm_.php?private=' . $id_chat . '">
+                                $data .= '<a href="dm_?private=' . $id_chat . '">
                                                             <div class="message-box-page-nome">
                                                             <img class="img_mgs" src="img/usuario.png" alt="">
                                                                     <b>' . $nomape . '</b>

@@ -1,37 +1,17 @@
 
-
-var bar_mjs_nav = 1;
-var varstopIntervalMjs;
-
 const chatListaNav = document.querySelector(".chat-list-nav");
-
-
-function StopFunctionIntervalMjs() {
-    clearInterval(varstopIntervalMjs);
-}
-
+var openBar = true;
 document.querySelector('.message-btn').addEventListener('click', () => {
     document.querySelector(".bar-menu-rigth").classList.toggle("show")
-    if (bar_mjs_nav == 1) {
-        bar_mjs_nav = 2;
-
-        varstopIntervalMjs = setInterval(MsjBarRigthNav, 1000);
-
+    if(openBar){
+        MsjBarRigthNav();
+        openBar = false;
     }
-    else {
-        StopFunctionIntervalMjs();
-        bar_mjs_nav = 1;
-    }
-
-
-
 })
 
 document.querySelector('.menu-btn').addEventListener('click', () => {
     document.querySelector(".bar-menu").classList.toggle("showed")
 })
-
-
 
 function MsjBarRigthNav() {
     let xhrz = new XMLHttpRequest();
@@ -46,7 +26,6 @@ function MsjBarRigthNav() {
     }
     xhrz.send();
 }
-
 
 $(document).ready(function () {
     var back = document.getElementById("caja_de_historias");

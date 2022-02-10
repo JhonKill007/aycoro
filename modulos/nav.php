@@ -363,7 +363,7 @@ if (!isset($_SESSION['id'])) {
 
         <div class="conteiner_search">
         </div>
-        <script>
+        <!-- <script>
             const MonViewTwo = document.querySelector(".num-message-bar-Two");
             const MonView = document.querySelector(".num-message");
             const MonViewone = document.querySelector(".num-message-bar");
@@ -378,10 +378,12 @@ if (!isset($_SESSION['id'])) {
                             MonView.innerHTML = datoview;
                             MonViewTwo.innerHTML = datoview;
                             MonViewone.innerHTML = datoview;
+                            console.log(datoview);
                         }
                     }
                 }
                 xhrz.send();
+                console.log("se hiso el conteo");
             };
 
             $(document).ready(function(e) {
@@ -393,11 +395,11 @@ if (!isset($_SESSION['id'])) {
 
                 conn.onmessage = function(e) {
                     var obj = JSON.parse(e.data);
-                    const id_registro = <?php echo $registro['id_registro'];?>;
-                    console.log('id_sendner: ' + obj.id_sendner 
-                    + ' id_reciver: ' + obj.id_reciver
-                    + 'mensaje: '+ obj.mensaje);
-                    if(id_registro == obj.id_reciver){
+                    const id_registro = <?php echo $registro['id_registro']; ?>;
+                    console.log('id_sendner: ' + obj.id_sendner +
+                        ' id_reciver: ' + obj.id_reciver +
+                        'mensaje: ' + obj.mensaje);
+                    if (id_registro == obj.id_reciver) {
                         chatCount();
                     }
                 };
@@ -421,16 +423,53 @@ if (!isset($_SESSION['id'])) {
                         'createdms': createdms,
                         'mensaje': mensaje
                     };
-                    console.log(enviar); 
+                    console.log(enviar);
 
-                    var sendDAta = conn.send(JSON.stringify(enviar));
-                    if(sendDAta){
-                        console.log('enviado');
-                    }
+                    // var socket = require('js/socket.js');
+                    import { socket } from './js/socket.js';
+                    let sumar = socket(1,2);
+                    console.log(sumar);
+                    // AJAXrequest(enviar);
+                    // $.ajax({
+                    //     url: 'keys/send-mensaje-key.php',
+                    //     method: 'POST',
+                    //     data: {
+                    //         id_sendner: id_sendner,
+                    //         id_reciver: id_reciver,
+                    //         mgsprivate: mgsprivate,
+                    //         time: time_mjs,
+                    //         vista: vista,
+                    //         createdms: createdms,
+                    //         mensaje: mensaje
+                    //     },
+                    //     success: function(data) {
+                    //         console.log(data);
+                    //     }
+                    // });
+
+                    // var sendDAta = conn.send(JSON.stringify(enviar));
                 });
                 // conn.send('Hello World!');
             });
-        </script>
+
+
+            // function AJAXrequest(Data) {
+            //     $.ajax()({
+            //         type: 'POST',
+            //         url: 'keys/send-mensaje-key.php',
+            //         data: Data,
+            //         dataType: 'json',
+            //         success: function(data) {
+            //             sendSocket(Data);
+            //         }
+            //     });
+            // }
+
+            function sendSocket(Data) {
+                var sendDAta = conn.send(JSON.stringify(Data));
+            }
+        </script> -->
+        <?php require("socket/socket.php");?>
 
         <!-- barra lateral derecha -->
         <nav class="bar-main-rigth fixed-top">

@@ -108,8 +108,8 @@ if (isset($_SESSION['id'])) {
             }
         }
     }
-    if ($output == '') {
-        $output .= '<div class="details letter-comver">
+    if ($output == "") {
+        $output .= '<div class="details letter-comver" id="tittleOfEmpty">
                         <h3>No haz iniciado una conversacion</h3>
                    </div>';
     }
