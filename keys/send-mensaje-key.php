@@ -10,8 +10,6 @@ $fecha = date('d-m-Y');
 $hora = date('h:i a');
 $readdate = 0;
 
-$data = "";
-
 $eso = require("conection.php");
 
 if ($mensaje != "") {
@@ -21,10 +19,10 @@ if ($mensaje != "") {
         $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour,date_mjs)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private','$fecha','$hora',NOW())";
         $resultado = mysqli_query($conn, $INSERT);
         if ($resultado) {
-            $data = "enviado";
+            echo "enviado";
             // header("Location: ../dm.php?usu=$id_reciver");
         } else {
-            $data = "Ha ocurrido un error!";
+            echo "Ha ocurrido un error!";
         }
     } else {
         if (!empty($mensaje) || !empty($id_sendner) || !empty($id_reciver) || !empty($readdate)) {
@@ -46,10 +44,10 @@ if ($mensaje != "") {
                                 $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour,date_mjs)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private','$fecha','$hora',NOW())";
                                 $resultado = mysqli_query($conn, $INSERT);
                                 if ($resultado) {
-                                    $data = "enviado";
+                                    echo "enviado";
                                     // header("Location: ../dm.php?usu=$id_reciver");
                                 } else {
-                                    $data = "Ha ocurrido un error!";
+                                    echo "Ha ocurrido un error!";
                                 }
                             }
                         }
@@ -62,10 +60,10 @@ if ($mensaje != "") {
                             $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour,date_mjs)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat','$private','$fecha','$hora',NOW())";
                             $resultado = mysqli_query($conn, $INSERT);
                             if ($resultado) {
-                                $data = "enviado";
+                                echo "enviado";
                                 // header("Location: ../dm.php?usu=$id_reciver");
                             } else {
-                                $data = "Ha ocurrido un error!";
+                                echo "Ha ocurrido un error!";
                             }
                         }
                     }
@@ -85,10 +83,10 @@ if ($mensaje != "") {
                                 $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour,date_mjs)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat',$private,'$fecha','$hora',NOW())";
                                 $resultado = mysqli_query($conn, $INSERT);
                                 if ($resultado) {
-                                    $data = "enviado";
+                                    echo "enviado";
                                     // header("Location: ../dm.php?usu=$id_reciver");
                                 } else {
-                                    $data = "Ha ocurrido un error!";
+                                    echo "Ha ocurrido un error!";
                                 }
                             }
                         }
@@ -101,19 +99,17 @@ if ($mensaje != "") {
                             $INSERT = "INSERT INTO chat (id_sendner,id_reciver,mensaje,readdate,id_chat,mgsprivate,day,hour,date_mjs)values('$id_sendner','$id_reciver','$mensaje','$readdate','$id_chat',$private,'$fecha','$hora',NOW())";
                             $resultado = mysqli_query($conn, $INSERT);
                             if ($resultado) {
-                                $data = "enviado";
+                                echo "enviado";
                                 // header("Location: ../dm.php?usu=$id_reciver");
                             } else {
-                                $data = "Ha ocurrido un error!";
+                                echo "Ha ocurrido un error!";
                             }
                         }
                     }
                 }
             } else {
-                $data = "la connecion fallo";
+                echo "la connecion fallo";
             }
         }
     }
 }
-
-echo $data;

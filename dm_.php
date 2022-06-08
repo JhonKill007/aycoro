@@ -27,9 +27,10 @@ require("fund/head.php");
 
 
     require("modulos/nav.php");
-    require("modulos/nav-two.php");
+    // require("modulos/nav-two.php");
     $idmine = $registro['id_registro'];
     require("modulos/status-post.php");
+
 
     $eso = require("keys/conection.php");
     $SELECTidchat = "SELECT * FROM idchat WHERE id_chat = $id_chat";
@@ -38,9 +39,9 @@ require("fund/head.php");
         if ($idchat_result = $resultadoidchat->fetch_array()) {
             if ($idchat_result['private'] == 1) {
                 if ($idchat_result['id_usu1'] == $idmine) {
-                    $id_incognito = $idchat_result['id_usu2'];
+                    $id_sus = $idchat_result['id_usu2'];
                 } else {
-                    $id_incognito = $idchat_result['id_usu1'];
+                    $id_sus = $idchat_result['id_usu1'];
                 }
             }
         }
@@ -75,7 +76,7 @@ require("fund/head.php");
                             </div>
                         </div>
                     </header>
-                    <div class="chat-box" id="chat-boox">
+                    <div class="chat-box">
 
 
                     </div>
@@ -85,16 +86,16 @@ require("fund/head.php");
                     $credms = 2;
                     ?>
                     <form action="" method="post" class="typing-area">
-                    <input type="hidden" value="<?php echo $registro['id_registro']; ?>" name="id_sendner" id="id_sendner">
-                        <input type="hidden" value="<?php echo $id_incognito; ?>" name="id_reciver" id="id_reciver">
-                        <input type="hidden" value="<?php echo $pri; ?>" name="mgsprivate" id="mgsprivate">
+                        <input type="hidden" value="<?php echo $idmine; ?>" name="id_sendner">
+                        <input type="hidden" value="<?php echo $id_sus; ?>" name="id_reciver">
+                        <input type="hidden" value="<?php echo $pri; ?>" name="mgsprivate">
                         <input type="hidden" value="" name="time" id="time_mjs">
-                        <input type="hidden" value="<?php echo $vista; ?>" name="vista" id="vista">
-                        <input type="hidden" value="<?php echo $credms; ?>" name="createdms" id="createdms">
-                        <input type="hidden" value="<?php echo $registro['foto']; ?>" name="foto_user" id="foto_user">
+                        <input type="hidden" value="<?php echo $vista; ?>" name="vista">
                         <input type="hidden" value="<?php echo $id_chat; ?>" name="id_chat">
-                        <input type="text" autocomplete="off" class="input-field" name="mensaje" id="mensaje" placeholder="Escribe Aqui" maxlength="1000">
-                        <button id="btn"><i class="fab fa-telegram-plane"></i></button>
+                        <input type="hidden" value="<?php echo $vista; ?>" name="readdate">
+                        <input type="hidden" value="<?php echo $credms; ?>" name="createdms">
+                        <input type="text" autocomplete="off" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
+                        <button><i class="fab fa-telegram-plane"></i></button>
                     </form>
                 </section>
             </div>
@@ -104,7 +105,8 @@ require("fund/head.php");
         const time_mjs = Intl.DateTimeFormat().resolvedOptions().timeZone;
         document.getElementById("time_mjs").value = time_mjs;
     </script>
-    <script src="js/chat.js?<?php echo $version; ?>"></script>
+    <script src="js/chat.js"></script>
+    <!-- <script src="js/status.js"></script> -->
     <?php
     require("fund/script.php");
     ?>

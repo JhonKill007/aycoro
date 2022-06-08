@@ -33,7 +33,7 @@ require("fund/head.php");
 
     <?php
     require("modulos/nav.php");
-    require("modulos/nav-two.php");
+    // require("modulos/nav-two.php");
     require("modulos/status-post.php");
 
     $id_sus = $_GET['usu'];

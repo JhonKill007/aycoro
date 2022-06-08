@@ -40,14 +40,14 @@ require("fund/head.php");
     <div class="body_center">
         <?php
         require("modulos/nav.php");
-        require("modulos/nav-two.php");
+        // require("modulos/nav-two.php");
         require("modulos/status-post.php");
 
 
         require("modulos/perfil-bio-reciver.php");
 
         if (isset($_SESSION['id'])) {
-            require("models/user_post_model.php");
+            // require("models/user_post_model.php");
             require("modulos/post-view.php");
         } else {
         ?>
@@ -61,7 +61,7 @@ require("fund/head.php");
                             <h6>Registrate para que puedas ver todas sus fotos, seguir a la persona que quieras y conversar con ella.</h6>
                         </div>
                         <div class="buton_registra_user">
-                            <button class="btn btn-primary">Registrate</button>
+                            <a href="signup"><button class="btn btn-primary">Registrate</button></a>
                         </div>
                     </div>
                     <!-- </div> -->
@@ -69,11 +69,18 @@ require("fund/head.php");
             </div>
             <br>
             <br>
-            <?php require("modulos/footer-blog.php")?>
+            <?php require("modulos/footer-blog.php") ?>
         <?php
         }
         require("fund/script.php");
         ?>
+        <script src="js/follows.js?<?php echo $version; ?>"></script>
+        <script>
+            window.onload = async function() {
+                this.LoadFollows(<?php echo $_SESSION['id']; ?>, <?php echo $id_usu; ?>);
+                this.loadItems(<?php echo $_SESSION['id']; ?>, <?php echo $id_usu; ?>);
+            };
+        </script>
     </div>
 </body>
 

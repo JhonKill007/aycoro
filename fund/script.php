@@ -1,4 +1,5 @@
 <script src="js/script-main.js?<?php echo $version; ?>"></script>
+<script src="js/publication.js?<?php echo $version; ?>"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

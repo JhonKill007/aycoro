@@ -75,6 +75,10 @@
     width: 50px;
 }
 
+.buttons-box{
+    width: 100%;
+    display: flex;
+}
 
 .messege-icon i{
     font-size: 40px;
@@ -90,19 +94,33 @@
 
 }
 
+
 .button_follow{
-    width: 150px;
+    width: 100px;
     height: 35px;
     background-color: red;
     color: white;
-    border-radius: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    /* border-radius: 20px; */
+    /* border: 3px solid purple; */
 }
 
-.lettle_follow{
+.message-icon-box{
     width: 50px;
-    margin: auto;
-    border-top: 4px solid red;
 }
+
+.message-icon-box i{
+    font-size: 30px;
+}
+
+.lettle-button-follow{
+    width: 50px;
+    margin-top: 4px;
+    margin-left: 25px;
+}
+
+
 
 .icon_follow{
     width: 35px;
@@ -110,8 +128,10 @@
 
 }
 .icon_follow i{
-    font-size: 33px;
-
+    font-size: 25px;
+    margin-top: 3px;
+    margin-left: 5px;
+    color: white;
 }
 
 

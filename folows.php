@@ -17,7 +17,7 @@ $usuario_usu = $_GET['user'];
     <div class="body_center">
         <?php
         require("modulos/nav.php");
-        require("modulos/nav-two.php");
+        // require("modulos/nav-two.php");
         require("modulos/status-post.php");
         require("keys/usu.php");
         $eso = require("keys/conection.php");

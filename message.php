@@ -31,7 +31,7 @@ require("fund/head.php");
     <div class="body_center">
         <?php
         require("modulos/nav.php");
-        require("modulos/nav-two.php");
+        // require("modulos/nav-two.php");
         require("modulos/status-post.php");
 
         ?>
@@ -46,8 +46,7 @@ require("fund/head.php");
                 <br>
                 <script>
                     const usersLista = document.querySelector(".users-lista");
-                    var getPageData = getdataPage();
-                    function getdataPage() {
+                    setInterval(() => {
                         let xhr = new XMLHttpRequest();
                         xhr.open("GET", "keys/message-page-key.php", true);
                         xhr.onload = () => {
@@ -59,7 +58,7 @@ require("fund/head.php");
                             }
                         }
                         xhr.send();
-                    }
+                    }, 500);
                 </script>
 
             </div>

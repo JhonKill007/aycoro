@@ -92,6 +92,11 @@
   padding: 3px;
 }
 
+.icon-message {
+  /* border: 1px solid green; */
+  margin-top: -11px;
+}
+
 .img-barra img {
   width: 100%;
   height: 100%;
