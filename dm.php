@@ -25,7 +25,7 @@ require("fund/head.php");
 
     <?php
     require("modulos/nav.php");
-    require("modulos/nav-two.php");
+    // require("modulos/nav-two.php");
     $idmine = $registro['id_registro'];
     require("modulos/status-post.php");
     if ($eso) {
@@ -58,7 +58,7 @@ require("fund/head.php");
                             <a class="icon-dm" href="dm-secrete?user=<?php echo $usuario_usu; ?>"><i class="fas fa-comment-slash"></i></a>
                         </div>
                     </header>
-                    <div class="chat-box" id="chat-boox">
+                    <div class="chat-box">
 
 
                     </div>
@@ -67,19 +67,16 @@ require("fund/head.php");
                     $vista = 0;
                     $credms = 0;
                     ?>
-                    <!-- <div class="typing-area"> -->
                     <form action="" method="post" class="typing-area">
-                        <input type="hidden" value="<?php echo $registro['id_registro']; ?>" name="id_sendner" id="id_sendner">
-                        <input type="hidden" value="<?php echo $id_usu; ?>" name="id_reciver" id="id_reciver">
-                        <input type="hidden" value="<?php echo $pri; ?>" name="mgsprivate" id="mgsprivate">
+                        <input type="hidden" value="<?php echo $registro['id_registro']; ?>" name="id_sendner">
+                        <input type="hidden" value="<?php echo $id_usu; ?>" name="id_reciver">
+                        <input type="hidden" value="<?php echo $pri; ?>" name="mgsprivate">
                         <input type="hidden" value="" name="time" id="time_mjs">
-                        <input type="hidden" value="<?php echo $vista; ?>" name="vista" id="vista">
-                        <input type="hidden" value="<?php echo $credms; ?>" name="createdms" id="createdms">
-                        <input type="hidden" value="<?php echo $registro['foto']; ?>" name="foto_user" id="foto_user">
-                        <input type="text" autocomplete="off" class="input-field" name="mensaje" id="mensaje" placeholder="Escribe Aqui" maxlength="1000">
-                        <button id="btn"><i class="fab fa-telegram-plane"></i></button>
+                        <input type="hidden" value="<?php echo $vista; ?>" name="vista">
+                        <input type="hidden" value="<?php echo $credms; ?>" name="createdms">
+                        <input type="text" autocomplete="off" class="input-field" name="mensaje" placeholder="Escribe Aqui" maxlength="1000">
+                        <button><i class="fab fa-telegram-plane"></i></button>
                     </form>
-                    <!-- </div> -->
                 </section>
             </div>
         </div>
@@ -88,7 +85,8 @@ require("fund/head.php");
         const time_mjs = Intl.DateTimeFormat().resolvedOptions().timeZone;
         document.getElementById("time_mjs").value = time_mjs;
     </script>
-    <script src="js/chat.js?<?php echo $version; ?>"></script>
+    <script src="js/chat.js"></script>
+    <!-- <script src="js/status.js"></script> -->
     <?php
     require("fund/script.php");
     ?>

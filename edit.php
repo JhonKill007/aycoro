@@ -14,7 +14,7 @@ require("fund/head.php");
     <div class="body_center">
         <?php
         require("modulos/nav.php");
-        require("modulos/nav-two.php");
+        // require("modulos/nav-two.php");
         require("modulos/status-post.php");
 
         if ($e == "User") {

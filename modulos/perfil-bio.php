@@ -43,9 +43,9 @@ if ($eso) {
             <h4><?php echo $nombre; ?></h4>
             <a href=""><b><?php echo $usuario; ?></b></a>
             <br>
-            <a id="folowers_perfil" href="folows?o=2&user=<?php echo $usuario; ?>"><b><?php echo $can_of_foloweds . " " . "Seguidos"; ?></b></a>
-            <span>|</span>
             <a id="folowers_perfil" href="folows?o=1&user=<?php echo $usuario; ?>"><b><?php echo $can_of_folowers . " " . "Seguidores"; ?></b></a>
+            <span>|</span>
+            <a id="folowers_perfil" href="folows?o=2&user=<?php echo $usuario; ?>"><b><?php echo $can_of_foloweds . " " . "Seguidos"; ?></b></a>
             <p><?php echo $presentacion . " "; ?><a href="configuration"><i class="fas fa-cog"></i></a></p>
         </div>
         <hr>

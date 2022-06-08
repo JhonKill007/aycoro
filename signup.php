@@ -290,11 +290,11 @@ require("fund/head.php");
             </div>
         </div>
         <br>
-        <?php require("modulos/footer-blog.php") ?>
+        <?php require("modulos/footer-blog.php")?>
     </div>
 
 
-    <script src="js/signup.js?<?php echo $version; ?>"></script>
+    <script src="js/signup.js"></script>
     <?php
     require("fund/script.php");
     ?>

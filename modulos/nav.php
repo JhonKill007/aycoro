@@ -335,12 +335,20 @@ if (!isset($_SESSION['id'])) {
                             </div>
                         </div>
                     </li>
+
+                    <li class="icon-out">
+                        <a href="explorador">
+                            <div><i title="Explorer" class="fas fa-compass go-out"></i></div>
+                        </a>
+                    </li>
+
                     <li class="icon-message">
                         <img class="message-btn" id="icon-logo" src="img/message.png" title="Mensajes" alt="Mensajes">
                         <div class="cicule-mjs">
                             <span class="num-message" for="icon-logo"></span>
                         </div>
                     </li>
+
                     <li class="icon-out">
                         <a href="modulos/logout.php">
                             <div><i title="Cerrar Sesion" class="fas fa-sign-out-alt go-out"></i></div>
@@ -363,12 +371,11 @@ if (!isset($_SESSION['id'])) {
 
         <div class="conteiner_search">
         </div>
-        <!-- <script>
+        <script>
             const MonViewTwo = document.querySelector(".num-message-bar-Two");
             const MonView = document.querySelector(".num-message");
             const MonViewone = document.querySelector(".num-message-bar");
-
-            function chatCount() {
+            setInterval(() => {
                 let xhrz = new XMLHttpRequest();
                 xhrz.open("GET", "keys/num-onview-key.php", true);
                 xhrz.onload = () => {
@@ -378,98 +385,12 @@ if (!isset($_SESSION['id'])) {
                             MonView.innerHTML = datoview;
                             MonViewTwo.innerHTML = datoview;
                             MonViewone.innerHTML = datoview;
-                            console.log(datoview);
                         }
                     }
                 }
                 xhrz.send();
-                console.log("se hiso el conteo");
-            };
-
-            $(document).ready(function(e) {
-                chatCount();
-                var conn = new WebSocket('ws://localhost:8080');
-                conn.onopen = function(e) {
-                    console.log("Connection established!");
-                };
-
-                conn.onmessage = function(e) {
-                    var obj = JSON.parse(e.data);
-                    const id_registro = <?php echo $registro['id_registro']; ?>;
-                    console.log('id_sendner: ' + obj.id_sendner +
-                        ' id_reciver: ' + obj.id_reciver +
-                        'mensaje: ' + obj.mensaje);
-                    if (id_registro == obj.id_reciver) {
-                        chatCount();
-                    }
-                };
-
-                $('#btn').click(function(e) {
-                    // console.log("hecho");
-                    var id_sendner = $('#id_sendner').val();
-                    var id_reciver = $('#id_reciver').val();
-                    var mgsprivate = $('#mgsprivate').val();
-                    var time_mjs = $('#time_mjs').val();
-                    var vista = $('#vista').val();
-                    var createdms = $('#createdms').val();
-                    var mensaje = $('#mensaje').val();
-
-                    var enviar = {
-                        'id_sendner': id_sendner,
-                        'id_reciver': id_reciver,
-                        'mgsprivate': mgsprivate,
-                        'time_mjs': time_mjs,
-                        'vista': vista,
-                        'createdms': createdms,
-                        'mensaje': mensaje
-                    };
-                    console.log(enviar);
-
-                    // var socket = require('js/socket.js');
-                    import { socket } from './js/socket.js';
-                    let sumar = socket(1,2);
-                    console.log(sumar);
-                    // AJAXrequest(enviar);
-                    // $.ajax({
-                    //     url: 'keys/send-mensaje-key.php',
-                    //     method: 'POST',
-                    //     data: {
-                    //         id_sendner: id_sendner,
-                    //         id_reciver: id_reciver,
-                    //         mgsprivate: mgsprivate,
-                    //         time: time_mjs,
-                    //         vista: vista,
-                    //         createdms: createdms,
-                    //         mensaje: mensaje
-                    //     },
-                    //     success: function(data) {
-                    //         console.log(data);
-                    //     }
-                    // });
-
-                    // var sendDAta = conn.send(JSON.stringify(enviar));
-                });
-                // conn.send('Hello World!');
-            });
-
-
-            // function AJAXrequest(Data) {
-            //     $.ajax()({
-            //         type: 'POST',
-            //         url: 'keys/send-mensaje-key.php',
-            //         data: Data,
-            //         dataType: 'json',
-            //         success: function(data) {
-            //             sendSocket(Data);
-            //         }
-            //     });
-            // }
-
-            function sendSocket(Data) {
-                var sendDAta = conn.send(JSON.stringify(Data));
-            }
-        </script> -->
-        <?php require("socket/socket.php");?>
+            }, 500);
+        </script>
 
         <!-- barra lateral derecha -->
         <nav class="bar-main-rigth fixed-top">
@@ -523,7 +444,7 @@ if (!isset($_SESSION['id'])) {
             if (event.target.value != "") {
 
                 if (change_search == 0) {
-                    document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
+                    // document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
                     document.querySelector(".conteiner_search").classList.toggle("show")
                     change_search = 1;
                 }
@@ -543,7 +464,7 @@ if (!isset($_SESSION['id'])) {
                 xhr.send(formData);
             } else {
                 if (change_search == 1) {
-                    document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
+                    // document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
                     document.querySelector(".conteiner_search").classList.toggle("show")
                     change_search = 0;
                 }

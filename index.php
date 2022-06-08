@@ -24,7 +24,7 @@ $identity_page_post = 1;
     <div class="body_center">
         <?php
         require("modulos/nav.php");
-        require("modulos/nav-two.php");
+        // require("modulos/nav-two.php");
         ?>
         <script>
             identity_page_post = 1;
@@ -399,86 +399,14 @@ $identity_page_post = 1;
 
 
         <?php
-        require("models/index_post_model.php");
+        // require("models/index_post_model.php");
         ?>
+        <hr>
         <div class="conteiner_index">
             <?php
             require("modulos/post-view.php");
             ?>
         </div>
-        <?php
-        if (isset($_GET['acces'])) {
-            $acces = $_GET['acces'];
-            if ($acces == 'Admin007') {
-        ?>
-                <script>
-                    console.log('<?php echo $acces; ?>');
-                </script>
-                <?php
-                // activar post
-                if ($eso) {
-                    $SELECT = "SELECT * FROM post ORDER BY id_post DESC";
-                    $resultado = mysqli_query($conn, $SELECT);
-                    $pst = $resultado->fetch_array();
-                    $cant_post = $pst["id_post"] + 1;
-                    for ($i = 0; $i < $cant_post; $i++) {
-                        $UPDATE = "UPDATE post SET status = 'Active' WHERE id_post = $i";
-                        $resultado = mysqli_query($conn, $UPDATE);
-                        if ($resultado) {
-                ?>
-                            <script>
-                                console.log('<?php echo "success" . $i . " "; ?>')
-                            </script>
-                        <?php
-                        } else {
-                        ?>
-                            <script>
-                                console.log('<?php echo "Ha ocurrido un error!" . $i . " "; ?>')
-                            </script>
-                            <?php
-                        }
-                    }
-                } else {
-                    echo "la connecion fallo";
-                }
-
-
-                // introducir usuarios
-                if ($eso) {
-                    $SELECT13 = "SELECT * FROM registro";
-                    $resultado13 = mysqli_query($conn, $SELECT13);
-                    while ($reg = $resultado13->fetch_array()) {
-                        $id_reg = $reg["id_registro"];
-                        $email_reg = $reg["email"];
-                        $usuario10 = substr($email_reg, 0, strpos($email_reg, '@'));
-                        if ($usuario10) {
-                            // $INSERT13 = "INSERT INTO registro (usuario)values('$usuario10') WHERE email = $email_reg";
-                            $UPDATE13 = "UPDATE registro SET usuario = '$usuario10' WHERE email = '$email_reg'";
-                            $resultado12 = mysqli_query($conn, $UPDATE13);
-                            // $resultado12 = mysqli_query($conn, $INSERT13);
-                            if ($resultado12) {
-                            ?>
-                                <script>
-                                    console.log('<?php echo "success" . $email_reg . " "; ?>')
-                                </script>
-                            <?php
-                            } else {
-                            ?>
-                                <script>
-                                    console.log('<?php echo "Ha ocurrido un error!" . $email_reg . " "; ?>')
-                                </script>
-        <?php
-                            }
-                        }
-                    }
-                } else {
-                    echo "la connecion fallo";
-                }
-            }
-        }
-
-
-        ?>
 
 
 
@@ -489,6 +417,13 @@ $identity_page_post = 1;
         <br>
         <br>
         <br>
+
+        <script>
+            
+            window.onload = async function() {
+                this.loadItems(<?php echo $_SESSION['id']; ?>, <?php echo $_SESSION['id']; ?>);
+            };
+        </script>
 
 
         <?php

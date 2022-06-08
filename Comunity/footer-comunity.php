@@ -62,8 +62,8 @@
         <?php
         if (!isset($_SESSION['id'])) {
         ?>
-            <li><a href="../login.php"><span>Iniciar Sesion</span></a></li>
-            <li><a href="../signup.php"><span>Registrate</span></a></li>
+            <li><a href="../login"><span>Iniciar Sesion</span></a></li>
+            <li><a href="../signup"><span>Registrate</span></a></li>
         <?php
         }
         ?>
@@ -86,8 +86,8 @@
     if (!isset($_SESSION['id'])) {
     ?>
         <ul id="ul4">
-            <li><a href="../login.php"><span>Iniciar Sesion</span></a></li>
-            <li><a href="../signup.php"><span>Registrate</span></a></li>
+            <li><a href="../login"><span>Iniciar Sesion</span></a></li>
+            <li><a href="../signup"><span>Registrate</span></a></li>
         </ul>
     <?php
     }

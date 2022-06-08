@@ -33,7 +33,7 @@ require("fund/head.php");
     <div class="body_center">
         <?php
         require("modulos/nav.php");
-        require("modulos/nav-two.php");
+        // require("modulos/nav-two.php");
         require("modulos/status-post.php");
         ?>
         <script>
@@ -163,10 +163,17 @@ require("fund/head.php");
         }
 
         require("modulos/perfil-bio.php");
-        require("models/perfil_post_model.php");
+        // require("models/perfil_post_model.php");
         require("modulos/post-view.php");
         require("fund/script.php");
         ?>
+
+        <script>
+            window.onload = async function() {
+                this.loadItems(<?php echo $_SESSION['id']; ?>, <?php echo $_SESSION['id']; ?>);
+            };
+        </script>
+
     </div>
 </body>
 

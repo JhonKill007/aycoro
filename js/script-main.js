@@ -1,17 +1,37 @@
 
+
+var bar_mjs_nav = 1;
+var varstopIntervalMjs;
+
 const chatListaNav = document.querySelector(".chat-list-nav");
-var openBar = true;
+
+
+function StopFunctionIntervalMjs() {
+    clearInterval(varstopIntervalMjs);
+}
+
 document.querySelector('.message-btn').addEventListener('click', () => {
     document.querySelector(".bar-menu-rigth").classList.toggle("show")
-    if(openBar){
-        MsjBarRigthNav();
-        openBar = false;
+    if (bar_mjs_nav == 1) {
+        bar_mjs_nav = 2;
+
+        varstopIntervalMjs = setInterval(MsjBarRigthNav, 1000);
+
     }
+    else {
+        StopFunctionIntervalMjs();
+        bar_mjs_nav = 1;
+    }
+
+
+
 })
 
 document.querySelector('.menu-btn').addEventListener('click', () => {
     document.querySelector(".bar-menu").classList.toggle("showed")
 })
+
+
 
 function MsjBarRigthNav() {
     let xhrz = new XMLHttpRequest();
@@ -26,6 +46,7 @@ function MsjBarRigthNav() {
     }
     xhrz.send();
 }
+
 
 $(document).ready(function () {
     var back = document.getElementById("caja_de_historias");
@@ -50,7 +71,7 @@ searchBtn.onclick = () => {
     searchBtn.classList.toggle("active");
     if (change_search == 1) {
         document.querySelector('.search_input_box').value = "";
-        document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
+        // document.querySelector(".conteiner-nav-two").classList.toggle("hidde")
         document.querySelector(".conteiner_search").classList.toggle("show")
         change_search = 0;
     }

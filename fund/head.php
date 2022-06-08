@@ -61,7 +61,7 @@ require("version.php")
   <link rel="stylesheet" href="css/stylo-busqueda.css?<?php echo $version; ?>">
 
   <!-- style eventos -->
-  <link rel="stylesheet" href="css/stylo-historys.css?<?php echo $version; ?>">
+  <!-- <link rel="stylesheet" href="css/stylo-historys.css?<?php echo $version; ?>"> -->
 
   <!-- nav three -->
   <link rel="stylesheet" href="css/stylo-nav-three.css?<?php echo $version; ?>">
@@ -90,7 +90,6 @@ require("version.php")
 
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
   <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
   <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet" />
